@@ -26,6 +26,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- Header -->
@@ -51,6 +54,31 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Decorative dots pattern -->
+        <div class="hero-decoration">
+            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="dots-pattern">
+                <circle cx="10" cy="10" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="40" cy="10" r="3" fill="currentColor" opacity="0.2"/>
+                <circle cx="70" cy="10" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="100" cy="10" r="3" fill="currentColor" opacity="0.1"/>
+                <circle cx="130" cy="10" r="3" fill="currentColor" opacity="0.2"/>
+                <circle cx="10" cy="40" r="3" fill="currentColor" opacity="0.2"/>
+                <circle cx="40" cy="40" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="70" cy="40" r="3" fill="currentColor" opacity="0.2"/>
+                <circle cx="100" cy="40" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="130" cy="40" r="3" fill="currentColor" opacity="0.1"/>
+                <circle cx="10" cy="70" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="40" cy="70" r="3" fill="currentColor" opacity="0.1"/>
+                <circle cx="70" cy="70" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="100" cy="70" r="3" fill="currentColor" opacity="0.2"/>
+                <circle cx="130" cy="70" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="10" cy="100" r="3" fill="currentColor" opacity="0.1"/>
+                <circle cx="40" cy="100" r="3" fill="currentColor" opacity="0.2"/>
+                <circle cx="70" cy="100" r="3" fill="currentColor" opacity="0.1"/>
+                <circle cx="100" cy="100" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="130" cy="100" r="3" fill="currentColor" opacity="0.2"/>
+            </svg>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
@@ -89,17 +117,17 @@
             </div>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <div class="problem-icon">📊</div>
+                    <div class="problem-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <h3>Baja Madurez en Gobernanza</h3>
                     <p>Peru tiene solo <strong>1.88/5</strong> en madurez de gobernanza de datos. Sin una base solida, tus sistemas de IA estan construidos sobre arena.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon">⚖️</div>
+                    <div class="problem-icon"><i class="fa-solid fa-scale-balanced"></i></div>
                     <h3>Nueva Regulacion Exigente</h3>
                     <p>El <strong>DS 115-2025-PCM</strong> exige transparencia algoritmica, evaluaciones de impacto etico y trazabilidad completa. El plazo corre.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon">⏰</div>
+                    <div class="problem-icon"><i class="fa-solid fa-clock"></i></div>
                     <h3>Tiempo Limitado</h3>
                     <p>Las instituciones financieras grandes tienen <strong>12 meses</strong> para implementar compliance completo. Cada dia cuenta.</p>
                 </div>
@@ -237,7 +265,7 @@
                 <div class="experience-items">
                     <h3>Experiencia probada en los ambientes mas exigentes</h3>
                     <div class="experience-item">
-                        <h4>🏦 Helvetia Asset Management (Suiza)</h4>
+                        <h4><i class="fa-solid fa-building-columns"></i> Helvetia Asset Management (Suiza)</h4>
                         <p><strong>Senior Data Analyst & Governance Specialist</strong></p>
                         <ul>
                             <li>Gestion directa de Data Governance Council</li>
@@ -247,7 +275,7 @@
                         </ul>
                     </div>
                     <div class="experience-item">
-                        <h4>💊 Roche Pharma (Suiza) - 6 anos</h4>
+                        <h4><i class="fa-solid fa-flask"></i> Roche Pharma (Suiza) - 6 anos</h4>
                         <p><strong>Business Intelligence & Data Quality Expert</strong></p>
                         <ul>
                             <li>Aseguramiento de compliance en industria pharma (GxP)</li>
@@ -259,7 +287,7 @@
                 </div>
                 <div class="credentials">
                     <div class="credential-card">
-                        <h4>🎓 Certificaciones</h4>
+                        <h4><i class="fa-solid fa-graduation-cap"></i> Certificaciones</h4>
                         <ul>
                             <li>Business Intelligence & Big Data Analytics</li>
                             <li>Advanced Analytics Specialist</li>
@@ -267,7 +295,7 @@
                         </ul>
                     </div>
                     <div class="credential-card">
-                        <h4>🛠️ Expertise Tecnico</h4>
+                        <h4><i class="fa-solid fa-screwdriver-wrench"></i> Expertise Tecnico</h4>
                         <ul>
                             <li>PowerBI, Tableau, SAP Analytics Cloud</li>
                             <li>SQL, Python, R</li>
@@ -276,7 +304,7 @@
                         </ul>
                     </div>
                     <div class="credential-card">
-                        <h4>🌍 Ventaja Competitiva</h4>
+                        <h4><i class="fa-solid fa-globe"></i> Ventaja Competitiva</h4>
                         <ul>
                             <li>Trilingue: Aleman, Ingles, Espanol</li>
                             <li>8+ anos en industrias reguladas</li>
@@ -298,7 +326,7 @@
             </div>
             <div class="case-content">
                 <div class="case-before">
-                    <h4>❌ Sin Data Governance</h4>
+                    <h4><i class="fa-solid fa-xmark"></i> Sin Data Governance</h4>
                     <ul>
                         <li>Datos duplicados, incompletos, inconsistentes</li>
                         <li>Sesgos no detectados (genero, geografia, edad)</li>
@@ -309,7 +337,7 @@
                     </ul>
                 </div>
                 <div class="case-after">
-                    <h4>✅ Con Data Governance</h4>
+                    <h4><i class="fa-solid fa-check"></i> Con Data Governance</h4>
                     <ul>
                         <li>Fuente unica de verdad para scoring</li>
                         <li>Monitoreo continuo de sesgos algoritmicos</li>
@@ -333,15 +361,15 @@
             <div class="contact-content">
                 <div class="contact-details">
                     <div class="contact-item">
-                        <strong>📧 Email:</strong>
+                        <strong><i class="fa-solid fa-envelope"></i> Email:</strong>
                         <a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a>
                     </div>
                     <div class="contact-item">
-                        <strong>📍 Ubicacion:</strong>
+                        <strong><i class="fa-solid fa-location-dot"></i> Ubicacion:</strong>
                         <span>Lima, Peru</span>
                     </div>
                     <div class="contact-item">
-                        <strong>💼 LinkedIn:</strong>
+                        <strong><i class="fa-brands fa-linkedin"></i> LinkedIn:</strong>
                         <a href="https://linkedin.com/in/wilkofeye" target="_blank">linkedin.com/in/wilkofeye</a>
                     </div>
                     <div class="contact-value">

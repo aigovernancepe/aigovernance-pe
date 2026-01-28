@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeaderScroll();
     initScrollAnimations();
     initContactForm();
+    initStatsCounter();
 });
 
 /* ============================================
@@ -160,13 +161,20 @@ function initContactForm() {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
+        // Check honeypot field - if filled, it's likely spam
+        if (data._gotcha) {
+            // Silently reject spam
+            showFormMessage(form, 'success', '¡Gracias por tu mensaje! Te contactaremos pronto.');
+            form.reset();
+            return;
+        }
+
         try {
-            // Here you would typically send to your backend
-            // For now, we'll simulate a successful submission
-            await simulateFormSubmission(data);
+            // Submit to FormSubmit.co
+            await submitFormToFormSubmit(data);
 
             // Show success message
-            showFormMessage(form, 'success', '¡Gracias por tu mensaje! Te contactaremos pronto.');
+            showFormMessage(form, 'success', '¡Gracias por tu mensaje! Te contactaremos dentro de 24-48 horas.');
             form.reset();
 
         } catch (error) {
@@ -262,32 +270,51 @@ function showFormMessage(form, type, message) {
 
     const messageEl = document.createElement('div');
     messageEl.className = type === 'success' ? 'form-success' : 'form-error';
+    messageEl.setAttribute('role', 'alert');
     messageEl.textContent = message;
 
     form.parentElement.appendChild(messageEl);
 
-    // Auto-remove after 5 seconds
+    // Announce to screen readers via aria-live region
+    const announcements = document.getElementById('form-announcements');
+    if (announcements) {
+        announcements.textContent = message;
+    }
+
+    // Auto-remove after 8 seconds (increased from 5 for better UX)
     setTimeout(() => {
         messageEl.remove();
-    }, 5000);
+    }, 8000);
 }
 
-function simulateFormSubmission(data) {
-    // Simulate API call
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // Log form data (for development)
-            console.log('Form submitted with data:', data);
+async function submitFormToFormSubmit(data) {
+    // FormSubmit.co endpoint - replace YOUR_EMAIL with your actual email
+    const endpoint = 'https://formsubmit.co/ajax/info@aigovernance.pe';
 
-            // Randomly fail 10% of the time for testing error handling
-            // In production, remove this and implement actual form submission
-            if (Math.random() < 0.1) {
-                reject(new Error('Simulated error'));
-            } else {
-                resolve({ success: true });
-            }
-        }, 1500);
+    const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            nombre: data.nombre,
+            cargo: data.cargo,
+            empresa: data.empresa,
+            email: data.email,
+            telefono: data.telefono || 'No proporcionado',
+            tipo_institucion: data.tipo_institucion,
+            mensaje: data.mensaje || 'Sin mensaje adicional',
+            _subject: `Nuevo Assessment Request de ${data.empresa}`,
+            _template: 'table'
+        })
     });
+
+    if (!response.ok) {
+        throw new Error('Error en el envío del formulario');
+    }
+
+    return response.json();
 }
 
 /* ============================================
@@ -364,5 +391,3 @@ function animateCounter(element) {
     }, 16);
 }
 
-// Initialize stats counter on load
-document.addEventListener('DOMContentLoaded', initStatsCounter);

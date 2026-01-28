@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initContactForm();
     initStatsCounter();
+    initCountdown();
+    initFAQ();
 });
 
 /* ============================================
@@ -106,7 +108,7 @@ function initHeaderScroll() {
 function initScrollAnimations() {
     // Add animate-on-scroll class to elements
     const animatedElements = document.querySelectorAll(
-        '.problem-card, .pillar, .service-card, .experience-item, .credential-card, .case-before, .case-after'
+        '.problem-card, .pillar, .service-card, .experience-item, .credential-card, .case-before, .case-after, .process-step, .faq-item, .metric-card, .context-item'
     );
 
     animatedElements.forEach(el => {
@@ -389,5 +391,87 @@ function animateCounter(element) {
         }
         element.textContent = Math.floor(current) + (hasPlus ? '+' : '');
     }, 16);
+}
+
+/* ============================================
+   Countdown Timer for Compliance Deadline
+   ============================================ */
+function initCountdown() {
+    // Set deadline to January 31, 2026 (12 months from DS 115-2025-PCM publication)
+    const deadline = new Date('2026-01-31T23:59:59').getTime();
+
+    const daysEl = document.getElementById('countdown-days');
+    const hoursEl = document.getElementById('countdown-hours');
+    const minutesEl = document.getElementById('countdown-minutes');
+    const secondsEl = document.getElementById('countdown-seconds');
+
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = deadline - now;
+
+        if (distance < 0) {
+            // Deadline passed
+            daysEl.textContent = '0';
+            hoursEl.textContent = '00';
+            minutesEl.textContent = '00';
+            secondsEl.textContent = '00';
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysEl.textContent = days;
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+        secondsEl.textContent = seconds.toString().padStart(2, '0');
+    }
+
+    // Update immediately
+    updateCountdown();
+
+    // Update every second
+    setInterval(updateCountdown, 1000);
+}
+
+/* ============================================
+   FAQ Accordion
+   ============================================ */
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        if (!question) return;
+
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+
+            // Close all other items (optional - remove this loop for multiple open)
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+            question.setAttribute('aria-expanded', !isActive);
+        });
+
+        // Keyboard accessibility
+        question.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                question.click();
+            }
+        });
+    });
 }
 

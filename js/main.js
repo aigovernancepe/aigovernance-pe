@@ -166,7 +166,7 @@ function initContactForm() {
         // Check honeypot field - if filled, it's likely spam
         if (data._gotcha) {
             // Silently reject spam
-            showFormMessage(form, 'success', '¡Gracias por tu mensaje! Te contactaremos pronto.');
+            showFormMessage(form, 'success', '¡Gracias por su mensaje! Lo contactaremos pronto.');
             form.reset();
             return;
         }
@@ -176,12 +176,12 @@ function initContactForm() {
             await submitFormToFormSubmit(data);
 
             // Show success message
-            showFormMessage(form, 'success', '¡Gracias por tu mensaje! Te contactaremos dentro de 24-48 horas.');
+            showFormMessage(form, 'success', '¡Gracias por su mensaje! Lo contactaremos dentro de 24-48 horas.');
             form.reset();
 
         } catch (error) {
             // Show error message
-            showFormMessage(form, 'error', 'Hubo un error al enviar el formulario. Por favor intenta de nuevo.');
+            showFormMessage(form, 'error', 'Hubo un error al enviar el formulario. Por favor intente de nuevo.');
             console.error('Form submission error:', error);
 
         } finally {
@@ -240,7 +240,7 @@ function validateField(field) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
             isValid = false;
-            errorMessage = 'Por favor ingresa un email válido';
+            errorMessage = 'Por favor ingrese un email válido';
         }
     }
 
@@ -249,7 +249,7 @@ function validateField(field) {
         const phoneRegex = /^[\d\s\-\+\(\)]{7,}$/;
         if (!phoneRegex.test(value)) {
             isValid = false;
-            errorMessage = 'Por favor ingresa un teléfono válido';
+            errorMessage = 'Por favor ingrese un teléfono válido';
         }
     }
 

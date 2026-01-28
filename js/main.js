@@ -397,8 +397,8 @@ function animateCounter(element) {
    Countdown Timer for Compliance Deadline
    ============================================ */
 function initCountdown() {
-    // Set deadline to January 31, 2026 (12 months from DS 115-2025-PCM publication)
-    const deadline = new Date('2026-01-31T23:59:59').getTime();
+    // Set deadline to September 10, 2026 (1 year from DS 115-2025-PCM publication on Sept 9, 2025)
+    const deadline = new Date('2026-09-10T23:59:59').getTime();
 
     const daysEl = document.getElementById('countdown-days');
     const hoursEl = document.getElementById('countdown-hours');

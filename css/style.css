@@ -425,6 +425,17 @@ p {
     max-width: 750px;
 }
 
+.hero-law-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.hero-law-link:hover {
+    color: var(--primary-dark);
+}
+
 .hero-cta {
     display: flex;
     flex-wrap: wrap;

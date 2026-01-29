@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
   <defs>
-    <!-- Gradient for the icon (lighter blue for dark backgrounds) -->
+    <!-- White/light gradient for dark backgrounds -->
     <linearGradient id="logoGradientWhite" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4DA6FF"/>
-      <stop offset="100%" style="stop-color:#00C8FF"/>
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e0e0e0"/>
     </linearGradient>
     <!-- Subtle glow effect -->
     <filter id="glowWhite" x="-20%" y="-20%" width="140%" height="140%">
@@ -46,12 +46,12 @@
     <circle cx="10" cy="18" r="3.5" fill="url(#logoGradientWhite)" filter="url(#glowWhite)"/>
 
     <!-- Central node (AI core) - slightly larger -->
-    <circle cx="25" cy="28" r="5" fill="#4DA6FF" filter="url(#glowWhite)"/>
-    <circle cx="25" cy="28" r="3" fill="#00C8FF"/>
+    <circle cx="25" cy="28" r="5" fill="#ffffff" filter="url(#glowWhite)"/>
+    <circle cx="25" cy="28" r="3" fill="#e0e0e0"/>
   </g>
 
-  <!-- Text: aigovernance (light blue for dark backgrounds - better readability) -->
-  <text x="58" y="38" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#4DA6FF">
+  <!-- Text: aigovernance (white for dark backgrounds) -->
+  <text x="58" y="38" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#ffffff">
     aigovernance<tspan>.pe</tspan>
   </text>
 </svg>

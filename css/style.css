@@ -1667,6 +1667,10 @@ p {
     margin-bottom: 3rem;
 }
 
+.footer-brand .logo {
+    margin-bottom: 1.5rem;
+}
+
 .footer-brand .logo-text {
     color: white;
     margin-bottom: 1rem;
@@ -1700,6 +1704,7 @@ p {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .footer-column a:hover {

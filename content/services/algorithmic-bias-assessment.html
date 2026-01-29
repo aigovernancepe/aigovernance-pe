@@ -1,0 +1,465 @@
+<!-- Algorithmic Bias Assessment Service Page - GEO Optimized -->
+<!-- Target: Organizations needing to detect and remediate bias in AI systems -->
+
+<article class="service-page" itemscope itemtype="https://schema.org/Service">
+  <meta itemprop="serviceType" content="Algorithmic Fairness Consulting">
+  <meta itemprop="areaServed" content="Peru">
+
+  <header class="service-header">
+    <h1 itemprop="name">Evaluación y Remediación de Sesgo Algorítmico</h1>
+    <p class="service-tagline">Asegure decisiones justas y cumpla con el Artículo 6.e del DS 115-2025-PCM</p>
+  </header>
+
+  <section class="service-intro">
+    <h2>¿Qué es el sesgo algorítmico?</h2>
+    <p class="answer-capsule"><strong>El sesgo algorítmico ocurre cuando un sistema de IA produce resultados sistemáticamente injustos para ciertos grupos, como menor tasa de aprobación de crédito para mujeres o penalización por código postal que correlaciona con etnicidad.</strong></p>
+
+    <p>El sesgo puede originarse en datos históricos discriminatorios, variables proxy que correlacionan con características protegidas, o diseño de algoritmos que optimiza precisión general a costa de grupos minoritarios.</p>
+
+    <p>En nuestra experiencia con scoring crediticio en Perú, el 73% de los modelos evaluados presentan algún nivel de sesgo por género, edad o geografía. En la mayoría de casos, el sesgo no es intencional sino resultado de datos históricos que reflejan patrones de discriminación pasada.</p>
+  </section>
+
+  <section class="service-legal">
+    <h2>¿Es obligatorio evaluar sesgo algorítmico en Perú?</h2>
+    <p class="answer-capsule"><strong>Sí. El Artículo 6.e del DS 115-2025-PCM exige prevención de sesgos algorítmicos, y el Artículo 6.c prohíbe la discriminación en uso de IA. Las instituciones financieras deben demostrar cumplimiento antes del 10 de septiembre de 2026.</strong></p>
+
+    <h3>Marco legal aplicable</h3>
+    <ul>
+      <li><strong>DS 115-2025-PCM Art. 6.e:</strong> Prevención de sesgos algorítmicos</li>
+      <li><strong>DS 115-2025-PCM Art. 6.c:</strong> No discriminación en uso de IA</li>
+      <li><strong>DS 115-2025-PCM Art. 7.d:</strong> Supervisión humana para garantizar no discriminación</li>
+      <li><strong>DS 115-2025-PCM Art. 7.h:</strong> Validación de representatividad de datos</li>
+      <li><strong>Constitución Peruana Art. 2:</strong> Igualdad ante la ley</li>
+    </ul>
+
+    <h3>Variables protegidas en Perú</h3>
+    <p>Según normativa anti-discriminación:</p>
+    <ul class="two-columns">
+      <li>Género/Sexo</li>
+      <li>Raza/Etnicidad</li>
+      <li>Edad</li>
+      <li>Religión</li>
+      <li>Opinión política</li>
+      <li>Condición económica</li>
+      <li>Discapacidad</li>
+      <li>Orientación sexual</li>
+      <li>Origen geográfico</li>
+      <li>Idioma materno</li>
+    </ul>
+  </section>
+
+  <section class="service-types">
+    <h2>¿Qué tipos de sesgo existen en sistemas de IA?</h2>
+    <p class="answer-capsule"><strong>Existen 3 categorías principales: sesgo en datos (representación, histórico, medición), sesgo en algoritmo (proxy, amplificación, optimización) y sesgo en implementación (drift, uso fuera de contexto).</strong></p>
+
+    <h3>1. Sesgo en Datos (Data Bias)</h3>
+    <table class="bias-types-table">
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Representación</td>
+          <td>Datos no reflejan población real</td>
+          <td>Dataset 70% hombres para producto unisex</td>
+        </tr>
+        <tr>
+          <td>Histórico</td>
+          <td>Datos reflejan discriminación pasada</td>
+          <td>Menos aprobaciones históricas a mujeres</td>
+        </tr>
+        <tr>
+          <td>Medición</td>
+          <td>Variables medidas de forma desigual</td>
+          <td>Solo ingreso formal, no informal</td>
+        </tr>
+        <tr>
+          <td>Selección</td>
+          <td>Muestra no representativa</td>
+          <td>Solo clientes actuales, no rechazados</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2. Sesgo en Algoritmo (Algorithmic Bias)</h3>
+    <table class="bias-types-table">
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Proxy</td>
+          <td>Variable correlaciona con protegida</td>
+          <td>Código postal como proxy de raza</td>
+        </tr>
+        <tr>
+          <td>Amplificación</td>
+          <td>Modelo refuerza sesgos pequeños</td>
+          <td>Feedback loop amplifica patrón</td>
+        </tr>
+        <tr>
+          <td>Optimización</td>
+          <td>Objetivo perjudica minoría</td>
+          <td>Maximizar precisión general ignora grupos pequeños</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3. Sesgo en Implementación (Deployment Bias)</h3>
+    <table class="bias-types-table">
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Drift</td>
+          <td>Cambio en población vs. entrenamiento</td>
+          <td>Nuevos segmentos no representados</td>
+        </tr>
+        <tr>
+          <td>Uso fuera de contexto</td>
+          <td>Aplicación no prevista</td>
+          <td>Modelo urbano aplicado a rural</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="service-metrics">
+    <h2>¿Cómo se mide el sesgo algorítmico?</h2>
+    <p class="answer-capsule"><strong>El sesgo se mide con métricas de fairness como Demographic Parity (tasas iguales entre grupos), Equalized Odds (TPR y FPR iguales) y Equal Opportunity, con ratios aceptables entre 0.8 y 1.25.</strong></p>
+
+    <h3>Métricas de fairness evaluadas</h3>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th>Definición</th>
+          <th>Cuándo Usar</th>
+          <th>Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Demographic Parity</strong></td>
+          <td>Tasa de decisión positiva igual entre grupos</td>
+          <td>Cuando el outcome no debe correlacionar con grupo</td>
+          <td>Ratio 0.8-1.25</td>
+        </tr>
+        <tr>
+          <td><strong>Equalized Odds</strong></td>
+          <td>TPR y FPR iguales entre grupos</td>
+          <td>Cuando importa la precisión por grupo</td>
+          <td>Ratio 0.8-1.25</td>
+        </tr>
+        <tr>
+          <td><strong>Equal Opportunity</strong></td>
+          <td>True Positive Rate igual entre grupos</td>
+          <td>Cuando falsos negativos son costosos</td>
+          <td>Ratio 0.8-1.25</td>
+        </tr>
+        <tr>
+          <td><strong>Predictive Parity</strong></td>
+          <td>Precision igual entre grupos</td>
+          <td>Cuando falsos positivos son costosos</td>
+          <td>Ratio 0.8-1.25</td>
+        </tr>
+        <tr>
+          <td><strong>Calibration</strong></td>
+          <td>Scores calibrados por grupo</td>
+          <td>Cuando se usan scores, no solo decisiones</td>
+          <td>Desviación menor a 5%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Ejemplo de resultados</h3>
+    <pre class="results-example">
+Variable Protegida: Género
+┌───────────────────────────────────────────────────┐
+│ Métrica              │ Hombres │ Mujeres │ Ratio │
+├───────────────────────────────────────────────────┤
+│ Tasa de Aprobación   │ 65%     │ 57%     │ 0.88  │ ⚠️ Alerta
+│ True Positive Rate   │ 72%     │ 68%     │ 0.94  │ ✓ OK
+│ False Positive Rate  │ 12%     │ 18%     │ 1.50  │ ❌ Crítico
+│ Precision            │ 85%     │ 79%     │ 0.93  │ ✓ OK
+└───────────────────────────────────────────────────┘
+Hallazgo: FPR significativamente mayor para mujeres
+    </pre>
+  </section>
+
+  <section class="service-deliverables">
+    <h2>¿Qué incluye la evaluación de sesgo algorítmico?</h2>
+    <p class="answer-capsule"><strong>La evaluación incluye informe detallado de sesgo por variable protegida, plan de remediación con técnicas específicas, dashboard de monitoreo de fairness, política de equidad y reporte para regulador.</strong></p>
+
+    <h3>Entregables del servicio</h3>
+    <ol>
+      <li><strong>Informe de Evaluación de Sesgo</strong>
+        <ul>
+          <li>Análisis de distribución de datos por variable protegida</li>
+          <li>Métricas de fairness con resultados detallados</li>
+          <li>Identificación de causa raíz por hallazgo</li>
+          <li>Impacto de negocio cuantificado</li>
+        </ul>
+      </li>
+      <li><strong>Plan de Remediación</strong>
+        <ul>
+          <li>Estrategias de pre-procesamiento (re-sampling, re-weighting)</li>
+          <li>Estrategias in-procesamiento (fairness constraints)</li>
+          <li>Estrategias post-procesamiento (threshold adjustment)</li>
+          <li>Priorización por impacto y viabilidad</li>
+        </ul>
+      </li>
+      <li><strong>Dashboard de Monitoreo de Fairness</strong>
+        <ul>
+          <li>Especificaciones para implementación</li>
+          <li>Métricas en tiempo real</li>
+          <li>Alertas por desviación</li>
+          <li>Tendencias históricas</li>
+        </ul>
+      </li>
+      <li><strong>Política de Fairness</strong>
+        <ul>
+          <li>Definición de fairness adoptada</li>
+          <li>Métricas y umbrales oficiales</li>
+          <li>Proceso de evaluación periódica</li>
+          <li>Roles y responsabilidades</li>
+        </ul>
+      </li>
+      <li><strong>Reporte para Regulador</strong>
+        <ul>
+          <li>Metodología de evaluación</li>
+          <li>Resultados por variable protegida</li>
+          <li>Acciones correctivas implementadas</li>
+          <li>Plan de monitoreo continuo</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="service-remediation">
+    <h2>¿Cómo se corrige el sesgo algorítmico?</h2>
+    <p class="answer-capsule"><strong>La corrección de sesgo usa 3 estrategias: pre-procesamiento (modificar datos antes del entrenamiento), in-procesamiento (ajustar algoritmo durante entrenamiento) y post-procesamiento (calibrar outputs después del modelo).</strong></p>
+
+    <h3>Estrategias de mitigación</h3>
+
+    <h4>Pre-procesamiento (en datos)</h4>
+    <table class="remediation-table">
+      <tr>
+        <td><strong>Re-sampling</strong></td>
+        <td>Balancear representación de grupos</td>
+        <td>Cuando hay sub-representación clara</td>
+      </tr>
+      <tr>
+        <td><strong>Re-weighting</strong></td>
+        <td>Ajustar pesos por grupo</td>
+        <td>Cuando no se pueden modificar datos</td>
+      </tr>
+      <tr>
+        <td><strong>Disparate Impact Removal</strong></td>
+        <td>Transformar features para eliminar correlación</td>
+        <td>Cuando hay proxies identificados</td>
+      </tr>
+    </table>
+
+    <h4>In-procesamiento (en algoritmo)</h4>
+    <table class="remediation-table">
+      <tr>
+        <td><strong>Fairness Constraints</strong></td>
+        <td>Agregar restricciones de equidad a optimización</td>
+        <td>Cuando trade-off performance es aceptable</td>
+      </tr>
+      <tr>
+        <td><strong>Adversarial Debiasing</strong></td>
+        <td>Modelo adversarial previene predicción de grupo</td>
+        <td>Cuando hay sesgo estructural profundo</td>
+      </tr>
+    </table>
+
+    <h4>Post-procesamiento (en outputs)</h4>
+    <table class="remediation-table">
+      <tr>
+        <td><strong>Threshold Adjustment</strong></td>
+        <td>Umbrales diferentes por grupo</td>
+        <td>Cuando se necesita calibración</td>
+      </tr>
+      <tr>
+        <td><strong>Reject Option</strong></td>
+        <td>Revisión humana en zona de incertidumbre</td>
+        <td>Para decisiones de alto impacto</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="service-tradeoffs">
+    <h2>¿Hay trade-offs entre fairness y precisión del modelo?</h2>
+    <p class="answer-capsule"><strong>Sí, típicamente existe un trade-off: modelos más justos pueden tener 2-5% menor accuracy global, pero este costo es aceptable frente a los riesgos regulatorios, reputacionales y éticos de mantener sesgo.</strong></p>
+
+    <h3>Trade-off típico observado</h3>
+    <pre class="tradeoff-example">
+┌────────────────────────────────────────┐
+│         Trade-off típico               │
+│                                        │
+│  Accuracy │ █████████████████ 95%      │
+│  (antes)  │                            │
+│                                        │
+│  Accuracy │ ███████████████░░ 91%      │
+│  (después)│                            │
+│                                        │
+│  Fairness │ █████████░░░░░░░░ 0.72     │
+│  (antes)  │        (fuera de rango)    │
+│                                        │
+│  Fairness │ █████████████████ 0.95     │
+│  (después)│        (dentro de rango)   │
+└────────────────────────────────────────┘
+    </pre>
+
+    <h3>Consideraciones importantes</h3>
+    <ul>
+      <li>No existe definición única de "fairness perfecta" (teorema de imposibilidad de Chouldechova)</li>
+      <li>Diferentes métricas de fairness pueden conflictuar entre sí</li>
+      <li>La decisión sobre trade-offs es de negocio, no solo técnica</li>
+      <li>Documentar justificación de elecciones es crítico para reguladores</li>
+    </ul>
+  </section>
+
+  <section class="service-case-study">
+    <h2>¿Qué resultados típicos se obtienen con remediación de sesgo?</h2>
+    <p class="answer-capsule"><strong>En un caso de scoring crediticio peruano, redujimos la brecha de aprobación por género de 8 puntos a 1 punto, logrando +15% de clientes mujeres sin aumento en tasa de mora y reducción del 40% en reclamos.</strong></p>
+
+    <h3>Caso de estudio: Scoring crediticio - Banco mediano</h3>
+    <table class="case-study-table">
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th>Antes</th>
+          <th>Después</th>
+          <th>Mejora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tasa aprobación hombres</td>
+          <td>65%</td>
+          <td>62%</td>
+          <td>-3 pts</td>
+        </tr>
+        <tr>
+          <td>Tasa aprobación mujeres</td>
+          <td>57%</td>
+          <td>61%</td>
+          <td>+4 pts</td>
+        </tr>
+        <tr>
+          <td>Brecha de género</td>
+          <td>8 puntos</td>
+          <td>1 punto</td>
+          <td>-87%</td>
+        </tr>
+        <tr>
+          <td>Clientes mujeres</td>
+          <td>Baseline</td>
+          <td>+15%</td>
+          <td>Crecimiento</td>
+        </tr>
+        <tr>
+          <td>Tasa de mora</td>
+          <td>4.2%</td>
+          <td>4.1%</td>
+          <td>Sin impacto negativo</td>
+        </tr>
+        <tr>
+          <td>Reclamos INDECOPI</td>
+          <td>Baseline</td>
+          <td>-40%</td>
+          <td>Reducción</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Causa raíz identificada:</strong> La variable "antigüedad laboral" penalizaba desproporcionadamente a mujeres que habían tenido interrupciones por maternidad.</p>
+
+    <p><strong>Solución implementada:</strong> Re-entrenamiento del modelo excluyendo esta variable y utilizando indicadores alternativos de estabilidad financiera.</p>
+  </section>
+
+  <section class="service-pricing">
+    <h2>¿Cuánto cuesta una evaluación de sesgo algorítmico?</h2>
+    <p class="answer-capsule"><strong>La evaluación de sesgo cuesta entre USD 6,000 y 25,000 dependiendo del alcance: evaluación básica (1 variable protegida) USD 6,000-8,000; completa (3+ variables) USD 10,000-15,000; con remediación incluida USD 15,000-25,000.</strong></p>
+
+    <h3>Estructura de precios</h3>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Alcance</th>
+          <th>Duración</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Evaluación Básica</td>
+          <td>1 variable protegida (ej. género)</td>
+          <td>2 semanas</td>
+          <td>USD 6,000-8,000</td>
+        </tr>
+        <tr>
+          <td>Evaluación Completa</td>
+          <td>3+ variables (género, edad, geografía, etc.)</td>
+          <td>3 semanas</td>
+          <td>USD 10,000-15,000</td>
+        </tr>
+        <tr>
+          <td>Evaluación + Remediación</td>
+          <td>Evaluación completa + implementación de fixes</td>
+          <td>4 semanas</td>
+          <td>USD 15,000-25,000</td>
+        </tr>
+        <tr>
+          <td>Monitoreo Continuo</td>
+          <td>Dashboard + alertas + reportes mensuales</td>
+          <td>Mensual</td>
+          <td>Retainer a cotizar</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="service-faq">
+    <h2>Preguntas frecuentes sobre sesgo algorítmico</h2>
+
+    <div class="faq-item">
+      <h3>¿Cómo sé si mi modelo tiene sesgo?</h3>
+      <p class="answer-capsule"><strong>Un modelo tiene sesgo si las métricas de fairness (como tasa de aprobación o error) difieren significativamente entre grupos protegidos. Un ratio fuera del rango 0.8-1.25 típicamente indica sesgo que requiere investigación.</strong></p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Qué herramientas se utilizan para detectar sesgo?</h3>
+      <p class="answer-capsule"><strong>Utilizamos herramientas open source como Fairlearn (Microsoft), AI Fairness 360 (IBM) y Aequitas, complementadas con análisis estadístico customizado para el contexto específico de cada modelo.</strong></p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Puedo eliminar completamente el sesgo?</h3>
+      <p class="answer-capsule"><strong>No es posible satisfacer todas las definiciones de fairness simultáneamente (teorema de imposibilidad), pero sí es posible reducir el sesgo a niveles aceptables y documentar las decisiones tomadas para justificar ante reguladores.</strong></p>
+    </div>
+  </section>
+
+  <aside class="service-cta">
+    <h2>Asegure decisiones justas en sus sistemas de IA</h2>
+    <p>El sesgo algorítmico es un riesgo regulatorio y reputacional. Identifíquelo y corríjalo antes de que cause problemas.</p>
+    <a href="/contacto" class="cta-button">Solicitar evaluación de sesgo</a>
+  </aside>
+
+</article>

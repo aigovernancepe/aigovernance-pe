@@ -40,12 +40,41 @@
             "url": "https://aigovernance.pe"
         },
         "serviceType": "Data Governance Consulting",
-        "areaServed": "Peru",
-        "offers": {
-            "@type": "Offer",
-            "price": "35000",
-            "priceCurrency": "USD"
-        }
+        "areaServed": "Peru"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo toma ver resultados?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los quick wins son visibles en las primeras 4-6 semanas (Council operativo, primeras políticas). El sistema completo está funcionando en 12 semanas, con mejoras medibles en KPIs de calidad desde el mes 2."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Necesitamos contratar personal nuevo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Generalmente no. Los roles de Data Owner son responsabilidades adicionales para gerentes existentes (5-10% de su tiempo). Data Stewards pueden ser analistas existentes con dedicación parcial (20-50%)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué herramientas necesitamos comprar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Para implementación inicial, herramientas existentes como Excel, SharePoint y Power BI son suficientes. Herramientas especializadas (Collibra, Alation) se recomiendan solo cuando la madurez supera nivel 3."
+                }
+            }
+        ]
     }
     </script>
 
@@ -243,19 +272,57 @@
         }
         .faq-section {
             padding: 4rem 0;
+            background: var(--bg-light);
+        }
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 2rem auto 0;
         }
         .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem 0;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
         }
-        .faq-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.05rem;
+            font-weight: 600;
             color: var(--text-dark);
+            font-family: inherit;
         }
-        .faq-item p {
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        .faq-question i {
+            transition: transform 0.3s;
+            color: var(--primary);
+        }
+        .faq-question[aria-expanded="true"] i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 1.5rem 1.25rem;
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.7;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
         }
         .results-highlight {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -627,25 +694,11 @@
                         </tbody>
                     </table>
 
-                    <h2>¿Cuánto cuesta implementar data governance?</h2>
-                    <div class="answer-capsule">
-                        <strong>La implementación de data governance para instituciones financieras medianas típicamente oscila entre USD 35,000-50,000 para el proyecto de 3 meses, dependiendo de complejidad y número de dominios.</strong>
-                    </div>
-                    <p>Factores que influyen en el precio:</p>
-                    <ul>
-                        <li><strong>Número de dominios de datos:</strong> 4-6 dominios estándar vs. 8+ dominios</li>
-                        <li><strong>Complejidad de sistemas:</strong> Sistemas legacy vs. arquitectura moderna</li>
-                        <li><strong>Geografía:</strong> Single site vs. múltiples ubicaciones</li>
-                        <li><strong>Herramientas:</strong> Uso de herramientas existentes vs. implementación de nuevas</li>
-                    </ul>
-                    <p>El ROI típico de governance es 3-5x la inversión en el primer año, principalmente por reducción de errores, eficiencia operativa y evitación de multas regulatorias.</p>
                 </div>
 
                 <aside class="service-sidebar">
                     <div class="sidebar-card">
-                        <h3>Inversión</h3>
-                        <div class="price">USD 35,000+</div>
-                        <div class="price-note">Desde, según complejidad</div>
+                        <h3>Incluye</h3>
                         <ul>
                             <li><i class="fa-solid fa-check"></i> Sistema operativo completo</li>
                             <li><i class="fa-solid fa-check"></i> Data Quality Dashboard</li>
@@ -676,23 +729,49 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
         <div class="container">
             <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="faq-item">
-                <h3>¿Cuánto tiempo toma ver resultados?</h3>
-                <p>Los quick wins son visibles en las primeras 4-6 semanas (Council operativo, primeras políticas). El sistema completo está funcionando en 12 semanas, con mejoras medibles en KPIs de calidad desde el mes 2.</p>
-            </div>
-            <div class="faq-item">
-                <h3>¿Necesitamos contratar personal nuevo?</h3>
-                <p>Generalmente no. Los roles de Data Owner son responsabilidades adicionales para gerentes existentes (5-10% de su tiempo). Data Stewards pueden ser analistas existentes con dedicación parcial (20-50%).</p>
-            </div>
-            <div class="faq-item">
-                <h3>¿Qué herramientas necesitamos comprar?</h3>
-                <p>Para implementación inicial, herramientas existentes como Excel, SharePoint y Power BI son suficientes. Herramientas especializadas (Collibra, Alation) se recomiendan solo cuando la madurez supera nivel 3.</p>
+            <div class="faq-grid">
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span itemprop="name">¿Cuánto tiempo toma ver resultados?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Los quick wins son visibles en las primeras 4-6 semanas (Council operativo, primeras políticas). El sistema completo está funcionando en 12 semanas, con mejoras medibles en KPIs de calidad desde el mes 2.</p>
+                    </div>
+                </div>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span itemprop="name">¿Necesitamos contratar personal nuevo?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Generalmente no. Los roles de Data Owner son responsabilidades adicionales para gerentes existentes (5-10% de su tiempo). Data Stewards pueden ser analistas existentes con dedicación parcial (20-50%).</p>
+                    </div>
+                </div>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span itemprop="name">¿Qué herramientas necesitamos comprar?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Para implementación inicial, herramientas existentes como Excel, SharePoint y Power BI son suficientes. Herramientas especializadas (Collibra, Alation) se recomiendan solo cuando la madurez supera nivel 3.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        function toggleFaq(button) {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('active');
+        }
+    </script>
 
     <!-- Related Services -->
     <section class="related-services">

@@ -40,12 +40,41 @@
             "url": "https://aigovernance.pe"
         },
         "serviceType": "AI Governance Consulting",
-        "areaServed": "Peru",
-        "offers": {
-            "@type": "Offer",
-            "price": "8000",
-            "priceCurrency": "USD"
-        }
+        "areaServed": "Peru"
+    }
+    </script>
+
+    <!-- FAQ Schema for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Qué información necesitan antes del assessment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Antes del kick-off necesitamos organigrama del área de datos/tecnología, listado de sistemas core, políticas de datos existentes (si las hay) y reportes de auditoría previos disponibles."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿El assessment interrumpe las operaciones normales?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El impacto operativo es mínimo: requerimos aproximadamente 8-10 horas de tiempo de stakeholders clave distribuidas en 2 semanas, principalmente en entrevistas estructuradas de 1 hora."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué pasa después del assessment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El roadmap entregado permite implementación autónoma o con nuestro acompañamiento. Ofrecemos servicios de Data Governance Implementation para organizaciones que desean apoyo continuo."
+                }
+            }
+        ]
     }
     </script>
 
@@ -238,19 +267,180 @@
         }
         .faq-section {
             padding: 4rem 0;
+            background: var(--bg-light);
+        }
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 2rem auto 0;
         }
         .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem 0;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
         }
-        .faq-item h3 {
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-family: inherit;
+        }
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        .faq-question i {
+            transition: transform 0.3s;
+            color: var(--primary);
+        }
+        .faq-question[aria-expanded="true"] i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 1.5rem 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Process Workflow Visualization */
+        .process-workflow {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 16px;
+        }
+        .workflow-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .workflow-week {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid var(--border);
+            position: relative;
+        }
+        .workflow-week.week-1 {
+            border-color: var(--primary);
+        }
+        .workflow-week.week-2 {
+            border-color: var(--secondary);
+        }
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .week-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white;
+        }
+        .week-1 .week-number {
+            background: var(--primary);
+        }
+        .week-2 .week-number {
+            background: var(--secondary);
+        }
+        .week-title h4 {
+            margin: 0;
             font-size: 1.1rem;
-            margin-bottom: 0.75rem;
             color: var(--text-dark);
         }
-        .faq-item p {
+        .week-title span {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            line-height: 1.6;
+        }
+        .workflow-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .workflow-steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed var(--border);
+        }
+        .workflow-steps li:last-child {
+            border-bottom: none;
+        }
+        .step-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+        .week-1 .step-icon {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+        }
+        .week-2 .step-icon {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--secondary);
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-content strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+        .step-content span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .workflow-arrow {
+            display: flex;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .workflow-arrow {
+                transform: rotate(90deg);
+                justify-content: center;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -314,7 +504,7 @@
                         <strong>Una evaluación de madurez en IA es un diagnóstico estructurado que mide la capacidad de una organización para gestionar sistemas de inteligencia artificial de forma responsable y cumplir con regulaciones como el DS 115-2025-PCM.</strong>
                     </div>
                     <p>Este assessment analiza seis dimensiones críticas: estrategia y gobernanza, calidad de datos, gestión de metadatos, arquitectura de datos, seguridad y privacidad, e integración de sistemas. El resultado es un roadmap priorizado con acciones concretas.</p>
-                    <p>En nuestra experiencia con instituciones financieras peruanas, el <strong>78% de las organizaciones evaluadas</strong> tienen un nivel de madurez inferior a 2.5 en una escala de 5 puntos, lo que indica brechas significativas que deben cerrarse antes de la fecha límite regulatoria.</p>
+                    <p>Según el <a href="https://edmcouncil.org/frameworks/dcam/" target="_blank" rel="noopener">EDM Council</a>, la mayoría de organizaciones que realizan su primera evaluación DCAM descubren brechas significativas en sus capacidades de gestión de datos, especialmente aquellas sin programas formales de data governance.</p>
 
                     <h2>¿Cuándo deben cumplir las empresas peruanas con la regulación de IA?</h2>
                     <div class="answer-capsule">
@@ -372,21 +562,93 @@
                         <strong>El proceso toma 2 semanas: la primera semana se dedica a descubrimiento mediante entrevistas y revisión documental; la segunda semana se enfoca en análisis, desarrollo de roadmap y presentación.</strong>
                     </div>
 
-                    <h3>Semana 1: Descubrimiento</h3>
-                    <ul>
-                        <li>Kick-off con stakeholders clave (CDO, CIO, Compliance, Legal)</li>
-                        <li>Revisión de documentación existente: políticas, procedimientos, reportes de auditoría</li>
-                        <li>Entrevistas estructuradas con Data Owners y equipos de Data Science</li>
-                        <li>Inventario inicial de sistemas que usan IA/ML</li>
-                    </ul>
+                    <div class="process-workflow">
+                        <div class="workflow-container">
+                            <div class="workflow-week week-1">
+                                <div class="week-header">
+                                    <div class="week-number">1</div>
+                                    <div class="week-title">
+                                        <h4>Descubrimiento</h4>
+                                        <span>Días 1-5</span>
+                                    </div>
+                                </div>
+                                <ul class="workflow-steps">
+                                    <li>
+                                        <div class="step-icon"><i class="fa-solid fa-users"></i></div>
+                                        <div class="step-content">
+                                            <strong>Kick-off Meeting</strong>
+                                            <span>CDO, CIO, Compliance, Legal</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="step-icon"><i class="fa-solid fa-folder-open"></i></div>
+                                        <div class="step-content">
+                                            <strong>Revisión Documental</strong>
+                                            <span>Políticas, procedimientos, auditorías</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+                                        <div class="step-content">
+                                            <strong>Entrevistas</strong>
+                                            <span>Data Owners, Data Science</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="step-icon"><i class="fa-solid fa-list-check"></i></div>
+                                        <div class="step-content">
+                                            <strong>Inventario IA/ML</strong>
+                                            <span>Sistemas, datos, responsables</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
-                    <h3>Semana 2: Análisis y Reporte</h3>
-                    <ul>
-                        <li>Consolidación de hallazgos y evaluación de madurez</li>
-                        <li>Desarrollo de roadmap con quick wins identificados</li>
-                        <li>Preparación de presentación ejecutiva</li>
-                        <li>Entrega y presentación al Directorio</li>
-                    </ul>
+                            <div class="workflow-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+
+                            <div class="workflow-week week-2">
+                                <div class="week-header">
+                                    <div class="week-number">2</div>
+                                    <div class="week-title">
+                                        <h4>Análisis y Reporte</h4>
+                                        <span>Días 6-10</span>
+                                    </div>
+                                </div>
+                                <ul class="workflow-steps">
+                                    <li>
+                                        <div class="step-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                                        <div class="step-content">
+                                            <strong>Evaluación de Madurez</strong>
+                                            <span>Score 1-5 por dimensión</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="step-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                        <div class="step-content">
+                                            <strong>Gap Analysis</strong>
+                                            <span>vs. DS 115-2025-PCM</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="step-icon"><i class="fa-solid fa-route"></i></div>
+                                        <div class="step-content">
+                                            <strong>Roadmap Priorizado</strong>
+                                            <span>Quick wins identificados</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="step-icon"><i class="fa-solid fa-presentation-screen"></i></div>
+                                        <div class="step-content">
+                                            <strong>Presentación Ejecutiva</strong>
+                                            <span>1 hora con Directorio</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
                     <h2>¿Qué empresas necesitan esta evaluación?</h2>
                     <div class="answer-capsule">
@@ -440,16 +702,14 @@
 
                 <aside class="service-sidebar">
                     <div class="sidebar-card">
-                        <h3>Inversión</h3>
-                        <div class="price">USD 8,000</div>
-                        <div class="price-note">Precio fijo, sin sorpresas</div>
+                        <h3>Incluye</h3>
                         <ul>
                             <li><i class="fa-solid fa-check"></i> 6 entregables completos</li>
                             <li><i class="fa-solid fa-check"></i> Presentación a Directorio</li>
                             <li><i class="fa-solid fa-check"></i> Transferencia de conocimiento</li>
                             <li><i class="fa-solid fa-check"></i> 2 semanas de ejecución</li>
                         </ul>
-                        <a href="/#contacto" class="btn-sidebar">Solicitar Assessment</a>
+                        <a href="/#contacto" class="btn-sidebar">Solicitar Cotización</a>
                     </div>
 
                     <div class="sidebar-card">
@@ -473,23 +733,49 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
         <div class="container">
             <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="faq-item">
-                <h3>¿Qué información necesitan antes del assessment?</h3>
-                <p>Antes del kick-off necesitamos organigrama del área de datos/tecnología, listado de sistemas core, políticas de datos existentes (si las hay) y reportes de auditoría previos disponibles.</p>
-            </div>
-            <div class="faq-item">
-                <h3>¿El assessment interrumpe las operaciones normales?</h3>
-                <p>El impacto operativo es mínimo: requerimos aproximadamente 8-10 horas de tiempo de stakeholders clave distribuidas en 2 semanas, principalmente en entrevistas estructuradas de 1 hora.</p>
-            </div>
-            <div class="faq-item">
-                <h3>¿Qué pasa después del assessment?</h3>
-                <p>El roadmap entregado permite implementación autónoma o con nuestro acompañamiento. Ofrecemos servicios de Data Governance Implementation (3 meses) para organizaciones que desean apoyo continuo.</p>
+            <div class="faq-grid">
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span itemprop="name">¿Qué información necesitan antes del assessment?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Antes del kick-off necesitamos organigrama del área de datos/tecnología, listado de sistemas core, políticas de datos existentes (si las hay) y reportes de auditoría previos disponibles.</p>
+                    </div>
+                </div>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span itemprop="name">¿El assessment interrumpe las operaciones normales?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">El impacto operativo es mínimo: requerimos aproximadamente 8-10 horas de tiempo de stakeholders clave distribuidas en 2 semanas, principalmente en entrevistas estructuradas de 1 hora.</p>
+                    </div>
+                </div>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span itemprop="name">¿Qué pasa después del assessment?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">El roadmap entregado permite implementación autónoma o con nuestro acompañamiento. Ofrecemos servicios de Data Governance Implementation para organizaciones que desean apoyo continuo.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        function toggleFaq(button) {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('active');
+        }
+    </script>
 
     <!-- Related Services -->
     <section class="related-services">

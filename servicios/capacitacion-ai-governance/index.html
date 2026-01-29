@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Capacitación en AI Governance y Data Literacy. Cumpla con el Artículo 28.5 del DS 115-2025-PCM: educación interna sobre riesgos de IA para instituciones financieras en Perú.">
+    <meta name="keywords" content="capacitación AI governance, training data governance, DS 115-2025-PCM, data literacy peru, data owners training">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/servicios/capacitacion-ai-governance/">
+    <meta property="og:title" content="Capacitación en AI Governance | AI Governance Perú">
+    <meta property="og:description" content="Programas de formación en AI Governance y Data Literacy para cumplir con el DS 115-2025-PCM.">
+
+    <title>Capacitación en AI Governance | AI Governance Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/servicios/capacitacion-ai-governance/">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Service Page Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Capacitación en AI Governance",
+        "description": "Programas de formación en AI Governance y Data Literacy para cumplir con DS 115-2025-PCM",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "AI Governance Perú",
+            "url": "https://aigovernance.pe"
+        },
+        "serviceType": "AI Governance Training",
+        "areaServed": "Peru",
+        "offers": {
+            "@type": "Offer",
+            "price": "1500",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <style>
+        .service-page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 120px 0 80px;
+            color: white;
+        }
+        .service-page-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .service-page-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .service-page-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .service-page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-page-hero .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+        .service-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .service-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .service-meta-item i {
+            opacity: 0.8;
+        }
+        .service-content {
+            padding: 4rem 0;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        @media (max-width: 968px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service-main h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .service-main h2:first-child {
+            margin-top: 0;
+        }
+        .service-main h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+        .service-main h4 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .answer-capsule {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .service-main p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .service-main ul, .service-main ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .service-main li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .service-main table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .service-main th, .service-main td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .service-main th {
+            background: var(--bg-light);
+            font-weight: 600;
+        }
+        .service-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .sidebar-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .sidebar-card .price-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .sidebar-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sidebar-card li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-card li i {
+            color: var(--primary);
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+        }
+        .related-services {
+            background: var(--bg-light);
+            padding: 4rem 0;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .related-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .faq-section {
+            padding: 4rem 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .program-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .program-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .program-card .meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        .program-card .price-tag {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        .stat-highlight {
+            background: #e7f3ff;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .stat-highlight .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-highlight .label {
+            color: var(--text-muted);
+        }
+        .package-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+        .package-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        .package-card .savings {
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#experiencia">Experiencia</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li><a href="/#contacto" class="btn-nav">Solicitar Assessment</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="service-page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / <a href="/#servicios">Servicios</a> / Capacitación en AI Governance
+            </div>
+            <h1>Capacitación en AI Governance y Data Literacy</h1>
+            <p class="hero-subtitle">Cumpla con el Artículo 28.5 del DS 115-2025-PCM: educación interna sobre riesgos de IA</p>
+            <div class="service-meta">
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>7 programas</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>2-16 horas</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span>Certificados incluidos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-main">
+                    <h2>¿Por qué es obligatoria la capacitación en IA para empresas peruanas?</h2>
+                    <div class="answer-capsule">
+                        <strong>El Artículo 28.5 del DS 115-2025-PCM obliga a fomentar educación interna sobre riesgos de IA, convirtiendo la capacitación en requisito de cumplimiento.</strong>
+                    </div>
+                    <p>Más allá del cumplimiento, la capacitación es crítica porque:</p>
+                    <ul>
+                        <li>Los Data Owners no pueden cumplir sus responsabilidades sin entender governance</li>
+                        <li>Los Data Scientists necesitan conocer principios de IA responsable</li>
+                        <li>La supervisión humana (Art. 7.d) requiere personal capacitado</li>
+                        <li>Los usuarios de negocio deben interpretar correctamente outputs de IA</li>
+                    </ul>
+
+                    <div class="stat-highlight">
+                        <div class="number">5x</div>
+                        <div class="label">mayor probabilidad de éxito en iniciativas de datos con programas de data literacy (DAMA International)</div>
+                    </div>
+
+                    <h2>¿Qué programas de capacitación en IA governance están disponibles?</h2>
+                    <div class="answer-capsule">
+                        <strong>Ofrecemos 7 programas especializados: Executive Briefing (3 hrs), Data Owners (8 hrs), Data Stewards (16 hrs), IA Responsable para técnicos (12 hrs), Regulación (6 hrs), Data Literacy (4 hrs) y Awareness (2 hrs).</strong>
+                    </div>
+
+                    <h3>Catálogo de programas</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Programa</th>
+                                <th>Audiencia</th>
+                                <th>Duración</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Executive Briefing</td>
+                                <td>Directorio y C-Suite</td>
+                                <td>3 horas</td>
+                                <td>USD 2,500</td>
+                            </tr>
+                            <tr>
+                                <td>Formación Data Owners</td>
+                                <td>Gerentes responsables de dominios</td>
+                                <td>8 horas</td>
+                                <td>USD 3,500</td>
+                            </tr>
+                            <tr>
+                                <td>Formación Data Stewards</td>
+                                <td>Analistas operativos de datos</td>
+                                <td>16 horas</td>
+                                <td>USD 5,000</td>
+                            </tr>
+                            <tr>
+                                <td>IA Responsable para Técnicos</td>
+                                <td>Data Scientists, ML Engineers</td>
+                                <td>12 horas</td>
+                                <td>USD 4,500</td>
+                            </tr>
+                            <tr>
+                                <td>Regulación de IA</td>
+                                <td>Compliance, Legal, Auditoría</td>
+                                <td>6 horas</td>
+                                <td>USD 3,000</td>
+                            </tr>
+                            <tr>
+                                <td>Data Literacy Básico</td>
+                                <td>Usuarios de negocio</td>
+                                <td>4 horas</td>
+                                <td>USD 2,000</td>
+                            </tr>
+                            <tr>
+                                <td>Awareness General</td>
+                                <td>Todos los colaboradores</td>
+                                <td>2 horas</td>
+                                <td>USD 1,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>¿Qué aprenden los directores sobre IA governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>El Executive Briefing de 3 horas cubre contexto regulatorio DS 115-2025-PCM, riesgos de IA para el negocio, estructura de gobernanza requerida y rol del Directorio en supervisión.</strong>
+                    </div>
+
+                    <h3>Contenido: Executive Briefing</h3>
+                    <table>
+                        <tr>
+                            <td><strong>Módulo 1 (45 min)</strong></td>
+                            <td>Contexto regulatorio: DS 115-2025-PCM, obligaciones, plazos, sanciones</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Módulo 2 (45 min)</strong></td>
+                            <td>Gobernanza de IA: qué es, por qué importa, estructura organizacional</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Módulo 3 (45 min)</strong></td>
+                            <td>Riesgos de IA: sesgos, transparencia, casos de fracasos famosos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Módulo 4 (45 min)</strong></td>
+                            <td>Roadmap estratégico: estado actual vs. requerido, inversiones necesarias</td>
+                        </tr>
+                    </table>
+
+                    <h2>¿Qué capacitación necesitan los Data Owners?</h2>
+                    <div class="answer-capsule">
+                        <strong>Los Data Owners requieren 8 horas de formación cubriendo: definición del rol, gestión de dominio de datos, políticas y estándares, calidad de datos, gestión de accesos y resolución de casos prácticos.</strong>
+                    </div>
+
+                    <h3>Contenido: Formación de Data Owners (8 horas)</h3>
+                    <h4>Sesión 1: Fundamentos (4 horas)</h4>
+                    <ul>
+                        <li>Rol del Data Owner: definición, alcance, responsabilidades</li>
+                        <li>Gestión de dominio: inventario, clasificación, ownership de calidad</li>
+                        <li>Políticas y estándares: marco de políticas, aprobación de solicitudes</li>
+                    </ul>
+                    <h4>Sesión 2: Práctica (4 horas)</h4>
+                    <ul>
+                        <li>Calidad de datos: dimensiones, KPIs, monitoreo, escalamiento</li>
+                        <li>Gestión de accesos: autorización, revisión periódica, auditoría</li>
+                        <li>Casos prácticos: roleplay, resolución de conflictos, Q&A</li>
+                    </ul>
+
+                    <h2>¿Qué habilidades desarrollan los Data Stewards?</h2>
+                    <div class="answer-capsule">
+                        <strong>Los Data Stewards desarrollan habilidades operativas en 16 horas: fundamentos de stewardship, calidad de datos hands-on, gestión de metadatos y documentación, y operación diaria.</strong>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td><strong>Sesión 1</strong></td>
+                            <td>Fundamentos de Data Stewardship</td>
+                            <td>Rol, responsabilidades, herramientas, métricas de éxito</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sesión 2</strong></td>
+                            <td>Calidad de Datos (hands-on)</td>
+                            <td>Dimensiones, reglas, perfilado, identificación de issues</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sesión 3</strong></td>
+                            <td>Metadatos y Documentación</td>
+                            <td>Diccionario, catálogo, lineage, documentación técnica</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sesión 4</strong></td>
+                            <td>Operación Diaria</td>
+                            <td>Monitoreo, gestión de incidentes, reportería, mejora continua</td>
+                        </tr>
+                    </table>
+
+                    <h2>¿Qué deben saber los Data Scientists sobre IA responsable?</h2>
+                    <div class="answer-capsule">
+                        <strong>Los Data Scientists requieren 12 horas cubriendo: principios éticos de IA, regulación DS 115-2025-PCM, detección y mitigación de sesgo con Fairlearn, y técnicas de explicabilidad como SHAP y LIME.</strong>
+                    </div>
+
+                    <h3>Contenido: IA Responsable para Equipos Técnicos (12 horas)</h3>
+                    <h4>Sesión 1: Fundamentos (4 horas)</h4>
+                    <ul>
+                        <li>Principios éticos de IA (fairness, accountability, transparency)</li>
+                        <li>Regulación: DS 115-2025-PCM, requisitos específicos</li>
+                        <li>Estándares: ISO 42001, ciclo de vida de IA responsable</li>
+                    </ul>
+                    <h4>Sesión 2: Fairness y Sesgo (4 horas)</h4>
+                    <ul>
+                        <li>Tipos de sesgo: datos, algoritmo, implementación</li>
+                        <li>Métricas de fairness: demographic parity, equalized odds</li>
+                        <li><strong>Hands-on:</strong> Fairlearn, AI Fairness 360</li>
+                    </ul>
+                    <h4>Sesión 3: Transparencia y Explicabilidad (4 horas)</h4>
+                    <ul>
+                        <li>Explicabilidad local vs. global</li>
+                        <li>Métodos: SHAP, LIME, feature importance</li>
+                        <li><strong>Hands-on:</strong> Implementación de explicabilidad</li>
+                    </ul>
+
+                    <h2>¿Qué necesita saber Compliance sobre regulación de IA?</h2>
+                    <div class="answer-capsule">
+                        <strong>Los equipos de Compliance requieren 6 horas cubriendo: análisis detallado del DS 115-2025-PCM, obligaciones por sector, clasificación de riesgo, evaluaciones de impacto y relación con reguladores.</strong>
+                    </div>
+
+                    <h2>¿Existen paquetes de capacitación con descuento?</h2>
+                    <div class="answer-capsule">
+                        <strong>Sí, ofrecemos 3 paquetes con 10-15% de descuento: Paquete Compliance Básico (USD 5,500), Paquete Técnico (USD 8,500) y Paquete Compliance Completo con todos los programas (USD 18,000).</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Paquete</th>
+                                <th>Incluye</th>
+                                <th>Horas</th>
+                                <th>Precio</th>
+                                <th>Ahorro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Compliance Básico</strong></td>
+                                <td>Executive Briefing + Data Owners + Awareness</td>
+                                <td>13 hrs</td>
+                                <td>USD 5,500</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Técnico</strong></td>
+                                <td>Data Stewards + IA Responsable</td>
+                                <td>28 hrs</td>
+                                <td>USD 8,500</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Compliance Completo</strong></td>
+                                <td>Todos los 7 programas</td>
+                                <td>51 hrs</td>
+                                <td>USD 18,000</td>
+                                <td>15%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>¿Cuál es la metodología de capacitación?</h2>
+                    <div class="answer-capsule">
+                        <strong>Utilizamos metodología 40% teoría / 60% práctica con casos de estudio reales, ejercicios hands-on, role-playing y evaluación pre/post. El contenido se adapta al sector del cliente.</strong>
+                    </div>
+
+                    <h3>Formatos disponibles</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Formato</th>
+                                <th>Descripción</th>
+                                <th>Ventajas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Presencial</td>
+                                <td>En oficinas del cliente</td>
+                                <td>Interacción directa, networking</td>
+                            </tr>
+                            <tr>
+                                <td>Virtual sincrónico</td>
+                                <td>Sesiones en vivo por video</td>
+                                <td>Flexibilidad geográfica</td>
+                            </tr>
+                            <tr>
+                                <td>Híbrido</td>
+                                <td>Combinación presencial + virtual</td>
+                                <td>Balance de beneficios</td>
+                            </tr>
+                            <tr>
+                                <td>E-learning</td>
+                                <td>Plataforma asincrónica</td>
+                                <td>Escalabilidad, propio ritmo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>¿Cómo se mide el éxito de la capacitación?</h2>
+                    <div class="answer-capsule">
+                        <strong>Medimos en 4 niveles: reacción (satisfacción mayor a 4.5/5), aprendizaje (mejora mayor a 30% en scores pre/post), comportamiento (adopción de prácticas) y resultados (mejora en KPIs).</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nivel</th>
+                                <th>Qué Mide</th>
+                                <th>Cómo</th>
+                                <th>Target</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. Reacción</td>
+                                <td>Satisfacción de participantes</td>
+                                <td>Encuesta post-sesión</td>
+                                <td>Mayor a 4.5/5</td>
+                            </tr>
+                            <tr>
+                                <td>2. Aprendizaje</td>
+                                <td>Conocimiento adquirido</td>
+                                <td>Quiz pre/post</td>
+                                <td>Mejora mayor a 30%</td>
+                            </tr>
+                            <tr>
+                                <td>3. Comportamiento</td>
+                                <td>Aplicación en trabajo</td>
+                                <td>Encuesta 3 meses después</td>
+                                <td>Adopción de prácticas</td>
+                            </tr>
+                            <tr>
+                                <td>4. Resultados</td>
+                                <td>Impacto en negocio</td>
+                                <td>KPIs de governance</td>
+                                <td>Mejora medible</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <aside class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Inversión</h3>
+                        <div class="price">USD 1,500+</div>
+                        <div class="price-note">Desde, según programa</div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> 7 programas disponibles</li>
+                            <li><i class="fa-solid fa-check"></i> Certificados incluidos</li>
+                            <li><i class="fa-solid fa-check"></i> Material de estudio</li>
+                            <li><i class="fa-solid fa-check"></i> Paquetes con descuento</li>
+                        </ul>
+                        <a href="/#contacto" class="btn-sidebar">Solicitar Programa</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Programas Más Populares</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Data Owners (8 hrs)</li>
+                            <li><i class="fa-solid fa-star"></i> Executive Briefing (3 hrs)</li>
+                            <li><i class="fa-solid fa-star"></i> IA Responsable (12 hrs)</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Paquete Recomendado</h3>
+                        <p style="font-weight: 700; color: var(--primary); font-size: 1.25rem; margin: 0.5rem 0;">USD 18,000</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Compliance Completo</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Todos los 7 programas con 15% de descuento. Ideal para cumplimiento integral del DS 115-2025-PCM.</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Entregables Incluidos</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-file-pdf"></i> Manuales y guías</li>
+                            <li><i class="fa-solid fa-list-check"></i> Templates y checklists</li>
+                            <li><i class="fa-solid fa-certificate"></i> Certificados</li>
+                            <li><i class="fa-solid fa-chart-line"></i> Evaluaciones pre/post</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3>¿Cuántos participantes puede tener cada sesión?</h3>
+                <p>Los programas especializados (Data Owners, Stewards, Técnicos) admiten hasta 10-15 participantes para asegurar interacción. Data Literacy y Awareness pueden tener hasta 25-50 participantes respectivamente.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Se otorgan certificados?</h3>
+                <p>Sí, todos los programas incluyen certificado de completación digital. Para programas de Data Owners y Data Stewards, el certificado valida competencias específicas que pueden incluirse en evaluaciones de desempeño.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Pueden customizar el contenido para nuestra industria?</h3>
+                <p>Sí, todo el contenido se adapta al sector del cliente (banca, seguros, fintech, etc.) incluyendo casos de estudio específicos, ejemplos de la industria y políticas internas del cliente si están disponibles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="related-services">
+        <div class="container">
+            <h2 class="section-title">Servicios Relacionados</h2>
+            <div class="related-grid">
+                <a href="/servicios/implementacion-data-governance/" class="related-card">
+                    <h4>Data Governance Implementation</h4>
+                    <p>Implementación completa del framework de Data Governance</p>
+                </a>
+                <a href="/servicios/evaluacion-madurez-ia/" class="related-card">
+                    <h4>AI Readiness Assessment</h4>
+                    <p>Evaluación de madurez en IA y Data Governance</p>
+                </a>
+                <a href="/servicios/evaluacion-sesgo-algoritmico/" class="related-card">
+                    <h4>Evaluación de Sesgo Algorítmico</h4>
+                    <p>Detección y remediación de sesgos en sistemas de IA</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/implementacion-data-governance/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/evaluacion-sesgo-algoritmico/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/capacitacion-ai-governance/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/#experiencia">Experiencia</a></li>
+                        <li><a href="/#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

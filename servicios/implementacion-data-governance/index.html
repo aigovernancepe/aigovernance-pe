@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Implementación de Data Governance para instituciones financieras. Sistema de gobernanza de datos operativo en 3 meses, listo para auditoría regulatoria DS 115-2025-PCM.">
+    <meta name="keywords" content="data governance implementation, implementación gobernanza datos, DS 115-2025-PCM, data quality, sector financiero peru">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/servicios/implementacion-data-governance/">
+    <meta property="og:title" content="Implementación de Data Governance | AI Governance Perú">
+    <meta property="og:description" content="Sistema de gobernanza de datos operativo en 3 meses, listo para auditoría regulatoria y cumplimiento del DS 115-2025-PCM.">
+
+    <title>Implementación de Data Governance | AI Governance Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/servicios/implementacion-data-governance/">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Service Page Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Data Governance Implementation",
+        "description": "Implementación de framework de Data Governance para cumplir con DS 115-2025-PCM",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "AI Governance Perú",
+            "url": "https://aigovernance.pe"
+        },
+        "serviceType": "Data Governance Consulting",
+        "areaServed": "Peru",
+        "offers": {
+            "@type": "Offer",
+            "price": "35000",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <style>
+        .service-page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 120px 0 80px;
+            color: white;
+        }
+        .service-page-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .service-page-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .service-page-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .service-page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-page-hero .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+        .service-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .service-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .service-meta-item i {
+            opacity: 0.8;
+        }
+        .service-content {
+            padding: 4rem 0;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        @media (max-width: 968px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service-main h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .service-main h2:first-child {
+            margin-top: 0;
+        }
+        .service-main h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+        .answer-capsule {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .service-main p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .service-main ul, .service-main ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .service-main li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .service-main table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .service-main th, .service-main td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .service-main th {
+            background: var(--bg-light);
+            font-weight: 600;
+        }
+        .service-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .sidebar-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .sidebar-card .price-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .sidebar-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sidebar-card li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-card li i {
+            color: var(--primary);
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+        }
+        .related-services {
+            background: var(--bg-light);
+            padding: 4rem 0;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .related-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .faq-section {
+            padding: 4rem 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .results-highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        .results-highlight h3 {
+            color: white;
+            margin-top: 0;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 600px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .result-item {
+            text-align: center;
+        }
+        .result-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .result-item .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#experiencia">Experiencia</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li><a href="/#contacto" class="btn-nav">Solicitar Assessment</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="service-page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / <a href="/#servicios">Servicios</a> / Data Governance Implementation
+            </div>
+            <h1>Implementación de Data Governance para Instituciones Financieras</h1>
+            <p class="hero-subtitle">Sistema de gobernanza de datos operativo en 3 meses, listo para auditoría regulatoria</p>
+            <div class="service-meta">
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>12 semanas</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Sector Financiero</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Sistema completo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-main">
+                    <h2>¿Qué es la implementación de data governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>La implementación de data governance establece estructura organizacional, políticas, procesos y tecnología para gestionar datos como activo estratégico, asegurando calidad, seguridad y cumplimiento regulatorio.</strong>
+                    </div>
+                    <p>A diferencia de un assessment que solo diagnostica, la implementación entrega un sistema operativo funcionando: Data Governance Council activo, Data Owners designados, políticas aprobadas, dashboard de calidad automatizado y equipo capacitado.</p>
+                    <p>Según el modelo de madurez DCAM, las organizaciones que implementan governance formal mejoran su score de madurez en promedio 2.3 puntos en 6 meses, pasando de nivel 1-2 (ad-hoc) a nivel 3-4 (gestionado).</p>
+
+                    <h2>¿Por qué necesitan las instituciones financieras peruanas data governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>El DS 115-2025-PCM exige políticas institucionales de IA, calidad de datos validada, trazabilidad de decisiones automatizadas y supervisión humana, requisitos que solo se cumplen con data governance implementado.</strong>
+                    </div>
+                    <p>Las obligaciones específicas del DS 115-2025-PCM que requieren governance incluyen:</p>
+                    <ul>
+                        <li><strong>Artículo 28.1:</strong> Aprobar políticas institucionales sobre uso de IA</li>
+                        <li><strong>Artículo 7.h:</strong> Validar calidad de datos para precisión, integridad y representatividad</li>
+                        <li><strong>Artículo 31.1:</strong> Mantener registro actualizado y accesible sobre funcionamiento de sistemas de IA</li>
+                        <li><strong>Artículo 6.e:</strong> Prevenir sesgos algorítmicos mediante governance de datos</li>
+                    </ul>
+                    <p>Sin governance formal, es imposible demostrar cumplimiento a la SBS o responder a auditorías regulatorias de manera consistente.</p>
+
+                    <h2>¿Qué incluye la implementación de data governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>La implementación incluye Data Governance Council operativo, marco de políticas completo, Data Quality Dashboard automatizado, catálogo de datos documentado y capacitación de equipos en 12 semanas.</strong>
+                    </div>
+
+                    <h3>Fase 1: Fundación (Semanas 1-4)</h3>
+                    <table>
+                        <tr>
+                            <td><strong>Data Governance Council</strong></td>
+                            <td>Estructura, roles, términos de referencia, calendario de reuniones</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Owners designados</strong></td>
+                            <td>Por dominio: Clientes, Productos, Financieros, Riesgo, Regulatorios</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Política de Gobernanza v1.0</strong></td>
+                            <td>Aprobada por Directorio, lista para auditoría</td>
+                        </tr>
+                    </table>
+
+                    <h3>Fase 2: Framework de Calidad (Semanas 5-8)</h3>
+                    <table>
+                        <tr>
+                            <td><strong>Dimensiones de calidad</strong></td>
+                            <td>Completitud, exactitud, consistencia, unicidad, oportunidad, validez</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dashboard automatizado</strong></td>
+                            <td>Power BI/Tableau con actualización diaria y alertas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Procedimiento de monitoreo</strong></td>
+                            <td>Proceso documentado de escalamiento y resolución</td>
+                        </tr>
+                    </table>
+
+                    <h3>Fase 3: Catálogo y Metadatos (Semanas 9-10)</h3>
+                    <table>
+                        <tr>
+                            <td><strong>Catálogo de datos v1.0</strong></td>
+                            <td>Inventario completo de activos de datos críticos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diccionario de datos</strong></td>
+                            <td>Definiciones, ownership, clasificación de sensibilidad</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lineage documentado</strong></td>
+                            <td>Flujo de datos para sistemas de IA priorizados</td>
+                        </tr>
+                    </table>
+
+                    <h3>Fase 4: Capacitación y Transferencia (Semanas 11-12)</h3>
+                    <table>
+                        <tr>
+                            <td><strong>Training Data Owners</strong></td>
+                            <td>4 horas con manual y templates de decisión</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training Data Stewards</strong></td>
+                            <td>8 horas con guías operativas y checklists</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training usuarios</strong></td>
+                            <td>2 horas de data literacy básico</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Plan de mejora continua</strong></td>
+                            <td>Roadmap post-implementación y métricas de éxito</td>
+                        </tr>
+                    </table>
+
+                    <h2>¿Qué roles son necesarios para data governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>Un framework de data governance requiere Data Governance Council (órgano de gobierno), Data Owners (responsables de dominios), Data Stewards (ejecutores operativos) y Data Custodians (responsables técnicos en IT).</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rol</th>
+                                <th>Responsabilidad Principal</th>
+                                <th>Dedicación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Data Governance Council</td>
+                                <td>Aprobar políticas, resolver conflictos, priorizar iniciativas</td>
+                                <td>2-4 horas/mes</td>
+                            </tr>
+                            <tr>
+                                <td>CDO/CIO (Chair)</td>
+                                <td>Liderar estrategia de datos, reportar a Directorio</td>
+                                <td>10-15% del tiempo</td>
+                            </tr>
+                            <tr>
+                                <td>Data Owners</td>
+                                <td>Definir reglas de negocio, aprobar accesos, asegurar calidad</td>
+                                <td>5-10% del tiempo</td>
+                            </tr>
+                            <tr>
+                                <td>Data Stewards</td>
+                                <td>Monitorear calidad, documentar metadatos, resolver issues</td>
+                                <td>20-50% del tiempo</td>
+                            </tr>
+                            <tr>
+                                <td>Data Custodians (IT)</td>
+                                <td>Seguridad técnica, backups, performance de sistemas</td>
+                                <td>Parte de rol existente</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>En nuestra experiencia, las organizaciones medianas (500+ empleados) típicamente necesitan 3-5 Data Owners y 5-8 Data Stewards para cubrir los dominios críticos de datos.</p>
+
+                    <h2>¿Cómo funciona el proceso de implementación?</h2>
+                    <div class="answer-capsule">
+                        <strong>Utilizamos un enfoque hands-on de 12 semanas: trabajamos lado a lado con sus equipos, implementamos procesos reales que funcionan y transferimos conocimiento para autonomía post-proyecto.</strong>
+                    </div>
+
+                    <h3>Principios metodológicos</h3>
+                    <ul>
+                        <li><strong>Iterativo e incremental:</strong> Entregas frecuentes de valor, feedback loops cortos</li>
+                        <li><strong>Hands-on:</strong> Coaching continuo, no solo consultoría tradicional</li>
+                        <li><strong>Transferencia de conocimiento:</strong> El cliente opera de forma autónoma al finalizar</li>
+                        <li><strong>Pragmático:</strong> Enfoque en lo necesario, no en perfección teórica</li>
+                    </ul>
+
+                    <h2>¿Qué resultados típicos se obtienen con data governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>Las organizaciones que implementan governance reportan 83% reducción en rechazos por datos incorrectos, 85% reducción en tiempo de auditoría y mejora de 153% en score de madurez en 4 meses.</strong>
+                    </div>
+
+                    <div class="results-highlight">
+                        <h3>Caso de estudio: Banco mediano peruano</h3>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <div class="number">+153%</div>
+                                <div class="label">Mejora en madurez</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="number">-83%</div>
+                                <div class="label">Rechazos por datos</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="number">-85%</div>
+                                <div class="label">Tiempo de auditoría</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Antes</th>
+                                <th>Después</th>
+                                <th>Mejora</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Madurez de Governance</td>
+                                <td>1.5/5</td>
+                                <td>3.8/5</td>
+                                <td>+153%</td>
+                            </tr>
+                            <tr>
+                                <td>Rechazos por datos incorrectos</td>
+                                <td>30%</td>
+                                <td>5%</td>
+                                <td>-83%</td>
+                            </tr>
+                            <tr>
+                                <td>Tiempo de auditoría</td>
+                                <td>3+ meses</td>
+                                <td>2 semanas</td>
+                                <td>-85%</td>
+                            </tr>
+                            <tr>
+                                <td>Score de calidad de datos</td>
+                                <td>65%</td>
+                                <td>97%</td>
+                                <td>+49%</td>
+                            </tr>
+                            <tr>
+                                <td>Sesgo por género en scoring</td>
+                                <td>8 puntos</td>
+                                <td>1 punto</td>
+                                <td>-87%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Beneficios adicionales documentados:</p>
+                    <ul>
+                        <li><strong>+12%</strong> en aprobaciones correctas sin aumento de mora</li>
+                        <li><strong>-40%</strong> en reclamos a INDECOPI</li>
+                        <li>Documentación completa disponible para SBS en días, no meses</li>
+                    </ul>
+
+                    <h2>¿Qué necesita mi organización antes de implementar governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>Los prerrequisitos son: AI Readiness Assessment completado, sponsor ejecutivo identificado a nivel C-suite y compromiso de tiempo de stakeholders clave (8-10 horas/semana durante 12 semanas).</strong>
+                    </div>
+
+                    <h3>Checklist de preparación</h3>
+                    <ul>
+                        <li>Diagnóstico de madurez actual documentado</li>
+                        <li>Patrocinador ejecutivo (CDO, CIO o equivalente) comprometido</li>
+                        <li>Candidatos identificados para roles de Data Owner</li>
+                        <li>Acceso a sistemas y datos garantizado</li>
+                        <li>Presupuesto aprobado para herramientas (si aplica)</li>
+                        <li>Disponibilidad de equipo técnico para integraciones</li>
+                    </ul>
+                    <p>Si no tiene un assessment reciente, recomendamos iniciar con nuestro AI Readiness Assessment de 2 semanas antes de la implementación.</p>
+
+                    <h2>¿Cuáles son los principales riesgos en implementación de governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>Los 4 riesgos principales son: falta de sponsor ejecutivo (fatal), resistencia al cambio, datos en silos organizacionales y falta de recursos dedicados. Todos son mitigables con el enfoque correcto.</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Riesgo</th>
+                                <th>Probabilidad</th>
+                                <th>Impacto</th>
+                                <th>Mitigación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Falta de sponsor ejecutivo</td>
+                                <td>Media</td>
+                                <td>Crítico</td>
+                                <td>Involucrar a alta dirección desde inicio con business case</td>
+                            </tr>
+                            <tr>
+                                <td>Resistencia al cambio</td>
+                                <td>Alta</td>
+                                <td>Alto</td>
+                                <td>Change management, quick wins visibles, comunicación continua</td>
+                            </tr>
+                            <tr>
+                                <td>Datos en silos</td>
+                                <td>Alta</td>
+                                <td>Medio</td>
+                                <td>Enfoque incremental, priorización por valor</td>
+                            </tr>
+                            <tr>
+                                <td>Falta de recursos</td>
+                                <td>Media</td>
+                                <td>Alto</td>
+                                <td>Planificación realista, roles formalizados en evaluaciones</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>¿Cuánto cuesta implementar data governance?</h2>
+                    <div class="answer-capsule">
+                        <strong>La implementación de data governance para instituciones financieras medianas típicamente oscila entre USD 35,000-50,000 para el proyecto de 3 meses, dependiendo de complejidad y número de dominios.</strong>
+                    </div>
+                    <p>Factores que influyen en el precio:</p>
+                    <ul>
+                        <li><strong>Número de dominios de datos:</strong> 4-6 dominios estándar vs. 8+ dominios</li>
+                        <li><strong>Complejidad de sistemas:</strong> Sistemas legacy vs. arquitectura moderna</li>
+                        <li><strong>Geografía:</strong> Single site vs. múltiples ubicaciones</li>
+                        <li><strong>Herramientas:</strong> Uso de herramientas existentes vs. implementación de nuevas</li>
+                    </ul>
+                    <p>El ROI típico de governance es 3-5x la inversión en el primer año, principalmente por reducción de errores, eficiencia operativa y evitación de multas regulatorias.</p>
+                </div>
+
+                <aside class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Inversión</h3>
+                        <div class="price">USD 35,000+</div>
+                        <div class="price-note">Desde, según complejidad</div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Sistema operativo completo</li>
+                            <li><i class="fa-solid fa-check"></i> Data Quality Dashboard</li>
+                            <li><i class="fa-solid fa-check"></i> Capacitación incluida</li>
+                            <li><i class="fa-solid fa-check"></i> 12 semanas de ejecución</li>
+                        </ul>
+                        <a href="/#contacto" class="btn-sidebar">Solicitar Propuesta</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Prerrequisitos</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-file"></i> AI Readiness Assessment</li>
+                            <li><i class="fa-solid fa-user-tie"></i> Sponsor ejecutivo</li>
+                            <li><i class="fa-solid fa-users"></i> Stakeholders disponibles</li>
+                            <li><i class="fa-solid fa-database"></i> Acceso a sistemas</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>¿No tiene Assessment?</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Recomendamos iniciar con nuestro AI Readiness Assessment de 2 semanas para tener una línea base clara.</p>
+                        <a href="/servicios/evaluacion-madurez-ia/" class="btn-sidebar" style="background: var(--secondary);">Ver AI Readiness Assessment</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3>¿Cuánto tiempo toma ver resultados?</h3>
+                <p>Los quick wins son visibles en las primeras 4-6 semanas (Council operativo, primeras políticas). El sistema completo está funcionando en 12 semanas, con mejoras medibles en KPIs de calidad desde el mes 2.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Necesitamos contratar personal nuevo?</h3>
+                <p>Generalmente no. Los roles de Data Owner son responsabilidades adicionales para gerentes existentes (5-10% de su tiempo). Data Stewards pueden ser analistas existentes con dedicación parcial (20-50%).</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Qué herramientas necesitamos comprar?</h3>
+                <p>Para implementación inicial, herramientas existentes como Excel, SharePoint y Power BI son suficientes. Herramientas especializadas (Collibra, Alation) se recomiendan solo cuando la madurez supera nivel 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="related-services">
+        <div class="container">
+            <h2 class="section-title">Servicios Relacionados</h2>
+            <div class="related-grid">
+                <a href="/servicios/evaluacion-madurez-ia/" class="related-card">
+                    <h4>AI Readiness Assessment</h4>
+                    <p>Evaluación de madurez en IA y Data Governance en 2 semanas</p>
+                </a>
+                <a href="/servicios/evaluacion-impacto-ia/" class="related-card">
+                    <h4>Evaluación de Impacto de IA</h4>
+                    <p>Evaluación obligatoria para sistemas de IA de alto riesgo</p>
+                </a>
+                <a href="/servicios/evaluacion-sesgo-algoritmico/" class="related-card">
+                    <h4>Evaluación de Sesgo Algorítmico</h4>
+                    <p>Detección y remediación de sesgos en sistemas de IA</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/implementacion-data-governance/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/evaluacion-sesgo-algoritmico/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/capacitacion-ai-governance/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/#experiencia">Experiencia</a></li>
+                        <li><a href="/#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

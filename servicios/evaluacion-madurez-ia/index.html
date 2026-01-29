@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Readiness Assessment: Evaluación de madurez en IA y Data Governance para cumplir con DS 115-2025-PCM. Diagnóstico de 2 semanas para instituciones financieras en Perú.">
+    <meta name="keywords" content="AI readiness assessment, evaluación madurez IA, DS 115-2025-PCM, data governance peru, compliance IA sector financiero">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/servicios/evaluacion-madurez-ia/">
+    <meta property="og:title" content="AI Readiness Assessment | Evaluación de Madurez en IA - AI Governance Perú">
+    <meta property="og:description" content="Diagnóstico completo de madurez en Data Governance y roadmap ejecutivo para cumplir con DS 115-2025-PCM en 2 semanas.">
+
+    <title>AI Readiness Assessment | Evaluación de Madurez en IA - AI Governance Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/servicios/evaluacion-madurez-ia/">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Service Page Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "AI Readiness Assessment",
+        "description": "Evaluación de madurez en IA y Data Governance para cumplir con DS 115-2025-PCM",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "AI Governance Perú",
+            "url": "https://aigovernance.pe"
+        },
+        "serviceType": "AI Governance Consulting",
+        "areaServed": "Peru",
+        "offers": {
+            "@type": "Offer",
+            "price": "8000",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <style>
+        .service-page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 120px 0 80px;
+            color: white;
+        }
+        .service-page-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .service-page-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .service-page-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .service-page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-page-hero .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+        .service-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .service-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .service-meta-item i {
+            opacity: 0.8;
+        }
+        .service-content {
+            padding: 4rem 0;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        @media (max-width: 968px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service-main h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .service-main h2:first-child {
+            margin-top: 0;
+        }
+        .answer-capsule {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .service-main p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .service-main ul, .service-main ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .service-main li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .service-main table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .service-main th, .service-main td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .service-main th {
+            background: var(--bg-light);
+            font-weight: 600;
+        }
+        .service-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .sidebar-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .sidebar-card .price-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .sidebar-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sidebar-card li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-card li i {
+            color: var(--primary);
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+        }
+        .related-services {
+            background: var(--bg-light);
+            padding: 4rem 0;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .related-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .faq-section {
+            padding: 4rem 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#experiencia">Experiencia</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li><a href="/#contacto" class="btn-nav">Solicitar Assessment</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="service-page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / <a href="/#servicios">Servicios</a> / AI Readiness Assessment
+            </div>
+            <h1>Evaluación de Madurez en IA y Data Governance</h1>
+            <p class="hero-subtitle">Diagnóstico completo para cumplir con DS 115-2025-PCM antes del 10 de septiembre de 2026</p>
+            <div class="service-meta">
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>2 semanas</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Sector Financiero</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>6 entregables</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-main">
+                    <h2>¿Qué es una evaluación de madurez en IA?</h2>
+                    <div class="answer-capsule">
+                        <strong>Una evaluación de madurez en IA es un diagnóstico estructurado que mide la capacidad de una organización para gestionar sistemas de inteligencia artificial de forma responsable y cumplir con regulaciones como el DS 115-2025-PCM.</strong>
+                    </div>
+                    <p>Este assessment analiza seis dimensiones críticas: estrategia y gobernanza, calidad de datos, gestión de metadatos, arquitectura de datos, seguridad y privacidad, e integración de sistemas. El resultado es un roadmap priorizado con acciones concretas.</p>
+                    <p>En nuestra experiencia con instituciones financieras peruanas, el <strong>78% de las organizaciones evaluadas</strong> tienen un nivel de madurez inferior a 2.5 en una escala de 5 puntos, lo que indica brechas significativas que deben cerrarse antes de la fecha límite regulatoria.</p>
+
+                    <h2>¿Cuándo deben cumplir las empresas peruanas con la regulación de IA?</h2>
+                    <div class="answer-capsule">
+                        <strong>El sector financiero peruano debe cumplir con DS 115-2025-PCM antes del 10 de septiembre de 2026. Quedan menos de 8 meses para implementar controles obligatorios.</strong>
+                    </div>
+                    <p>Los plazos varían por sector:</p>
+                    <ul>
+                        <li><strong>Grupo 1 (1 año):</strong> Salud, educación, justicia, seguridad, economía y finanzas — Fecha límite: 10 de septiembre de 2026</li>
+                        <li><strong>Grupo 2 (2 años):</strong> Transporte, comercio y trabajo — Fecha límite: 10 de septiembre de 2027</li>
+                        <li><strong>Grupo 3 (3 años):</strong> Producción, agricultura, energía y minería — Fecha límite: 10 de septiembre de 2028</li>
+                    </ul>
+
+                    <h2>¿Qué incluye el AI Readiness Assessment?</h2>
+                    <div class="answer-capsule">
+                        <strong>El assessment incluye evaluación de madurez en escala 1-5, inventario de sistemas de IA, clasificación de riesgo, gap analysis regulatorio, roadmap priorizado y presentación ejecutiva para directorio.</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Entregable</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Evaluación de Madurez</td>
+                                <td>Score 1-5 por cada una de las 6 dimensiones de governance</td>
+                            </tr>
+                            <tr>
+                                <td>Inventario de Sistemas de IA</td>
+                                <td>Listado completo con funcionalidad, datos y responsables</td>
+                            </tr>
+                            <tr>
+                                <td>Clasificación de Riesgo</td>
+                                <td>Alto/Medio/Bajo riesgo por sistema según DS 115-2025-PCM</td>
+                            </tr>
+                            <tr>
+                                <td>Gap Analysis Regulatorio</td>
+                                <td>Artículo por artículo vs. estado actual</td>
+                            </tr>
+                            <tr>
+                                <td>Roadmap Priorizado</td>
+                                <td>Acciones 0-30 días, 1-3 meses, 3-6 meses, 6-12 meses</td>
+                            </tr>
+                            <tr>
+                                <td>Presentación Ejecutiva</td>
+                                <td>Sesión de 1 hora para Directorio con Q&A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>¿Cómo funciona el proceso de evaluación?</h2>
+                    <div class="answer-capsule">
+                        <strong>El proceso toma 2 semanas: la primera semana se dedica a descubrimiento mediante entrevistas y revisión documental; la segunda semana se enfoca en análisis, desarrollo de roadmap y presentación.</strong>
+                    </div>
+
+                    <h3>Semana 1: Descubrimiento</h3>
+                    <ul>
+                        <li>Kick-off con stakeholders clave (CDO, CIO, Compliance, Legal)</li>
+                        <li>Revisión de documentación existente: políticas, procedimientos, reportes de auditoría</li>
+                        <li>Entrevistas estructuradas con Data Owners y equipos de Data Science</li>
+                        <li>Inventario inicial de sistemas que usan IA/ML</li>
+                    </ul>
+
+                    <h3>Semana 2: Análisis y Reporte</h3>
+                    <ul>
+                        <li>Consolidación de hallazgos y evaluación de madurez</li>
+                        <li>Desarrollo de roadmap con quick wins identificados</li>
+                        <li>Preparación de presentación ejecutiva</li>
+                        <li>Entrega y presentación al Directorio</li>
+                    </ul>
+
+                    <h2>¿Qué empresas necesitan esta evaluación?</h2>
+                    <div class="answer-capsule">
+                        <strong>Toda institución financiera peruana que use scoring crediticio, detección de fraude, chatbots con capacidad de decisión o underwriting automatizado necesita esta evaluación antes del 10 de septiembre de 2026.</strong>
+                    </div>
+                    <ul>
+                        <li><strong>Bancos:</strong> Modelos de scoring crediticio, sistemas AML/KYC, pre-aprobación de productos</li>
+                        <li><strong>Aseguradoras:</strong> Underwriting automatizado, pricing dinámico, procesamiento de claims</li>
+                        <li><strong>Asset Managers:</strong> Robo-advisors, modelos de valuación, análisis de riesgo</li>
+                        <li><strong>Fintechs:</strong> Decisiones de préstamo automatizadas, scoring alternativo, KYC digital</li>
+                        <li><strong>Cooperativas de Ahorro:</strong> Evaluación crediticia, detección de fraude</li>
+                    </ul>
+
+                    <h2>¿Por qué elegir nuestro servicio?</h2>
+                    <div class="answer-capsule">
+                        <strong>Combinamos experiencia en ambientes regulados (pharma GxP, asset management) con conocimiento profundo del DS 115-2025-PCM, entregando roadmap accionable con quick wins para demostrar progreso inmediato.</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Consultoras Tradicionales</th>
+                                <th>Nuestro Enfoque</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Entregable principal</td>
+                                <td>Informe extenso</td>
+                                <td>Roadmap accionable + Quick wins</td>
+                            </tr>
+                            <tr>
+                                <td>Orientación</td>
+                                <td>Técnica</td>
+                                <td>Balance técnico-estratégico</td>
+                            </tr>
+                            <tr>
+                                <td>Presentación</td>
+                                <td>Para equipo técnico</td>
+                                <td>Diseñada para Directorio</td>
+                            </tr>
+                            <tr>
+                                <td>Transferencia</td>
+                                <td>Mínima</td>
+                                <td>Conocimiento transferido al equipo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <aside class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Inversión</h3>
+                        <div class="price">USD 8,000</div>
+                        <div class="price-note">Precio fijo, sin sorpresas</div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> 6 entregables completos</li>
+                            <li><i class="fa-solid fa-check"></i> Presentación a Directorio</li>
+                            <li><i class="fa-solid fa-check"></i> Transferencia de conocimiento</li>
+                            <li><i class="fa-solid fa-check"></i> 2 semanas de ejecución</li>
+                        </ul>
+                        <a href="/#contacto" class="btn-sidebar">Solicitar Assessment</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Información Requerida</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-file"></i> Organigrama de datos/TI</li>
+                            <li><i class="fa-solid fa-file"></i> Listado de sistemas core</li>
+                            <li><i class="fa-solid fa-file"></i> Políticas existentes</li>
+                            <li><i class="fa-solid fa-file"></i> Reportes de auditoría</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>¿Siguiente Paso?</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Agende una llamada de 30 minutos para entender su contexto y confirmar si este servicio es adecuado para su institución.</p>
+                        <a href="/#contacto" class="btn-sidebar">Agendar Llamada</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3>¿Qué información necesitan antes del assessment?</h3>
+                <p>Antes del kick-off necesitamos organigrama del área de datos/tecnología, listado de sistemas core, políticas de datos existentes (si las hay) y reportes de auditoría previos disponibles.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿El assessment interrumpe las operaciones normales?</h3>
+                <p>El impacto operativo es mínimo: requerimos aproximadamente 8-10 horas de tiempo de stakeholders clave distribuidas en 2 semanas, principalmente en entrevistas estructuradas de 1 hora.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Qué pasa después del assessment?</h3>
+                <p>El roadmap entregado permite implementación autónoma o con nuestro acompañamiento. Ofrecemos servicios de Data Governance Implementation (3 meses) para organizaciones que desean apoyo continuo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="related-services">
+        <div class="container">
+            <h2 class="section-title">Servicios Relacionados</h2>
+            <div class="related-grid">
+                <a href="/servicios/implementacion-data-governance/" class="related-card">
+                    <h4>Data Governance Implementation</h4>
+                    <p>Implementación completa del framework de Data Governance en 3 meses</p>
+                </a>
+                <a href="/servicios/evaluacion-impacto-ia/" class="related-card">
+                    <h4>Evaluación de Impacto de IA</h4>
+                    <p>Evaluación obligatoria para sistemas de IA de alto riesgo</p>
+                </a>
+                <a href="/servicios/evaluacion-sesgo-algoritmico/" class="related-card">
+                    <h4>Evaluación de Sesgo Algorítmico</h4>
+                    <p>Detección y remediación de sesgos en sistemas de IA</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/implementacion-data-governance/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/evaluacion-sesgo-algoritmico/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/capacitacion-ai-governance/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/#experiencia">Experiencia</a></li>
+                        <li><a href="/#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

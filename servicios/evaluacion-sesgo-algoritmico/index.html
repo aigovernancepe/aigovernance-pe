@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Evaluación y Remediación de Sesgo Algorítmico. Asegure decisiones justas y cumpla con el Artículo 6.e del DS 115-2025-PCM. Detección de bias en scoring crediticio y sistemas de IA.">
+    <meta name="keywords" content="sesgo algoritmico, algorithmic bias, fairness AI, DS 115-2025-PCM, scoring crediticio peru, discriminación IA">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/servicios/evaluacion-sesgo-algoritmico/">
+    <meta property="og:title" content="Evaluación de Sesgo Algorítmico | AI Governance Perú">
+    <meta property="og:description" content="Detección y remediación de sesgos en sistemas de IA. Cumplimiento del Artículo 6.e del DS 115-2025-PCM.">
+
+    <title>Evaluación de Sesgo Algorítmico | AI Governance Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/servicios/evaluacion-sesgo-algoritmico/">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Service Page Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Evaluación de Sesgo Algorítmico",
+        "description": "Detección y remediación de sesgos en sistemas de IA para cumplir con DS 115-2025-PCM",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "AI Governance Perú",
+            "url": "https://aigovernance.pe"
+        },
+        "serviceType": "Algorithmic Fairness Consulting",
+        "areaServed": "Peru",
+        "offers": {
+            "@type": "Offer",
+            "price": "6000",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <style>
+        .service-page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 120px 0 80px;
+            color: white;
+        }
+        .service-page-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .service-page-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .service-page-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .service-page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-page-hero .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+        .service-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .service-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .service-meta-item i {
+            opacity: 0.8;
+        }
+        .service-content {
+            padding: 4rem 0;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        @media (max-width: 968px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service-main h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .service-main h2:first-child {
+            margin-top: 0;
+        }
+        .service-main h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+        .service-main h4 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .answer-capsule {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .service-main p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .service-main ul, .service-main ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .service-main li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .service-main table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .service-main th, .service-main td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .service-main th {
+            background: var(--bg-light);
+            font-weight: 600;
+        }
+        .service-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .sidebar-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .sidebar-card .price-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .sidebar-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sidebar-card li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-card li i {
+            color: var(--primary);
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+        }
+        .related-services {
+            background: var(--bg-light);
+            padding: 4rem 0;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .related-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .faq-section {
+            padding: 4rem 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .results-highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        .results-highlight h3 {
+            color: white;
+            margin-top: 0;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 600px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .result-item {
+            text-align: center;
+        }
+        .result-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .result-item .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        .stat-box {
+            background: #e7f3ff;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-box .label {
+            color: var(--text-muted);
+        }
+        .two-columns {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+        @media (max-width: 600px) {
+            .two-columns {
+                column-count: 1;
+            }
+        }
+        .metrics-example {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        .metrics-example .ok { color: #4ec9b0; }
+        .metrics-example .warning { color: #dcdcaa; }
+        .metrics-example .critical { color: #f14c4c; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#experiencia">Experiencia</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li><a href="/#contacto" class="btn-nav">Solicitar Assessment</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="service-page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / <a href="/#servicios">Servicios</a> / Evaluación de Sesgo Algorítmico
+            </div>
+            <h1>Evaluación y Remediación de Sesgo Algorítmico</h1>
+            <p class="hero-subtitle">Asegure decisiones justas y cumpla con el Artículo 6.e del DS 115-2025-PCM</p>
+            <div class="service-meta">
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>2-4 semanas</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <span>Fairness & Compliance</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Reporte para SBS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-main">
+                    <h2>¿Qué es el sesgo algorítmico?</h2>
+                    <div class="answer-capsule">
+                        <strong>El sesgo algorítmico ocurre cuando un sistema de IA produce resultados sistemáticamente injustos para ciertos grupos, como menor aprobación de crédito para mujeres.</strong>
+                    </div>
+                    <p>El sesgo puede originarse en datos históricos discriminatorios, variables proxy que correlacionan con características protegidas, o diseño de algoritmos que optimiza precisión general a costa de grupos minoritarios.</p>
+
+                    <div class="stat-box">
+                        <div class="number">73%</div>
+                        <div class="label">de los modelos de scoring evaluados presentan algún nivel de sesgo por género, edad o geografía</div>
+                    </div>
+
+                    <p>En la mayoría de casos, el sesgo no es intencional sino resultado de datos históricos que reflejan patrones de discriminación pasada.</p>
+
+                    <h2>¿Es obligatorio evaluar sesgo algorítmico en Perú?</h2>
+                    <div class="answer-capsule">
+                        <strong>Sí. El Artículo 6.e del DS 115-2025-PCM exige prevención de sesgos algorítmicos, y el Artículo 6.c prohíbe la discriminación en uso de IA. Fecha límite: 10 de septiembre de 2026.</strong>
+                    </div>
+
+                    <h3>Marco legal aplicable</h3>
+                    <ul>
+                        <li><strong>DS 115-2025-PCM Art. 6.e:</strong> Prevención de sesgos algorítmicos</li>
+                        <li><strong>DS 115-2025-PCM Art. 6.c:</strong> No discriminación en uso de IA</li>
+                        <li><strong>DS 115-2025-PCM Art. 7.d:</strong> Supervisión humana para garantizar no discriminación</li>
+                        <li><strong>DS 115-2025-PCM Art. 7.h:</strong> Validación de representatividad de datos</li>
+                        <li><strong>Constitución Peruana Art. 2:</strong> Igualdad ante la ley</li>
+                    </ul>
+
+                    <h3>Variables protegidas en Perú</h3>
+                    <ul class="two-columns">
+                        <li>Género/Sexo</li>
+                        <li>Raza/Etnicidad</li>
+                        <li>Edad</li>
+                        <li>Religión</li>
+                        <li>Opinión política</li>
+                        <li>Condición económica</li>
+                        <li>Discapacidad</li>
+                        <li>Orientación sexual</li>
+                        <li>Origen geográfico</li>
+                        <li>Idioma materno</li>
+                    </ul>
+
+                    <h2>¿Qué tipos de sesgo existen en sistemas de IA?</h2>
+                    <div class="answer-capsule">
+                        <strong>Existen 3 categorías principales: sesgo en datos (representación, histórico, medición), sesgo en algoritmo (proxy, amplificación, optimización) y sesgo en implementación (drift, uso fuera de contexto).</strong>
+                    </div>
+
+                    <h3>1. Sesgo en Datos (Data Bias)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                                <th>Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Representación</td>
+                                <td>Datos no reflejan población real</td>
+                                <td>Dataset 70% hombres para producto unisex</td>
+                            </tr>
+                            <tr>
+                                <td>Histórico</td>
+                                <td>Datos reflejan discriminación pasada</td>
+                                <td>Menos aprobaciones históricas a mujeres</td>
+                            </tr>
+                            <tr>
+                                <td>Medición</td>
+                                <td>Variables medidas de forma desigual</td>
+                                <td>Solo ingreso formal, no informal</td>
+                            </tr>
+                            <tr>
+                                <td>Selección</td>
+                                <td>Muestra no representativa</td>
+                                <td>Solo clientes actuales, no rechazados</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>2. Sesgo en Algoritmo (Algorithmic Bias)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                                <th>Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Proxy</td>
+                                <td>Variable correlaciona con protegida</td>
+                                <td>Código postal como proxy de raza</td>
+                            </tr>
+                            <tr>
+                                <td>Amplificación</td>
+                                <td>Modelo refuerza sesgos pequeños</td>
+                                <td>Feedback loop amplifica patrón</td>
+                            </tr>
+                            <tr>
+                                <td>Optimización</td>
+                                <td>Objetivo perjudica minoría</td>
+                                <td>Maximizar precisión general ignora grupos pequeños</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>¿Cómo se mide el sesgo algorítmico?</h2>
+                    <div class="answer-capsule">
+                        <strong>El sesgo se mide con métricas de fairness como Demographic Parity (tasas iguales entre grupos), Equalized Odds (TPR y FPR iguales) y Equal Opportunity, con ratios aceptables entre 0.8 y 1.25.</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Definición</th>
+                                <th>Target</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Demographic Parity</strong></td>
+                                <td>Tasa de decisión positiva igual entre grupos</td>
+                                <td>Ratio 0.8-1.25</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Equalized Odds</strong></td>
+                                <td>TPR y FPR iguales entre grupos</td>
+                                <td>Ratio 0.8-1.25</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Equal Opportunity</strong></td>
+                                <td>True Positive Rate igual entre grupos</td>
+                                <td>Ratio 0.8-1.25</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Predictive Parity</strong></td>
+                                <td>Precision igual entre grupos</td>
+                                <td>Ratio 0.8-1.25</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Calibration</strong></td>
+                                <td>Scores calibrados por grupo</td>
+                                <td>Desviación menor a 5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Ejemplo de resultados</h3>
+                    <div class="metrics-example">
+Variable Protegida: Género<br>
+┌────────────────────────────────────────────────────────┐<br>
+│ Métrica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │ Hombres │ Mujeres │ Ratio │<br>
+├────────────────────────────────────────────────────────┤<br>
+│ Tasa de Aprobación &nbsp;&nbsp; │ 65% &nbsp;&nbsp;&nbsp; │ 57% &nbsp;&nbsp;&nbsp; │ <span class="warning">0.88</span> &nbsp;│ Alerta<br>
+│ True Positive Rate &nbsp;&nbsp; │ 72% &nbsp;&nbsp;&nbsp; │ 68% &nbsp;&nbsp;&nbsp; │ <span class="ok">0.94</span> &nbsp;│ OK<br>
+│ False Positive Rate &nbsp; │ 12% &nbsp;&nbsp;&nbsp; │ 18% &nbsp;&nbsp;&nbsp; │ <span class="critical">1.50</span> &nbsp;│ Crítico<br>
+│ Precision &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │ 85% &nbsp;&nbsp;&nbsp; │ 79% &nbsp;&nbsp;&nbsp; │ <span class="ok">0.93</span> &nbsp;│ OK<br>
+└────────────────────────────────────────────────────────┘<br>
+Hallazgo: FPR significativamente mayor para mujeres
+                    </div>
+
+                    <h2>¿Qué incluye la evaluación de sesgo algorítmico?</h2>
+                    <div class="answer-capsule">
+                        <strong>La evaluación incluye informe detallado de sesgo por variable protegida, plan de remediación con técnicas específicas, dashboard de monitoreo de fairness, política de equidad y reporte para regulador.</strong>
+                    </div>
+
+                    <h3>Entregables del servicio</h3>
+                    <ol>
+                        <li><strong>Informe de Evaluación de Sesgo</strong>
+                            <ul>
+                                <li>Análisis de distribución de datos por variable protegida</li>
+                                <li>Métricas de fairness con resultados detallados</li>
+                                <li>Identificación de causa raíz por hallazgo</li>
+                                <li>Impacto de negocio cuantificado</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plan de Remediación</strong>
+                            <ul>
+                                <li>Estrategias de pre-procesamiento (re-sampling, re-weighting)</li>
+                                <li>Estrategias in-procesamiento (fairness constraints)</li>
+                                <li>Estrategias post-procesamiento (threshold adjustment)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dashboard de Monitoreo de Fairness</strong>
+                            <ul>
+                                <li>Especificaciones para implementación</li>
+                                <li>Métricas en tiempo real</li>
+                                <li>Alertas por desviación</li>
+                            </ul>
+                        </li>
+                        <li><strong>Política de Fairness y Reporte para Regulador</strong></li>
+                    </ol>
+
+                    <h2>¿Cómo se corrige el sesgo algorítmico?</h2>
+                    <div class="answer-capsule">
+                        <strong>La corrección de sesgo usa 3 estrategias: pre-procesamiento (modificar datos antes del entrenamiento), in-procesamiento (ajustar algoritmo durante entrenamiento) y post-procesamiento (calibrar outputs).</strong>
+                    </div>
+
+                    <h3>Estrategias de mitigación</h3>
+
+                    <h4>Pre-procesamiento (en datos)</h4>
+                    <table>
+                        <tr>
+                            <td><strong>Re-sampling</strong></td>
+                            <td>Balancear representación de grupos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Re-weighting</strong></td>
+                            <td>Ajustar pesos por grupo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Disparate Impact Removal</strong></td>
+                            <td>Transformar features para eliminar correlación</td>
+                        </tr>
+                    </table>
+
+                    <h4>In-procesamiento (en algoritmo)</h4>
+                    <table>
+                        <tr>
+                            <td><strong>Fairness Constraints</strong></td>
+                            <td>Agregar restricciones de equidad a optimización</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adversarial Debiasing</strong></td>
+                            <td>Modelo adversarial previene predicción de grupo</td>
+                        </tr>
+                    </table>
+
+                    <h4>Post-procesamiento (en outputs)</h4>
+                    <table>
+                        <tr>
+                            <td><strong>Threshold Adjustment</strong></td>
+                            <td>Umbrales diferentes por grupo para calibración</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reject Option</strong></td>
+                            <td>Revisión humana en zona de incertidumbre</td>
+                        </tr>
+                    </table>
+
+                    <h2>¿Qué resultados típicos se obtienen con remediación de sesgo?</h2>
+                    <div class="answer-capsule">
+                        <strong>En un caso de scoring crediticio peruano, redujimos la brecha de aprobación por género de 8 puntos a 1 punto, logrando +15% de clientes mujeres sin aumento en tasa de mora.</strong>
+                    </div>
+
+                    <div class="results-highlight">
+                        <h3>Caso de estudio: Scoring crediticio - Banco mediano</h3>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <div class="number">-87%</div>
+                                <div class="label">Brecha de género</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="number">+15%</div>
+                                <div class="label">Clientes mujeres</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="number">-40%</div>
+                                <div class="label">Reclamos INDECOPI</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Antes</th>
+                                <th>Después</th>
+                                <th>Mejora</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tasa aprobación hombres</td>
+                                <td>65%</td>
+                                <td>62%</td>
+                                <td>-3 pts</td>
+                            </tr>
+                            <tr>
+                                <td>Tasa aprobación mujeres</td>
+                                <td>57%</td>
+                                <td>61%</td>
+                                <td>+4 pts</td>
+                            </tr>
+                            <tr>
+                                <td>Brecha de género</td>
+                                <td>8 puntos</td>
+                                <td>1 punto</td>
+                                <td>-87%</td>
+                            </tr>
+                            <tr>
+                                <td>Tasa de mora</td>
+                                <td>4.2%</td>
+                                <td>4.1%</td>
+                                <td>Sin impacto</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>Causa raíz identificada:</strong> La variable "antigüedad laboral" penalizaba desproporcionadamente a mujeres que habían tenido interrupciones por maternidad.</p>
+                    <p><strong>Solución implementada:</strong> Re-entrenamiento del modelo excluyendo esta variable y utilizando indicadores alternativos de estabilidad financiera.</p>
+
+                    <h2>¿Cuánto cuesta una evaluación de sesgo algorítmico?</h2>
+                    <div class="answer-capsule">
+                        <strong>La evaluación de sesgo cuesta entre USD 6,000 y 25,000: evaluación básica (1 variable) USD 6,000-8,000; completa (3+ variables) USD 10,000-15,000; con remediación USD 15,000-25,000.</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Alcance</th>
+                                <th>Duración</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Evaluación Básica</td>
+                                <td>1 variable protegida (ej. género)</td>
+                                <td>2 semanas</td>
+                                <td>USD 6,000-8,000</td>
+                            </tr>
+                            <tr>
+                                <td>Evaluación Completa</td>
+                                <td>3+ variables (género, edad, geografía)</td>
+                                <td>3 semanas</td>
+                                <td>USD 10,000-15,000</td>
+                            </tr>
+                            <tr>
+                                <td>Evaluación + Remediación</td>
+                                <td>Evaluación completa + implementación</td>
+                                <td>4 semanas</td>
+                                <td>USD 15,000-25,000</td>
+                            </tr>
+                            <tr>
+                                <td>Monitoreo Continuo</td>
+                                <td>Dashboard + alertas + reportes mensuales</td>
+                                <td>Mensual</td>
+                                <td>Retainer a cotizar</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <aside class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Inversión</h3>
+                        <div class="price">USD 6,000+</div>
+                        <div class="price-note">Desde, según alcance</div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Informe detallado de sesgo</li>
+                            <li><i class="fa-solid fa-check"></i> Plan de remediación</li>
+                            <li><i class="fa-solid fa-check"></i> Dashboard de monitoreo</li>
+                            <li><i class="fa-solid fa-check"></i> Reporte para SBS</li>
+                        </ul>
+                        <a href="/#contacto" class="btn-sidebar">Solicitar Evaluación</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Herramientas Utilizadas</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-code"></i> Fairlearn (Microsoft)</li>
+                            <li><i class="fa-solid fa-code"></i> AI Fairness 360 (IBM)</li>
+                            <li><i class="fa-solid fa-code"></i> Aequitas</li>
+                            <li><i class="fa-solid fa-chart-bar"></i> Análisis customizado</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Estadística Clave</h3>
+                        <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0.5rem 0;">73%</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">de modelos de scoring evaluados presentan algún nivel de sesgo</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3>¿Cómo sé si mi modelo tiene sesgo?</h3>
+                <p>Un modelo tiene sesgo si las métricas de fairness (como tasa de aprobación o error) difieren significativamente entre grupos protegidos. Un ratio fuera del rango 0.8-1.25 típicamente indica sesgo que requiere investigación.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Qué herramientas se utilizan para detectar sesgo?</h3>
+                <p>Utilizamos herramientas open source como Fairlearn (Microsoft), AI Fairness 360 (IBM) y Aequitas, complementadas con análisis estadístico customizado para el contexto específico de cada modelo.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Puedo eliminar completamente el sesgo?</h3>
+                <p>No es posible satisfacer todas las definiciones de fairness simultáneamente (teorema de imposibilidad), pero sí es posible reducir el sesgo a niveles aceptables y documentar las decisiones tomadas para justificar ante reguladores.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="related-services">
+        <div class="container">
+            <h2 class="section-title">Servicios Relacionados</h2>
+            <div class="related-grid">
+                <a href="/servicios/evaluacion-impacto-ia/" class="related-card">
+                    <h4>Evaluación de Impacto de IA</h4>
+                    <p>Evaluación obligatoria para sistemas de IA de alto riesgo</p>
+                </a>
+                <a href="/servicios/implementacion-data-governance/" class="related-card">
+                    <h4>Data Governance Implementation</h4>
+                    <p>Implementación completa del framework de Data Governance</p>
+                </a>
+                <a href="/servicios/capacitacion-ai-governance/" class="related-card">
+                    <h4>Capacitación en AI Governance</h4>
+                    <p>Programas de formación para equipos técnicos y ejecutivos</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/implementacion-data-governance/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/evaluacion-sesgo-algoritmico/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/capacitacion-ai-governance/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/#experiencia">Experiencia</a></li>
+                        <li><a href="/#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

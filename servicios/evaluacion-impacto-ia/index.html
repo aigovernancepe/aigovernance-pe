@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Evaluación de Impacto de Sistemas de IA de Alto Riesgo. Cumplimiento obligatorio de Artículos 30 y 32 del DS 115-2025-PCM para instituciones financieras en Perú.">
+    <meta name="keywords" content="evaluación impacto IA, impact assessment AI, DS 115-2025-PCM, sistemas alto riesgo, scoring crediticio peru">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/servicios/evaluacion-impacto-ia/">
+    <meta property="og:title" content="Evaluación de Impacto de IA | AI Governance Perú">
+    <meta property="og:description" content="Evaluación obligatoria para sistemas de IA de alto riesgo. Cumplimiento de Artículos 30 y 32 del DS 115-2025-PCM.">
+
+    <title>Evaluación de Impacto de IA | AI Governance Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/servicios/evaluacion-impacto-ia/">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Service Page Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Evaluación de Impacto de IA",
+        "description": "Evaluación obligatoria para sistemas de IA de alto riesgo bajo DS 115-2025-PCM",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "AI Governance Perú",
+            "url": "https://aigovernance.pe"
+        },
+        "serviceType": "AI Impact Assessment",
+        "areaServed": "Peru",
+        "offers": {
+            "@type": "Offer",
+            "price": "6000",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <style>
+        .service-page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 120px 0 80px;
+            color: white;
+        }
+        .service-page-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .service-page-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .service-page-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .service-page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-page-hero .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+        .service-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .service-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .service-meta-item i {
+            opacity: 0.8;
+        }
+        .service-content {
+            padding: 4rem 0;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        @media (max-width: 968px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service-main h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .service-main h2:first-child {
+            margin-top: 0;
+        }
+        .service-main h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+        .service-main h4 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .answer-capsule {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .service-main p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .service-main ul, .service-main ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .service-main li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .service-main table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .service-main th, .service-main td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .service-main th {
+            background: var(--bg-light);
+            font-weight: 600;
+        }
+        .service-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .sidebar-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .sidebar-card .price-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .sidebar-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sidebar-card li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-card li i {
+            color: var(--primary);
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+        }
+        .related-services {
+            background: var(--bg-light);
+            padding: 4rem 0;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .related-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .faq-section {
+            padding: 4rem 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box strong {
+            color: #856404;
+        }
+        .risk-matrix {
+            margin: 1.5rem 0;
+        }
+        .risk-matrix td.critical {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .risk-matrix td.major {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .risk-matrix td.minor {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        .risk-matrix td.acceptable {
+            background: #d4edda;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#experiencia">Experiencia</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li><a href="/#contacto" class="btn-nav">Solicitar Assessment</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="service-page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / <a href="/#servicios">Servicios</a> / Evaluación de Impacto de IA
+            </div>
+            <h1>Evaluación de Impacto de Sistemas de IA de Alto Riesgo</h1>
+            <p class="hero-subtitle">Cumplimiento obligatorio de Artículos 30 y 32 del DS 115-2025-PCM</p>
+            <div class="service-meta">
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>2-3 semanas por sistema</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Sistemas de Alto Riesgo</span>
+                </div>
+                <div class="service-meta-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Documentación 3 años</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-main">
+                    <h2>¿Qué es una evaluación de impacto de IA?</h2>
+                    <div class="answer-capsule">
+                        <strong>Una evaluación de impacto de IA es un análisis obligatorio que documenta riesgos, impactos potenciales y medidas de mitigación para sistemas de inteligencia artificial clasificados como alto riesgo bajo DS 115-2025-PCM.</strong>
+                    </div>
+                    <p>Esta evaluación es un requisito legal, no una recomendación. El Artículo 30 del DS 115-2025-PCM exige evaluación previa para sistemas de IA de alto riesgo, y el Artículo 32 requiere que la documentación se conserve por mínimo 3 años.</p>
+                    <p>La evaluación analiza impactos en individuos, grupos y sociedad, considerando dimensiones como fairness, accountability, transparencia, privacidad y seguridad. El resultado es un documento formal presentable a reguladores.</p>
+
+                    <h2>¿Qué sistemas de IA requieren evaluación de impacto en Perú?</h2>
+                    <div class="answer-capsule">
+                        <strong>En Perú, los sistemas de IA de alto riesgo que requieren evaluación obligatoria incluyen scoring crediticio, decisiones de acceso a crédito, underwriting de seguros, diagnósticos médicos y evaluaciones educativas.</strong>
+                    </div>
+
+                    <h3>Sistemas clasificados como alto riesgo (DS 115-2025-PCM)</h3>
+
+                    <h4>Sector Financiero</h4>
+                    <ul>
+                        <li><strong>Scoring crediticio:</strong> Modelos que evalúan riesgo crediticio de personas</li>
+                        <li><strong>Decisiones de crédito:</strong> Sistemas que aprueban/rechazan automáticamente</li>
+                        <li><strong>Condiciones de productos:</strong> IA que determina tasas, límites o términos</li>
+                        <li><strong>Underwriting automatizado:</strong> Evaluación de riesgo para seguros</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <strong>Excepción importante:</strong> La detección de fraude financiero NO se considera alto riesgo según el reglamento, aunque sí requiere governance general.
+                    </div>
+
+                    <h4>Otros Sectores</h4>
+                    <ul>
+                        <li><strong>Salud:</strong> Diagnósticos que impactan tratamientos</li>
+                        <li><strong>Educación:</strong> Evaluaciones que afectan acceso o progresión</li>
+                        <li><strong>Laboral:</strong> Decisiones de contratación o promoción</li>
+                        <li><strong>Seguridad:</strong> Sistemas de vigilancia con identificación</li>
+                    </ul>
+
+                    <h2>¿Qué incluye la evaluación de impacto de IA?</h2>
+                    <div class="answer-capsule">
+                        <strong>La evaluación incluye informe de impacto formal de 6 secciones, ficha técnica para reguladores, plan de monitoreo continuo y registro archivable que debe conservarse por 3 años según ley.</strong>
+                    </div>
+
+                    <h3>Componentes del informe de impacto</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sección</th>
+                                <th>Contenido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>A. Descripción del Sistema</strong></td>
+                                <td>Nombre, propósito, tipo de IA/ML, volumen de decisiones, stakeholders afectados</td>
+                            </tr>
+                            <tr>
+                                <td><strong>B. Análisis de Datos</strong></td>
+                                <td>Fuentes, tipos de datos, calidad de entrenamiento, representatividad, proveniencia</td>
+                            </tr>
+                            <tr>
+                                <td><strong>C. Análisis de Riesgos</strong></td>
+                                <td>Identificación, probabilidad e impacto, riesgos a individuos/grupos/sociedad</td>
+                            </tr>
+                            <tr>
+                                <td><strong>D. Evaluación de Impactos</strong></td>
+                                <td>Fairness, accountability, transparencia, privacidad, seguridad, derechos humanos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>E. Medidas de Mitigación</strong></td>
+                                <td>Controles por riesgo, supervisión humana, mecanismos de apelación</td>
+                            </tr>
+                            <tr>
+                                <td><strong>F. Conclusiones</strong></td>
+                                <td>Resumen ejecutivo, riesgos residuales, condiciones de operación</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Entregables adicionales</h3>
+                    <ul>
+                        <li><strong>Ficha Técnica:</strong> Resumen de 1-2 páginas para presentar a SBS u otro regulador</li>
+                        <li><strong>Plan de Monitoreo:</strong> KPIs, métricas de fairness, umbrales de alerta, proceso de escalamiento</li>
+                        <li><strong>Registro para Archivo:</strong> Versión archivable con evidencia de aprobaciones e histórico de cambios</li>
+                    </ul>
+
+                    <h2>¿Qué dimensiones evalúa un impact assessment de IA?</h2>
+                    <div class="answer-capsule">
+                        <strong>La evaluación analiza 7 dimensiones: fairness, accountability, transparencia, privacidad, seguridad, accesibilidad y derechos humanos, alineadas con ISO 42001 y estándares internacionales.</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimensión</th>
+                                <th>Preguntas Clave</th>
+                                <th>Alineación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fairness</strong></td>
+                                <td>¿Hay diferencias injustificadas por género, edad u otra variable protegida?</td>
+                                <td>ISO 42001 A.5.4</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accountability</strong></td>
+                                <td>¿Están claras las responsabilidades? ¿Quién responde por decisiones?</td>
+                                <td>ISO 42001 A.3</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Transparencia</strong></td>
+                                <td>¿Los usuarios saben que interactúan con IA? ¿Se explican las decisiones?</td>
+                                <td>DS 115 Art. 6.b</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Privacidad</strong></td>
+                                <td>¿Se cumple LPDP? ¿El uso de PII es proporcional?</td>
+                                <td>Ley 29733</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Seguridad</strong></td>
+                                <td>¿Hay vulnerabilidades? ¿El sistema es robusto ante ataques?</td>
+                                <td>ISO 27002</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accesibilidad</strong></td>
+                                <td>¿Poblaciones vulnerables son desproporcionadamente afectadas?</td>
+                                <td>ISO 42001 A.5.5</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Derechos Humanos</strong></td>
+                                <td>¿El sistema limita injustamente acceso a servicios o dignidad?</td>
+                                <td>DS 115 Art. 6.c</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>¿Cómo funciona el proceso de evaluación de impacto?</h2>
+                    <div class="answer-capsule">
+                        <strong>El proceso toma 2-3 semanas por sistema: 3 días de preparación, 5 días de análisis técnico, 4 días de evaluación de impactos y 3 días de documentación, culminando con presentación.</strong>
+                    </div>
+
+                    <h3>Fases del proceso</h3>
+
+                    <h4>Fase 1: Preparación (Días 1-3)</h4>
+                    <ul>
+                        <li>Kick-off con stakeholders del sistema</li>
+                        <li>Recopilación de documentación técnica</li>
+                        <li>Definición de alcance específico</li>
+                        <li>Entrevistas iniciales con responsables</li>
+                    </ul>
+
+                    <h4>Fase 2: Análisis Técnico (Días 4-8)</h4>
+                    <ul>
+                        <li>Revisión de arquitectura del sistema</li>
+                        <li>Análisis de datos de entrenamiento</li>
+                        <li>Evaluación de algoritmo y lógica de decisión</li>
+                        <li>Testing preliminar de sesgo</li>
+                    </ul>
+
+                    <h4>Fase 3: Evaluación de Impactos (Días 9-12)</h4>
+                    <ul>
+                        <li>Workshops con áreas afectadas</li>
+                        <li>Análisis de casos de uso reales</li>
+                        <li>Evaluación por cada dimensión</li>
+                        <li>Documentación de evidencia</li>
+                    </ul>
+
+                    <h4>Fase 4: Documentación (Días 13-15)</h4>
+                    <ul>
+                        <li>Elaboración de informe completo</li>
+                        <li>Desarrollo de recomendaciones</li>
+                        <li>Preparación de ficha técnica</li>
+                        <li>Presentación de resultados</li>
+                    </ul>
+
+                    <h2>¿Cómo se clasifican los riesgos en una evaluación de impacto?</h2>
+                    <div class="answer-capsule">
+                        <strong>Los riesgos se clasifican en matriz de impacto vs. probabilidad: críticos (acción inmediata), mayores (plan de mitigación), menores (monitoreo) y aceptables (documentar), siguiendo ISO 31000.</strong>
+                    </div>
+
+                    <h3>Matriz de clasificación de riesgos</h3>
+                    <table class="risk-matrix">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Alta Probabilidad</th>
+                                <th>Baja Probabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Alto Impacto</strong></td>
+                                <td class="critical">CRÍTICO - Acción inmediata</td>
+                                <td class="major">MAYOR - Plan con plazos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bajo Impacto</strong></td>
+                                <td class="minor">MENOR - Monitoreo continuo</td>
+                                <td class="acceptable">ACEPTABLE - Documentar</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Criterios de aceptabilidad</h3>
+                    <ul>
+                        <li><strong>Riesgos críticos:</strong> Sistema no puede operar sin mitigación efectiva</li>
+                        <li><strong>Riesgos mayores:</strong> Requieren plan de acción documentado con plazos</li>
+                        <li><strong>Riesgos menores:</strong> Aceptables con monitoreo y controles básicos</li>
+                        <li><strong>Riesgos aceptables:</strong> Documentados para referencia y transparencia</li>
+                    </ul>
+
+                    <h2>¿Con qué frecuencia debe actualizarse la evaluación de impacto?</h2>
+                    <div class="answer-capsule">
+                        <strong>La evaluación debe actualizarse ante cambios significativos en el modelo, nuevos datos de entrenamiento o casos de uso. Se recomienda revisión anual para sistemas de alto riesgo incluso sin cambios.</strong>
+                    </div>
+
+                    <h3>Triggers de re-evaluación obligatoria</h3>
+                    <ul>
+                        <li>Cambios significativos en el modelo o algoritmo</li>
+                        <li>Actualización de datos de entrenamiento</li>
+                        <li>Nuevos casos de uso no contemplados originalmente</li>
+                        <li>Hallazgos de monitoreo que indican drift o anomalías</li>
+                        <li>Cambios regulatorios que afecten requisitos</li>
+                        <li>Incidentes reportados por usuarios o afectados</li>
+                    </ul>
+
+                    <table>
+                        <tr>
+                            <td><strong>Sistemas de alto riesgo</strong></td>
+                            <td>Revisión anual completa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sistemas de riesgo medio</strong></td>
+                            <td>Revisión bianual</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Post-incidentes</strong></td>
+                            <td>Evaluación inmediata</td>
+                        </tr>
+                    </table>
+
+                    <h2>¿Cuánto cuesta una evaluación de impacto de IA en Perú?</h2>
+                    <div class="answer-capsule">
+                        <strong>La evaluación de impacto de IA cuesta entre USD 6,000 y 15,000 por sistema, dependiendo de complejidad, volumen de decisiones y número de variables a evaluar.</strong>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Sistema</th>
+                                <th>Complejidad</th>
+                                <th>Rango de Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Scoring crediticio básico</td>
+                                <td>Simple</td>
+                                <td>USD 6,000 - 8,000</td>
+                            </tr>
+                            <tr>
+                                <td>Underwriting con múltiples modelos</td>
+                                <td>Media</td>
+                                <td>USD 8,000 - 12,000</td>
+                            </tr>
+                            <tr>
+                                <td>Sistema de decisión integrado</td>
+                                <td>Compleja</td>
+                                <td>USD 10,000 - 15,000</td>
+                            </tr>
+                            <tr>
+                                <td>Evaluación múltiple (3+ sistemas)</td>
+                                <td>Variable</td>
+                                <td>Descuento 15-20%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>El precio incluye informe completo, ficha técnica, plan de monitoreo y presentación de resultados. No incluye implementación de remediaciones.</p>
+
+                    <h2>¿Cuál es el valor de realizar una evaluación de impacto?</h2>
+                    <div class="answer-capsule">
+                        <strong>Más allá del cumplimiento obligatorio, la evaluación identifica riesgos ocultos, mejora la calidad de modelos, reduce reclamos de clientes y protege la reputación organizacional.</strong>
+                    </div>
+
+                    <h3>Beneficios por stakeholder</h3>
+
+                    <h4>Para Compliance</h4>
+                    <ul>
+                        <li>Documento formal para presentar a reguladores (SBS, INDECOPI)</li>
+                        <li>Evidencia de due diligence ante investigaciones</li>
+                        <li>Cumplimiento demostrable con Artículos 30 y 32 del DS 115-2025-PCM</li>
+                    </ul>
+
+                    <h4>Para el Negocio</h4>
+                    <ul>
+                        <li>Identificación temprana de riesgos antes de incidentes</li>
+                        <li>Mejora de modelos basada en análisis objetivo</li>
+                        <li>Reducción de rechazos incorrectos y reclamos</li>
+                        <li>Protección de reputación organizacional</li>
+                    </ul>
+
+                    <h4>Para Clientes</h4>
+                    <ul>
+                        <li>Transparencia sobre cómo se toman decisiones</li>
+                        <li>Mecanismos claros de apelación</li>
+                        <li>Protección de derechos frente a sesgos</li>
+                    </ul>
+                </div>
+
+                <aside class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Inversión</h3>
+                        <div class="price">USD 6,000+</div>
+                        <div class="price-note">Por sistema, según complejidad</div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Informe formal 6 secciones</li>
+                            <li><i class="fa-solid fa-check"></i> Ficha técnica para SBS</li>
+                            <li><i class="fa-solid fa-check"></i> Plan de monitoreo</li>
+                            <li><i class="fa-solid fa-check"></i> 2-3 semanas por sistema</li>
+                        </ul>
+                        <a href="/#contacto" class="btn-sidebar">Solicitar Evaluación</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Sistemas Típicos Evaluados</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-chart-line"></i> Scoring crediticio</li>
+                            <li><i class="fa-solid fa-credit-card"></i> Decisiones de crédito</li>
+                            <li><i class="fa-solid fa-shield"></i> Underwriting seguros</li>
+                            <li><i class="fa-solid fa-robot"></i> Chatbots con decisión</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Documentación Obligatoria</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">El DS 115-2025-PCM exige conservar la evaluación de impacto por mínimo 3 años. Entregamos formato archivable.</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3>¿Qué pasa si no hacemos la evaluación de impacto?</h3>
+                <p>Operar sistemas de alto riesgo sin evaluación de impacto documentada es incumplimiento directo del DS 115-2025-PCM, exponiendo a la organización a sanciones de SBS, suspensión del sistema y responsabilidad legal.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Quién debe aprobar la evaluación de impacto?</h3>
+                <p>La evaluación debe ser aprobada por el Data Owner del sistema, revisada por Compliance y presentada al Data Governance Council. Para sistemas críticos, se recomienda validación adicional del Directorio.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿La evaluación puede resultar en que no se pueda usar el sistema?</h3>
+                <p>Si se identifican riesgos críticos no mitigables, la recomendación puede ser suspender el sistema hasta implementar controles. Esto es preferible a operar un sistema que cause daños a usuarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="related-services">
+        <div class="container">
+            <h2 class="section-title">Servicios Relacionados</h2>
+            <div class="related-grid">
+                <a href="/servicios/evaluacion-sesgo-algoritmico/" class="related-card">
+                    <h4>Evaluación de Sesgo Algorítmico</h4>
+                    <p>Detección y remediación de sesgos en sistemas de IA</p>
+                </a>
+                <a href="/servicios/implementacion-data-governance/" class="related-card">
+                    <h4>Data Governance Implementation</h4>
+                    <p>Implementación completa del framework de Data Governance</p>
+                </a>
+                <a href="/servicios/evaluacion-madurez-ia/" class="related-card">
+                    <h4>AI Readiness Assessment</h4>
+                    <p>Evaluación de madurez en IA y Data Governance</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/implementacion-data-governance/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/evaluacion-sesgo-algoritmico/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/capacitacion-ai-governance/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/#experiencia">Experiencia</a></li>
+                        <li><a href="/#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

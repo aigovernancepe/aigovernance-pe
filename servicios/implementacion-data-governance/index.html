@@ -374,25 +374,23 @@
             opacity: 0.9;
         }
 
-        /* Implementation Phases Visualization */
+        /* Implementation Phases Visualization - 2x2 Grid */
         .implementation-phases {
             margin: 2rem 0;
             padding: 2rem;
             background: var(--bg-light);
             border-radius: 16px;
         }
-        .phases-timeline {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: wrap;
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
             margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .phase-card {
-            flex: 1;
-            min-width: 180px;
-            max-width: 220px;
             background: white;
             border-radius: 12px;
             padding: 1.25rem;
@@ -460,18 +458,9 @@
         .phase-items li:last-child {
             border-bottom: none;
         }
-        .phase-connector {
-            display: flex;
-            align-items: center;
-            color: var(--border);
-            font-size: 1.25rem;
-        }
-        @media (max-width: 900px) {
-            .phase-connector {
-                display: none;
-            }
-            .phase-card {
-                max-width: 100%;
+        @media (max-width: 600px) {
+            .phases-grid {
+                grid-template-columns: 1fr;
             }
         }
         .phases-progress {
@@ -658,9 +647,9 @@
                         <strong>La implementación incluye Data Governance Council operativo, marco de políticas completo, Data Quality Dashboard automatizado, catálogo de datos documentado y capacitación de equipos en 24 semanas (6 meses).</strong>
                     </div>
 
-                    <!-- Modern Phase Visualization -->
+                    <!-- Modern Phase Visualization - 2x2 Grid -->
                     <div class="implementation-phases">
-                        <div class="phases-timeline">
+                        <div class="phases-grid">
                             <div class="phase-card phase-1">
                                 <div class="phase-header">
                                     <div class="phase-icon">
@@ -675,9 +664,6 @@
                                     <li>Data Owners designados</li>
                                     <li>Política de Gobernanza v1.0</li>
                                 </ul>
-                            </div>
-                            <div class="phase-connector">
-                                <i class="fa-solid fa-arrow-right"></i>
                             </div>
                             <div class="phase-card phase-2">
                                 <div class="phase-header">
@@ -694,9 +680,6 @@
                                     <li>Procedimiento de monitoreo</li>
                                 </ul>
                             </div>
-                            <div class="phase-connector">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </div>
                             <div class="phase-card phase-3">
                                 <div class="phase-header">
                                     <div class="phase-icon">
@@ -711,9 +694,6 @@
                                     <li>Diccionario de datos</li>
                                     <li>Lineage documentado</li>
                                 </ul>
-                            </div>
-                            <div class="phase-connector">
-                                <i class="fa-solid fa-arrow-right"></i>
                             </div>
                             <div class="phase-card phase-4">
                                 <div class="phase-header">
@@ -746,74 +726,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <h3>Fase 1: Fundación (Semanas 1-6)</h3>
-                    <table>
-                        <tr>
-                            <td><strong>Data Governance Council</strong></td>
-                            <td>Estructura, roles, términos de referencia, calendario de reuniones</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Data Owners designados</strong></td>
-                            <td>Por dominio: Clientes, Productos, Financieros, Riesgo, Regulatorios</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Política de Gobernanza v1.0</strong></td>
-                            <td>Aprobada por Directorio, lista para auditoría</td>
-                        </tr>
-                    </table>
-
-                    <h3>Fase 2: Framework de Calidad (Semanas 7-14)</h3>
-                    <table>
-                        <tr>
-                            <td><strong>Dimensiones de calidad</strong></td>
-                            <td>Completitud, exactitud, consistencia, unicidad, oportunidad, validez</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dashboard automatizado</strong></td>
-                            <td>Power BI/Tableau con actualización diaria y alertas</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Procedimiento de monitoreo</strong></td>
-                            <td>Proceso documentado de escalamiento y resolución</td>
-                        </tr>
-                    </table>
-
-                    <h3>Fase 3: Catálogo y Metadatos (Semanas 15-20)</h3>
-                    <table>
-                        <tr>
-                            <td><strong>Catálogo de datos v1.0</strong></td>
-                            <td>Inventario completo de activos de datos críticos</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Diccionario de datos</strong></td>
-                            <td>Definiciones, ownership, clasificación de sensibilidad</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Lineage documentado</strong></td>
-                            <td>Flujo de datos para sistemas de IA priorizados</td>
-                        </tr>
-                    </table>
-
-                    <h3>Fase 4: Capacitación y Transferencia (Semanas 21-24)</h3>
-                    <table>
-                        <tr>
-                            <td><strong>Training Data Owners</strong></td>
-                            <td>4 horas con manual y templates de decisión</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Training Data Stewards</strong></td>
-                            <td>8 horas con guías operativas y checklists</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Training usuarios</strong></td>
-                            <td>2 horas de data literacy básico</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Plan de mejora continua</strong></td>
-                            <td>Roadmap post-implementación y métricas de éxito</td>
-                        </tr>
-                    </table>
 
                     <h2>¿Qué roles son necesarios para data governance?</h2>
                     <div class="answer-capsule">

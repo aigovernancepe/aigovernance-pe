@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Implementación de Data Governance para instituciones financieras. Sistema de gobernanza de datos operativo en 3 meses, listo para auditoría regulatoria DS 115-2025-PCM.">
+    <meta name="description" content="Implementación de Data Governance para instituciones financieras. Sistema de gobernanza de datos operativo en 6 meses, listo para auditoría regulatoria DS 115-2025-PCM.">
     <meta name="keywords" content="data governance implementation, implementación gobernanza datos, DS 115-2025-PCM, data quality, sector financiero peru">
     <meta name="author" content="Wilko Feye">
 
@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aigovernance.pe/servicios/implementacion-data-governance/">
     <meta property="og:title" content="Implementación de Data Governance | AI Governance Perú">
-    <meta property="og:description" content="Sistema de gobernanza de datos operativo en 3 meses, listo para auditoría regulatoria y cumplimiento del DS 115-2025-PCM.">
+    <meta property="og:description" content="Sistema de gobernanza de datos operativo en 6 meses, listo para auditoría regulatoria y cumplimiento del DS 115-2025-PCM.">
 
     <title>Implementación de Data Governance | AI Governance Perú</title>
 
@@ -55,7 +55,7 @@
                 "name": "¿Cuánto tiempo toma ver resultados?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Los quick wins son visibles en las primeras 4-6 semanas (Council operativo, primeras políticas). El sistema completo está funcionando en 12 semanas, con mejoras medibles en KPIs de calidad desde el mes 2."
+                    "text": "Los quick wins son visibles en las primeras 6-8 semanas (Council operativo, primeras políticas). El sistema completo está funcionando en 24 semanas (6 meses), con mejoras medibles en KPIs de calidad desde el mes 3."
                 }
             },
             {
@@ -357,6 +357,189 @@
             font-size: 0.85rem;
             opacity: 0.9;
         }
+
+        /* Implementation Phases Visualization */
+        .implementation-phases {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 16px;
+        }
+        .phases-timeline {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .phase-card {
+            flex: 1;
+            min-width: 180px;
+            max-width: 220px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 2px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .phase-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .phase-card.phase-1 { border-top: 4px solid #4F46E5; }
+        .phase-card.phase-2 { border-top: 4px solid #0EA5E9; }
+        .phase-card.phase-3 { border-top: 4px solid #10B981; }
+        .phase-card.phase-4 { border-top: 4px solid #F59E0B; }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .phase-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: white;
+        }
+        .phase-1 .phase-icon { background: #4F46E5; }
+        .phase-2 .phase-icon { background: #0EA5E9; }
+        .phase-3 .phase-icon { background: #10B981; }
+        .phase-4 .phase-icon { background: #F59E0B; }
+        .phase-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+        .phase-card h4 {
+            margin: 0 0 0.25rem;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+        .phase-duration {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .phase-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.85rem;
+        }
+        .phase-items li {
+            padding: 0.35rem 0;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        .phase-items li:last-child {
+            border-bottom: none;
+        }
+        .phase-connector {
+            display: flex;
+            align-items: center;
+            color: var(--border);
+            font-size: 1.25rem;
+        }
+        @media (max-width: 900px) {
+            .phase-connector {
+                display: none;
+            }
+            .phase-card {
+                max-width: 100%;
+            }
+        }
+        .phases-progress {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .progress-bar {
+            display: flex;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--border);
+        }
+        .progress-segment {
+            height: 100%;
+        }
+        .progress-segment.seg-1 { background: #4F46E5; }
+        .progress-segment.seg-2 { background: #0EA5E9; }
+        .progress-segment.seg-3 { background: #10B981; }
+        .progress-segment.seg-4 { background: #F59E0B; }
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Preparation Checklist Styling */
+        .preparation-checklist {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0 1.5rem;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            cursor: default;
+            transition: background 0.2s;
+        }
+        .checklist-item:last-child {
+            margin-bottom: 0;
+        }
+        .checklist-item:hover {
+            background: #f8fafc;
+        }
+        .checklist-item input[type="checkbox"] {
+            display: none;
+        }
+        .checkmark {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: white;
+        }
+        .checkmark::after {
+            content: '';
+            width: 6px;
+            height: 10px;
+            border: solid var(--primary);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            margin-bottom: 2px;
+            opacity: 0;
+        }
+        .checklist-item:hover .checkmark::after {
+            opacity: 0.3;
+        }
+        .checklist-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -391,11 +574,11 @@
                 <a href="/">Inicio</a> / <a href="/#servicios">Servicios</a> / Data Governance Implementation
             </div>
             <h1>Implementación de Data Governance para Instituciones Financieras</h1>
-            <p class="hero-subtitle">Sistema de gobernanza de datos operativo en 3 meses, listo para auditoría regulatoria</p>
+            <p class="hero-subtitle">Sistema de gobernanza de datos operativo en 6 meses, listo para auditoría regulatoria</p>
             <div class="service-meta">
                 <div class="service-meta-item">
                     <i class="fa-solid fa-clock"></i>
-                    <span>12 semanas</span>
+                    <span>24 semanas</span>
                 </div>
                 <div class="service-meta-item">
                     <i class="fa-solid fa-building-columns"></i>
@@ -419,7 +602,7 @@
                         <strong>La implementación de data governance establece estructura organizacional, políticas, procesos y tecnología para gestionar datos como activo estratégico, asegurando calidad, seguridad y cumplimiento regulatorio.</strong>
                     </div>
                     <p>A diferencia de un assessment que solo diagnostica, la implementación entrega un sistema operativo funcionando: Data Governance Council activo, Data Owners designados, políticas aprobadas, dashboard de calidad automatizado y equipo capacitado.</p>
-                    <p>Según el modelo de madurez DCAM, las organizaciones que implementan governance formal mejoran su score de madurez en promedio 2.3 puntos en 6 meses, pasando de nivel 1-2 (ad-hoc) a nivel 3-4 (gestionado).</p>
+                    <p>Según el <a href="https://edmcouncil.org/frameworks/dcam/" target="_blank" rel="noopener">modelo de madurez DCAM</a>, las organizaciones que implementan governance formal típicamente avanzan de nivel 1-2 (ad-hoc) a nivel 3-4 (gestionado), logrando capacidades sostenibles de gestión de datos.</p>
 
                     <h2>¿Por qué necesitan las instituciones financieras peruanas data governance?</h2>
                     <div class="answer-capsule">
@@ -436,10 +619,99 @@
 
                     <h2>¿Qué incluye la implementación de data governance?</h2>
                     <div class="answer-capsule">
-                        <strong>La implementación incluye Data Governance Council operativo, marco de políticas completo, Data Quality Dashboard automatizado, catálogo de datos documentado y capacitación de equipos en 12 semanas.</strong>
+                        <strong>La implementación incluye Data Governance Council operativo, marco de políticas completo, Data Quality Dashboard automatizado, catálogo de datos documentado y capacitación de equipos en 24 semanas (6 meses).</strong>
                     </div>
 
-                    <h3>Fase 1: Fundación (Semanas 1-4)</h3>
+                    <!-- Modern Phase Visualization -->
+                    <div class="implementation-phases">
+                        <div class="phases-timeline">
+                            <div class="phase-card phase-1">
+                                <div class="phase-header">
+                                    <div class="phase-icon">
+                                        <i class="fa-solid fa-layer-group"></i>
+                                    </div>
+                                    <div class="phase-number">Fase 1</div>
+                                </div>
+                                <h4>Fundación</h4>
+                                <span class="phase-duration">Semanas 1-6</span>
+                                <ul class="phase-items">
+                                    <li>Data Governance Council</li>
+                                    <li>Data Owners designados</li>
+                                    <li>Política de Gobernanza v1.0</li>
+                                </ul>
+                            </div>
+                            <div class="phase-connector">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                            <div class="phase-card phase-2">
+                                <div class="phase-header">
+                                    <div class="phase-icon">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <div class="phase-number">Fase 2</div>
+                                </div>
+                                <h4>Framework de Calidad</h4>
+                                <span class="phase-duration">Semanas 7-14</span>
+                                <ul class="phase-items">
+                                    <li>Dimensiones de calidad</li>
+                                    <li>Dashboard automatizado</li>
+                                    <li>Procedimiento de monitoreo</li>
+                                </ul>
+                            </div>
+                            <div class="phase-connector">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                            <div class="phase-card phase-3">
+                                <div class="phase-header">
+                                    <div class="phase-icon">
+                                        <i class="fa-solid fa-book-open"></i>
+                                    </div>
+                                    <div class="phase-number">Fase 3</div>
+                                </div>
+                                <h4>Catálogo y Metadatos</h4>
+                                <span class="phase-duration">Semanas 15-20</span>
+                                <ul class="phase-items">
+                                    <li>Catálogo de datos v1.0</li>
+                                    <li>Diccionario de datos</li>
+                                    <li>Lineage documentado</li>
+                                </ul>
+                            </div>
+                            <div class="phase-connector">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                            <div class="phase-card phase-4">
+                                <div class="phase-header">
+                                    <div class="phase-icon">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="phase-number">Fase 4</div>
+                                </div>
+                                <h4>Capacitación</h4>
+                                <span class="phase-duration">Semanas 21-24</span>
+                                <ul class="phase-items">
+                                    <li>Training Data Owners</li>
+                                    <li>Training Data Stewards</li>
+                                    <li>Plan de mejora continua</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="phases-progress">
+                            <div class="progress-bar">
+                                <div class="progress-segment seg-1" style="width: 25%"></div>
+                                <div class="progress-segment seg-2" style="width: 33%"></div>
+                                <div class="progress-segment seg-3" style="width: 25%"></div>
+                                <div class="progress-segment seg-4" style="width: 17%"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span>Mes 1-2</span>
+                                <span>Mes 2-4</span>
+                                <span>Mes 4-5</span>
+                                <span>Mes 5-6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Fase 1: Fundación (Semanas 1-6)</h3>
                     <table>
                         <tr>
                             <td><strong>Data Governance Council</strong></td>
@@ -455,7 +727,7 @@
                         </tr>
                     </table>
 
-                    <h3>Fase 2: Framework de Calidad (Semanas 5-8)</h3>
+                    <h3>Fase 2: Framework de Calidad (Semanas 7-14)</h3>
                     <table>
                         <tr>
                             <td><strong>Dimensiones de calidad</strong></td>
@@ -471,7 +743,7 @@
                         </tr>
                     </table>
 
-                    <h3>Fase 3: Catálogo y Metadatos (Semanas 9-10)</h3>
+                    <h3>Fase 3: Catálogo y Metadatos (Semanas 15-20)</h3>
                     <table>
                         <tr>
                             <td><strong>Catálogo de datos v1.0</strong></td>
@@ -487,7 +759,7 @@
                         </tr>
                     </table>
 
-                    <h3>Fase 4: Capacitación y Transferencia (Semanas 11-12)</h3>
+                    <h3>Fase 4: Capacitación y Transferencia (Semanas 21-24)</h3>
                     <table>
                         <tr>
                             <td><strong>Training Data Owners</strong></td>
@@ -552,7 +824,7 @@
 
                     <h2>¿Cómo funciona el proceso de implementación?</h2>
                     <div class="answer-capsule">
-                        <strong>Utilizamos un enfoque hands-on de 12 semanas: trabajamos lado a lado con sus equipos, implementamos procesos reales que funcionan y transferimos conocimiento para autonomía post-proyecto.</strong>
+                        <strong>Utilizamos un enfoque hands-on de 24 semanas (6 meses): trabajamos lado a lado con sus equipos, implementamos procesos reales que funcionan y transferimos conocimiento para autonomía post-proyecto.</strong>
                     </div>
 
                     <h3>Principios metodológicos</h3>
@@ -565,91 +837,108 @@
 
                     <h2>¿Qué resultados típicos se obtienen con data governance?</h2>
                     <div class="answer-capsule">
-                        <strong>Las organizaciones que implementan governance reportan 83% reducción en rechazos por datos incorrectos, 85% reducción en tiempo de auditoría y mejora de 153% en score de madurez en 4 meses.</strong>
+                        <strong>Según <a href="https://www.gartner.com/peer-community/oneminuteinsights/omi-data-governance-frameworks-challenges-hbo" target="_blank" rel="noopener">Gartner</a>, las organizaciones con frameworks de governance establecidos experimentan una reducción del 20-40% en errores de datos y mejoras significativas en tiempos de auditoría.</strong>
                     </div>
-
                     <div class="results-highlight">
-                        <h3>Caso de estudio: Banco mediano peruano</h3>
+                        <h3>Beneficios Documentados de Data Governance</h3>
                         <div class="results-grid">
                             <div class="result-item">
-                                <div class="number">+153%</div>
-                                <div class="label">Mejora en madurez</div>
+                                <div class="number">20-40%</div>
+                                <div class="label">Reducción en errores de datos</div>
                             </div>
                             <div class="result-item">
-                                <div class="number">-83%</div>
-                                <div class="label">Rechazos por datos</div>
+                                <div class="number">30%</div>
+                                <div class="label">Reducción en costos IT de compliance</div>
                             </div>
                             <div class="result-item">
-                                <div class="number">-85%</div>
-                                <div class="label">Tiempo de auditoría</div>
+                                <div class="number">39%</div>
+                                <div class="label">Reportan menor riesgo financiero</div>
                             </div>
                         </div>
                     </div>
-
                     <table>
                         <thead>
                             <tr>
-                                <th>Métrica</th>
-                                <th>Antes</th>
-                                <th>Después</th>
-                                <th>Mejora</th>
+                                <th>Área de Mejora</th>
+                                <th>Beneficio Típico</th>
+                                <th>Fuente</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Madurez de Governance</td>
-                                <td>1.5/5</td>
-                                <td>3.8/5</td>
-                                <td>+153%</td>
+                                <td>Errores de datos</td>
+                                <td>Reducción del 20-40%</td>
+                                <td>Gartner 2023</td>
                             </tr>
                             <tr>
-                                <td>Rechazos por datos incorrectos</td>
-                                <td>30%</td>
-                                <td>5%</td>
-                                <td>-83%</td>
+                                <td>Costos de compliance IT</td>
+                                <td>Reducción hasta 30%</td>
+                                <td>Accenture</td>
                             </tr>
                             <tr>
-                                <td>Tiempo de auditoría</td>
-                                <td>3+ meses</td>
-                                <td>2 semanas</td>
-                                <td>-85%</td>
+                                <td>Riesgo financiero</td>
+                                <td>39% reportan reducción</td>
+                                <td>Gartner Peer Community</td>
                             </tr>
                             <tr>
-                                <td>Score de calidad de datos</td>
-                                <td>65%</td>
-                                <td>97%</td>
-                                <td>+49%</td>
+                                <td>Procesos de auditoría</td>
+                                <td>25% reportan mejoras</td>
+                                <td>Gartner Peer Community</td>
                             </tr>
                             <tr>
-                                <td>Sesgo por género en scoring</td>
-                                <td>8 puntos</td>
-                                <td>1 punto</td>
-                                <td>-87%</td>
+                                <td>Tiempo de respuesta regulatoria</td>
+                                <td>De semanas a días</td>
+                                <td>Data.world</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <p>Beneficios adicionales documentados:</p>
+                    <p>Beneficios adicionales documentados en el sector financiero:</p>
                     <ul>
-                        <li><strong>+12%</strong> en aprobaciones correctas sin aumento de mora</li>
-                        <li><strong>-40%</strong> en reclamos a INDECOPI</li>
+                        <li>Mejor precisión en decisiones automatizadas de crédito</li>
+                        <li>Reducción significativa en reclamos regulatorios</li>
                         <li>Documentación completa disponible para SBS en días, no meses</li>
+                        <li>Mayor confianza del Directorio en datos para toma de decisiones</li>
                     </ul>
 
                     <h2>¿Qué necesita mi organización antes de implementar governance?</h2>
                     <div class="answer-capsule">
-                        <strong>Los prerrequisitos son: AI Readiness Assessment completado, sponsor ejecutivo identificado a nivel C-suite y compromiso de tiempo de stakeholders clave (8-10 horas/semana durante 12 semanas).</strong>
+                        <strong>Los prerrequisitos son: AI Readiness Assessment completado, sponsor ejecutivo identificado a nivel C-suite y compromiso de tiempo de stakeholders clave (8-10 horas/semana durante 6 meses).</strong>
                     </div>
 
                     <h3>Checklist de preparación</h3>
-                    <ul>
-                        <li>Diagnóstico de madurez actual documentado</li>
-                        <li>Patrocinador ejecutivo (CDO, CIO o equivalente) comprometido</li>
-                        <li>Candidatos identificados para roles de Data Owner</li>
-                        <li>Acceso a sistemas y datos garantizado</li>
-                        <li>Presupuesto aprobado para herramientas (si aplica)</li>
-                        <li>Disponibilidad de equipo técnico para integraciones</li>
-                    </ul>
+                    <div class="preparation-checklist">
+                        <label class="checklist-item">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Diagnóstico de madurez actual documentado</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Patrocinador ejecutivo (CDO, CIO o equivalente) comprometido</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Candidatos identificados para roles de Data Owner</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Acceso a sistemas y datos garantizado</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Presupuesto aprobado para herramientas (si aplica)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Disponibilidad de equipo técnico para integraciones</span>
+                        </label>
+                    </div>
                     <p>Si no tiene un assessment reciente, recomendamos iniciar con nuestro AI Readiness Assessment de 2 semanas antes de la implementación.</p>
 
                     <h2>¿Cuáles son los principales riesgos en implementación de governance?</h2>
@@ -703,7 +992,7 @@
                             <li><i class="fa-solid fa-check"></i> Sistema operativo completo</li>
                             <li><i class="fa-solid fa-check"></i> Data Quality Dashboard</li>
                             <li><i class="fa-solid fa-check"></i> Capacitación incluida</li>
-                            <li><i class="fa-solid fa-check"></i> 12 semanas de ejecución</li>
+                            <li><i class="fa-solid fa-check"></i> 24 semanas de ejecución</li>
                         </ul>
                         <a href="/#contacto" class="btn-sidebar">Solicitar Propuesta</a>
                     </div>
@@ -739,7 +1028,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Los quick wins son visibles en las primeras 4-6 semanas (Council operativo, primeras políticas). El sistema completo está funcionando en 12 semanas, con mejoras medibles en KPIs de calidad desde el mes 2.</p>
+                        <p itemprop="text">Los quick wins son visibles en las primeras 6-8 semanas (Council operativo, primeras políticas). El sistema completo está funcionando en 24 semanas (6 meses), con mejoras medibles en KPIs de calidad desde el mes 3.</p>
                     </div>
                 </div>
                 <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

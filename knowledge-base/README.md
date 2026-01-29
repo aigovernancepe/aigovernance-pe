@@ -21,16 +21,21 @@ knowledge-base/
 │   └── training-capacity-building.md     (COMPLETE) - Training programs
 │
 ├── methodology/              # Frameworks and methodologies
-│   ├── data-governance-framework.md      (COMPLETE) - Comprehensive framework
-│   ├── data-governance-fundamentals.md   (COMPLETE) - CDGP Body of Knowledge
-│   ├── data-quality-framework.md         (COMPLETE) - Quality dimensions & governance
-│   ├── metadata-management.md            (COMPLETE) - Metadata governance
-│   ├── data-governance-toolkit.md        (COMPLETE) - Tools & technology
-│   ├── data-governance-policies-standards.md (COMPLETE) - Policies & standards
-│   ├── data-governance-initiatives.md    (COMPLETE) - Governance enabling initiatives
-│   ├── maturity-model.md                 (COMPLETE)
-│   ├── iso-42001-aims.md                 (COMPLETE) - AI Management Systems
-│   └── iso-27002-security-controls.md    (COMPLETE) - Security Controls for AI
+│   ├── data-governance-framework.md              (COMPLETE) - Comprehensive framework
+│   ├── data-governance-fundamentals.md           (COMPLETE) - CDGP Body of Knowledge
+│   ├── data-governance-organizational-structures.md (COMPLETE) - Frameworks & org models
+│   ├── data-stewardship.md                       (COMPLETE) - Stewardship foundations
+│   ├── data-governance-program-management.md     (COMPLETE) - Program & project management
+│   ├── data-governance-implementation.md         (COMPLETE) - Implementation & revitalization
+│   ├── data-governance-risk-management.md        (COMPLETE) - Risk management for data & AI
+│   ├── data-quality-framework.md                 (COMPLETE) - Quality dimensions & governance
+│   ├── metadata-management.md                    (COMPLETE) - Metadata governance
+│   ├── data-governance-toolkit.md                (COMPLETE) - Tools & technology
+│   ├── data-governance-policies-standards.md     (COMPLETE) - Policies & standards
+│   ├── data-governance-initiatives.md            (COMPLETE) - Governance enabling initiatives
+│   ├── maturity-model.md                         (COMPLETE)
+│   ├── iso-42001-aims.md                         (COMPLETE) - AI Management Systems
+│   └── iso-27002-security-controls.md            (COMPLETE) - Security Controls for AI
 │
 ├── case-studies/             # Detailed case studies
 │   └── scoring-crediticio.md             (COMPLETE)
@@ -66,6 +71,17 @@ knowledge-base/
 **Core Data Governance:**
 - **Data Governance Framework:** Comprehensive framework covering conceptual foundations, organizational structure, operating models (centralized/decentralized/federated), best practices, and regulatory integration
 - **Data Governance Fundamentals:** CDGP Body of Knowledge - 6 domains covering business drivers, ethics, privacy/security, stakeholder engagement, ROI measurement, and change management
+- **Organizational Structures:** Frameworks comparison (DGI, DAMA-DMBOK2, Eckerson, DGPO), operating models, councils, roles, and operationalization strategies
+
+**Data Stewardship:**
+- **Data Stewardship:** Foundations of stewardship including roles (business/technical/project stewards), responsibilities, stewardship councils, building stewardship programs, and regulatory alignment
+
+**Program & Project Management:**
+- **Program Management:** Program vs function distinction, program components, establishing and managing programs, roadmaps, and PMI alignment
+- **Implementation & Revitalization:** Designing new programs, revitalizing existing programs, sustainable adoption, change management, and compliance timelines
+
+**Risk Management:**
+- **Risk Management:** Risk categories (security, privacy, quality, compliance, AI), risk framework, DPIA for AI, controls, and regulatory alignment with DS 115-2025-PCM
 
 **Data Quality & Metadata:**
 - **Data Quality Framework:** Quality dimensions, governance integration, fit-for-purpose concept, implementation methodology, tools, and regulatory requirements

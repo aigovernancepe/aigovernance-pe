@@ -388,6 +388,9 @@
             .two-columns {
                 column-count: 1;
             }
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
         }
         .metrics-example {
             background: #1e1e1e;
@@ -397,7 +400,15 @@
             font-family: monospace;
             font-size: 0.9rem;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             margin: 1.5rem 0;
+            white-space: nowrap;
+        }
+        @media (max-width: 480px) {
+            .metrics-example {
+                font-size: 0.7rem;
+                padding: 1rem;
+            }
         }
         .metrics-example .ok { color: #4ec9b0; }
         .metrics-example .warning { color: #dcdcaa; }
@@ -483,6 +494,29 @@
         @media (max-width: 600px) {
             .phases-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+        /* Table responsiveness */
+        .service-main table {
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (max-width: 600px) {
+            .service-main table {
+                font-size: 0.85rem;
+            }
+            .service-main th,
+            .service-main td {
+                padding: 0.5rem 0.75rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .service-page-hero h1 {
+                font-size: 1.5rem;
+            }
+            .stat-box .number {
+                font-size: 2rem;
             }
         }
     </style>

@@ -1837,6 +1837,264 @@ p {
 }
 
 /* ============================================
+   Service Pages - Mobile Responsiveness
+   ============================================ */
+
+/* Service page hero mobile fixes */
+@media (max-width: 768px) {
+    .service-page-hero h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    .service-page-hero .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .service-meta {
+        gap: 1rem;
+    }
+
+    .service-meta-item {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-page-hero {
+        padding: 100px 0 60px;
+    }
+
+    .service-page-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .service-content {
+        padding: 2rem 0;
+    }
+
+    .service-main h2 {
+        font-size: 1.25rem;
+    }
+
+    .answer-capsule {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tables mobile scroll wrapper */
+.service-main table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 600px) {
+    .service-main table {
+        font-size: 0.85rem;
+    }
+
+    .service-main th,
+    .service-main td {
+        padding: 0.5rem 0.75rem;
+        min-width: 100px;
+    }
+
+    /* Allow text to wrap in table cells on mobile */
+    .service-main td {
+        white-space: normal;
+        word-wrap: break-word;
+    }
+}
+
+/* Metrics example (code block) mobile */
+.metrics-example {
+    font-size: 0.75rem;
+    padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 480px) {
+    .metrics-example {
+        font-size: 0.65rem;
+        padding: 0.75rem;
+    }
+}
+
+/* Two columns list mobile */
+@media (max-width: 600px) {
+    .two-columns {
+        column-count: 1;
+    }
+}
+
+/* Results highlight grid mobile */
+@media (max-width: 600px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .result-item .number {
+        font-size: 1.75rem;
+    }
+}
+
+/* Stat box mobile */
+@media (max-width: 480px) {
+    .stat-box .number,
+    .stat-highlight .number {
+        font-size: 2rem;
+    }
+
+    .stat-box,
+    .stat-highlight {
+        padding: 1rem;
+    }
+}
+
+/* Phase cards and session cards mobile */
+@media (max-width: 600px) {
+    .phases-grid,
+    .sessions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .phase-card,
+    .session-card {
+        padding: 1rem;
+    }
+
+    .phase-items li,
+    .session-card p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Principles grid mobile */
+@media (max-width: 600px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .principle-card {
+        padding: 1rem;
+    }
+}
+
+/* Obligations list mobile */
+@media (max-width: 480px) {
+    .obligation-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .obligation-badge {
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* Preparation checklist mobile */
+@media (max-width: 480px) {
+    .checklist-item {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .checklist-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Progress bar labels mobile */
+@media (max-width: 480px) {
+    .progress-labels {
+        font-size: 0.65rem;
+    }
+}
+
+/* Sidebar cards on mobile (when stacked) */
+@media (max-width: 968px) {
+    .service-sidebar {
+        position: static;
+        margin-top: 2rem;
+    }
+
+    .sidebar-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Warning box mobile */
+@media (max-width: 480px) {
+    .warning-box {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Risk matrix mobile */
+@media (max-width: 600px) {
+    .risk-matrix td,
+    .risk-matrix th {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Deliverables phases container mobile */
+@media (max-width: 480px) {
+    .assessment-phases,
+    .implementation-phases,
+    .deliverables-phases,
+    .stewards-phases {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+}
+
+/* Package card mobile */
+@media (max-width: 480px) {
+    .package-card {
+        padding: 1rem;
+    }
+
+    .package-card .savings {
+        font-size: 0.75rem;
+    }
+}
+
+/* FAQ section mobile */
+@media (max-width: 480px) {
+    .faq-question {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .faq-answer {
+        padding: 0 1rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Related services grid mobile */
+@media (max-width: 480px) {
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-card {
+        padding: 1rem;
+    }
+
+    .related-card h4 {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
    Animations
    ============================================ */
 @keyframes fadeInUp {

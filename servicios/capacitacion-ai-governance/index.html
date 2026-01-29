@@ -518,9 +518,32 @@
             }
         }
 
-        /* Table no-wrap for specific columns */
-        .service-main table td:first-child {
-            white-space: nowrap;
+        /* Table responsiveness */
+        .service-main table {
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (max-width: 600px) {
+            .service-main table {
+                font-size: 0.85rem;
+            }
+            .service-main th,
+            .service-main td {
+                padding: 0.5rem 0.75rem;
+            }
+            /* Allow wrapping on mobile */
+            .service-main table td:first-child {
+                white-space: normal;
+            }
+            .stat-highlight .number {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .service-page-hero h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>

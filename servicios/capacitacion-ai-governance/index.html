@@ -233,16 +233,18 @@
             display: block;
             width: 100%;
             padding: 1rem;
-            background: var(--primary);
+            background: #1a56db;
             color: white;
             text-align: center;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
         }
         .btn-sidebar:hover {
-            background: var(--primary-dark);
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
         .related-services {
             background: var(--bg-light);
@@ -386,6 +388,139 @@
             font-size: 0.85rem;
             display: inline-block;
             margin-bottom: 0.5rem;
+        }
+
+        /* Session Cards - Principles Style (for Data Owners 2 sessions) */
+        .sessions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .session-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .session-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .session-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            color: white;
+        }
+        .session-icon.fundamentos { background: linear-gradient(135deg, #4F46E5, #7C3AED); }
+        .session-icon.practica { background: linear-gradient(135deg, #10B981, #059669); }
+        .session-card h5 {
+            font-size: 1rem;
+            margin: 0 0 0.25rem;
+            color: var(--text-dark);
+        }
+        .session-card .duration {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .session-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+        @media (max-width: 600px) {
+            .sessions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Phase Cards - 2x2 Grid (for Data Stewards 4 sessions) */
+        .stewards-phases {
+            margin: 1.5rem 0;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 16px;
+        }
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .phase-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 2px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .phase-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .phase-card.phase-1 { border-top: 4px solid #4F46E5; }
+        .phase-card.phase-2 { border-top: 4px solid #0EA5E9; }
+        .phase-card.phase-3 { border-top: 4px solid #10B981; }
+        .phase-card.phase-4 { border-top: 4px solid #F59E0B; }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .phase-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: white;
+        }
+        .phase-1 .phase-icon { background: #4F46E5; }
+        .phase-2 .phase-icon { background: #0EA5E9; }
+        .phase-3 .phase-icon { background: #10B981; }
+        .phase-4 .phase-icon { background: #F59E0B; }
+        .phase-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+        .phase-card h4 {
+            margin: 0 0 0.5rem;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+        .phase-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+        @media (max-width: 600px) {
+            .phases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Table no-wrap for specific columns */
+        .service-main table td:first-child {
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -545,46 +680,74 @@
                     </div>
 
                     <h3>Contenido: Formación de Data Owners (8 horas)</h3>
-                    <h4>Sesión 1: Fundamentos (4 horas)</h4>
-                    <ul>
-                        <li>Rol del Data Owner: definición, alcance, responsabilidades</li>
-                        <li>Gestión de dominio: inventario, clasificación, ownership de calidad</li>
-                        <li>Políticas y estándares: marco de políticas, aprobación de solicitudes</li>
-                    </ul>
-                    <h4>Sesión 2: Práctica (4 horas)</h4>
-                    <ul>
-                        <li>Calidad de datos: dimensiones, KPIs, monitoreo, escalamiento</li>
-                        <li>Gestión de accesos: autorización, revisión periódica, auditoría</li>
-                        <li>Casos prácticos: roleplay, resolución de conflictos, Q&A</li>
-                    </ul>
+                    <div class="sessions-grid">
+                        <div class="session-card">
+                            <div class="session-icon fundamentos">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <h5>Sesión 1: Fundamentos</h5>
+                            <div class="duration">4 horas</div>
+                            <p>Rol del Data Owner: definición, alcance, responsabilidades. Gestión de dominio: inventario, clasificación, ownership. Políticas y estándares: marco, aprobaciones.</p>
+                        </div>
+                        <div class="session-card">
+                            <div class="session-icon practica">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h5>Sesión 2: Práctica</h5>
+                            <div class="duration">4 horas</div>
+                            <p>Calidad de datos: dimensiones, KPIs, monitoreo. Gestión de accesos: autorización, auditoría. Casos prácticos: roleplay, resolución de conflictos.</p>
+                        </div>
+                    </div>
 
                     <h2>¿Qué habilidades desarrollan los Data Stewards?</h2>
                     <div class="answer-capsule">
                         <strong>Los Data Stewards desarrollan habilidades operativas en 16 horas: fundamentos de stewardship, calidad de datos hands-on, gestión de metadatos y documentación, y operación diaria.</strong>
                     </div>
 
-                    <table>
-                        <tr>
-                            <td><strong>Sesión 1</strong></td>
-                            <td>Fundamentos de Data Stewardship</td>
-                            <td>Rol, responsabilidades, herramientas, métricas de éxito</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sesión 2</strong></td>
-                            <td>Calidad de Datos (hands-on)</td>
-                            <td>Dimensiones, reglas, perfilado, identificación de issues</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sesión 3</strong></td>
-                            <td>Metadatos y Documentación</td>
-                            <td>Diccionario, catálogo, lineage, documentación técnica</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sesión 4</strong></td>
-                            <td>Operación Diaria</td>
-                            <td>Monitoreo, gestión de incidentes, reportería, mejora continua</td>
-                        </tr>
-                    </table>
+                    <div class="stewards-phases">
+                        <div class="phases-grid">
+                            <div class="phase-card phase-1">
+                                <div class="phase-header">
+                                    <div class="phase-icon">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="phase-number">Sesión 1</div>
+                                </div>
+                                <h4>Fundamentos de Stewardship</h4>
+                                <p>Rol, responsabilidades, herramientas, métricas de éxito</p>
+                            </div>
+                            <div class="phase-card phase-2">
+                                <div class="phase-header">
+                                    <div class="phase-icon">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </div>
+                                    <div class="phase-number">Sesión 2</div>
+                                </div>
+                                <h4>Calidad de Datos (hands-on)</h4>
+                                <p>Dimensiones, reglas, perfilado, identificación de issues</p>
+                            </div>
+                            <div class="phase-card phase-3">
+                                <div class="phase-header">
+                                    <div class="phase-icon">
+                                        <i class="fa-solid fa-database"></i>
+                                    </div>
+                                    <div class="phase-number">Sesión 3</div>
+                                </div>
+                                <h4>Metadatos y Documentación</h4>
+                                <p>Diccionario, catálogo, lineage, documentación técnica</p>
+                            </div>
+                            <div class="phase-card phase-4">
+                                <div class="phase-header">
+                                    <div class="phase-icon">
+                                        <i class="fa-solid fa-gears"></i>
+                                    </div>
+                                    <div class="phase-number">Sesión 4</div>
+                                </div>
+                                <h4>Operación Diaria</h4>
+                                <p>Monitoreo, gestión de incidentes, reportería, mejora continua</p>
+                            </div>
+                        </div>
+                    </div>
 
                     <h2>¿Qué deben saber los Data Scientists sobre IA responsable?</h2>
                     <div class="answer-capsule">

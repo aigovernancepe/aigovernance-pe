@@ -545,6 +545,86 @@
             color: var(--text-dark);
             line-height: 1.4;
         }
+
+        /* Modern Principles & Obligations Cards */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .principle-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .principle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .principle-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            color: white;
+        }
+        .principle-icon.transparencia { background: linear-gradient(135deg, #4F46E5, #7C3AED); }
+        .principle-icon.no-discriminacion { background: linear-gradient(135deg, #0EA5E9, #06B6D4); }
+        .principle-icon.proteccion { background: linear-gradient(135deg, #10B981, #059669); }
+        .principle-icon.supervision { background: linear-gradient(135deg, #F59E0B, #D97706); }
+        .principle-icon.rendicion { background: linear-gradient(135deg, #EF4444, #DC2626); }
+        .principle-card h5 {
+            font-size: 0.95rem;
+            margin: 0 0 0.5rem;
+            color: var(--text-dark);
+        }
+        .principle-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Obligations List - Modern Styled */
+        .obligations-list {
+            display: grid;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+        .obligation-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid var(--primary);
+        }
+        .obligation-badge {
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .obligation-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+        .obligation-text strong {
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -618,21 +698,63 @@
                     <p>La <strong>Ley 31814</strong> (julio 2023) establece el marco legal para promover el uso de la inteligencia artificial en el Perú, mientras que el <strong>DS 115-2025-PCM</strong> (septiembre 2025) es su reglamento que detalla las obligaciones específicas. Juntos establecen:</p>
 
                     <h4>Principios de la Ley 31814 que requieren Governance</h4>
-                    <ul>
-                        <li><strong>Transparencia:</strong> Los sistemas de IA deben poder explicar sus decisiones—requiere documentación de datos y modelos</li>
-                        <li><strong>No discriminación:</strong> Prevenir sesgos algorítmicos—requiere Data Quality y testing de fairness</li>
-                        <li><strong>Protección de datos:</strong> Cumplir con privacidad—requiere clasificación y controles de acceso</li>
-                        <li><strong>Supervisión humana:</strong> Intervención en decisiones críticas—requiere workflows y escalamiento</li>
-                        <li><strong>Rendición de cuentas:</strong> Trazabilidad de impactos—requiere lineage de datos</li>
-                    </ul>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <div class="principle-icon transparencia">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h5>Transparencia</h5>
+                            <p>Los sistemas de IA deben poder explicar sus decisiones—requiere documentación de datos y modelos</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon no-discriminacion">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <h5>No Discriminación</h5>
+                            <p>Prevenir sesgos algorítmicos—requiere Data Quality y testing de fairness</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon proteccion">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h5>Protección de Datos</h5>
+                            <p>Cumplir con privacidad—requiere clasificación y controles de acceso</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon supervision">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <h5>Supervisión Humana</h5>
+                            <p>Intervención en decisiones críticas—requiere workflows y escalamiento</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon rendicion">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <h5>Rendición de Cuentas</h5>
+                            <p>Trazabilidad de impactos—requiere lineage de datos</p>
+                        </div>
+                    </div>
 
                     <h4>Obligaciones del DS 115-2025-PCM</h4>
-                    <ul>
-                        <li><strong>Artículo 28.1:</strong> Aprobar políticas institucionales sobre uso de IA</li>
-                        <li><strong>Artículo 7.h:</strong> Validar calidad de datos para precisión, integridad y representatividad</li>
-                        <li><strong>Artículo 31.1:</strong> Mantener registro actualizado y accesible sobre funcionamiento de sistemas de IA</li>
-                        <li><strong>Artículo 6.e:</strong> Prevenir sesgos algorítmicos mediante governance de datos</li>
-                    </ul>
+                    <div class="obligations-list">
+                        <div class="obligation-item">
+                            <span class="obligation-badge">Art. 28.1</span>
+                            <span class="obligation-text">Aprobar <strong>políticas institucionales</strong> sobre uso de IA</span>
+                        </div>
+                        <div class="obligation-item">
+                            <span class="obligation-badge">Art. 7.h</span>
+                            <span class="obligation-text">Validar <strong>calidad de datos</strong> para precisión, integridad y representatividad</span>
+                        </div>
+                        <div class="obligation-item">
+                            <span class="obligation-badge">Art. 31.1</span>
+                            <span class="obligation-text">Mantener <strong>registro actualizado</strong> y accesible sobre funcionamiento de sistemas de IA</span>
+                        </div>
+                        <div class="obligation-item">
+                            <span class="obligation-badge">Art. 6.e</span>
+                            <span class="obligation-text">Prevenir <strong>sesgos algorítmicos</strong> mediante governance de datos</span>
+                        </div>
+                    </div>
 
                     <div class="deadline-alert" style="background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;">
                         <strong style="color: #92400E;"><i class="fa-solid fa-calendar-check"></i> Fecha límite sector financiero:</strong>
@@ -816,27 +938,27 @@
                             <tr>
                                 <td>Errores de datos</td>
                                 <td>Reducción del 20-40%</td>
-                                <td>Gartner 2023</td>
+                                <td><a href="https://www.gartner.com/en/newsroom/press-releases/2023-07-25-gartner-says-data-quality-improves-overall-organization-performance" target="_blank" rel="noopener">Gartner 2023</a></td>
                             </tr>
                             <tr>
                                 <td>Costos de compliance IT</td>
                                 <td>Reducción hasta 30%</td>
-                                <td>Accenture</td>
+                                <td><a href="https://www.accenture.com/us-en/insights/technology/data-governance" target="_blank" rel="noopener">Accenture</a></td>
                             </tr>
                             <tr>
                                 <td>Riesgo financiero</td>
                                 <td>39% reportan reducción</td>
-                                <td>Gartner Peer Community</td>
+                                <td><a href="https://www.gartner.com/peer-community/oneminuteinsights/omi-data-governance-frameworks-challenges-hbo" target="_blank" rel="noopener">Gartner Peer Community</a></td>
                             </tr>
                             <tr>
                                 <td>Procesos de auditoría</td>
                                 <td>25% reportan mejoras</td>
-                                <td>Gartner Peer Community</td>
+                                <td><a href="https://www.gartner.com/peer-community/oneminuteinsights/omi-data-governance-frameworks-challenges-hbo" target="_blank" rel="noopener">Gartner Peer Community</a></td>
                             </tr>
                             <tr>
                                 <td>Tiempo de respuesta regulatoria</td>
                                 <td>De semanas a días</td>
-                                <td>Data.world</td>
+                                <td><a href="https://data.world/blog/data-governance-best-practices/" target="_blank" rel="noopener">Data.world</a></td>
                             </tr>
                         </tbody>
                     </table>

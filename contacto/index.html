@@ -73,7 +73,7 @@
         }
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1.5fr;
             gap: 4rem;
             align-items: start;
         }
@@ -169,21 +169,30 @@
             background: white;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-            padding: 2.5rem;
+            padding: 3rem 3.5rem;
             box-shadow: var(--shadow-lg);
+            min-width: 0;
         }
         .contact-form-section h2 {
             color: var(--secondary-color);
             margin-bottom: 2rem;
             font-size: 1.75rem;
         }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 0;
+        }
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.25rem;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
         }
         .form-group label {
             display: block;
@@ -249,7 +258,8 @@
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            .form-row {
+            .form-row,
+            .form-grid {
                 grid-template-columns: 1fr;
             }
             .contact-hero .hero-decoration {
@@ -260,6 +270,9 @@
             }
             .what-to-expect ul {
                 grid-template-columns: 1fr;
+            }
+            .contact-form-section {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -389,11 +402,11 @@
                         <!-- Honeypot field for spam protection - hidden from users -->
                         <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
 
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" required>
-                        </div>
-                        <div class="form-row">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo *</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
                             <div class="form-group">
                                 <label for="cargo">Cargo *</label>
                                 <input type="text" id="cargo" name="cargo" required>
@@ -402,8 +415,6 @@
                                 <label for="empresa">Empresa *</label>
                                 <input type="text" id="empresa" name="empresa" required>
                             </div>
-                        </div>
-                        <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email corporativo *</label>
                                 <input type="email" id="email" name="email" required>
@@ -412,24 +423,26 @@
                                 <label for="telefono">Teléfono</label>
                                 <input type="tel" id="telefono" name="telefono">
                             </div>
+                            <div class="form-group">
+                                <label for="tipo_institucion">Tipo de institución *</label>
+                                <select id="tipo_institucion" name="tipo_institucion" required>
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="banco">Banco</option>
+                                    <option value="aseguradora">Aseguradora</option>
+                                    <option value="asset_manager">Asset Manager</option>
+                                    <option value="fintech">Fintech</option>
+                                    <option value="cooperativa">Cooperativa de Ahorro</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                                <div class="form-group full-width">
+                                <label for="mensaje">Cuéntenos sobre su situación actual</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describa brevemente su contexto, desafíos principales y qué espera lograr..."></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="btn-submit">Solicitar Evaluación</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="tipo_institucion">Tipo de institución *</label>
-                            <select id="tipo_institucion" name="tipo_institucion" required>
-                                <option value="">Seleccione una opción</option>
-                                <option value="banco">Banco</option>
-                                <option value="aseguradora">Aseguradora</option>
-                                <option value="asset_manager">Asset Manager</option>
-                                <option value="fintech">Fintech</option>
-                                <option value="cooperativa">Cooperativa de Ahorro</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje">Cuéntenos sobre su situación actual</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describa brevemente su contexto, desafíos principales y qué espera lograr..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Solicitar Evaluación</button>
                         <p class="form-note">Al enviar este formulario, acepta nuestra política de privacidad. No compartiremos su información con terceros.</p>
                     </form>
                 </div>

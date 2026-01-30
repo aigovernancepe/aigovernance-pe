@@ -118,6 +118,7 @@
             background: var(--bg-light);
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
+            min-width: 0;
         }
         .contact-method-header {
             display: flex;
@@ -146,6 +147,8 @@
             margin-bottom: 0;
             font-size: 0.95rem;
             color: var(--text-secondary);
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
         .contact-method a {
             color: var(--primary-color);

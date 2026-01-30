@@ -1,120 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
+  <!-- Homepage -->
   <url>
     <loc>https://aigovernance.pe/</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Main Navigation Pages -->
   <url>
     <loc>https://aigovernance.pe/servicios/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aigovernance.pe/cumplimiento-ley-31814/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aigovernance.pe/recursos/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigovernance.pe/contacto/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigovernance.pe/nosotros/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Service Category Pages -->
   <url>
     <loc>https://aigovernance.pe/servicios/data-governance/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aigovernance.pe/servicios/data-quality/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aigovernance.pe/servicios/compliance/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Individual Service Pages -->
+  <!-- Data Governance Services -->
   <url>
     <loc>https://aigovernance.pe/servicios/data-governance/evaluacion-madurez-ia/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aigovernance.pe/servicios/data-governance/implementacion/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aigovernance.pe/servicios/data-governance/capacitacion/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Data Quality Services -->
+  <url>
+    <loc>https://aigovernance.pe/servicios/data-quality/evaluacion-sesgo/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Compliance Services -->
+  <url>
+    <loc>https://aigovernance.pe/servicios/compliance/evaluacion-impacto-ia/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Ley 31814 Content Pages -->
+  <url>
+    <loc>https://aigovernance.pe/cumplimiento-ley-31814/que-es-ley-31814/</loc>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aigovernance.pe/servicios/compliance/evaluacion-impacto-ia/</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aigovernance.pe/servicios/data-quality/evaluacion-sesgo/</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Regulatory Sub-Pages -->
-  <url>
-    <loc>https://aigovernance.pe/cumplimiento-ley-31814/que-es-ley-31814/</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://aigovernance.pe/cumplimiento-ley-31814/ds-115-2025-pcm/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aigovernance.pe/cumplimiento-ley-31814/plazos-cumplimiento/</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aigovernance.pe/cumplimiento-ley-31814/requisitos-sector-financiero/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Supporting Pages -->
-  <url>
-    <loc>https://aigovernance.pe/nosotros/</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://aigovernance.pe/contacto/</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>

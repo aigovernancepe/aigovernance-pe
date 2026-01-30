@@ -51,70 +51,120 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://aigovernance.pe/#organization",
         "name": "AI Governance Peru",
-        "alternateName": "aigovernance.pe",
+        "alternateName": ["AI Governance Perú", "aigovernance.pe"],
         "url": "https://aigovernance.pe",
-        "logo": "https://aigovernance.pe/images/logo.svg",
-        "description": "Servicios de Data Governance, Data Quality y Compliance para el sector financiero en Perú",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://aigovernance.pe/images/logo.svg",
+            "width": 200,
+            "height": 50
+        },
+        "description": "Servicios especializados de Data Governance, Data Quality y Compliance para el sector financiero en Perú. Expertos en cumplimiento de Ley 31814 y regulaciones SBS/SMV.",
+        "foundingDate": "2024",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Peru"
+        },
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lima",
+            "addressRegion": "Lima",
             "addressCountry": "PE"
         },
         "contactPoint": {
             "@type": "ContactPoint",
             "email": "info@aigovernance.pe",
-            "contactType": "sales"
+            "contactType": "sales",
+            "availableLanguage": ["Spanish", "English"]
         },
         "sameAs": [
             "https://linkedin.com/company/ai-governance-peru"
+        ],
+        "knowsAbout": [
+            "Data Governance",
+            "Data Quality",
+            "Regulatory Compliance",
+            "Ley 31814",
+            "AI Governance",
+            "Financial Services Compliance"
         ]
     }
     </script>
-    <!-- LocalBusiness Schema -->
+    <!-- ProfessionalService Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "ProfessionalService",
+        "@id": "https://aigovernance.pe/#business",
         "name": "AI Governance Peru",
-        "@id": "https://aigovernance.pe",
         "url": "https://aigovernance.pe",
         "image": "https://aigovernance.pe/images/logo.svg",
+        "description": "Consultoría especializada en Data Governance, Data Quality y Compliance para instituciones financieras en Perú",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lima",
+            "addressRegion": "Lima",
             "addressCountry": "PE"
         },
-        "priceRange": "$$$$",
+        "priceRange": "$$$",
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "09:00",
             "closes": "18:00"
+        },
+        "sameAs": [
+            "https://linkedin.com/company/ai-governance-peru"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Data Governance",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Evaluación de Madurez en Data Governance",
+                        "description": "Diagnóstico completo de madurez y roadmap ejecutivo",
+                        "url": "https://aigovernance.pe/servicios/data-governance/evaluacion-madurez-ia/"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Implementación de Data Governance",
+                        "description": "Implementación completa del framework de Data Governance",
+                        "url": "https://aigovernance.pe/servicios/data-governance/implementacion/"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Evaluación de Impacto de IA",
+                        "description": "Evaluación obligatoria para sistemas de IA según Ley 31814",
+                        "url": "https://aigovernance.pe/servicios/compliance/evaluacion-impacto-ia/"
+                    }
+                }
+            ]
         }
     }
     </script>
-    <!-- Service Schema -->
+    <!-- WebSite Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Evaluación de Madurez en Data Governance",
-        "provider": {
-            "@type": "Organization",
-            "name": "AI Governance Peru"
+        "@type": "WebSite",
+        "@id": "https://aigovernance.pe/#website",
+        "name": "AI Governance Peru",
+        "url": "https://aigovernance.pe",
+        "publisher": {
+            "@id": "https://aigovernance.pe/#organization"
         },
-        "description": "Diagnóstico completo de madurez en Data Governance y roadmap ejecutivo para alcanzar sus objetivos",
-        "offers": {
-            "@type": "Offer",
-            "price": "8000",
-            "priceCurrency": "USD",
-            "description": "Evaluación de 3 semanas"
-        },
-        "areaServed": {
-            "@type": "Country",
-            "name": "Peru"
-        }
+        "inLanguage": "es-PE"
     }
     </script>
     <!-- FAQ Schema -->
@@ -145,6 +195,14 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Trabajamos con todo el sector financiero: bancos, aseguradoras, asset managers, fintechs y cooperativas de ahorro. Adaptamos nuestros servicios al tamaño y complejidad de cada institución."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué es la Ley 31814?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La Ley 31814 es la ley peruana que regula el uso de inteligencia artificial. Establece requisitos de transparencia, evaluación de impacto y gobernanza para sistemas de IA, especialmente aquellos considerados de alto riesgo en el sector financiero."
                 }
             }
         ]

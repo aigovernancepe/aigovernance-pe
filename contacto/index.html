@@ -135,15 +135,23 @@
             font-size: 1.25rem;
             flex-shrink: 0;
         }
+        .contact-method-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
         .contact-method h4 {
             color: var(--secondary-color);
             margin-bottom: 0;
-            font-size: 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .contact-method p {
             margin-bottom: 0;
-            font-size: 0.9rem;
-            word-break: break-word;
+            font-size: 1rem;
+            font-weight: 500;
         }
         .contact-method a {
             color: var(--primary-color);
@@ -386,7 +394,7 @@
                             <div class="contact-icon">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
-                            <div>
+                            <div class="contact-method-text">
                                 <h4>Email</h4>
                                 <p><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></p>
                             </div>
@@ -395,7 +403,7 @@
                             <div class="contact-icon">
                                 <i class="fa-brands fa-linkedin"></i>
                             </div>
-                            <div>
+                            <div class="contact-method-text">
                                 <h4>LinkedIn</h4>
                                 <p><a href="https://linkedin.com/company/ai-governance-peru" target="_blank">AI Governance Peru</a></p>
                             </div>
@@ -404,7 +412,7 @@
                             <div class="contact-icon">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
-                            <div>
+                            <div class="contact-method-text">
                                 <h4>Ubicación</h4>
                                 <p>Lima, Perú</p>
                             </div>

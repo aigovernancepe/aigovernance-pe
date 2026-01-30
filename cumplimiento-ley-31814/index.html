@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Todo sobre la Ley 31814 de IA en Perú: requisitos, plazos, y cómo cumplir. Guía completa para bancos, aseguradoras y fintechs. Plazo: septiembre 2026.">
+    <meta name="keywords" content="Ley 31814, DS 115-2025-PCM, compliance IA Peru, regulación inteligencia artificial, sector financiero peru, gobernanza IA">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/cumplimiento-ley-31814/">
+    <meta property="og:title" content="Cumplimiento Ley 31814 y DS 115-2025-PCM | Guía Sector Financiero Perú">
+    <meta property="og:description" content="Todo sobre la Ley 31814 de IA en Perú: requisitos, plazos, y cómo cumplir. Guía completa para bancos, aseguradoras y fintechs. Plazo: septiembre 2026.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aigovernance.pe/cumplimiento-ley-31814/">
+    <meta property="twitter:title" content="Cumplimiento Ley 31814 y DS 115-2025-PCM | Guía Sector Financiero Perú">
+    <meta property="twitter:description" content="Todo sobre la Ley 31814 de IA en Perú: requisitos, plazos, y cómo cumplir.">
+
+    <title>Cumplimiento Ley 31814 y DS 115-2025-PCM | Guía Sector Financiero Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/cumplimiento-ley-31814/">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://aigovernance.pe/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Cumplimiento Ley 31814",
+            "item": "https://aigovernance.pe/cumplimiento-ley-31814/"
+        }]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cuál es el plazo para cumplir con la Ley 31814?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Las instituciones financieras (bancos, aseguradoras, asset managers, fintechs) tienen hasta el 10 de septiembre de 2026 para implementar compliance completo con la Ley 31814 y su reglamento DS 115-2025-PCM."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué pasa si no cumplo con la Ley 31814?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El incumplimiento puede resultar en sanciones regulatorias de la SBS, daño reputacional significativo, restricciones operativas para sus sistemas de IA, y responsabilidad por daños causados por decisiones algorítmicas discriminatorias o injustas."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué incluye un AI Readiness Assessment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El Assessment incluye evaluación de madurez en Data Governance (escala 1-5), gap analysis vs. DS 115-2025-PCM, inventario de sistemas de IA, clasificación de riesgo por sistema, roadmap priorizado con quick wins, y presentación ejecutiva para Directorio. Duración: 3 semanas."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Necesito Data Governance si solo tengo un sistema de IA?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. La Ley 31814 aplica a cualquier sistema de IA que procese datos personales o tome decisiones que afecten a personas, independientemente del número de sistemas. Además, un framework de Data Governance establece las bases para escalar responsablemente cuando agregue más sistemas."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué sistemas de IA requieren evaluación de impacto?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Según el DS 115-2025-PCM, los sistemas de IA de alto riesgo requieren evaluación de impacto. Esto incluye: scoring crediticio, aprobación de préstamos, detección de fraude, underwriting automatizado, pricing dinámico, y cualquier sistema que tome decisiones automatizadas que afecten significativamente a las personas."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Cumplimiento de la Ley 31814 para el Sector Financiero",
+        "description": "Guía completa sobre la Ley 31814 de IA en Perú: requisitos, plazos y cómo cumplir para bancos, aseguradoras y fintechs.",
+        "author": {
+            "@type": "Organization",
+            "name": "AI Governance Perú"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI Governance Perú",
+            "url": "https://aigovernance.pe"
+        },
+        "datePublished": "2025-01-01",
+        "dateModified": "2026-01-30"
+    }
+    </script>
+
+    <style>
+        .law-hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a5f 100%);
+            padding: 120px 0 80px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .law-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26,86,219,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .law-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+        .law-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .law-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .law-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .law-hero .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-countdown {
+            background: rgba(220, 38, 38, 0.9);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        .hero-countdown-numbers {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero-countdown-item {
+            text-align: center;
+        }
+        .hero-countdown-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .hero-countdown-unit {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+        .hero-countdown .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: #dc2626;
+            padding: 0.875rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .hero-countdown .btn-white:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        /* Content Section */
+        .law-content {
+            padding: 4rem 0;
+        }
+        .law-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        .law-main h2 {
+            color: var(--primary-color);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .law-main h2:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .law-main h3 {
+            color: var(--secondary-color);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        .law-main p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .law-main ul, .law-main ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .law-main li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        .law-main strong {
+            color: var(--text-primary);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(26, 86, 219, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(220, 38, 38, 0.05);
+            border-left: 4px solid #dc2626;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        .warning-box p {
+            margin-bottom: 0;
+            color: #991b1b;
+        }
+
+        /* Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .principle-card {
+            background: var(--bg-light);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .principle-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        .principle-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(26, 86, 219, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+        .principle-card h4 {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .principle-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            margin: 1.5rem 0;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        .timeline-date {
+            flex-shrink: 0;
+            width: 100px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .timeline-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--secondary-color);
+        }
+        .timeline-content p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Institution Cards */
+        .institutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .institution-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .institution-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+        .institution-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+        .institution-card h4 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0;
+        }
+
+        /* Requirements List */
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .requirements-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+        .requirements-list li i {
+            color: var(--accent-color);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+        .requirements-list li strong {
+            display: block;
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        /* Service Cards */
+        .services-help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .service-help-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+        }
+        .service-help-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-help-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .service-help-card p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .service-help-card a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .service-help-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar */
+        .law-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-nav li {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .sidebar-nav li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .sidebar-nav a:hover {
+            color: var(--primary-color);
+            padding-left: 0.5rem;
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-section .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .cta-section .btn-white:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+        .cta-section .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.5);
+            transition: var(--transition);
+        }
+        .cta-section .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        @media (max-width: 968px) {
+            .law-grid {
+                grid-template-columns: 1fr;
+            }
+            .law-sidebar {
+                position: static;
+                order: -1;
+            }
+        }
+        @media (max-width: 768px) {
+            .law-hero {
+                padding: 100px 0 60px;
+            }
+            .law-hero h1 {
+                font-size: 1.75rem;
+            }
+            .hero-countdown-numbers {
+                gap: 1rem;
+            }
+            .hero-countdown-number {
+                font-size: 2rem;
+            }
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .timeline-date {
+                width: auto;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+            .cta-section .btn-white,
+            .cta-section .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+            .institutions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/servicios/">Servicios</a></li>
+                    <li><a href="/recursos/">Recursos</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="law-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / Cumplimiento Ley 31814
+            </div>
+            <h1>Cumplimiento de la Ley 31814 para el Sector Financiero</h1>
+            <p class="hero-subtitle">Todo lo que necesita saber sobre la regulación de inteligencia artificial en Perú: requisitos, plazos de cumplimiento, y cómo preparar su institución para el compliance.</p>
+            <div class="hero-countdown">
+                <div class="hero-countdown-label">Fecha límite para el sector financiero</div>
+                <div class="hero-countdown-numbers">
+                    <div class="hero-countdown-item">
+                        <span class="hero-countdown-number" id="countdown-days">---</span>
+                        <span class="hero-countdown-unit">Días</span>
+                    </div>
+                    <div class="hero-countdown-item">
+                        <span class="hero-countdown-number" id="countdown-hours">--</span>
+                        <span class="hero-countdown-unit">Horas</span>
+                    </div>
+                    <div class="hero-countdown-item">
+                        <span class="hero-countdown-number" id="countdown-minutes">--</span>
+                        <span class="hero-countdown-unit">Min</span>
+                    </div>
+                    <div class="hero-countdown-item">
+                        <span class="hero-countdown-number" id="countdown-seconds">--</span>
+                        <span class="hero-countdown-unit">Seg</span>
+                    </div>
+                </div>
+                <a href="/#contacto" class="btn-white">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Solicitar AI Readiness Assessment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="law-content">
+        <div class="container">
+            <div class="law-grid">
+                <div class="law-main">
+                    <h2 id="que-es">¿Qué es la Ley 31814?</h2>
+                    <p>La <a href="https://www.gob.pe/institucion/congreso-de-la-republica/normas-legales/4565760-31814" target="_blank" rel="noopener"><strong>Ley 31814</strong></a>, aprobada en julio de 2023, es la primera ley peruana que regula específicamente el uso de la inteligencia artificial. Su objetivo es promover el uso responsable de la IA, proteger los derechos fundamentales de las personas, y establecer un marco de gobernanza para las organizaciones que desarrollan o utilizan sistemas de IA.</p>
+
+                    <div class="highlight-box">
+                        <p>La Ley 31814 posiciona al Perú como uno de los primeros países de América Latina en contar con un marco regulatorio específico para la inteligencia artificial, siguiendo los estándares internacionales establecidos por la OCDE y la Unión Europea.</p>
+                    </div>
+
+                    <h3>Principios Fundamentales de la Ley 31814</h3>
+                    <p>La ley establece cuatro principios rectores que deben guiar el desarrollo y uso de sistemas de IA:</p>
+
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h4>Transparencia</h4>
+                            <p>Los usuarios deben saber cuándo interactúan con IA</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <h4>No Discriminación</h4>
+                            <p>Sistemas libres de sesgos injustos</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h4>Protección de Datos</h4>
+                            <p>Cumplimiento con normativa de privacidad</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <h4>Supervisión Humana</h4>
+                            <p>Humanos mantienen control sobre decisiones críticas</p>
+                        </div>
+                    </div>
+
+                    <p>Para conocer más detalles sobre la ley, sus objetivos y alcance completo, visite nuestra <a href="/cumplimiento-ley-31814/que-es-ley-31814/">guía detallada sobre la Ley 31814</a>.</p>
+
+                    <h2 id="reglamento">El Reglamento DS 115-2025-PCM</h2>
+                    <p>El <a href="https://busquedas.elperuano.pe/dispositivo/NL/2436426-1" target="_blank" rel="noopener"><strong>Decreto Supremo 115-2025-PCM</strong></a>, publicado el 10 de septiembre de 2025, es el reglamento que operacionaliza la Ley 31814. Este decreto establece las obligaciones específicas, los plazos de cumplimiento, y los mecanismos de supervisión para las organizaciones.</p>
+
+                    <h3>Principales Disposiciones del DS 115-2025-PCM</h3>
+                    <ul>
+                        <li><strong>Clasificación de riesgo:</strong> Los sistemas de IA se clasifican en categorías de riesgo (alto, medio, bajo) según su impacto potencial en las personas</li>
+                        <li><strong>Evaluaciones de impacto:</strong> Los sistemas de alto riesgo requieren evaluaciones de impacto obligatorias (Artículos 30 y 32)</li>
+                        <li><strong>Registro de sistemas:</strong> Las organizaciones deben mantener un inventario actualizado de sus sistemas de IA</li>
+                        <li><strong>Documentación:</strong> Se requiere documentación completa sobre el funcionamiento, datos de entrenamiento, y decisiones de los sistemas</li>
+                        <li><strong>Supervisión humana:</strong> Mecanismos específicos para garantizar la intervención humana en decisiones críticas</li>
+                    </ul>
+
+                    <p>Para un análisis artículo por artículo del reglamento, visite nuestra <a href="/cumplimiento-ley-31814/ds-115-2025-pcm/">guía detallada del DS 115-2025-PCM</a>.</p>
+
+                    <h2 id="plazos">Plazos de Cumplimiento</h2>
+                    <p>El DS 115-2025-PCM establece plazos diferenciados por sector, dando prioridad a aquellos con mayor impacto en la vida de las personas:</p>
+
+                    <div class="timeline-section">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Sep 2026</div>
+                            <div class="timeline-content">
+                                <h4>Grupo 1 - Sectores Prioritarios (1 año)</h4>
+                                <p>Salud, educación, justicia, seguridad, <strong>economía y finanzas</strong>. Fecha límite: 10 de septiembre de 2026.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Sep 2027</div>
+                            <div class="timeline-content">
+                                <h4>Grupo 2 - Sectores de Impacto Medio (2 años)</h4>
+                                <p>Transporte, comercio, trabajo. Fecha límite: 10 de septiembre de 2027.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Sep 2028</div>
+                            <div class="timeline-content">
+                                <h4>Grupo 3 - Otros Sectores (3 años)</h4>
+                                <p>Producción, agricultura, energía, minería. Fecha límite: 10 de septiembre de 2028.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <p><strong>El sector financiero tiene solo hasta el 10 de septiembre de 2026</strong> para implementar compliance completo. Dado que una implementación robusta de Data Governance toma aproximadamente 6 meses, las instituciones que aún no han comenzado deben actuar inmediatamente.</p>
+                    </div>
+
+                    <p>Consulte nuestra <a href="/cumplimiento-ley-31814/plazos-cumplimiento/">guía de plazos y cronograma de implementación</a> para una planificación detallada.</p>
+
+                    <h2 id="quien-debe-cumplir">¿Quién Debe Cumplir?</h2>
+                    <p>La Ley 31814 y su reglamento aplican a todas las organizaciones que desarrollan, proveen o utilizan sistemas de inteligencia artificial en Perú. Para el sector financiero específicamente:</p>
+
+                    <div class="institutions-grid">
+                        <div class="institution-card">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <h4>Bancos</h4>
+                        </div>
+                        <div class="institution-card">
+                            <i class="fa-solid fa-umbrella"></i>
+                            <h4>Aseguradoras</h4>
+                        </div>
+                        <div class="institution-card">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <h4>Asset Managers</h4>
+                        </div>
+                        <div class="institution-card">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <h4>Fintechs</h4>
+                        </div>
+                        <div class="institution-card">
+                            <i class="fa-solid fa-handshake"></i>
+                            <h4>Cooperativas</h4>
+                        </div>
+                    </div>
+
+                    <h3>Sistemas de IA Típicos en el Sector Financiero</h3>
+                    <ul>
+                        <li><strong>Scoring crediticio:</strong> Modelos que evalúan el riesgo crediticio de clientes</li>
+                        <li><strong>Detección de fraude:</strong> Sistemas que identifican transacciones sospechosas</li>
+                        <li><strong>Underwriting automatizado:</strong> Decisiones de aprobación de préstamos o seguros</li>
+                        <li><strong>Chatbots y asistentes virtuales:</strong> Sistemas de atención al cliente con capacidad de decisión</li>
+                        <li><strong>Pricing dinámico:</strong> Algoritmos que determinan precios o tasas</li>
+                        <li><strong>KYC automatizado:</strong> Verificación de identidad mediante IA</li>
+                        <li><strong>Robo-advisors:</strong> Sistemas de recomendación de inversiones</li>
+                    </ul>
+
+                    <p>Para requisitos específicos por tipo de institución, visite nuestra <a href="/cumplimiento-ley-31814/requisitos-sector-financiero/">guía de requisitos por sector financiero</a>.</p>
+
+                    <h2 id="requisitos">Requisitos Principales de Cumplimiento</h2>
+                    <p>Las instituciones financieras deben implementar los siguientes controles y procesos:</p>
+
+                    <ul class="requirements-list">
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <div>
+                                <strong>Transparencia Algorítmica</strong>
+                                Informar a clientes cuando interactúan con sistemas de IA y explicar cómo se toman decisiones automatizadas que les afectan.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <div>
+                                <strong>Evaluaciones de Impacto</strong>
+                                Realizar evaluaciones de impacto para sistemas de IA de alto riesgo según Artículos 30 y 32 del DS 115-2025-PCM.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <div>
+                                <strong>Supervisión Humana</strong>
+                                Establecer mecanismos de revisión humana para decisiones automatizadas, especialmente aquellas con impacto significativo.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <div>
+                                <strong>Gobernanza de Datos</strong>
+                                Implementar un framework de Data Governance con roles claros (Data Owners, Stewards), políticas y procesos documentados.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <div>
+                                <strong>Documentación y Trazabilidad</strong>
+                                Mantener documentación completa sobre lineage de datos, decisiones algorítmicas, y logs de auditoría por mínimo 3 años.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <div>
+                                <strong>Gestión de Sesgos</strong>
+                                Implementar procesos de detección, medición y mitigación de sesgos algorítmicos discriminatorios.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h2 id="como-ayudamos">Cómo Podemos Ayudarle</h2>
+                    <p>Ofrecemos servicios especializados para ayudar a instituciones financieras a cumplir con la Ley 31814 y DS 115-2025-PCM:</p>
+
+                    <div class="services-help-grid">
+                        <div class="service-help-card">
+                            <h4>AI Readiness Assessment</h4>
+                            <p>Diagnóstico de madurez, inventario de sistemas de IA, gap analysis regulatorio, y roadmap priorizado. 3 semanas.</p>
+                            <a href="/servicios/evaluacion-madurez-ia/">
+                                Ver servicio <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-help-card">
+                            <h4>Data Governance Implementation</h4>
+                            <p>Implementación completa del framework de gobernanza: Council, políticas, dashboards, catálogo de datos. 6 meses.</p>
+                            <a href="/servicios/implementacion-data-governance/">
+                                Ver servicio <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-help-card">
+                            <h4>Evaluación de Impacto de IA</h4>
+                            <p>Evaluación obligatoria para sistemas de alto riesgo. Informe formal, ficha técnica, plan de monitoreo. 2-3 semanas.</p>
+                            <a href="/servicios/evaluacion-impacto-ia/">
+                                Ver servicio <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-help-card">
+                            <h4>Capacitación en AI Governance</h4>
+                            <p>Formación para equipos de TI, compliance, riesgos y alta dirección. Programas presenciales y virtuales.</p>
+                            <a href="/servicios/capacitacion-ai-governance/">
+                                Ver servicio <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h2 id="recursos">Recursos Adicionales</h2>
+                    <p>Explore nuestros recursos gratuitos para profundizar en el cumplimiento de la Ley 31814:</p>
+                    <ul>
+                        <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/">¿Qué es la Ley 31814? - Guía Completa</a></li>
+                        <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/">DS 115-2025-PCM: Análisis Detallado del Reglamento</a></li>
+                        <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/">Plazos de Cumplimiento y Cronograma Recomendado</a></li>
+                        <li><a href="/cumplimiento-ley-31814/requisitos-sector-financiero/">Requisitos por Tipo de Institución Financiera</a></li>
+                        <li><a href="/recursos/">Centro de Recursos y Conocimiento</a></li>
+                    </ul>
+                </div>
+
+                <aside class="law-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Navegación Rápida</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="#que-es">¿Qué es la Ley 31814?</a></li>
+                            <li><a href="#reglamento">El Reglamento DS 115-2025-PCM</a></li>
+                            <li><a href="#plazos">Plazos de Cumplimiento</a></li>
+                            <li><a href="#quien-debe-cumplir">¿Quién Debe Cumplir?</a></li>
+                            <li><a href="#requisitos">Requisitos Principales</a></li>
+                            <li><a href="#como-ayudamos">Cómo Podemos Ayudar</a></li>
+                            <li><a href="#recursos">Recursos Adicionales</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Fecha Límite</h3>
+                        <p style="font-size: 2rem; font-weight: 800; color: #dc2626; margin-bottom: 0.5rem;">10 Sep 2026</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Sector financiero: bancos, aseguradoras, asset managers, fintechs</p>
+                        <a href="/#contacto" class="btn-sidebar">Comience su Assessment</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Documentos Oficiales</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="https://www.gob.pe/institucion/congreso-de-la-republica/normas-legales/4565760-31814" target="_blank" rel="noopener">Texto Ley 31814 <i class="fa-solid fa-external-link" style="font-size: 0.75rem;"></i></a></li>
+                            <li><a href="https://busquedas.elperuano.pe/dispositivo/NL/2436426-1" target="_blank" rel="noopener">DS 115-2025-PCM <i class="fa-solid fa-external-link" style="font-size: 0.75rem;"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>¿Tiene Preguntas?</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Agende una llamada de 30 minutos sin compromiso para discutir su situación específica.</p>
+                        <a href="mailto:info@aigovernance.pe" class="btn-sidebar" style="background: var(--secondary-color);">
+                            <i class="fa-solid fa-envelope"></i> Contáctenos
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <p class="section-subtitle">Respuestas a las dudas más comunes sobre el cumplimiento de la Ley 31814</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span>¿Cuál es el plazo para cumplir con la Ley 31814?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Las instituciones financieras (bancos, aseguradoras, asset managers, fintechs, cooperativas) tienen hasta el <strong>10 de septiembre de 2026</strong> para implementar compliance completo con la Ley 31814 y su reglamento DS 115-2025-PCM. Otros sectores tienen plazos de 2 años (septiembre 2027) o 3 años (septiembre 2028).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span>¿Qué pasa si no cumplo con la Ley 31814?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El incumplimiento puede resultar en: sanciones regulatorias de la SBS, daño reputacional significativo, restricciones operativas para sus sistemas de IA, y responsabilidad civil por daños causados por decisiones algorítmicas discriminatorias o injustas. Además, sin governance adecuado, sus modelos pueden tomar decisiones sesgadas exponiendo a su institución a riesgos legales.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span>¿Qué incluye un AI Readiness Assessment?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El Assessment incluye: evaluación de madurez en Data Governance (escala 1-5), gap analysis vs. DS 115-2025-PCM, inventario completo de sistemas de IA, clasificación de riesgo por sistema, roadmap priorizado con quick wins, y presentación ejecutiva para Directorio. Duración: 3 semanas. <a href="/servicios/evaluacion-madurez-ia/" class="inline-link">Ver detalles del servicio</a>.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span>¿Necesito Data Governance si solo tengo un sistema de IA?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí. La Ley 31814 aplica a cualquier sistema de IA que procese datos personales o tome decisiones que afecten a personas, independientemente del número de sistemas. Además, un framework de Data Governance establece las bases para escalar responsablemente cuando agregue más sistemas en el futuro.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span>¿Qué sistemas de IA requieren evaluación de impacto?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Según el DS 115-2025-PCM, los sistemas de IA de alto riesgo requieren evaluación de impacto obligatoria. Esto incluye: scoring crediticio, aprobación de préstamos, detección de fraude, underwriting automatizado, pricing dinámico, y cualquier sistema que tome decisiones automatizadas que afecten significativamente a las personas. <a href="/servicios/evaluacion-impacto-ia/" class="inline-link">Conozca nuestro servicio de evaluación de impacto</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>El tiempo para actuar es ahora</h2>
+            <p>No espere hasta el último momento. Una implementación robusta de Data Governance toma aproximadamente 6 meses. Comience su proceso de cumplimiento hoy.</p>
+            <div class="cta-buttons">
+                <a href="/#contacto" class="btn-white">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Solicitar AI Readiness Assessment
+                </a>
+                <a href="/servicios/" class="btn-outline">
+                    <i class="fa-solid fa-list"></i>
+                    Ver Todos los Servicios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/implementacion-data-governance/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/evaluacion-sesgo-algoritmico/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/capacitacion-ai-governance/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ley 31814</h4>
+                    <ul>
+                        <li><a href="/cumplimiento-ley-31814/">Cumplimiento Ley 31814</a></li>
+                        <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/">¿Qué es la Ley 31814?</a></li>
+                        <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/">DS 115-2025-PCM</a></li>
+                        <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/">Plazos de Cumplimiento</a></li>
+                        <li><a href="/cumplimiento-ley-31814/requisitos-sector-financiero/">Requisitos por Sector</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const deadline = new Date('2026-09-10T23:59:59');
+            const now = new Date();
+            const diff = deadline - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown-days').textContent = days;
+                document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+            button.parentElement.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

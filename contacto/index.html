@@ -112,9 +112,8 @@
         }
         .contact-method {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 1rem;
+            flex-direction: column;
+            gap: 0.5rem;
             padding: 1.25rem 1.5rem;
             background: var(--bg-light);
             border-radius: var(--radius-md);
@@ -123,35 +122,33 @@
         .contact-method.full-width {
             grid-column: 1 / -1;
         }
+        .contact-method-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
         .contact-icon {
-            width: 50px;
-            height: 50px;
+            width: 36px;
+            height: 36px;
             background: rgba(26, 86, 219, 0.1);
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary-color);
-            font-size: 1.25rem;
+            font-size: 1rem;
             flex-shrink: 0;
-        }
-        .contact-method-text {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
         }
         .contact-method h4 {
             color: var(--secondary-color);
             margin-bottom: 0;
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 1rem;
+            font-weight: 600;
         }
         .contact-method p {
             margin-bottom: 0;
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
         }
         .contact-method a {
             color: var(--primary-color);
@@ -391,31 +388,31 @@
                     <h3>Contáctenos</h3>
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div class="contact-method-text">
+                            <div class="contact-method-header">
+                                <div class="contact-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
                                 <h4>Email</h4>
-                                <p><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></p>
                             </div>
+                            <p><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></p>
                         </div>
                         <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </div>
-                            <div class="contact-method-text">
+                            <div class="contact-method-header">
+                                <div class="contact-icon">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </div>
                                 <h4>LinkedIn</h4>
-                                <p><a href="https://linkedin.com/company/ai-governance-peru" target="_blank">AI Governance Peru</a></p>
                             </div>
+                            <p><a href="https://linkedin.com/company/ai-governance-peru" target="_blank">AI Governance Peru</a></p>
                         </div>
                         <div class="contact-method full-width">
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="contact-method-text">
+                            <div class="contact-method-header">
+                                <div class="contact-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
                                 <h4>Ubicación</h4>
-                                <p>Lima, Perú</p>
                             </div>
+                            <p>Lima, Perú</p>
                         </div>
                     </div>
                 </div>

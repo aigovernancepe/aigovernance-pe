@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Requisitos específicos de la Ley 31814 por tipo de institución financiera: bancos, aseguradoras, asset managers, fintechs y cooperativas.">
+    <meta name="keywords" content="requisitos Ley 31814 bancos, compliance IA aseguradoras, regulación fintechs Peru, requisitos asset managers IA">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aigovernance.pe/cumplimiento-ley-31814/requisitos-sector-financiero/">
+    <meta property="og:title" content="Requisitos Ley 31814 para Bancos, Aseguradoras y Fintechs en Perú">
+    <meta property="og:description" content="Requisitos específicos de la Ley 31814 por tipo de institución financiera: bancos, aseguradoras, asset managers, fintechs y cooperativas.">
+
+    <title>Requisitos Ley 31814 para Bancos, Aseguradoras y Fintechs en Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/cumplimiento-ley-31814/requisitos-sector-financiero/">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://aigovernance.pe/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Cumplimiento Ley 31814",
+            "item": "https://aigovernance.pe/cumplimiento-ley-31814/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Requisitos por Sector Financiero",
+            "item": "https://aigovernance.pe/cumplimiento-ley-31814/requisitos-sector-financiero/"
+        }]
+    }
+    </script>
+
+    <style>
+        .article-hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a5f 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .article-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .article-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .article-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .article-hero h1 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+        .article-hero .hero-subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+        .article-content {
+            padding: 4rem 0;
+        }
+        .article-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        .article-main h2 {
+            color: var(--primary-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .article-main h2:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .article-main h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        .article-main h4 {
+            color: var(--text-primary);
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .article-main p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .article-main ul, .article-main ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .article-main li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        .article-main strong {
+            color: var(--text-primary);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(26, 86, 219, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .institution-section {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: var(--transition);
+        }
+        .institution-section:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+        .institution-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .institution-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(26, 86, 219, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .institution-header h3 {
+            margin: 0;
+            color: var(--secondary-color);
+        }
+        .institution-header p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .system-card {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+        .system-card h5 {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+        .system-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .risk-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        .risk-high {
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+        }
+        .risk-medium {
+            background: rgba(245, 158, 11, 0.1);
+            color: #d97706;
+        }
+        .requirements-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .requirements-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-light);
+            border-radius: var(--radius-sm);
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .requirements-checklist li i {
+            color: var(--accent-color);
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+        .article-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-nav li {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .sidebar-nav li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .sidebar-nav a:hover {
+            color: var(--primary-color);
+            padding-left: 0.5rem;
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .cta-section .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .cta-section .btn-white:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 968px) {
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                position: static;
+                order: -1;
+            }
+        }
+        @media (max-width: 600px) {
+            .institution-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .systems-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/servicios/">Servicios</a></li>
+                    <li><a href="/recursos/">Recursos</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / <a href="/cumplimiento-ley-31814/">Cumplimiento Ley 31814</a> / Requisitos por Sector Financiero
+            </div>
+            <h1>Requisitos por Tipo de Institución Financiera</h1>
+            <p class="hero-subtitle">Guía detallada de los requisitos de la Ley 31814 y DS 115-2025-PCM para bancos, aseguradoras, asset managers, fintechs y cooperativas.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="article-content">
+        <div class="container">
+            <div class="article-grid">
+                <div class="article-main">
+                    <h2>Visión General</h2>
+                    <p>Todas las instituciones del sector financiero peruano que utilicen sistemas de inteligencia artificial deben cumplir con la Ley 31814 y su reglamento DS 115-2025-PCM antes del <strong>10 de septiembre de 2026</strong>. Sin embargo, los requisitos específicos varían según el tipo de institución y los sistemas de IA que utilicen.</p>
+
+                    <div class="highlight-box">
+                        <p>El nivel de riesgo de los sistemas de IA determina las obligaciones de cumplimiento. Sistemas que toman decisiones que afectan el acceso a servicios financieros (crédito, seguros, inversiones) se clasifican como alto riesgo y requieren controles adicionales.</p>
+                    </div>
+
+                    <!-- Bancos -->
+                    <div class="institution-section" id="bancos">
+                        <div class="institution-header">
+                            <div class="institution-icon">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <div>
+                                <h3>Bancos y Entidades Financieras</h3>
+                                <p>Bancos comerciales, bancos de inversión, financieras</p>
+                            </div>
+                        </div>
+
+                        <h4>Sistemas de IA Típicos</h4>
+                        <div class="systems-grid">
+                            <div class="system-card">
+                                <h5>Scoring Crediticio <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Modelos de evaluación de riesgo crediticio para personas y empresas</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Aprobación de Créditos <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Decisiones automatizadas de aprobación o rechazo de préstamos</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Detección de Fraude <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Identificación de transacciones sospechosas y patrones fraudulentos</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Cobranza Predictiva <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Priorización de acciones de cobranza basada en probabilidad de pago</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>KYC Automatizado <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Verificación de identidad y onboarding digital</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Chatbots Financieros <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Asistentes virtuales con capacidad de decisión o recomendación</p>
+                            </div>
+                        </div>
+
+                        <h4>Requisitos Específicos para Bancos</h4>
+                        <ul class="requirements-checklist">
+                            <li><i class="fa-solid fa-check-circle"></i>Evaluación de impacto obligatoria para modelos de scoring y aprobación de crédito</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Transparencia en criterios de decisión crediticia (explicabilidad del modelo)</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Mecanismo de apelación para decisiones automatizadas de crédito</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Monitoreo continuo de sesgo en variables como género, edad, ubicación</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Documentación de lineage de datos para modelos crediticios</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Supervisión humana para rechazos de crédito sobre cierto monto</li>
+                        </ul>
+                    </div>
+
+                    <!-- Aseguradoras -->
+                    <div class="institution-section" id="aseguradoras">
+                        <div class="institution-header">
+                            <div class="institution-icon">
+                                <i class="fa-solid fa-umbrella"></i>
+                            </div>
+                            <div>
+                                <h3>Compañías de Seguros</h3>
+                                <p>Seguros de vida, generales, salud, previsionales</p>
+                            </div>
+                        </div>
+
+                        <h4>Sistemas de IA Típicos</h4>
+                        <div class="systems-grid">
+                            <div class="system-card">
+                                <h5>Underwriting Automatizado <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Evaluación de riesgo para aceptación de pólizas</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Pricing Dinámico <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Determinación de primas basada en perfiles de riesgo</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Gestión de Siniestros <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Evaluación automatizada de reclamos y pagos</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Detección de Fraude <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Identificación de siniestros fraudulentos</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Modelos Actuariales <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Proyecciones y reservas técnicas con IA</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Cotizadores Online <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Sistemas de cotización automatizada</p>
+                            </div>
+                        </div>
+
+                        <h4>Requisitos Específicos para Aseguradoras</h4>
+                        <ul class="requirements-checklist">
+                            <li><i class="fa-solid fa-check-circle"></i>Evaluación de impacto para modelos de underwriting y pricing</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Transparencia en factores que determinan primas y condiciones</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Análisis de sesgo en variables de salud, edad, ubicación geográfica</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Mecanismo de revisión humana para rechazos de cobertura</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Documentación de criterios de decisión en gestión de siniestros</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Supervisión humana para denegaciones de siniestros significativos</li>
+                        </ul>
+                    </div>
+
+                    <!-- Asset Managers -->
+                    <div class="institution-section" id="asset-managers">
+                        <div class="institution-header">
+                            <div class="institution-icon">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                            <div>
+                                <h3>Asset Managers y Fondos</h3>
+                                <p>SAFs, fondos mutuos, fondos de inversión, AFPs</p>
+                            </div>
+                        </div>
+
+                        <h4>Sistemas de IA Típicos</h4>
+                        <div class="systems-grid">
+                            <div class="system-card">
+                                <h5>Robo-Advisors <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Recomendaciones automatizadas de inversión</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Portfolio Optimization <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Modelos de optimización de carteras</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Trading Algorítmico <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Estrategias automatizadas de trading</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Risk Analytics <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Modelos de análisis de riesgo de mercado</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Client Profiling <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Clasificación de clientes por perfil de riesgo</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>ESG Scoring <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Evaluación de criterios ESG con IA</p>
+                            </div>
+                        </div>
+
+                        <h4>Requisitos Específicos para Asset Managers</h4>
+                        <ul class="requirements-checklist">
+                            <li><i class="fa-solid fa-check-circle"></i>Evaluación de impacto para robo-advisors y client profiling</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Transparencia en lógica de recomendaciones de inversión</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Disclosure de uso de IA en marketing y comunicaciones</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Supervisión humana para decisiones de inversión significativas</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Documentación de modelos y backtesting</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Análisis de sesgo en recomendaciones por perfil demográfico</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fintechs -->
+                    <div class="institution-section" id="fintechs">
+                        <div class="institution-header">
+                            <div class="institution-icon">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <div>
+                                <h3>Fintechs</h3>
+                                <p>Startups financieras, neobancos, plataformas de préstamos, pagos</p>
+                            </div>
+                        </div>
+
+                        <h4>Sistemas de IA Típicos</h4>
+                        <div class="systems-grid">
+                            <div class="system-card">
+                                <h5>Credit Scoring Alternativo <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Modelos con datos alternativos (móvil, redes sociales)</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Instant Lending <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Aprobación instantánea de préstamos</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Identity Verification <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Verificación de identidad con biometría y IA</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Fraud Detection <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Detección de fraude en tiempo real</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Personalization <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Personalización de ofertas y experiencia</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Collection Bots <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Automatización de cobranza con IA</p>
+                            </div>
+                        </div>
+
+                        <h4>Requisitos Específicos para Fintechs</h4>
+                        <ul class="requirements-checklist">
+                            <li><i class="fa-solid fa-check-circle"></i>Evaluación de impacto para modelos de scoring alternativo</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Transparencia especial sobre uso de datos alternativos</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Análisis de sesgo considerando inclusión financiera</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Mecanismo de explicación de decisiones al usuario</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Supervisión humana accesible para apelaciones</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Consentimiento explícito para uso de datos no tradicionales</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cooperativas -->
+                    <div class="institution-section" id="cooperativas">
+                        <div class="institution-header">
+                            <div class="institution-icon">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h3>Cooperativas y Cajas</h3>
+                                <p>Cooperativas de ahorro y crédito, cajas municipales, cajas rurales</p>
+                            </div>
+                        </div>
+
+                        <h4>Sistemas de IA Típicos</h4>
+                        <div class="systems-grid">
+                            <div class="system-card">
+                                <h5>Scoring Crediticio <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Evaluación de riesgo para préstamos</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Gestión de Cobranza <span class="risk-badge risk-high">Alto Riesgo</span></h5>
+                                <p>Priorización y automatización de cobranza</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Análisis de Socios <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Segmentación y análisis de comportamiento</p>
+                            </div>
+                            <div class="system-card">
+                                <h5>Atención al Socio <span class="risk-badge risk-medium">Riesgo Medio</span></h5>
+                                <p>Chatbots y asistentes virtuales</p>
+                            </div>
+                        </div>
+
+                        <h4>Requisitos Específicos para Cooperativas</h4>
+                        <ul class="requirements-checklist">
+                            <li><i class="fa-solid fa-check-circle"></i>Evaluación de impacto para modelos de scoring crediticio</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Consideración especial de impacto en comunidad local</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Transparencia en criterios de decisión a socios</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Supervisión humana accesible (comité de créditos)</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Análisis de sesgo geográfico y demográfico</li>
+                        </ul>
+                    </div>
+
+                    <h2>Requisitos Comunes a Todas las Instituciones</h2>
+                    <p>Independientemente del tipo de institución, todas deben cumplir con:</p>
+
+                    <h3>Framework de Data Governance</h3>
+                    <ul>
+                        <li><strong>Data Governance Council:</strong> Órgano de gobierno con representación de negocio, TI, compliance y riesgos</li>
+                        <li><strong>Roles definidos:</strong> Data Owners, Data Stewards, Data Custodians para cada dominio de datos</li>
+                        <li><strong>Políticas documentadas:</strong> Calidad de datos, privacidad, seguridad, uso ético de IA</li>
+                        <li><strong>Procesos establecidos:</strong> Gestión de cambios, monitoreo, escalamiento</li>
+                    </ul>
+
+                    <h3>Documentación Obligatoria</h3>
+                    <ul>
+                        <li>Inventario de sistemas de IA con clasificación de riesgo</li>
+                        <li>Documentación técnica de cada modelo (arquitectura, datos, métricas)</li>
+                        <li>Evaluaciones de impacto para sistemas de alto riesgo</li>
+                        <li>Logs de decisiones archivados por mínimo 3 años</li>
+                        <li>Registros de revisiones humanas y apelaciones</li>
+                    </ul>
+
+                    <h3>Controles de Fairness</h3>
+                    <ul>
+                        <li>Monitoreo continuo de sesgo en variables protegidas</li>
+                        <li>Métricas de equidad definidas y monitoreadas</li>
+                        <li>Procesos de mitigación cuando se detectan sesgos</li>
+                        <li>Reportes periódicos de fairness al Council</li>
+                    </ul>
+
+                    <h2>Cómo Podemos Ayudar</h2>
+                    <p>Ofrecemos servicios especializados para cada tipo de institución financiera:</p>
+                    <ul>
+                        <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a> - Diagnóstico personalizado para su tipo de institución</li>
+                        <li><a href="/servicios/data-governance/implementacion/">Data Governance Implementation</a> - Framework adaptado a su escala y complejidad</li>
+                        <li><a href="/servicios/compliance/evaluacion-impacto-ia/">Evaluación de Impacto de IA</a> - Para cada sistema de alto riesgo</li>
+                        <li><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo</a> - Análisis de fairness de sus modelos</li>
+                    </ul>
+                </div>
+
+                <aside class="article-sidebar">
+                    <div class="sidebar-card">
+                        <h3>En Esta Sección</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="/cumplimiento-ley-31814/">Cumplimiento Ley 31814</a></li>
+                            <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/">¿Qué es la Ley 31814?</a></li>
+                            <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/">DS 115-2025-PCM</a></li>
+                            <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/">Plazos de Cumplimiento</a></li>
+                            <li><a href="/cumplimiento-ley-31814/requisitos-sector-financiero/" style="color: var(--primary-color); font-weight: 600;">Requisitos por Sector</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Ir a Sección</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="#bancos">Bancos</a></li>
+                            <li><a href="#aseguradoras">Aseguradoras</a></li>
+                            <li><a href="#asset-managers">Asset Managers</a></li>
+                            <li><a href="#fintechs">Fintechs</a></li>
+                            <li><a href="#cooperativas">Cooperativas</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Fecha Límite</h3>
+                        <p style="font-size: 2rem; font-weight: 800; color: #dc2626; margin-bottom: 0.5rem;">10 Sep 2026</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Todas las instituciones financieras</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>¿Necesita Ayuda?</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Obtenga un assessment personalizado para su tipo de institución.</p>
+                        <a href="/#contacto" class="btn-sidebar">Solicitar Assessment</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Comience su Proceso de Cumplimiento</h2>
+            <p>Nuestro AI Readiness Assessment está adaptado a los requisitos específicos de su tipo de institución financiera.</p>
+            <a href="/#contacto" class="btn-white">
+                <i class="fa-solid fa-calendar-check"></i>
+                Solicitar AI Readiness Assessment
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/data-governance/implementacion/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/compliance/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/data-governance/capacitacion/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ley 31814</h4>
+                    <ul>
+                        <li><a href="/cumplimiento-ley-31814/">Cumplimiento Ley 31814</a></li>
+                        <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/">¿Qué es la Ley 31814?</a></li>
+                        <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/">DS 115-2025-PCM</a></li>
+                        <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/">Plazos de Cumplimiento</a></li>
+                        <li><a href="/cumplimiento-ley-31814/requisitos-sector-financiero/">Requisitos por Sector</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

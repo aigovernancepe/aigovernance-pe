@@ -107,19 +107,21 @@
         }
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
         .contact-method {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            text-align: center;
-            gap: 0.75rem;
-            padding: 1.5rem 1rem;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
             background: var(--bg-light);
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
+        }
+        .contact-method.full-width {
+            grid-column: 1 / -1;
         }
         .contact-icon {
             width: 50px;
@@ -398,7 +400,7 @@
                                 <p><a href="https://linkedin.com/company/ai-governance-peru" target="_blank">AI Governance Peru</a></p>
                             </div>
                         </div>
-                        <div class="contact-method">
+                        <div class="contact-method full-width">
                             <div class="contact-icon">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>

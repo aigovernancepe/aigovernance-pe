@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Framework de calidad de datos para modelos de IA, detección de sesgos algorítmicos y monitoreo continuo. Cumplimiento DS 115-2025-PCM.">
+    <meta name="keywords" content="data quality peru, calidad datos IA, sesgo algorítmico, fairness machine learning, monitoreo modelos IA, Ley 31814, DS 115-2025-PCM">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/servicios/data-quality/">
+    <meta property="og:title" content="Data Quality & Monitoreo de IA para Sector Financiero | Perú">
+    <meta property="og:description" content="Framework de calidad de datos para modelos de IA, detección de sesgos algorítmicos y monitoreo continuo.">
+
+    <title>Data Quality & Monitoreo de IA para Sector Financiero | Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/servicios/data-quality/">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://aigovernance.pe/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Servicios",
+            "item": "https://aigovernance.pe/servicios/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Data Quality",
+            "item": "https://aigovernance.pe/servicios/data-quality/"
+        }]
+    }
+    </script>
+
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Servicios de Data Quality para IA",
+        "description": "Framework de calidad de datos para modelos de IA, detección de sesgos algorítmicos y monitoreo continuo para cumplir con DS 115-2025-PCM",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "AI Governance Perú",
+            "url": "https://aigovernance.pe"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Peru"
+        },
+        "serviceType": "Data Quality Consulting"
+    }
+    </script>
+
+    <style>
+        .category-hero {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 120px 0 80px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .category-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .category-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .category-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .category-hero h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            margin-bottom: 1.5rem;
+        }
+        .category-hero .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        /* Content Section */
+        .category-content {
+            padding: 4rem 0;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        .category-main h2 {
+            color: #059669;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .category-main h2:first-child {
+            margin-top: 0;
+        }
+        .category-main p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .category-main ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .category-main li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Services in Category */
+        .services-in-category {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .service-category-card {
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        .service-category-card:hover {
+            border-color: #10b981;
+            box-shadow: var(--shadow-lg);
+        }
+        .service-category-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .service-category-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #10b981;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .service-category-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .service-category-card h3 a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        .service-category-card h3 a:hover {
+            color: #10b981;
+        }
+        .service-category-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .service-category-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .service-category-card > p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .service-category-card .btn-service {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #10b981;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .service-category-card .btn-service:hover {
+            background: #059669;
+        }
+
+        /* Future Service */
+        .future-service {
+            opacity: 0.7;
+            position: relative;
+        }
+        .future-service::after {
+            content: 'Próximamente';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--text-muted);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Capabilities */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .capability-item {
+            background: var(--bg-light);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .capability-item i {
+            font-size: 1.5rem;
+            color: #10b981;
+            margin-bottom: 0.75rem;
+        }
+        .capability-item h4 {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+        .capability-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Sidebar */
+        .category-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-nav li {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .sidebar-nav li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .sidebar-nav a:hover {
+            color: #10b981;
+            padding-left: 0.5rem;
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: #10b981;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-sidebar:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Related Categories */
+        .related-categories {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .related-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .related-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .related-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .related-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .cta-section .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: #059669;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .cta-section .btn-white:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 968px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-sidebar {
+                position: static;
+            }
+        }
+        @media (max-width: 768px) {
+            .category-hero {
+                padding: 100px 0 60px;
+            }
+            .category-hero h1 {
+                font-size: 1.75rem;
+            }
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/servicios/">Servicios</a></li>
+                    <li><a href="/recursos/">Recursos</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="category-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / <a href="/servicios/">Servicios</a> / Data Quality
+            </div>
+            <h1>Data Quality Excellence para Sistemas de IA</h1>
+            <p class="hero-subtitle">Aseguramos que los datos que alimentan sus sistemas de IA sean precisos, completos y libres de sesgos. La calidad de sus decisiones algorítmicas depende de la calidad de sus datos.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="category-content">
+        <div class="container">
+            <div class="category-grid">
+                <div class="category-main">
+                    <h2>¿Por qué Data Quality es crítico para IA?</h2>
+                    <p>Los sistemas de inteligencia artificial son tan buenos como los datos con los que se entrenan y operan. Datos de baja calidad producen modelos sesgados, decisiones incorrectas, y exponen a su institución a riesgos regulatorios significativos.</p>
+
+                    <p>La <a href="/cumplimiento-ley-31814/">Ley 31814</a> y su reglamento DS 115-2025-PCM establecen requisitos específicos de calidad de datos:</p>
+                    <ul>
+                        <li><strong>No discriminación:</strong> Los sistemas de IA no deben producir resultados sesgados o discriminatorios</li>
+                        <li><strong>Exactitud:</strong> Los datos utilizados deben ser precisos y actualizados</li>
+                        <li><strong>Completitud:</strong> Datasets completos para evitar decisiones basadas en información parcial</li>
+                        <li><strong>Trazabilidad:</strong> Capacidad de rastrear el origen y transformaciones de los datos</li>
+                        <li><strong>Monitoreo continuo:</strong> Vigilancia activa del desempeño y fairness de los modelos</li>
+                    </ul>
+
+                    <h2>Servicios de Data Quality</h2>
+                    <p>Nuestros servicios de Data Quality están diseñados específicamente para sistemas de IA en el sector financiero:</p>
+
+                    <div class="services-in-category">
+                        <div class="service-category-card">
+                            <div class="service-category-header">
+                                <div class="service-category-icon">
+                                    <i class="fa-solid fa-balance-scale"></i>
+                                </div>
+                                <div>
+                                    <h3><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo Algorítmico</a></h3>
+                                    <div class="service-category-meta">
+                                        <span><i class="fa-solid fa-clock"></i> 2-4 semanas</span>
+                                        <span><i class="fa-solid fa-robot"></i> Modelos de IA</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Análisis especializado de fairness y detección de sesgos discriminatorios en modelos de IA. Evaluamos scoring crediticio, aprobación de préstamos, detección de fraude y otros modelos de decisión automatizada.</p>
+                            <a href="/servicios/data-quality/evaluacion-sesgo/" class="btn-service">
+                                Ver detalles <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="service-category-card future-service">
+                            <div class="service-category-header">
+                                <div class="service-category-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h3>Monitoreo Continuo de Calidad</h3>
+                                    <div class="service-category-meta">
+                                        <span><i class="fa-solid fa-clock"></i> Ongoing</span>
+                                        <span><i class="fa-solid fa-server"></i> Dashboards</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Implementación de dashboards de monitoreo continuo para métricas de calidad de datos, drift de modelos, y alertas de fairness. Detección temprana de problemas antes de que impacten decisiones.</p>
+                        </div>
+                    </div>
+
+                    <h2>Capacidades Clave</h2>
+                    <p>Nuestros servicios de Data Quality incluyen las siguientes capacidades:</p>
+
+                    <div class="capabilities-grid">
+                        <div class="capability-item">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <h4>Detección de Sesgos</h4>
+                            <p>Identificación de sesgos discriminatorios</p>
+                        </div>
+                        <div class="capability-item">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <h4>Métricas de Fairness</h4>
+                            <p>Demographic parity, equalized odds</p>
+                        </div>
+                        <div class="capability-item">
+                            <i class="fa-solid fa-database"></i>
+                            <h4>Validación de Datasets</h4>
+                            <p>Completitud, exactitud, consistencia</p>
+                        </div>
+                        <div class="capability-item">
+                            <i class="fa-solid fa-bell"></i>
+                            <h4>Alertas Automáticas</h4>
+                            <p>Notificaciones de drift y anomalías</p>
+                        </div>
+                        <div class="capability-item">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <h4>Dashboards Ejecutivos</h4>
+                            <p>Visualización para stakeholders</p>
+                        </div>
+                        <div class="capability-item">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <h4>Reportes Regulatorios</h4>
+                            <p>Documentación para auditorías</p>
+                        </div>
+                    </div>
+
+                    <h2>Sistemas de IA que Evaluamos</h2>
+                    <p>Tenemos experiencia evaluando fairness en los siguientes tipos de sistemas:</p>
+                    <ul>
+                        <li><strong>Scoring crediticio:</strong> Modelos que determinan capacidad de pago y riesgo crediticio</li>
+                        <li><strong>Aprobación de préstamos:</strong> Sistemas de decisión automatizada para créditos</li>
+                        <li><strong>Detección de fraude:</strong> Modelos que identifican transacciones sospechosas</li>
+                        <li><strong>Underwriting de seguros:</strong> Sistemas de evaluación de riesgo asegurable</li>
+                        <li><strong>Pricing dinámico:</strong> Algoritmos que determinan tasas y precios</li>
+                        <li><strong>KYC automatizado:</strong> Verificación de identidad y due diligence</li>
+                    </ul>
+
+                    <h2>Conexión con Compliance Regulatorio</h2>
+                    <p>Data Quality es un componente esencial del cumplimiento con la Ley 31814. Los principios de no discriminación y transparencia requieren que las instituciones puedan demostrar que sus modelos no producen resultados sesgados.</p>
+
+                    <p>Nuestros servicios de Data Quality complementan los <a href="/servicios/compliance/">servicios de Compliance</a> y son un input clave para las <a href="/servicios/compliance/evaluacion-impacto-ia/">Evaluaciones de Impacto de IA</a> requeridas por el DS 115-2025-PCM.</p>
+                </div>
+
+                <aside class="category-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Servicios en esta categoría</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo</a></li>
+                            <li><a href="#">Monitoreo Continuo (Próx.)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>¿Tiene sesgos en sus modelos?</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Descubra si sus sistemas de IA producen resultados discriminatorios con nuestra evaluación de sesgo algorítmico.</p>
+                        <a href="/#contacto" class="btn-sidebar">Solicitar Evaluación</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Otras Categorías</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="/servicios/data-governance/">Data Governance</a></li>
+                            <li><a href="/servicios/compliance/">Compliance & Transparency</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Recursos Relacionados</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="/cumplimiento-ley-31814/">Guía Ley 31814</a></li>
+                            <li><a href="/recursos/">Centro de Recursos</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Categories -->
+    <section class="related-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Otras Áreas de Servicio</h2>
+                <p class="section-subtitle">Explore nuestras otras áreas de especialización</p>
+            </div>
+            <div class="related-grid">
+                <a href="/servicios/data-governance/" class="related-card">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <h3>Data Governance Foundation</h3>
+                    <p>Establecimiento de Data Governance Council, políticas, roles y procesos para gestión efectiva de datos.</p>
+                </a>
+                <a href="/servicios/compliance/" class="related-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Compliance & Transparency</h3>
+                    <p>Evaluaciones de impacto de IA, documentación de lineage y reporting regulatorio automatizado.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Asegure la calidad de sus datos de IA</h2>
+            <p>Solicite una evaluación de sesgo algorítmico para identificar potenciales problemas de fairness en sus modelos de IA.</p>
+            <a href="/#contacto" class="btn-white">
+                <i class="fa-solid fa-balance-scale"></i>
+                Solicitar Evaluación de Sesgo
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/data-governance/implementacion/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/compliance/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/data-governance/capacitacion/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ley 31814</h4>
+                    <ul>
+                        <li><a href="/cumplimiento-ley-31814/">Cumplimiento Ley 31814</a></li>
+                        <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/">¿Qué es la Ley 31814?</a></li>
+                        <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/">Plazos de Cumplimiento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

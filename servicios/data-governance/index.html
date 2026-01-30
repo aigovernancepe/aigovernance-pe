@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Implementación de Data Governance Council, evaluación de madurez y capacitación para cumplir con Ley 31814. Especialistas en sector financiero peruano.">
+    <meta name="keywords" content="data governance peru, data governance council, evaluación madurez datos, capacitación governance, Ley 31814, DS 115-2025-PCM, sector financiero">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/servicios/data-governance/">
+    <meta property="og:title" content="Servicios de Data Governance para Sector Financiero | Lima, Perú">
+    <meta property="og:description" content="Implementación de Data Governance Council, evaluación de madurez y capacitación para cumplir con Ley 31814.">
+
+    <title>Servicios de Data Governance para Sector Financiero | Lima, Perú</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/servicios/data-governance/">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://aigovernance.pe/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Servicios",
+            "item": "https://aigovernance.pe/servicios/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Data Governance",
+            "item": "https://aigovernance.pe/servicios/data-governance/"
+        }]
+    }
+    </script>
+
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Servicios de Data Governance",
+        "description": "Implementación de Data Governance Council, evaluación de madurez y capacitación para cumplir con Ley 31814 y DS 115-2025-PCM",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "AI Governance Perú",
+            "url": "https://aigovernance.pe"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Peru"
+        },
+        "serviceType": "Data Governance Consulting"
+    }
+    </script>
+
+    <style>
+        .category-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 120px 0 80px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .category-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .category-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .category-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .category-hero h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            margin-bottom: 1.5rem;
+        }
+        .category-hero .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        /* Content Section */
+        .category-content {
+            padding: 4rem 0;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        .category-main h2 {
+            color: var(--primary-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .category-main h2:first-child {
+            margin-top: 0;
+        }
+        .category-main p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .category-main ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .category-main li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Services in Category */
+        .services-in-category {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .service-category-card {
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        .service-category-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-category-card.featured {
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, rgba(26, 86, 219, 0.03) 0%, var(--bg-light) 100%);
+        }
+        .service-category-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .service-category-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(26, 86, 219, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .service-category-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .service-category-card h3 a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        .service-category-card h3 a:hover {
+            color: var(--primary-color);
+        }
+        .service-category-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .service-category-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .service-category-card > p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .service-category-card .btn-service {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Deliverables */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .deliverable-item {
+            background: var(--bg-light);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .deliverable-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+        .deliverable-item h4 {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+        .deliverable-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Sidebar */
+        .category-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-nav li {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .sidebar-nav li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .sidebar-nav a:hover {
+            color: var(--primary-color);
+            padding-left: 0.5rem;
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Related Categories */
+        .related-categories {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .related-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .related-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .related-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .related-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .cta-section .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .cta-section .btn-white:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 968px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-sidebar {
+                position: static;
+            }
+        }
+        @media (max-width: 768px) {
+            .category-hero {
+                padding: 100px 0 60px;
+            }
+            .category-hero h1 {
+                font-size: 1.75rem;
+            }
+            .deliverables-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/servicios/">Servicios</a></li>
+                    <li><a href="/recursos/">Recursos</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="category-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / <a href="/servicios/">Servicios</a> / Data Governance
+            </div>
+            <h1>Data Governance para el Sector Financiero</h1>
+            <p class="hero-subtitle">Establecemos las bases organizacionales y los procesos necesarios para gestionar sus datos de manera efectiva y cumplir con la Ley 31814 y DS 115-2025-PCM.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="category-content">
+        <div class="container">
+            <div class="category-grid">
+                <div class="category-main">
+                    <h2>¿Qué es Data Governance y por qué es esencial para la Ley 31814?</h2>
+                    <p>Data Governance es el conjunto de políticas, procesos, roles y métricas que aseguran la gestión efectiva y segura de los datos de una organización. Para las instituciones financieras peruanas, un framework robusto de Data Governance no es solo una buena práctica, es un requisito regulatorio.</p>
+
+                    <p>La <a href="/cumplimiento-ley-31814/">Ley 31814</a> y su reglamento DS 115-2025-PCM exigen que las organizaciones que utilizan sistemas de IA puedan demostrar:</p>
+                    <ul>
+                        <li><strong>Trazabilidad completa</strong> de los datos utilizados para entrenar y operar sistemas de IA</li>
+                        <li><strong>Calidad de datos</strong> verificable y documentada</li>
+                        <li><strong>Roles y responsabilidades claros</strong> sobre la gestión de datos</li>
+                        <li><strong>Procesos de aprobación</strong> para el uso de datos en sistemas de IA</li>
+                        <li><strong>Documentación de decisiones</strong> algorítmicas para auditoría</li>
+                    </ul>
+
+                    <h2>Servicios de Data Governance</h2>
+                    <p>Ofrecemos tres servicios especializados que cubren todo el ciclo de implementación de Data Governance:</p>
+
+                    <div class="services-in-category">
+                        <div class="service-category-card featured">
+                            <div class="service-category-header">
+                                <div class="service-category-icon">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                </div>
+                                <div>
+                                    <h3><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a></h3>
+                                    <div class="service-category-meta">
+                                        <span><i class="fa-solid fa-clock"></i> 3 semanas</span>
+                                        <span><i class="fa-solid fa-star"></i> Más Popular</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Diagnóstico completo de su madurez en Data Governance. Evaluamos 6 dimensiones, identificamos gaps contra DS 115-2025-PCM, y entregamos un roadmap priorizado con quick wins inmediatos.</p>
+                            <a href="/servicios/data-governance/evaluacion-madurez-ia/" class="btn-service">
+                                Ver detalles <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="service-category-card">
+                            <div class="service-category-header">
+                                <div class="service-category-icon">
+                                    <i class="fa-solid fa-gears"></i>
+                                </div>
+                                <div>
+                                    <h3><a href="/servicios/data-governance/implementacion/">Implementación de Data Governance</a></h3>
+                                    <div class="service-category-meta">
+                                        <span><i class="fa-solid fa-clock"></i> 6 meses</span>
+                                        <span><i class="fa-solid fa-building-columns"></i> Sector Financiero</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Implementación completa del framework con sistema operativo funcionando. Incluye Data Governance Council, políticas, dashboards de calidad, catálogo de datos y capacitación de equipos.</p>
+                            <a href="/servicios/data-governance/implementacion/" class="btn-service">
+                                Ver detalles <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="service-category-card">
+                            <div class="service-category-header">
+                                <div class="service-category-icon">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h3><a href="/servicios/data-governance/capacitacion/">Capacitación en AI Governance</a></h3>
+                                    <div class="service-category-meta">
+                                        <span><i class="fa-solid fa-clock"></i> Flexible</span>
+                                        <span><i class="fa-solid fa-users"></i> Equipos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Programas de formación para equipos de TI, compliance, riesgos y alta dirección. Contenido adaptado a Ley 31814 y DS 115-2025-PCM. Modalidades presenciales y virtuales.</p>
+                            <a href="/servicios/data-governance/capacitacion/" class="btn-service">
+                                Ver detalles <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h2>Entregables Clave de Data Governance</h2>
+                    <p>Nuestros servicios de Data Governance entregan los componentes esenciales para cumplir con la regulación:</p>
+
+                    <div class="deliverables-grid">
+                        <div class="deliverable-item">
+                            <i class="fa-solid fa-sitemap"></i>
+                            <h4>Data Governance Council</h4>
+                            <p>Estructura organizacional con roles definidos</p>
+                        </div>
+                        <div class="deliverable-item">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <h4>Políticas y Procedimientos</h4>
+                            <p>Documentación alineada a regulación</p>
+                        </div>
+                        <div class="deliverable-item">
+                            <i class="fa-solid fa-users-gear"></i>
+                            <h4>Data Owners & Stewards</h4>
+                            <p>Roles y responsabilidades claras</p>
+                        </div>
+                        <div class="deliverable-item">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h4>Dashboard de Calidad</h4>
+                            <p>Monitoreo continuo de métricas</p>
+                        </div>
+                        <div class="deliverable-item">
+                            <i class="fa-solid fa-database"></i>
+                            <h4>Catálogo de Datos</h4>
+                            <p>Inventario y metadata management</p>
+                        </div>
+                        <div class="deliverable-item">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <h4>Data Lineage</h4>
+                            <p>Trazabilidad de origen a destino</p>
+                        </div>
+                    </div>
+
+                    <h2>¿Por qué elegirnos para Data Governance?</h2>
+                    <p>Nuestro fundador tiene más de <strong>10 años de experiencia</strong> implementando frameworks de Data Governance en las industrias más reguladas: asset management y farmacéutica en Suiza. Esta experiencia en ambientes donde los errores tienen consecuencias regulatorias severas nos permite entender exactamente lo que su institución necesita.</p>
+
+                    <ul>
+                        <li><strong>Experiencia en industrias reguladas:</strong> Asset management, pharma GxP en Suiza</li>
+                        <li><strong>Enfoque práctico:</strong> No solo documentación, sino sistemas operativos reales</li>
+                        <li><strong>Transferencia de conocimiento:</strong> Su equipo queda capacitado para operar autónomamente</li>
+                        <li><strong>Conocimiento regulatorio local:</strong> Profundo entendimiento de Ley 31814 y DS 115-2025-PCM</li>
+                    </ul>
+                </div>
+
+                <aside class="category-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Servicios en esta categoría</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                            <li><a href="/servicios/data-governance/implementacion/">Implementación</a></li>
+                            <li><a href="/servicios/data-governance/capacitacion/">Capacitación</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Fecha Límite</h3>
+                        <p style="font-size: 1.75rem; font-weight: 800; color: #dc2626; margin-bottom: 0.5rem;">10 Sep 2026</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Sector financiero debe cumplir con Ley 31814</p>
+                        <a href="/#contacto" class="btn-sidebar">Comience su Assessment</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Otras Categorías</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="/servicios/data-quality/">Data Quality</a></li>
+                            <li><a href="/servicios/compliance/">Compliance & Transparency</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Recursos Relacionados</h3>
+                        <ul class="sidebar-nav">
+                            <li><a href="/cumplimiento-ley-31814/">Guía Ley 31814</a></li>
+                            <li><a href="/recursos/">Centro de Recursos</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Categories -->
+    <section class="related-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Otras Áreas de Servicio</h2>
+                <p class="section-subtitle">Explore nuestras otras áreas de especialización</p>
+            </div>
+            <div class="related-grid">
+                <a href="/servicios/data-quality/" class="related-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Data Quality Excellence</h3>
+                    <p>Framework de calidad de datos, detección de sesgos algorítmicos y monitoreo continuo para sus sistemas de IA.</p>
+                </a>
+                <a href="/servicios/compliance/" class="related-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Compliance & Transparency</h3>
+                    <p>Evaluaciones de impacto de IA, documentación de lineage y reporting regulatorio automatizado.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Comience su viaje de Data Governance</h2>
+            <p>Agende una llamada de 30 minutos sin compromiso para discutir cómo podemos ayudarle a implementar un framework de Data Governance efectivo.</p>
+            <a href="/#contacto" class="btn-white">
+                <i class="fa-solid fa-calendar-check"></i>
+                Solicitar AI Readiness Assessment
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/data-governance/implementacion/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/compliance/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/data-governance/capacitacion/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ley 31814</h4>
+                    <ul>
+                        <li><a href="/cumplimiento-ley-31814/">Cumplimiento Ley 31814</a></li>
+                        <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/">¿Qué es la Ley 31814?</a></li>
+                        <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/">Plazos de Cumplimiento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
+                        <li><a href="/#contacto">Solicitar Assessment</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

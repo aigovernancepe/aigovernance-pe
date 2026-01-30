@@ -1,0 +1,8 @@
+# 301 Redirects for URL restructuring (Phase 2 SEO Implementation)
+# Old service URLs -> New categorized URLs
+
+/servicios/evaluacion-madurez-ia/*        /servicios/data-governance/evaluacion-madurez-ia/:splat  301
+/servicios/implementacion-data-governance/* /servicios/data-governance/implementacion/:splat        301
+/servicios/capacitacion-ai-governance/*   /servicios/data-governance/capacitacion/:splat           301
+/servicios/evaluacion-impacto-ia/*        /servicios/compliance/evaluacion-impacto-ia/:splat       301
+/servicios/evaluacion-sesgo-algoritmico/* /servicios/data-quality/evaluacion-sesgo/:splat          301

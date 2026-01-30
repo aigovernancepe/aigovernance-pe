@@ -889,6 +889,10 @@ p {
     letter-spacing: 0.05em;
 }
 
+.service-badge-law {
+    background: #dc2626;
+}
+
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -1317,6 +1321,12 @@ p {
 
 .urgency-text strong {
     color: white;
+}
+
+.urgency-ai-link {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .countdown-container {

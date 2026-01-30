@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Data Governance y Compliance de IA para el sector financiero en Perú. Framework especializado para cumplir con la Ley 31814 y DS 115-2025-PCM.">
+    <meta name="description" content="Servicios de Data Governance, Data Quality y Compliance para el sector financiero peruano. Especialistas en gestión de datos y cumplimiento regulatorio. Consulta gratuita.">
     <meta name="keywords" content="data governance peru, compliance ia, Ley 31814, DS 115-2025-PCM, gobernanza datos financiero, calidad datos ia, consultoria data governance">
     <meta name="author" content="Wilko Feye">
 
@@ -15,16 +15,16 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aigovernance.pe/">
-    <meta property="og:title" content="AI Governance Perú | Data Governance & Compliance de IA">
-    <meta property="og:description" content="Transformamos datos en cumplimiento y ventaja competitiva para el sector financiero en Perú">
+    <meta property="og:title" content="AI Governance Peru | Data Governance, Data Quality & Compliance">
+    <meta property="og:description" content="Servicios de Data Governance, Data Quality y Compliance para el sector financiero peruano.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://aigovernance.pe/">
-    <meta property="twitter:title" content="AI Governance Perú | Data Governance & Compliance de IA">
-    <meta property="twitter:description" content="Transformamos datos en cumplimiento y ventaja competitiva para el sector financiero en Perú">
+    <meta property="twitter:title" content="AI Governance Peru | Data Governance, Data Quality & Compliance">
+    <meta property="twitter:description" content="Servicios de Data Governance, Data Quality y Compliance para el sector financiero peruano.">
 
-    <title>AI Governance Peru | Data Governance & Compliance de IA para Sector Financiero</title>
+    <title>AI Governance Peru | Data Governance, Data Quality & Compliance | Sector Financiero</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
@@ -46,56 +46,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" integrity="sha512-CaIsK/NwxDlVhGKvjSVEU6oHv17tDjPQq9Coc+1IVMD4G5Zz3+ShBc0wCcn2JYqGXBVgbi6gLOb/JsRl1p5Jxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" integrity="sha512-8RxmFOVaKQe/xtg6lbscU9DU0IRhURWEuiI0tXevv+lXbAHfkpamD4VKFQRto9WgfOJDwOZ74c/s9Yesv3VvIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Structured Data (JSON-LD) for SEO -->
+    <!-- Organization Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "AI Governance Perú",
-        "description": "Data Governance y Compliance de IA para el sector financiero en Perú. Framework especializado para cumplir con la Ley 31814 y DS 115-2025-PCM.",
+        "@type": "Organization",
+        "name": "AI Governance Peru",
+        "alternateName": "aigovernance.pe",
         "url": "https://aigovernance.pe",
         "logo": "https://aigovernance.pe/images/logo.svg",
-        "image": "https://aigovernance.pe/images/logo.svg",
-        "telephone": "",
-        "email": "info@aigovernance.pe",
+        "description": "Servicios de Data Governance, Data Quality y Compliance para el sector financiero en Perú",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lima",
             "addressCountry": "PE"
         },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "-12.0464",
-            "longitude": "-77.0428"
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@aigovernance.pe",
+            "contactType": "sales"
         },
-        "founder": {
-            "@type": "Person",
-            "name": "Wilko Feye",
-            "jobTitle": "Data Governance Specialist",
-            "sameAs": "https://linkedin.com/in/wilkofeye"
-        },
-        "areaServed": {
-            "@type": "Country",
-            "name": "Peru"
-        },
-        "serviceType": ["Data Governance", "AI Compliance", "Data Quality", "Regulatory Compliance"],
-        "priceRange": "$$$$",
-        "openingHours": "Mo-Fr 09:00-18:00",
         "sameAs": [
             "https://linkedin.com/in/wilkofeye"
         ]
     }
     </script>
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "AI Governance Peru",
+        "@id": "https://aigovernance.pe",
+        "url": "https://aigovernance.pe",
+        "image": "https://aigovernance.pe/images/logo.svg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lima",
+            "addressCountry": "PE"
+        },
+        "priceRange": "$$$$",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        }
+    }
+    </script>
+    <!-- Service Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "AI Readiness Assessment",
+        "serviceType": "Evaluación de Madurez en Data Governance",
         "provider": {
-            "@type": "ProfessionalService",
-            "name": "AI Governance Perú"
+            "@type": "Organization",
+            "name": "AI Governance Peru"
         },
-        "description": "Diagnóstico completo de madurez en Data Governance y roadmap ejecutivo para cumplir con DS 115-2025-PCM",
+        "description": "Diagnóstico completo de madurez en Data Governance y roadmap ejecutivo para alcanzar sus objetivos",
         "offers": {
             "@type": "Offer",
             "price": "8000",
@@ -108,7 +117,7 @@
         }
     }
     </script>
-    <!-- FAQ Schema for SEO -->
+    <!-- FAQ Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -116,10 +125,10 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "¿Qué incluye el AI Readiness Assessment?",
+                "name": "¿Qué es Data Governance y por qué lo necesito?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "El Assessment incluye una evaluación completa de madurez en Data Governance (escala 1-5), gap analysis detallado contra DS 115-2025-PCM, inventario de todos sus sistemas de IA, clasificación de riesgo por sistema, roadmap priorizado con quick wins, y una presentación ejecutiva de 1 hora para su Directorio. Todo esto en 3 semanas."
+                    "text": "Data Governance es el conjunto de políticas, procesos, roles y métricas que aseguran la gestión efectiva de los datos de su organización. Lo necesita para tomar decisiones basadas en datos confiables, cumplir con requisitos regulatorios, reducir riesgos operativos, y mejorar la eficiencia."
                 }
             },
             {
@@ -127,31 +136,7 @@
                 "name": "¿Cuánto tiempo toma implementar Data Governance completo?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "La implementación completa del framework de Data Governance toma aproximadamente 6 meses. Esto incluye el establecimiento del Data Governance Council, desarrollo de políticas, implementación de dashboards de calidad, catálogo de datos, y capacitación de equipos. Al final tendrá un sistema operativo funcionando."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Qué pasa si no cumplo con DS 115-2025-PCM?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "El incumplimiento puede resultar en sanciones regulatorias de la SBS, daño reputacional significativo, y restricciones operativas para sus sistemas de IA. Además, sin governance adecuado, sus modelos de IA pueden tomar decisiones sesgadas o inexplicables, exponiendo a su institución a riesgos legales y pérdida de confianza de clientes."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Necesito experiencia técnica previa en Data Governance?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Nuestro enfoque es hands-on y práctico. Trabajamos directamente con sus equipos para transferir conocimiento y establecer procesos sostenibles. La capacitación está incluida en el servicio de implementación, y dejamos documentación completa para que su equipo pueda mantener el sistema de forma autónoma."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Cuál es la diferencia entre Assessment y Compliance Audit?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "El Assessment es para instituciones que están comenzando su viaje de Data Governance - le da un diagnóstico inicial y roadmap. El Compliance Audit es para instituciones que ya tienen controles implementados y necesitan una revisión independiente de cumplimiento, con un informe formal que puede presentar al regulador."
+                    "text": "Una implementación completa de Data Governance típicamente toma 6 meses. Esto incluye el establecimiento del Data Governance Council, definición de roles, desarrollo de políticas, implementación de herramientas, y capacitación de equipos."
                 }
             },
             {
@@ -159,7 +144,7 @@
                 "name": "¿Trabajan con fintechs o solo con bancos grandes?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Trabajamos con todo el espectro del sector financiero: bancos, aseguradoras, asset managers, fintechs, y cooperativas de ahorro. Nuestro framework es adaptable al tamaño y complejidad de cada institución. Las fintechs, aunque más ágiles, también están sujetas a DS 115-2025-PCM si usan IA en sus procesos."
+                    "text": "Trabajamos con todo el sector financiero: bancos, aseguradoras, asset managers, fintechs y cooperativas de ahorro. Adaptamos nuestros servicios al tamaño y complejidad de cada institución."
                 }
             }
         ]
@@ -226,10 +211,10 @@
                 <div class="hero-badge">
                     <span>Especializado en Sector Financiero</span>
                 </div>
-                <h1 class="hero-title">Transformamos datos en <span class="highlight">cumplimiento</span> y <span class="highlight">ventaja competitiva</span> para el sector financiero en Perú</h1>
-                <p class="hero-subtitle">Framework de Data Governance especializado para cumplir con la <a href="https://www.gob.pe/institucion/congreso-de-la-republica/normas-legales/4565760-31814" target="_blank" rel="noopener" class="hero-law-link">Ley 31814</a> y DS 115-2025-PCM</p>
+                <h1 class="hero-title">Transformamos satisfactoriamente datos en <span class="highlight">ventaja competitiva</span> para el sector financiero en Perú</h1>
+                <p class="hero-subtitle">Frameworks de Data Governance, Data Quality y Compliance para instituciones financieras que buscan excelencia operativa y cumplimiento regulatorio.</p>
                 <div class="hero-cta">
-                    <a href="#contacto" class="btn-primary">Solicite su AI Readiness Assessment</a>
+                    <a href="#contacto" class="btn-primary">Solicite su Evaluación de Madurez</a>
                     <a href="#servicios" class="btn-secondary">Ver Servicios</a>
                 </div>
             </div>
@@ -247,17 +232,17 @@
                 <div class="problem-card">
                     <div class="problem-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <h3>Baja Madurez en Gobernanza</h3>
-                    <p>Perú tiene solo <strong>1.88/5</strong> en madurez de gobernanza de datos. Sin una base sólida, sus sistemas de IA están construidos sobre arena.</p>
+                    <p>Perú tiene solo <strong>1.88/5</strong> en madurez de gobernanza de datos. Sin una base sólida, sus decisiones de negocio y reportes regulatorios están construidos sobre arena.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-                    <h3>Nueva Regulación Exigente</h3>
-                    <p>La <strong>Ley 31814</strong> y su reglamento <strong>DS 115-2025-PCM</strong> exigen transparencia algorítmica, evaluaciones de impacto ético y trazabilidad completa. El plazo corre.</p>
+                    <h3>Múltiples Requisitos Regulatorios</h3>
+                    <p><strong>SBS</strong>, <strong>SMV</strong> y normativas de protección de datos exigen trazabilidad, calidad verificable y documentación auditable. El cumplimiento es cada vez más complejo.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-icon"><i class="fa-solid fa-clock"></i></div>
-                    <h3>Tiempo Limitado</h3>
-                    <p>Las instituciones financieras tienen <strong>1 año</strong> desde la publicación del decreto para implementar compliance completo. <a href="#contacto" class="inline-link">Comience su Assessment hoy</a>.</p>
+                    <h3>Competencia por Datos</h3>
+                    <p>Las instituciones que gestionan mejor sus datos toman mejores decisiones, reducen costos operativos y responden más rápido a oportunidades de mercado. <a href="#servicios" class="inline-link">Conozca nuestros servicios</a>.</p>
                 </div>
             </div>
         </div>
@@ -267,7 +252,7 @@
     <section class="solution">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Framework de 3 Pilares para Compliance de IA</h2>
+                <h2 class="section-title">Framework de 3 Pilares para Excelencia en Datos</h2>
                 <p class="section-subtitle">Metodología probada en ambientes altamente regulados (pharma, asset management). <a href="#experiencia" class="inline-link">Conozca nuestra experiencia</a>.</p>
             </div>
             <div class="pillars-grid">
@@ -278,17 +263,17 @@
                         <li>Establecimiento de Data Governance Council</li>
                         <li>Roles y responsabilidades claros (Data Owners, Stewards)</li>
                         <li>Políticas de gestión de datos alineadas a regulación</li>
-                        <li>Procesos de aprobación de uso de datos en IA</li>
+                        <li>Procesos de aprobación y control de calidad de datos</li>
                     </ul>
                 </div>
                 <div class="pillar">
                     <div class="pillar-number">02</div>
                     <h3>Data Quality Excellence</h3>
                     <ul class="pillar-list">
-                        <li>Framework de calidad específico para modelos de IA</li>
+                        <li>Framework de calidad de datos integral</li>
                         <li>Dashboards de monitoreo continuo</li>
-                        <li>Detección y mitigación de sesgos en datasets</li>
-                        <li>Validación de datos para entrenar modelos</li>
+                        <li>Detección de anomalías y problemas de calidad</li>
+                        <li>Validación y perfilado de datos críticos</li>
                     </ul>
                 </div>
                 <div class="pillar">
@@ -297,7 +282,7 @@
                     <ul class="pillar-list">
                         <li>Documentación de lineage de datos</li>
                         <li>Catálogo de datos y metadatos</li>
-                        <li>Trazabilidad de decisiones algorítmicas</li>
+                        <li>Trazabilidad para auditorías y reguladores</li>
                         <li>Reporting regulatorio automatizado</li>
                     </ul>
                 </div>
@@ -310,7 +295,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Cómo Trabajamos Juntos</h2>
-                <p class="section-subtitle">Un proceso claro y estructurado para lograr compliance y excelencia en Data Governance</p>
+                <p class="section-subtitle">Un proceso claro y estructurado para lograr excelencia en Data Governance y cumplimiento regulatorio</p>
             </div>
             <div class="process-timeline">
                 <div class="process-step">
@@ -318,7 +303,7 @@
                     <div class="step-content">
                         <h3>Assessment Inicial</h3>
                         <p class="step-duration"><i class="fa-solid fa-clock"></i> 3 semanas</p>
-                        <p>Evaluamos su madurez actual en Data Governance, identificamos gaps contra la Ley 31814 y DS 115-2025-PCM, y creamos un roadmap priorizado con quick wins inmediatos.</p>
+                        <p>Evaluamos su madurez actual en Data Governance, identificamos gaps contra mejores prácticas y requisitos regulatorios, y creamos un roadmap priorizado con quick wins inmediatos.</p>
                     </div>
                 </div>
                 <div class="process-connector"></div>
@@ -327,7 +312,7 @@
                     <div class="step-content">
                         <h3>Reporte Ejecutivo</h3>
                         <p class="step-duration"><i class="fa-solid fa-clock"></i> Incluido en Assessment</p>
-                        <p>Presentación al Directorio con hallazgos clave, clasificación de riesgos por sistema de IA, y recomendaciones estratégicas con estimados de inversión.</p>
+                        <p>Presentación al Directorio con hallazgos clave, clasificación de riesgos por área, y recomendaciones estratégicas con estimados de inversión.</p>
                     </div>
                 </div>
                 <div class="process-connector"></div>
@@ -362,13 +347,13 @@
             <div class="services-grid">
                 <div class="service-card featured">
                     <div class="service-badge">Más Popular</div>
-                    <h3><a href="/servicios/data-governance/evaluacion-madurez-ia/" style="color: inherit; text-decoration: none;">AI Readiness Assessment</a></h3>
-                    <p class="service-description">Diagnóstico completo de su madurez en Data Governance y roadmap ejecutivo para cumplir con DS 115-2025-PCM. <a href="/servicios/data-governance/evaluacion-madurez-ia/" class="inline-link">Ver detalles</a></p>
+                    <h3><a href="/servicios/data-governance/evaluacion-madurez-ia/" style="color: inherit; text-decoration: none;">Evaluación de Madurez en Data Governance</a></h3>
+                    <p class="service-description">Diagnóstico completo de su madurez en Data Governance y roadmap ejecutivo para alcanzar sus objetivos. <a href="/servicios/data-governance/evaluacion-madurez-ia/" class="inline-link">Ver detalles</a></p>
                     <ul class="service-features">
-                        <li>Evaluación de madurez de Data Governance</li>
-                        <li>Gap analysis vs. DS 115-2025-PCM</li>
-                        <li>Inventario de sistemas de IA</li>
-                        <li>Clasificación de riesgo por sistema</li>
+                        <li>Evaluación de madurez de Data Governance (escala 1-5)</li>
+                        <li>Gap analysis vs. mejores prácticas y regulación</li>
+                        <li>Inventario de activos de datos críticos</li>
+                        <li>Clasificación de riesgo por área</li>
                         <li>Roadmap priorizado con quick wins</li>
                         <li>Presentación ejecutiva para Directorio</li>
                     </ul>
@@ -379,10 +364,10 @@
                     <a href="/servicios/data-governance/evaluacion-madurez-ia/" class="btn-service">Ver Servicio</a>
                 </div>
                 <div class="service-card">
-                    <h3><a href="/servicios/data-governance/implementacion/" style="color: inherit; text-decoration: none;">Data Governance Implementation</a></h3>
+                    <h3><a href="/servicios/data-governance/implementacion/" style="color: inherit; text-decoration: none;">Implementación de Data Governance</a></h3>
                     <p class="service-description">Implementación completa del framework de Data Governance con sistema operativo al final del proyecto. <a href="/servicios/data-governance/implementacion/" class="inline-link">Ver detalles</a></p>
                     <ul class="service-features">
-                        <li>Todo lo incluido en AI Readiness Assessment</li>
+                        <li>Todo lo incluido en Evaluación de Madurez</li>
                         <li>Diseño e implementación de Data Governance Council</li>
                         <li>Desarrollo de políticas y procedimientos</li>
                         <li>Implementación de Data Quality Dashboard</li>
@@ -397,8 +382,9 @@
                     <a href="/servicios/data-governance/implementacion/" class="btn-service">Ver Servicio</a>
                 </div>
                 <div class="service-card">
+                    <div class="service-badge service-badge-law">Ley 31814</div>
                     <h3><a href="/servicios/compliance/evaluacion-impacto-ia/" style="color: inherit; text-decoration: none;">Evaluación de Impacto de IA</a></h3>
-                    <p class="service-description">Evaluación obligatoria para sistemas de IA de alto riesgo. Cumplimiento de Artículos 30 y 32 del DS 115-2025-PCM. <a href="/servicios/compliance/evaluacion-impacto-ia/" class="inline-link">Ver detalles</a></p>
+                    <p class="service-description">Evaluación obligatoria para sistemas de IA de alto riesgo según la Ley 31814. Para instituciones que usan inteligencia artificial. <a href="/servicios/compliance/evaluacion-impacto-ia/" class="inline-link">Ver detalles</a></p>
                     <ul class="service-features">
                         <li>Informe de impacto formal de 6 secciones</li>
                         <li>Análisis de fairness y derechos humanos</li>
@@ -459,35 +445,17 @@
         </div>
     </section>
 
-    <!-- Urgency Section with Countdown -->
+    <!-- Data Excellence CTA Section -->
     <section class="urgency">
         <div class="container">
             <div class="urgency-content">
                 <div class="urgency-text">
-                    <h2>El plazo para cumplir con la Ley 31814 está corriendo</h2>
-                    <p>Las instituciones financieras tienen hasta <strong>septiembre 2026</strong> para implementar compliance completo. No espere hasta el último momento. <a href="#faq" class="inline-link inline-link-light">Ver preguntas frecuentes</a>.</p>
+                    <h2>Comience su viaje hacia la excelencia en datos</h2>
+                    <p>Las instituciones financieras que gestionan mejor sus datos toman mejores decisiones, cumplen más fácilmente con reguladores, y operan más eficientemente.</p>
                 </div>
                 <div class="countdown-container">
-                    <div class="countdown-label">Tiempo restante para compliance</div>
-                    <div class="countdown" id="countdown">
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="countdown-days">---</span>
-                            <span class="countdown-unit">Días</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="countdown-hours">--</span>
-                            <span class="countdown-unit">Horas</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="countdown-minutes">--</span>
-                            <span class="countdown-unit">Minutos</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="countdown-seconds">--</span>
-                            <span class="countdown-unit">Segundos</span>
-                        </div>
-                    </div>
-                    <a href="#contacto" class="btn-urgency">Actúe Ahora</a>
+                    <a href="#contacto" class="btn-urgency">Solicite su Evaluación Gratuita</a>
+                    <p class="urgency-ai-link">¿Usa Inteligencia Artificial? <a href="/cumplimiento-ley-31814/" class="inline-link inline-link-light">Conozca los requisitos de la Ley 31814 →</a></p>
                 </div>
             </div>
         </div>
@@ -503,11 +471,11 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>¿Qué incluye el AI Readiness Assessment?</span>
+                        <span>¿Qué es Data Governance y por qué lo necesito?</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>El Assessment incluye una evaluación completa de madurez en Data Governance (escala 1-5), gap analysis detallado contra DS 115-2025-PCM, inventario de todos sus sistemas de IA, clasificación de riesgo por sistema, roadmap priorizado con quick wins, y una presentación ejecutiva de 1 hora para su Directorio. Todo esto en 3 semanas. <a href="#servicios" class="inline-link">Ver detalles del servicio</a>.</p>
+                        <p>Data Governance es el conjunto de políticas, procesos, roles y métricas que aseguran la gestión efectiva de los datos de su organización. Lo necesita para: tomar decisiones basadas en datos confiables, cumplir con requisitos regulatorios (SBS, SMV), reducir riesgos operativos, y mejorar la eficiencia de sus operaciones.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -521,20 +489,20 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>¿Qué pasa si no cumplo con DS 115-2025-PCM?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>El incumplimiento puede resultar en sanciones regulatorias de la SBS, daño reputacional significativo, y restricciones operativas para sus sistemas de IA. Además, sin governance adecuado, sus modelos de IA pueden tomar decisiones sesgadas o inexplicables, exponiendo a su institución a riesgos legales y pérdida de confianza de clientes. <a href="#contacto" class="inline-link">Solicite una evaluación ahora</a>.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
                         <span>¿Necesito experiencia técnica previa en Data Governance?</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
                         <p>No. Nuestro enfoque es hands-on y práctico. Trabajamos directamente con sus equipos para transferir conocimiento y establecer procesos sostenibles. La capacitación está incluida en el servicio de implementación, y dejamos documentación completa para que su equipo pueda mantener el sistema de forma autónoma. <a href="#experiencia" class="inline-link">Conozca nuestra experiencia</a>.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Trabajan con fintechs o solo con bancos grandes?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Trabajamos con todo el espectro del sector financiero: bancos, aseguradoras, asset managers, fintechs, y cooperativas de ahorro. Nuestro framework es adaptable al tamaño y complejidad de cada institución.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -548,11 +516,20 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>¿Trabajan con fintechs o solo con bancos grandes?</span>
+                        <span>¿Qué incluye la Evaluación de Madurez en Data Governance?</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Trabajamos con todo el espectro del sector financiero: bancos, aseguradoras, asset managers, fintechs, y cooperativas de ahorro. Nuestro framework es adaptable al tamaño y complejidad de cada institución. Las fintechs, aunque más ágiles, también están sujetas a DS 115-2025-PCM si usan IA en sus procesos.</p>
+                        <p>Incluye: evaluación de madurez en 6 dimensiones (escala 1-5), gap analysis contra mejores prácticas y requisitos regulatorios, inventario de activos de datos críticos, clasificación de riesgo, roadmap priorizado con quick wins, y presentación ejecutiva para Directorio. Duración: 3 semanas. <a href="#servicios" class="inline-link">Ver detalles del servicio</a>.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Qué pasa si no cumplo con la Ley 31814? (para usuarios de IA)</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La Ley 31814 aplica a instituciones que utilizan sistemas de inteligencia artificial. El incumplimiento puede resultar en sanciones regulatorias. Las instituciones financieras tienen hasta septiembre 2026 para cumplir. Si su institución usa IA, <a href="/cumplimiento-ley-31814/" class="inline-link">visite nuestra guía completa de Ley 31814</a>.</p>
                     </div>
                 </div>
             </div>
@@ -563,8 +540,8 @@
     <section id="contacto" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Solicite su AI Readiness Assessment</h2>
-                <p class="section-subtitle">Evaluación de 3 semanas sin compromiso de continuidad. Recibirá un diagnóstico completo de su madurez en Data Governance y un roadmap ejecutivo.</p>
+                <h2 class="section-title">Solicite su Evaluación de Madurez</h2>
+                <p class="section-subtitle">Evaluación de 3 semanas sin compromiso de continuidad. Recibirá un diagnóstico completo de su madurez en Data Governance y un roadmap ejecutivo para alcanzar sus objetivos.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-details">
@@ -581,11 +558,11 @@
                         <a href="https://linkedin.com/in/wilkofeye" target="_blank">linkedin.com/in/wilkofeye</a>
                     </div>
                     <div class="contact-value">
-                        <h4>¿Qué incluye el Assessment?</h4>
+                        <h4>¿Qué incluye la Evaluación?</h4>
                         <ul>
-                            <li>Evaluación de madurez (1-5 scale)</li>
-                            <li>Gap analysis vs. DS 115-2025-PCM</li>
-                            <li>Inventario de sistemas de IA</li>
+                            <li>Evaluación de madurez (escala 1-5)</li>
+                            <li>Gap analysis vs. mejores prácticas</li>
+                            <li>Inventario de activos de datos críticos</li>
                             <li>Roadmap priorizado con quick wins</li>
                             <li>Presentación ejecutiva (1 hora)</li>
                         </ul>
@@ -636,7 +613,7 @@
                             <label for="mensaje">Cuéntenos sobre su situación actual</label>
                             <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describa brevemente su contexto, desafíos principales y qué espera lograr..."></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">Solicitar Assessment</button>
+                        <button type="submit" class="btn-submit">Solicitar Evaluación</button>
                     </form>
                 </div>
             </div>
@@ -653,13 +630,13 @@
                             <img src="images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
                         </a>
                     </div>
-                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                    <p>Data Governance, Data Quality & Compliance para el sector financiero en Perú</p>
                 </div>
                 <div class="footer-column">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
-                        <li><a href="/servicios/data-governance/implementacion/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">Evaluación de Madurez</a></li>
+                        <li><a href="/servicios/data-governance/implementacion/">Implementación de Data Governance</a></li>
                         <li><a href="/servicios/compliance/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
                         <li><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo</a></li>
                         <li><a href="/servicios/data-governance/capacitacion/">Capacitación</a></li>
@@ -677,7 +654,7 @@
                     <h4>Contacto</h4>
                     <ul>
                         <li><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></li>
-                        <li><a href="#contacto">Solicitar Assessment</a></li>
+                        <li><a href="#contacto">Solicitar Evaluación</a></li>
                     </ul>
                 </div>
             </div>

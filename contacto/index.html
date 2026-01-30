@@ -71,49 +71,66 @@
             max-width: 1400px;
             margin: 0 auto;
         }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: start;
+        /* Intro Section */
+        .contact-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
         }
-        .contact-info h2 {
+        .contact-intro h2 {
             color: var(--secondary-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-size: 2rem;
         }
-        .contact-info > p {
+        .contact-intro p {
             color: var(--text-secondary);
             line-height: 1.8;
-            margin-bottom: 2rem;
             font-size: 1.1rem;
         }
+        /* Info Grid - Contact Methods + What to Expect */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .contact-methods-section {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+        }
+        .contact-methods-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
         .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
         .contact-method {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.25rem;
+            text-align: center;
+            gap: 0.75rem;
+            padding: 1.5rem 1rem;
             background: var(--bg-light);
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
         }
         .contact-icon {
-            width: 44px;
-            height: 44px;
+            width: 50px;
+            height: 50px;
             background: rgba(26, 86, 219, 0.1);
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary-color);
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             flex-shrink: 0;
         }
         .contact-method h4 {
@@ -134,11 +151,11 @@
             text-decoration: underline;
         }
         .what-to-expect {
-            background: var(--bg-light);
+            background: white;
             padding: 2rem;
             border-radius: var(--radius-lg);
-            margin-top: 2.5rem;
             border: 1px solid var(--border-color);
+            height: 100%;
         }
         .what-to-expect h3 {
             color: var(--secondary-color);
@@ -149,50 +166,50 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
         .what-to-expect li {
             display: flex;
             align-items: flex-start;
             gap: 0.75rem;
-            padding: 0.75rem;
-            background: white;
+            padding: 1rem;
+            background: var(--bg-light);
             border-radius: var(--radius-md);
         }
         .what-to-expect li i {
             color: var(--accent-color);
             margin-top: 0.2rem;
+            flex-shrink: 0;
         }
+        /* Form Section - Full Width */
         .contact-form-section {
             background: white;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
             padding: 2.5rem 3rem;
             box-shadow: var(--shadow-lg);
-            min-width: 0;
         }
         .contact-form-section h2 {
             color: var(--secondary-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-size: 1.5rem;
+            text-align: center;
         }
         .form-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
         .form-group {
             margin-bottom: 0;
         }
+        .form-group.span-2 {
+            grid-column: span 2;
+        }
         .form-group.full-width {
             grid-column: 1 / -1;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
         }
         .form-group label {
             display: block;
@@ -220,15 +237,21 @@
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
+        }
+        .form-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
         .btn-submit {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            width: 100%;
-            padding: 1rem 2rem;
+            padding: 1rem 3rem;
             background: var(--primary-color);
             color: white;
             border: none;
@@ -245,28 +268,42 @@
         .form-note {
             font-size: 0.85rem;
             color: var(--text-muted);
-            margin-top: 1rem;
-            text-align: center;
+            margin: 0;
+            flex: 1;
         }
         @media (max-width: 1200px) {
             .form-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .form-group.span-2 {
+                grid-column: span 1;
+            }
         }
         @media (max-width: 968px) {
-            .contact-grid {
+            .contact-info-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
-            .form-row,
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            .what-to-expect ul {
+                grid-template-columns: 1fr;
+            }
             .form-grid {
                 grid-template-columns: 1fr;
+            }
+            .form-group.span-2 {
+                grid-column: span 1;
             }
             .contact-hero .hero-decoration {
                 display: none;
             }
             .contact-form-section {
                 padding: 1.5rem;
+            }
+            .form-footer {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -332,11 +369,16 @@
     <!-- Main Content -->
     <section class="contact-content">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Hablemos de su Proyecto</h2>
-                    <p>Ya sea que esté comenzando su journey de Data Governance o necesite ayuda específica para cumplir con requisitos regulatorios, estamos listos para escucharlo.</p>
+            <!-- Intro Section -->
+            <div class="contact-intro">
+                <h2>Hablemos de su Proyecto</h2>
+                <p>Ya sea que esté comenzando su journey de Data Governance o necesite ayuda específica para cumplir con requisitos regulatorios, estamos listos para escucharlo.</p>
+            </div>
 
+            <!-- Contact Info Grid -->
+            <div class="contact-info-grid">
+                <div class="contact-methods-section">
+                    <h3>Contáctenos</h3>
                     <div class="contact-methods">
                         <div class="contact-method">
                             <div class="contact-icon">
@@ -353,7 +395,7 @@
                             </div>
                             <div>
                                 <h4>LinkedIn</h4>
-                                <p><a href="https://linkedin.com/company/ai-governance-peru" target="_blank">linkedin.com/company/ai-governance-peru</a></p>
+                                <p><a href="https://linkedin.com/company/ai-governance-peru" target="_blank">AI Governance Peru</a></p>
                             </div>
                         </div>
                         <div class="contact-method">
@@ -366,80 +408,81 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="what-to-expect">
-                        <h3>¿Qué Esperar?</h3>
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-check-circle"></i>
-                                <span><strong>Respuesta rápida:</strong> Le contactaremos dentro de 24 horas hábiles</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-check-circle"></i>
-                                <span><strong>Conversación sin compromiso:</strong> Llamada de 30 minutos para entender su situación</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-check-circle"></i>
-                                <span><strong>Propuesta personalizada:</strong> Plan de trabajo adaptado a sus necesidades específicas</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-check-circle"></i>
-                                <span><strong>Total confidencialidad:</strong> Su información está segura con nosotros</span>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
 
-                <div class="contact-form-section">
-                    <h2>Solicite su Evaluación de Madurez</h2>
-                    <form id="contactForm" class="contact-form">
-                        <!-- Honeypot field for spam protection - hidden from users -->
-                        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+                <div class="what-to-expect">
+                    <h3>¿Qué Esperar?</h3>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Respuesta rápida:</strong> Le contactaremos dentro de 24 horas hábiles</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Conversación sin compromiso:</strong> Llamada de 30 minutos para entender su situación</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Propuesta personalizada:</strong> Plan de trabajo adaptado a sus necesidades</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Total confidencialidad:</strong> Su información está segura con nosotros</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="nombre">Nombre completo *</label>
-                                <input type="text" id="nombre" name="nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cargo">Cargo *</label>
-                                <input type="text" id="cargo" name="cargo" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="empresa">Empresa *</label>
-                                <input type="text" id="empresa" name="empresa" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email corporativo *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono">
-                            </div>
-                            <div class="form-group">
-                                <label for="tipo_institucion">Tipo de institución *</label>
-                                <select id="tipo_institucion" name="tipo_institucion" required>
-                                    <option value="">Seleccione una opción</option>
-                                    <option value="banco">Banco</option>
-                                    <option value="aseguradora">Aseguradora</option>
-                                    <option value="asset_manager">Asset Manager</option>
-                                    <option value="fintech">Fintech</option>
-                                    <option value="cooperativa">Cooperativa de Ahorro</option>
-                                    <option value="otro">Otro</option>
-                                </select>
-                            </div>
-                                <div class="form-group full-width">
-                                <label for="mensaje">Cuéntenos sobre su situación actual</label>
-                                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describa brevemente su contexto, desafíos principales y qué espera lograr..."></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <button type="submit" class="btn-submit">Solicitar Evaluación</button>
-                            </div>
+            <!-- Full Width Form -->
+            <div class="contact-form-section">
+                <h2>Solicite su Evaluación de Madurez</h2>
+                <form id="contactForm" class="contact-form">
+                    <!-- Honeypot field for spam protection - hidden from users -->
+                    <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
                         </div>
+                        <div class="form-group">
+                            <label for="cargo">Cargo *</label>
+                            <input type="text" id="cargo" name="cargo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa *</label>
+                            <input type="text" id="empresa" name="empresa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo_institucion">Tipo de institución *</label>
+                            <select id="tipo_institucion" name="tipo_institucion" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="banco">Banco</option>
+                                <option value="aseguradora">Aseguradora</option>
+                                <option value="asset_manager">Asset Manager</option>
+                                <option value="fintech">Fintech</option>
+                                <option value="cooperativa">Cooperativa de Ahorro</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group span-2">
+                            <label for="email">Email corporativo *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group span-2">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="mensaje">Cuéntenos sobre su situación actual</label>
+                            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Describa brevemente su contexto, desafíos principales y qué espera lograr..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-footer">
                         <p class="form-note">Al enviar este formulario, acepta nuestra política de privacidad. No compartiremos su información con terceros.</p>
-                    </form>
-                </div>
+                        <button type="submit" class="btn-submit">Solicitar Evaluación</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>

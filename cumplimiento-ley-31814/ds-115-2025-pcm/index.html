@@ -52,19 +52,37 @@
 
     <style>
         .article-hero {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a5f 100%);
+            background: white;
             padding: 120px 0 60px;
-            color: white;
+            color: var(--text-primary);
+            position: relative;
+        }
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .article-hero .container {
+            position: relative;
+            z-index: 1;
         }
         .article-hero h1 {
             font-size: clamp(1.75rem, 5vw, 2.5rem);
             margin-bottom: 1rem;
+            color: var(--secondary-color);
         }
         .article-hero .hero-subtitle {
             font-size: 1.15rem;
-            opacity: 0.9;
             max-width: 700px;
             line-height: 1.7;
+            color: var(--text-secondary);
         }
         .article-content {
             padding: 4rem 0;

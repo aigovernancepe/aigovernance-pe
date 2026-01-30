@@ -107,28 +107,22 @@
             font-size: 1.25rem;
         }
         .contact-methods {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
         }
         .contact-method {
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            padding: 1.25rem 1.5rem;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
             background: var(--bg-light);
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
-            min-width: 0;
-        }
-        .contact-method-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
         }
         .contact-icon {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background: rgba(26, 86, 219, 0.1);
             border-radius: var(--radius-md);
             display: flex;
@@ -138,18 +132,18 @@
             font-size: 1rem;
             flex-shrink: 0;
         }
-        .contact-method h4 {
+        .contact-method-text h4 {
             color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .contact-method-text p {
             margin-bottom: 0;
             font-size: 1rem;
-            font-weight: 600;
-        }
-        .contact-method p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            word-break: break-word;
-            overflow-wrap: break-word;
+            color: var(--text-primary);
         }
         .contact-method a {
             color: var(--primary-color);
@@ -285,9 +279,6 @@
             .contact-info-grid {
                 grid-template-columns: 1fr;
             }
-            .contact-methods {
-                grid-template-columns: 1fr;
-            }
             .what-to-expect ul {
                 grid-template-columns: 1fr;
             }
@@ -380,31 +371,31 @@
                     <h3>Contáctenos</h3>
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <div class="contact-method-header">
-                                <div class="contact-icon">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-method-text">
                                 <h4>Email</h4>
+                                <p><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></p>
                             </div>
-                            <p><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></p>
                         </div>
                         <div class="contact-method">
-                            <div class="contact-method-header">
-                                <div class="contact-icon">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                </div>
+                            <div class="contact-icon">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                            <div class="contact-method-text">
                                 <h4>LinkedIn</h4>
+                                <p><a href="https://linkedin.com/company/ai-governance-peru" target="_blank">AI Governance Peru</a></p>
                             </div>
-                            <p><a href="https://linkedin.com/company/ai-governance-peru" target="_blank">AI Governance Peru</a></p>
                         </div>
                         <div class="contact-method">
-                            <div class="contact-method-header">
-                                <div class="contact-icon">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                </div>
-                                <h4>Ubicación</h4>
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
                             </div>
-                            <p>Lima, Perú</p>
+                            <div class="contact-method-text">
+                                <h4>Ubicación</h4>
+                                <p>Lima, Perú</p>
+                            </div>
                         </div>
                     </div>
                 </div>

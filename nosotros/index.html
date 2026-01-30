@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Más de 10 años de experiencia implementando Data Governance en industrias reguladas. Estándares suizos aplicados al contexto peruano.">
+    <meta name="keywords" content="AI Governance Peru, consultoria data governance, Wilko Feye, experiencia suiza, sector financiero Peru">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/nosotros/">
+    <meta property="og:title" content="Sobre Nosotros | AI Governance Peru - Experiencia en Data Governance">
+    <meta property="og:description" content="Más de 10 años de experiencia implementando Data Governance en industrias reguladas. Estándares suizos aplicados al contexto peruano.">
+
+    <title>Sobre Nosotros | AI Governance Peru - Experiencia en Data Governance</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/nosotros/">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://aigovernance.pe/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Nosotros",
+            "item": "https://aigovernance.pe/nosotros/"
+        }]
+    }
+    </script>
+
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a5f 100%);
+            padding: 120px 0 80px;
+            color: white;
+        }
+        .about-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .about-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .about-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .about-hero h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            margin-bottom: 1rem;
+        }
+        .about-hero .hero-subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+        .about-content {
+            padding: 4rem 0;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        .about-main h2 {
+            color: var(--primary-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .about-main h2:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .about-main p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .about-main ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .about-main li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        .about-main strong {
+            color: var(--text-primary);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(26, 86, 219, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .experience-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+        .experience-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .experience-card h4 i {
+            color: var(--primary-color);
+        }
+        .experience-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .value-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .value-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        .value-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(26, 86, 219, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+        .value-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .about-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        .btn-sidebar {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-sidebar:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .cta-section .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .cta-section .btn-white:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-sidebar {
+                position: static;
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/servicios/">Servicios</a></li>
+                    <li><a href="/cumplimiento-ley-31814/">Ley 31814</a></li>
+                    <li><a href="/recursos/">Recursos</a></li>
+                    <li><a href="/contacto/">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / Nosotros
+            </div>
+            <h1>Sobre AI Governance Peru</h1>
+            <p class="hero-subtitle">Más de una década de experiencia implementando Data Governance en industrias altamente reguladas. Traemos estándares suizos al contexto peruano.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-main">
+                    <h2>Nuestra Historia</h2>
+                    <p>AI Governance Peru nace de la convergencia de dos mundos: la rigurosidad de los estándares suizos en gestión de datos y las necesidades específicas del sector financiero peruano frente a la nueva regulación de inteligencia artificial.</p>
+
+                    <p>Fundada por profesionales con más de 10 años de experiencia implementando frameworks de Data Governance en Suiza, uno de los centros financieros más exigentes del mundo, traemos metodologías probadas y adaptadas al contexto latinoamericano.</p>
+
+                    <div class="highlight-box">
+                        <p>Nuestra misión es ayudar a las instituciones financieras peruanas a implementar sistemas de IA de manera responsable, cumpliendo con la Ley 31814 y el DS 115-2025-PCM, mientras generan valor real para sus negocios.</p>
+                    </div>
+
+                    <h2>Experiencia Internacional</h2>
+                    <p>Nuestra experiencia se forjó en los entornos más regulados de Europa:</p>
+
+                    <div class="experience-grid">
+                        <div class="experience-card">
+                            <h4><i class="fa-solid fa-chart-pie"></i> Asset Management</h4>
+                            <p>Implementación de frameworks de Data Governance para gestoras de activos en Suiza, cumpliendo con regulaciones FINMA y estándares internacionales.</p>
+                        </div>
+                        <div class="experience-card">
+                            <h4><i class="fa-solid fa-flask"></i> Farmacéutica / GxP</h4>
+                            <p>Data integrity y governance en entornos GxP (Good Practice) para compañías farmacéuticas, donde la trazabilidad de datos es crítica.</p>
+                        </div>
+                        <div class="experience-card">
+                            <h4><i class="fa-solid fa-building-columns"></i> Banca Privada</h4>
+                            <p>Proyectos de data quality y governance para instituciones de banca privada suiza, con los más altos estándares de confidencialidad.</p>
+                        </div>
+                        <div class="experience-card">
+                            <h4><i class="fa-solid fa-shield-halved"></i> Compliance Regulatorio</h4>
+                            <p>Implementación de controles de compliance para cumplimiento con múltiples regulaciones simultáneas (GDPR, FINMA, MiFID).</p>
+                        </div>
+                    </div>
+
+                    <h2>Por Qué Elegimos Perú</h2>
+                    <p>Perú representa una oportunidad única: un país que está tomando la delantera en regulación de IA en América Latina con la Ley 31814, y un sector financiero en plena transformación digital que necesita guía experta para navegar estos cambios.</p>
+
+                    <p>Creemos que las instituciones peruanas merecen acceso a la misma calidad de consultoría que las grandes instituciones europeas. Nuestra propuesta de valor combina:</p>
+                    <ul>
+                        <li><strong>Metodologías probadas:</strong> Frameworks que han funcionado en los entornos más exigentes</li>
+                        <li><strong>Adaptación local:</strong> Entendimiento profundo del contexto regulatorio y empresarial peruano</li>
+                        <li><strong>Enfoque práctico:</strong> Soluciones implementables, no solo teoría</li>
+                        <li><strong>Transferencia de conocimiento:</strong> Capacitamos a sus equipos para operar de forma autónoma</li>
+                    </ul>
+
+                    <h2>Nuestros Valores</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h4>Excelencia</h4>
+                            <p>Aplicamos los más altos estándares de calidad en cada proyecto</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <h4>Integridad</h4>
+                            <p>Honestidad y transparencia en todas nuestras interacciones</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <h4>Innovación</h4>
+                            <p>Soluciones creativas adaptadas a cada contexto</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <h4>Colaboración</h4>
+                            <p>Trabajamos como socios, no como proveedores externos</p>
+                        </div>
+                    </div>
+
+                    <h2>Nuestro Enfoque</h2>
+                    <p>No creemos en soluciones genéricas. Cada institución tiene su propia cultura, madurez tecnológica y desafíos específicos. Nuestro enfoque se basa en:</p>
+
+                    <ul>
+                        <li><strong>Diagnóstico profundo:</strong> Entendemos su situación actual antes de proponer soluciones</li>
+                        <li><strong>Roadmap realista:</strong> Priorizamos quick wins mientras construimos capacidades de largo plazo</li>
+                        <li><strong>Implementación práctica:</strong> No dejamos PowerPoints, dejamos sistemas funcionando</li>
+                        <li><strong>Capacitación integral:</strong> Su equipo termina empoderado para continuar solo</li>
+                        <li><strong>Acompañamiento post-proyecto:</strong> Estamos disponibles cuando nos necesite</li>
+                    </ul>
+                </div>
+
+                <aside class="about-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Contacto</h3>
+                        <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <a href="mailto:info@aigovernance.pe" style="color: var(--text-secondary);">info@aigovernance.pe</a></p>
+                        <p style="margin-bottom: 1rem;"><i class="fa-brands fa-linkedin" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <a href="https://linkedin.com/in/wilkofeye" target="_blank" style="color: var(--text-secondary);">LinkedIn</a></p>
+                        <a href="/contacto/" class="btn-sidebar">Contáctenos</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Ubicación</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary);"><i class="fa-solid fa-location-dot" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Lima, Perú</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Solicite un Assessment</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Conozca su situación actual y reciba un roadmap personalizado de cumplimiento.</p>
+                        <a href="/#contacto" class="btn-sidebar" style="background: var(--accent-color);">Solicitar Assessment</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para Comenzar?</h2>
+            <p>Agende una conversación sin compromiso para discutir cómo podemos ayudarle con el cumplimiento de la Ley 31814.</p>
+            <a href="/contacto/" class="btn-white">
+                <i class="fa-solid fa-calendar-check"></i>
+                Agendar Conversación
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/data-governance/implementacion/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/compliance/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/data-governance/capacitacion/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ley 31814</h4>
+                    <ul>
+                        <li><a href="/cumplimiento-ley-31814/">Cumplimiento Ley 31814</a></li>
+                        <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/">¿Qué es la Ley 31814?</a></li>
+                        <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/">DS 115-2025-PCM</a></li>
+                        <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/">Plazos de Cumplimiento</a></li>
+                        <li><a href="/cumplimiento-ley-31814/requisitos-sector-financiero/">Requisitos por Sector</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/nosotros/">Nosotros</a></li>
+                        <li><a href="/recursos/">Recursos</a></li>
+                        <li><a href="/contacto/">Contacto</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contáctenos para una evaluación gratuita de su madurez en Data Governance. Oficina en Lima, Perú. Email: info@aigovernance.pe">
+    <meta name="keywords" content="contacto AI Governance Peru, consultoria data governance Lima, AI readiness assessment contacto">
+    <meta name="author" content="Wilko Feye">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aigovernance.pe/contacto/">
+    <meta property="og:title" content="Contacto | Solicite su AI Readiness Assessment | AI Governance Peru">
+    <meta property="og:description" content="Contáctenos para una evaluación gratuita de su madurez en Data Governance. Lima, Perú.">
+
+    <title>Contacto | Solicite su AI Readiness Assessment | AI Governance Peru</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo-icon.svg">
+    <link rel="canonical" href="https://aigovernance.pe/contacto/">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://aigovernance.pe/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contacto",
+            "item": "https://aigovernance.pe/contacto/"
+        }]
+    }
+    </script>
+
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a5f 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .contact-hero .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .contact-hero .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .contact-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .contact-hero h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            margin-bottom: 1rem;
+        }
+        .contact-hero .hero-subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+        .contact-content {
+            padding: 4rem 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .contact-info h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        .contact-info p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(26, 86, 219, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .contact-method h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+        .contact-method p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        .contact-method a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+        .what-to-expect {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            margin-top: 2rem;
+        }
+        .what-to-expect h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        .what-to-expect ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .what-to-expect li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .what-to-expect li:last-child {
+            border-bottom: none;
+        }
+        .what-to-expect li i {
+            color: var(--accent-color);
+            margin-top: 0.2rem;
+        }
+        .contact-form-section {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+        .contact-form-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            text-align: center;
+        }
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../images/logo.svg" alt="AI Governance Perú" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/servicios/">Servicios</a></li>
+                    <li><a href="/cumplimiento-ley-31814/">Ley 31814</a></li>
+                    <li><a href="/recursos/">Recursos</a></li>
+                    <li><a href="/contacto/">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Inicio</a> / Contacto
+            </div>
+            <h1>Contacto</h1>
+            <p class="hero-subtitle">¿Tiene preguntas sobre el cumplimiento de la Ley 31814? Estamos aquí para ayudarle. Agende una conversación sin compromiso.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Hablemos de su Proyecto</h2>
+                    <p>Ya sea que esté comenzando su journey de Data Governance o necesite ayuda específica para cumplir con la Ley 31814, estamos listos para escucharlo.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p><a href="https://linkedin.com/in/wilkofeye" target="_blank">linkedin.com/in/wilkofeye</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Lima, Perú</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="what-to-expect">
+                        <h3>¿Qué Esperar?</h3>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span><strong>Respuesta rápida:</strong> Le contactaremos dentro de 24 horas hábiles</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span><strong>Conversación sin compromiso:</strong> Llamada de 30 minutos para entender su situación</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span><strong>Propuesta personalizada:</strong> Plan de trabajo adaptado a sus necesidades específicas</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span><strong>Total confidencialidad:</strong> Su información está segura con nosotros</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2>Solicite un AI Readiness Assessment</h2>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre *</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido">Apellido *</label>
+                                <input type="text" id="apellido" name="apellido" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email corporativo *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="empresa">Empresa *</label>
+                                <input type="text" id="empresa" name="empresa" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cargo">Cargo</label>
+                                <input type="text" id="cargo" name="cargo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo-institucion">Tipo de Institución</label>
+                            <select id="tipo-institucion" name="tipo-institucion">
+                                <option value="">Seleccione una opción</option>
+                                <option value="banco">Banco</option>
+                                <option value="aseguradora">Aseguradora</option>
+                                <option value="asset-manager">Asset Manager / Fondo</option>
+                                <option value="fintech">Fintech</option>
+                                <option value="cooperativa">Cooperativa / Caja</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio">Servicio de Interés</label>
+                            <select id="servicio" name="servicio">
+                                <option value="">Seleccione una opción</option>
+                                <option value="ai-readiness">AI Readiness Assessment</option>
+                                <option value="data-governance">Data Governance Implementation</option>
+                                <option value="evaluacion-impacto">Evaluación de Impacto de IA</option>
+                                <option value="evaluacion-sesgo">Evaluación de Sesgo Algorítmico</option>
+                                <option value="capacitacion">Capacitación</option>
+                                <option value="otro">Otro / Consulta General</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntenos brevemente sobre su situación actual y cómo podemos ayudarle..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Enviar Solicitud
+                        </button>
+                        <p class="form-note">Al enviar este formulario, acepta nuestra política de privacidad. No compartiremos su información con terceros.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../images/logo-white.svg" alt="AI Governance Peru" class="logo-img">
+                        </a>
+                    </div>
+                    <p>Data Governance & Compliance de IA para el sector financiero en Perú</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/servicios/data-governance/evaluacion-madurez-ia/">AI Readiness Assessment</a></li>
+                        <li><a href="/servicios/data-governance/implementacion/">Data Governance Implementation</a></li>
+                        <li><a href="/servicios/compliance/evaluacion-impacto-ia/">Evaluación de Impacto</a></li>
+                        <li><a href="/servicios/data-quality/evaluacion-sesgo/">Evaluación de Sesgo</a></li>
+                        <li><a href="/servicios/data-governance/capacitacion/">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ley 31814</h4>
+                    <ul>
+                        <li><a href="/cumplimiento-ley-31814/">Cumplimiento Ley 31814</a></li>
+                        <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/">¿Qué es la Ley 31814?</a></li>
+                        <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/">DS 115-2025-PCM</a></li>
+                        <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/">Plazos de Cumplimiento</a></li>
+                        <li><a href="/cumplimiento-ley-31814/requisitos-sector-financiero/">Requisitos por Sector</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/nosotros/">Nosotros</a></li>
+                        <li><a href="/recursos/">Recursos</a></li>
+                        <li><a href="/contacto/">Contacto</a></li>
+                        <li><a href="https://linkedin.com/in/wilkofeye" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 aigovernance.pe - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

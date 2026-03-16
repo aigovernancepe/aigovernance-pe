@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'bi-data-foundations-ai')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbs = [
+  { name: 'Áreas', url: `${company.url}/areas/` },
+  { name: 'Lima', url: `${company.url}/areas/lima/` },
+  { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+];
+
+const schemas = [
+  serviceInAreaSchema(service, area),
+  breadcrumbSchema(breadcrumbs),
+];
+---
+
+<BaseLayout
+  title="Fundamentos de Datos y BI para IA en Lima | AI Governance Peru"
+  description="Arquitectura de datos de alta integridad para IA en Lima. Conectamos Business Intelligence con IA Generativa para decisiones confiables. Consultoría presencial."
+  schema={schemas}
+>
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbs} />
+      <h1>Fundamentos de Datos y BI para Inteligencia Artificial en Lima</h1>
+      <p>Construya la base de datos que su IA necesita para ser confiable. Arquitectura de datos de alta integridad diseñada para empresas limeñas que integran Business Intelligence con IA Generativa.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación de Madurez de Datos</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por Qué las Empresas en Lima Necesitan Fundamentos de Datos para IA?</h2>
+        <p>Lima concentra las principales empresas del Perú que están adoptando IA: bancos en San Isidro, farmacéuticas en el corredor industrial, y fintechs en Miraflores. Sin embargo, muchas iniciativas de IA fallan porque los datos subyacentes no están gobernados.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-database"></i></div>
+          <h3 class="card__title">Arquitectura de Bases Vectoriales</h3>
+          <p class="card__text">Almacenamiento estructurado para su conocimiento corporativo privado, optimizado para consultas de IA y RAG en su infraestructura local en Lima.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-tags"></i></div>
+          <h3 class="card__title">Gestión de Metadatos</h3>
+          <p class="card__text">Etiquetado y gobernanza de información para "Agent Readiness" — preparando sus datos para ser consumidos por agentes de IA de forma segura.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Ingeniería de Confiabilidad</h3>
+          <p class="card__text">Eliminación de alucinaciones de IA a través de RAG robusto y lógica de BI. Sus modelos responderán con datos verificados, no con invenciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ventajas de Trabajar Presencialmente en Lima</h2>
+      </div>
+      <div class="grid grid--2">
+        <div>
+          <div class="pillar">
+            <div class="pillar__icon"><i class="fa-solid fa-handshake"></i></div>
+            <div class="pillar__content">
+              <h3>Workshops In-Situ con sus Equipos</h3>
+              <p>Sesiones presenciales con sus equipos de datos, BI y tecnología para mapear los flujos de información y diseñar la arquitectura óptima.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon"><i class="fa-solid fa-building"></i></div>
+            <div class="pillar__content">
+              <h3>Proximidad al Ecosistema Financiero</h3>
+              <p>Acceso directo a las sedes de SBS, SMV y los principales bancos en San Isidro para coordinación regulatoria.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon"><i class="fa-solid fa-server"></i></div>
+            <div class="pillar__content">
+              <h3>Integración con Infraestructura Local</h3>
+              <p>Trabajamos directamente con sus sistemas on-premise o nube privada, asegurando que los datos sensibles nunca salgan de su perímetro de seguridad.</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima, Perú"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Otros Servicios Disponibles en Lima</h2>
+      </div>
+      <div class="link-list" style="max-width:600px">
+        {otherServices.map((s) => (
+          <a href={`/areas/lima/${s.slug}/`}>
+            <i class="fa-solid fa-arrow-right"></i> {s.title} en Lima
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Prepare sus Datos para la Era de la IA</h2>
+      <p>Solicite una evaluación de madurez de datos para su roadmap de IA. Consultoría presencial en Lima.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación</a>
+    </div>
+  </section>
+</BaseLayout>

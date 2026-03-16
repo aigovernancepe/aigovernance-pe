@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ContactForm from '../../../components/ContactForm.astro';
+import { company } from '../../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Cumplimiento Ley 31814', url: `${company.url}/cumplimiento-ley-31814/` },
+  { name: 'DS 115-2025-PCM', url: `${company.url}/cumplimiento-ley-31814/ds-115-2025-pcm/` },
+];
+
+const schemas = [
+  webPageSchema({
+    title: 'DS 115-2025-PCM - Reglamento de la Ley de IA del Peru',
+    description: 'Analisis detallado del DS 115-2025-PCM, el reglamento de la Ley 31814. Articulos clave, obligaciones especificas, plazos y requisitos de implementacion para empresas.',
+    url: `${company.url}/cumplimiento-ley-31814/ds-115-2025-pcm/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="DS 115-2025-PCM | Reglamento de la Ley de IA del Peru"
+  description="Analisis detallado del DS 115-2025-PCM, el reglamento de la Ley 31814. Articulos clave, obligaciones especificas, plazos y requisitos de implementacion para empresas."
+  schema={schemas}
+>
+  <!-- Breadcrumb -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__badge">Reglamento Oficial</span>
+      <h1>DS 115-2025-PCM: El Reglamento que Define las Obligaciones de IA</h1>
+      <p>El Decreto Supremo 115-2025-PCM establece las reglas detalladas para el cumplimiento de la Ley 31814. Aqui desglosamos cada obligacion que su empresa debe cumplir.</p>
+    </div>
+  </section>
+
+  <!-- What is it -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <h2>Que es el DS 115-2025-PCM?</h2>
+      <p>El Decreto Supremo 115-2025-PCM es el <strong>reglamento de la Ley 31814</strong>, aprobado por la Presidencia del Consejo de Ministros. Mientras la ley establece el marco general y los principios, el DS 115-2025-PCM define las <strong>obligaciones especificas, los procedimientos, los plazos y los mecanismos de supervision</strong> que las organizaciones deben seguir.</p>
+      <p>Este reglamento es fundamental porque transforma los principios generales de la Ley 31814 en requisitos operativos concretos que su organizacion debe implementar.</p>
+    </div>
+  </section>
+
+  <!-- Key articles -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Articulos Clave del Reglamento</h2>
+        <p>Los aspectos mas relevantes del DS 115-2025-PCM para su organizacion.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-clipboard-list"></i></div>
+          <h3 class="card__title">Registro de Sistemas de IA</h3>
+          <p class="card__text">El reglamento establece la obligacion de mantener un registro detallado de todos los sistemas de IA, incluyendo su proposito, datos utilizados, nivel de riesgo y responsable asignado. Este registro debe estar disponible para las autoridades competentes.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3 class="card__title">Evaluacion de Impacto Algoritmico</h3>
+          <p class="card__text">Para sistemas de alto riesgo, se requiere una evaluacion formal de impacto que documente: proposito del sistema, datos de entrenamiento, metricas de rendimiento, riesgos identificados, medidas de mitigacion y plan de monitoreo continuo.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3 class="card__title">Estructura de Gobernanza</h3>
+          <p class="card__text">Las organizaciones deben designar un responsable de gobernanza de IA, establecer comites de supervision, definir politicas internas de uso de IA y documentar los procesos de toma de decisiones automatizadas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-person-circle-question"></i></div>
+          <h3 class="card__title">Derechos de los Afectados</h3>
+          <p class="card__text">El reglamento detalla los mecanismos que deben implementarse para que las personas afectadas por decisiones de IA puedan solicitar explicaciones, impugnar resultados y obtener revision humana.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3 class="card__title">Auditorias y Supervision</h3>
+          <p class="card__text">Se establecen requisitos de auditoria periodica para sistemas de alto riesgo, incluyendo pruebas de sesgo, validacion de rendimiento, revision de datos de entrenamiento y verificacion de medidas de seguridad.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-gavel"></i></div>
+          <h3 class="card__title">Sanciones e Infracciones</h3>
+          <p class="card__text">El DS 115-2025-PCM tipifica las infracciones y establece las sanciones correspondientes, que pueden incluir multas, suspension de operaciones de IA y responsabilidad administrativa para los directivos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation specs -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Especificaciones de Implementacion</h2>
+        <p>Lo que el reglamento exige en terminos practicos.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>Documentacion Tecnica</h3>
+            <p>Cada sistema de IA de alto riesgo debe contar con documentacion tecnica que incluya: descripcion del sistema, datos de entrenamiento, arquitectura del modelo, metricas de desempeno, pruebas de sesgo realizadas y limitaciones conocidas.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Trazabilidad de Decisiones</h3>
+            <p>Se requiere implementar registros (logs) que permitan reconstruir el proceso de toma de decisiones automatizadas, incluyendo los datos de entrada, los factores considerados y el resultado producido.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Proteccion de Datos</h3>
+            <p>El reglamento refuerza la integracion con la Ley de Proteccion de Datos Personales, exigiendo evaluaciones de privacidad especificas para sistemas de IA que procesen datos personales.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Notificacion de Incidentes</h3>
+            <p>Las organizaciones deben establecer procedimientos para la notificacion oportuna de incidentes relacionados con sistemas de IA, incluyendo fallas, sesgos detectados o vulneraciones de derechos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Difference from law -->
+  <section class="section section--alt">
+    <div class="container" style="max-width:800px">
+      <h2>Ley 31814 vs. DS 115-2025-PCM: Diferencias Clave</h2>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title">Ley 31814</h3>
+          <ul class="pillar__list">
+            <li>Marco general y principios</li>
+            <li>Clasificacion de riesgo</li>
+            <li>Derechos fundamentales</li>
+            <li>Obligaciones generales</li>
+            <li>Creacion de autoridad supervisora</li>
+          </ul>
+          <a href="/cumplimiento-ley-31814/que-es-ley-31814/" class="btn btn--outline btn--sm" style="margin-top:1rem">Ver Ley 31814 &rarr;</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">DS 115-2025-PCM</h3>
+          <ul class="pillar__list">
+            <li>Requisitos operativos detallados</li>
+            <li>Plazos especificos de cumplimiento</li>
+            <li>Formatos de documentacion</li>
+            <li>Procedimientos de auditoria</li>
+            <li>Regimen sancionador</li>
+          </ul>
+          <a href="/cumplimiento-ley-31814/plazos-cumplimiento/" class="btn btn--outline btn--sm" style="margin-top:1rem">Ver Plazos &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Recursos Relacionados</h2>
+      </div>
+      <div class="link-list" style="max-width:600px;margin:0 auto">
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem">
+          <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Que es la Ley 31814</a></li>
+          <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Plazos de Cumplimiento</a></li>
+          <li><a href="/cumplimiento-ley-31814/requisitos-sector-financiero/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Requisitos por Sector</a></li>
+          <li><a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicio: AI Governance & Compliance Audit</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Necesita una Auditoria de Cumplimiento?</h2>
+      <p>Evaluamos su nivel de adecuacion al DS 115-2025-PCM y le entregamos un plan de accion concreto.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Auditoria</a>
+        <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio de Auditoria</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+];
+
+const dgServices = services.filter((s) => s.category === 'data-governance');
+const dqServices = services.filter((s) => s.category === 'data-quality');
+const complianceServices = services.filter((s) => s.category === 'compliance');
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  webPageSchema({
+    title: 'Servicios de AI Governance, Data Governance & Compliance | Perú',
+    description: 'Servicios especializados de AI Governance, Data Governance, Data Quality y Compliance para empresas peruanas. Evaluación de madurez, implementación, capacitación, auditoría de IA y workflows agénticos.',
+    url: `${company.url}/servicios/`,
+  }),
+];
+---
+
+<BaseLayout
+  title="Servicios de AI Governance, Data Governance & Compliance | Perú"
+  description="Servicios especializados de AI Governance, Data Governance, Data Quality y Compliance para empresas peruanas. Evaluación de madurez, implementación, capacitación, auditoría de IA y workflows agénticos."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge">8 Servicios Especializados</span>
+      <h1>Servicios de AI Governance, Data Governance & Compliance</h1>
+      <p>Soluciones integrales para empresas peruanas que necesitan gobernar sus datos, cumplir con la regulación de IA y acelerar la transformación digital de manera responsable.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicite una Consulta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Governance -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-sitemap text-accent"></i> Data Governance</h2>
+        <p>Establezca los fundamentos de gobernanza de datos que su organización necesita para operar con confianza y cumplir con la regulación.</p>
+      </div>
+      <div class="grid grid--3">
+        {dgServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Más Popular' ? '' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <div class="card__meta">
+              <span><i class="fa-regular fa-clock"></i> {s.duration}</span>
+              <span><i class="fa-regular fa-building"></i> {s.audience}</span>
+            </div>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Quality -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-chart-line text-accent"></i> Data Quality & AI Engineering</h2>
+        <p>Asegure la calidad de los datos que alimentan sus modelos de IA y automatice procesos complejos con agentes inteligentes.</p>
+      </div>
+      <div class="grid grid--2">
+        {dqServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <div class="card__meta">
+              <span><i class="fa-regular fa-clock"></i> {s.duration}</span>
+              <span><i class="fa-regular fa-building"></i> {s.audience}</span>
+            </div>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-scale-balanced text-accent"></i> Compliance & AI Governance</h2>
+        <p>Cumpla con la Ley 31814, el DS 115-2025-PCM y las regulaciones sectoriales con evaluaciones de impacto y auditorías especializadas.</p>
+      </div>
+      <div class="grid grid--2">
+        {complianceServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'DS 115-2025-PCM' ? 'card__badge--danger' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <div class="card__meta">
+              <span><i class="fa-regular fa-clock"></i> {s.duration}</span>
+              <span><i class="fa-regular fa-building"></i> {s.audience}</span>
+            </div>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Compliance Urgency with Countdown -->
+  <section class="section" style="background:linear-gradient(135deg,#991b1b,#dc2626);color:#fff;text-align:center">
+    <div class="container">
+      <h2 style="color:#fff">Plazo de Cumplimiento: Ley 31814 & DS 115-2025-PCM</h2>
+      <p style="color:rgba(255,255,255,0.9);max-width:650px;margin:0 auto 1rem">Las empresas que utilizan sistemas de IA de alto riesgo deben cumplir con los requisitos de la Ley 31814 antes de septiembre 2026. No espere al ultimo momento.</p>
+      <div class="countdown" id="countdown"></div>
+      <p style="color:rgba(255,255,255,0.85);margin-top:1.5rem;font-size:0.95rem">Tiempo restante para el plazo maximo de cumplimiento - 10 de septiembre de 2026</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/cumplimiento-ley-31814/" class="btn btn--white btn--lg">Ver Requisitos Completos</a>
+        <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.5);color:#fff">Solicitar Auditoria</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Cobertura Geografica</h2>
+        <p>Ofrecemos nuestros servicios en todo el Peru, con presencia principal en Lima.</p>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Ver servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Encuentre el Servicio Adecuado para su Organizacion</h2>
+      <p>No esta seguro por donde empezar? Nuestro equipo le ayudara a identificar las prioridades de gobernanza y compliance para su sector.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Agendar Consulta Gratuita</a>
+        <a href="/servicios/evaluacion-madurez/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Comenzar con Evaluacion de Madurez</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

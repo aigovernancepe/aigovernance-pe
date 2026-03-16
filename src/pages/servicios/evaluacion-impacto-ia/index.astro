@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../../data/company';
+import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'evaluacion-impacto-ia')!;
+const relatedServices = services.filter((s) =>
+  ['ai-governance-compliance-audit', 'evaluacion-sesgo', 'evaluacion-madurez'].includes(s.slug)
+);
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  serviceSchema(service),
+];
+---
+
+<BaseLayout
+  title={`${service.title} | Cumplimiento Ley 31814 Perú`}
+  description={`Evaluación de impacto para sistemas de IA de alto riesgo según Ley 31814 y DS 115-2025-PCM. Informe de 6 secciones, análisis de fairness, especificaciones técnicas y plan de monitoreo.`}
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+        <span class="hero__badge" style="background:rgba(220,38,38,0.9)">Ley 31814</span>
+        <span class="hero__badge">2-3 Semanas</span>
+      </div>
+      <h1>{service.title}</h1>
+      <p>Informe formal de evaluación de impacto para sistemas de IA de alto riesgo, cumpliendo con los requisitos de la Ley 31814 y el DS 115-2025-PCM. Proteja su organización ante la regulación.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación</a>
+        <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Requisitos Ley 31814</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Urgency -->
+  <section class="section" style="background:linear-gradient(135deg,#991b1b,#dc2626);color:#fff;text-align:center">
+    <div class="container">
+      <h2 style="color:#fff">Plazo de Cumplimiento: Septiembre 2026</h2>
+      <p style="color:rgba(255,255,255,0.9);max-width:600px;margin:0 auto 1rem">Los sistemas de IA de alto riesgo deben contar con evaluación de impacto antes del plazo establecido por la Ley 31814.</p>
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </section>
+
+  <!-- Report Structure -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Estructura del Informe de Impacto</h2>
+        <p>6 secciones que cubren todos los requisitos regulatorios para sistemas de IA de alto riesgo.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3 class="card__title">1. Descripción del Sistema</h3>
+          <p class="card__text">Documentación detallada del sistema de IA: propósito, alcance, datos utilizados, arquitectura técnica, usuarios y personas afectadas por las decisiones.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h3 class="card__title">2. Evaluación de Riesgos</h3>
+          <p class="card__text">Identificación y clasificación de riesgos: derechos fundamentales, seguridad, discriminación, privacidad. Matriz de probabilidad e impacto.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="card__title">3. Análisis de Fairness</h3>
+          <p class="card__text">Evaluación de equidad y no discriminación del sistema. Análisis de sesgo por variables protegidas con métricas cuantitativas de fairness.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-gears"></i></div>
+          <h3 class="card__title">4. Especificaciones Técnicas</h3>
+          <p class="card__text">Documentación de la arquitectura del modelo, datos de entrenamiento, métricas de performance, limitaciones conocidas y condiciones de uso apropiado.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">5. Medidas de Mitigación</h3>
+          <p class="card__text">Plan de mitigación para cada riesgo identificado: controles técnicos, organizacionales y de gobernanza. Mecanismos de supervisión humana.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">6. Plan de Monitoreo</h3>
+          <p class="card__text">Framework de monitoreo continuo: KPIs de performance y fairness, frecuencia de revisión, triggers de re-evaluación y proceso de actualización.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Proceso de Evaluación</h2>
+        <p>Metodología rigurosa adaptada a los requisitos de la regulación peruana.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>Semana 1: Recopilación y Análisis</h3>
+            <p>Entrevistas con equipos técnicos y de negocio. Revisión de documentación del sistema, datos de entrenamiento y métricas actuales. Clasificación del nivel de riesgo.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Semana 1-2: Evaluación Técnica</h3>
+            <p>Análisis de sesgo y fairness. Evaluación de explicabilidad. Revisión de especificaciones técnicas. Pruebas de robustez y casos límite.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Semana 2-3: Informe y Recomendaciones</h3>
+            <p>Desarrollo del informe de 6 secciones. Diseño del plan de monitoreo. Presentación de hallazgos y recomendaciones al equipo directivo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Relacionados</h2>
+        <p>Complemente su evaluación de impacto con estos servicios.</p>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'DS 115-2025-PCM' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Disponible en Todo el Perú</h2>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Cumpla con la Ley 31814 Antes del Plazo</h2>
+      <p>Evaluación de impacto en 2-3 semanas. Informe formal listo para presentar a reguladores. No espere a septiembre 2026.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación de Impacto</a>
+        <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Requisitos Ley 31814</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

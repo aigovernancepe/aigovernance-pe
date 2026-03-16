@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ContactForm from '../../../components/ContactForm.astro';
+import { company } from '../../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Cumplimiento Ley 31814', url: `${company.url}/cumplimiento-ley-31814/` },
+  { name: 'Requisitos por Sector', url: `${company.url}/cumplimiento-ley-31814/requisitos-sector-financiero/` },
+];
+
+const schemas = [
+  webPageSchema({
+    title: 'Requisitos Ley 31814 para el Sector Financiero',
+    description: 'Requisitos especificos de la Ley 31814 y DS 115-2025-PCM para bancos, aseguradoras, asset managers, fintechs, cooperativas y sector farmaceutico en Peru.',
+    url: `${company.url}/cumplimiento-ley-31814/requisitos-sector-financiero/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="Requisitos Ley 31814 para el Sector Financiero | Bancos, Aseguradoras, Fintech"
+  description="Requisitos especificos de la Ley 31814 y DS 115-2025-PCM para bancos, aseguradoras, asset managers, fintechs, cooperativas y sector farmaceutico en Peru."
+  schema={schemas}
+>
+  <!-- Breadcrumb -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__badge">Requisitos Sectoriales</span>
+      <h1>Requisitos por Sector: Financiero, Farmaceutico y mas</h1>
+      <p>Cada sector enfrenta desafios unicos en el cumplimiento de la Ley 31814. Conozca los requisitos especificos para su industria y los sistemas de IA que mas atencion requieren.</p>
+    </div>
+  </section>
+
+  <!-- Banks -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-building-columns"></i> Bancos</h2>
+        <p>Los bancos son uno de los sectores con mayor uso de IA de alto riesgo en Peru, sujetos ademas a supervision de la SBS.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title">Scoring Crediticio</h3>
+          <p class="card__text">Los modelos de scoring basados en IA son clasificados como alto riesgo. Requieren evaluacion de impacto, deteccion de sesgo, explicabilidad de decisiones y revision humana para rechazos.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Prevencion de Fraude</h3>
+          <p class="card__text">Los sistemas de deteccion de fraude con IA deben documentar sus reglas, mantener logs de decisiones y proporcionar mecanismos de impugnacion para falsos positivos.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">AML/KYC Automatizado</h3>
+          <p class="card__text">Los sistemas de Anti-Money Laundering y Know Your Customer basados en IA requieren gobernanza especial, auditabilidad y supervision humana en decisiones criticas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-shield-halved"></i> Aseguradoras</h2>
+        <p>Las aseguradoras utilizan IA para pricing, suscripcion y gestion de siniestros, todas areas de alto impacto en los clientes.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title">Pricing y Suscripcion</h3>
+          <p class="card__text">Los modelos de tarificacion basados en IA deben garantizar no discriminacion, transparencia en los factores considerados y posibilidad de revision humana.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Gestion de Siniestros</h3>
+          <p class="card__text">La automatizacion de la gestion de siniestros con IA requiere explicabilidad, trazabilidad de decisiones y mecanismos de apelacion para los asegurados.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Deteccion de Fraude</h3>
+          <p class="card__text">Los sistemas de deteccion de fraude en seguros deben mantener registros completos y proporcionar justificacion documentada ante investigaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Asset Managers -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-chart-line"></i> Asset Managers</h2>
+        <p>Los gestores de activos que utilizan IA para decisiones de inversion enfrentan requisitos de gobernanza y supervision especificos.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title">Trading Algoritmico</h3>
+          <p class="card__text">Los algoritmos de trading basados en IA requieren supervision continua, mecanismos de control (circuit breakers), documentacion de estrategias y reportes a la SMV.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Robo-Advisors</h3>
+          <p class="card__text">Los asesores de inversion automatizados deben garantizar idoneidad de las recomendaciones, transparencia en el proceso y supervision humana del perfilamiento de riesgo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fintechs -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-mobile-screen-button"></i> Fintechs</h2>
+        <p>Las fintechs, como empresas nativas digitales, suelen tener alta dependencia de IA y deben cumplir con la regulacion desde el diseno.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title">Lending Digital</h3>
+          <p class="card__text">Las plataformas de prestamos que usan IA para evaluacion crediticia deben cumplir los mismos requisitos que los bancos, incluyendo evaluacion de sesgo y explicabilidad.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Onboarding Digital</h3>
+          <p class="card__text">Los procesos de verificacion de identidad con biometria e IA requieren cumplimiento con proteccion de datos personales y evaluacion de sesgos biometricos.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Personalizacion</h3>
+          <p class="card__text">Los sistemas de recomendacion de productos financieros con IA deben ser transparentes, no discriminatorios y permitir que el usuario entienda la logica de las recomendaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cooperatives -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-people-group"></i> Cooperativas</h2>
+        <p>Las cooperativas de ahorro y credito que adoptan IA deben adaptarse a los mismos estandares, considerando su estructura y recursos.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title">Evaluacion Crediticia</h3>
+          <p class="card__text">Los modelos de evaluacion de socios para creditos con IA deben garantizar equidad, especialmente en zonas rurales y con poblaciones vulnerables.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Gobernanza Proporcional</h3>
+          <p class="card__text">Las cooperativas pueden implementar gobernanza de IA de forma proporcional a su tamano y complejidad, priorizando los sistemas de mayor riesgo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pharma -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-flask"></i> Sector Farmaceutico</h2>
+        <p>La industria farmaceutica enfrenta requisitos adicionales por operar en entornos GxP altamente regulados.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title">Control de Calidad</h3>
+          <p class="card__text">Los sistemas de IA para control de calidad en manufactura farmaceutica deben cumplir con requisitos GxP, validacion de sistemas computarizados y trazabilidad completa.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Farmacovigilancia</h3>
+          <p class="card__text">La IA aplicada a la deteccion de eventos adversos requiere supervision humana experta, documentacion completa y reporting regulatorio a DIGEMID.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Investigacion Clinica</h3>
+          <p class="card__text">El uso de IA en ensayos clinicos y analisis de datos requiere cumplimiento con etica de investigacion, consentimiento informado y buenas practicas clinicas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common requirements -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Requisitos Comunes a Todos los Sectores</h2>
+        <p>Independientemente de su sector, toda organizacion que use IA de alto riesgo debe cumplir con:</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-clipboard-list"></i></div>
+          <h3 class="card__title">Registro de Sistemas</h3>
+          <p class="card__text">Inventario completo y clasificacion de riesgo de todos los sistemas de IA.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3 class="card__title">Evaluacion de Impacto</h3>
+          <p class="card__text">Evaluacion formal para sistemas de alto riesgo con medidas de mitigacion.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3 class="card__title">Gobernanza</h3>
+          <p class="card__text">Estructura de gobernanza con roles, politicas y procedimientos definidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Como Podemos Ayudarle</h2>
+        <p>Servicios especializados para su sector.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <span class="card__badge card__badge--danger">DS 115-2025-PCM</span>
+          <h3 class="card__title">AI Governance & Compliance Audit</h3>
+          <p class="card__text">Auditoria completa de sus sistemas de IA, evaluacion de brechas y plan de adecuacion especifico para su sector.</p>
+          <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--primary btn--sm">Solicitar Auditoria &rarr;</a>
+        </div>
+        <div class="card">
+          <span class="card__badge card__badge--danger">Ley 31814</span>
+          <h3 class="card__title">Evaluacion de Impacto de IA</h3>
+          <p class="card__text">Informe formal de evaluacion de impacto para sus sistemas de IA de alto riesgo, adaptado a los requisitos de su sector.</p>
+          <a href="/servicios/evaluacion-impacto-ia/" class="btn btn--primary btn--sm">Solicitar Evaluacion &rarr;</a>
+        </div>
+      </div>
+      <div class="grid grid--2" style="margin-top:1.5rem">
+        <div class="card">
+          <h3 class="card__title">Evaluacion de Sesgo</h3>
+          <p class="card__text">Analisis de fairness y deteccion de sesgo algoritmico en sus modelos de IA criticos.</p>
+          <a href="/servicios/evaluacion-sesgo/" class="btn btn--outline btn--sm">Ver Servicio &rarr;</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Evaluacion de Madurez</h3>
+          <p class="card__text">Diagnostico de su nivel de madurez en Data Governance como base para el cumplimiento de IA.</p>
+          <a href="/servicios/evaluacion-madurez/" class="btn btn--outline btn--sm">Ver Servicio &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Explore Mas</h2>
+      </div>
+      <div class="link-list" style="max-width:600px;margin:0 auto">
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem">
+          <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Que es la Ley 31814</a></li>
+          <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> DS 115-2025-PCM: El Reglamento</a></li>
+          <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Plazos de Cumplimiento</a></li>
+          <li><a href="/nosotros/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Sobre AI Governance Peru</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Cumpla con la Ley 31814 en su Sector</h2>
+      <p>Cada sector tiene requisitos especificos. Le ayudamos a disenar un plan de cumplimiento adaptado a su realidad.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Contactar a un Experto</a>
+    </div>
+  </section>
+</BaseLayout>

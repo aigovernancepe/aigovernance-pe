@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../../data/company';
+import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'agentic-workflow-engineering')!;
+const relatedServices = services.filter((s) =>
+  ['bi-data-foundations-ai', 'ai-governance-compliance-audit', 'evaluacion-sesgo'].includes(s.slug)
+);
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  serviceSchema(service),
+];
+---
+
+<BaseLayout
+  title="Workflows de Agentes de IA para Empresas en Lima | Agentic Workflow Engineering"
+  description="Diseño e implementación de workflows autónomos con agentes de IA para empresas en Lima y Perú. Soluciones para pharma, asset management y finanzas con human-in-the-loop y despliegue en VPC."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge card__badge--success" style="display:inline-block;padding:0.25rem 1rem;border-radius:100px;font-size:0.85rem">Nuevo — 8-12 Semanas</span>
+      <h1>Autonomous Agentic Workflows: Moving Beyond Chatbots to Operational Autonomy</h1>
+      <p>Deje atrás los chatbots básicos. Diseñamos e implementamos sistemas multi-agente que automatizan procesos complejos de negocio con supervisión humana integrada, desplegados en su infraestructura.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Agendar Consulta de Arquitectura</a>
+        <a href="/servicios/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Todos los Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Gap -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2">
+        <div>
+          <h2>De Chatbots a Autonomía Operativa</h2>
+          <p>La mayoría de empresas en Perú han experimentado con chatbots y asistentes de IA básicos. Pero el verdadero valor de la IA generativa está en <strong>workflows autónomos multi-agente</strong> que ejecutan procesos de negocio completos.</p>
+          <p>Nuestros workflows agénticos combinan múltiples agentes de IA especializados que colaboran para completar tareas complejas: investigación, análisis, redacción, validación y reporte — todo con supervisión humana en puntos críticos.</p>
+        </div>
+        <div>
+          <div class="card">
+            <h3 class="card__title">Chatbot vs. Workflow Agéntico</h3>
+            <ul class="pillar__list">
+              <li><strong>Chatbot:</strong> Responde preguntas individuales</li>
+              <li><strong>Agente:</strong> Ejecuta procesos de múltiples pasos</li>
+              <li><strong>Chatbot:</strong> Requiere input constante del usuario</li>
+              <li><strong>Agente:</strong> Opera autónomamente con checkpoints</li>
+              <li><strong>Chatbot:</strong> Una herramienta, una tarea</li>
+              <li><strong>Agente:</strong> Orquesta múltiples herramientas y APIs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Solutions with Tabs -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Soluciones por Industria</h2>
+        <p>Workflows agénticos diseñados para los desafíos específicos de cada sector regulado.</p>
+      </div>
+      <div class="tab-group">
+        <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem">
+          <button class="tab-btn active" data-tab="tab-pharma">Farmacéutica</button>
+          <button class="tab-btn" data-tab="tab-asset">Asset Management</button>
+          <button class="tab-btn" data-tab="tab-finance">Finanzas</button>
+        </div>
+
+        <div class="tab-panel active" id="tab-pharma">
+          <div class="grid grid--2">
+            <div class="card">
+              <div class="card__icon"><i class="fa-solid fa-flask"></i></div>
+              <h3 class="card__title">Automatización de Expedientes DIGEMID</h3>
+              <p class="card__text">Agentes que recopilan, validan y organizan la documentación requerida para registros sanitarios. Verificación automática de completitud contra requisitos DIGEMID con alertas de inconsistencias.</p>
+            </div>
+            <div class="card">
+              <div class="card__icon"><i class="fa-solid fa-file-medical"></i></div>
+              <h3 class="card__title">Monitoreo de Literatura Científica</h3>
+              <p class="card__text">Agentes de vigilancia que monitorean publicaciones científicas, ensayos clínicos y alertas regulatorias relevantes para su portafolio, generando resúmenes ejecutivos automáticos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-asset">
+          <div class="grid grid--2">
+            <div class="card">
+              <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h3 class="card__title">Research Automatizado</h3>
+              <p class="card__text">Agentes que analizan reportes financieros, noticias, datos macro y filings regulatorios para generar memos de inversión preliminares con fuentes citadas y verificadas.</p>
+            </div>
+            <div class="card">
+              <div class="card__icon"><i class="fa-solid fa-file-contract"></i></div>
+              <h3 class="card__title">Compliance Documental</h3>
+              <p class="card__text">Automatización de la revisión de documentación de clientes, verificación de requisitos KYC/AML y generación de reportes de compliance para SMV.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-finance">
+          <div class="grid grid--2">
+            <div class="card">
+              <div class="card__icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+              <h3 class="card__title">Gestión Inteligente de Cobranzas</h3>
+              <p class="card__text">Agentes que segmentan clientes, personalizan estrategias de contacto, generan comunicaciones adaptativas y escalan casos según parámetros definidos por su equipo.</p>
+            </div>
+            <div class="card">
+              <div class="card__icon"><i class="fa-solid fa-user-shield"></i></div>
+              <h3 class="card__title">Automatización KYC/AML</h3>
+              <p class="card__text">Workflows multi-agente para verificación de identidad, screening de listas restrictivas, análisis de riesgo de clientes y generación de reportes de debida diligencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Edge -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Ventaja Técnica</h2>
+        <p>Arquitectura empresarial que prioriza seguridad, gobernanza y control.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-user-check"></i></div>
+          <h3 class="card__title">Human-in-the-Loop</h3>
+          <p class="card__text">Cada workflow incluye puntos de control donde un humano revisa, aprueba o redirige las acciones del agente. Usted define la autonomía de cada paso: desde aprobación manual completa hasta supervisión por excepción.</p>
+          <ul class="pillar__list">
+            <li>Checkpoints configurables por nivel de riesgo</li>
+            <li>Escalamiento automático para casos atípicos</li>
+            <li>Audit trail completo de decisiones humanas y de IA</li>
+            <li>Dashboard de supervisión en tiempo real</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-server"></i></div>
+          <h3 class="card__title">Despliegue en VPC</h3>
+          <p class="card__text">Sus datos nunca salen de su infraestructura. Desplegamos los agentes en su Virtual Private Cloud (AWS, Azure o GCP) con aislamiento completo y control de acceso granular.</p>
+          <ul class="pillar__list">
+            <li>Despliegue en su cuenta de AWS/Azure/GCP</li>
+            <li>Datos procesados en su jurisdicción</li>
+            <li>Integración con su IAM y políticas de seguridad</li>
+            <li>Sin dependencia de APIs externas para datos sensibles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Relacionados</h2>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'DS 115-2025-PCM' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Disponible en Todo el Perú</h2>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Agende su Consulta de "Workflow Architecture"</h2>
+      <p>Evaluamos sus procesos de negocio e identificamos las oportunidades de mayor impacto para workflows agénticos. Sesión gratuita de 60 minutos.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Agendar Consulta de Arquitectura</a>
+    </div>
+  </section>
+</BaseLayout>

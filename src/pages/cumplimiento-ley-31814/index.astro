@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { company } from '../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Cumplimiento Ley 31814', url: `${company.url}/cumplimiento-ley-31814/` },
+];
+
+const schemas = [
+  webPageSchema({
+    title: 'Cumplimiento Ley 31814 y DS 115-2025-PCM | Guia para Empresas',
+    description: 'Guia completa de cumplimiento de la Ley 31814 y el DS 115-2025-PCM para empresas peruanas. Plazos, requisitos y pasos para cumplir con la regulacion de IA en Peru.',
+    url: `${company.url}/cumplimiento-ley-31814/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="Cumplimiento Ley 31814 y DS 115-2025-PCM | Guia para Empresas | AI Governance Peru"
+  description="Guia completa de cumplimiento de la Ley 31814 y el DS 115-2025-PCM para empresas peruanas. Plazos, requisitos y pasos para cumplir con la regulacion de IA en Peru."
+  schema={schemas}
+>
+  <!-- Breadcrumb -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__badge">Ley 31814 & DS 115-2025-PCM</span>
+      <h1>Guia Completa de Cumplimiento: Ley 31814 y DS 115-2025-PCM</h1>
+      <p>Todo lo que su empresa necesita saber para cumplir con la primera ley de inteligencia artificial del Peru. Plazos, requisitos por sector y pasos concretos de implementacion.</p>
+      <div class="countdown" id="countdown"></div>
+      <p style="color:rgba(255,255,255,0.8);margin-top:0.5rem">Tiempo restante hasta el plazo maximo de cumplimiento: 10 de septiembre de 2026</p>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>La Regulacion de IA en Peru</h2>
+        <p>La Ley 31814 y su reglamento DS 115-2025-PCM establecen el marco normativo para el uso responsable de la inteligencia artificial en el Peru. Toda organizacion que desarrolle, implemente u opere sistemas de IA debe evaluar su nivel de cumplimiento.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-gavel"></i></div>
+          <h3 class="card__title">Ley 31814</h3>
+          <p class="card__text">La primera ley de inteligencia artificial del Peru. Define los principios rectores, categorias de riesgo, derechos de los ciudadanos y obligaciones generales para entidades publicas y privadas.</p>
+          <a href="/cumplimiento-ley-31814/que-es-ley-31814/" class="btn btn--outline btn--sm">Conocer la Ley 31814 &rarr;</a>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-contract"></i></div>
+          <h3 class="card__title">DS 115-2025-PCM</h3>
+          <p class="card__text">El reglamento que operacionaliza la Ley 31814. Detalla las obligaciones especificas, los plazos de cumplimiento, las evaluaciones de impacto requeridas y las sanciones por incumplimiento.</p>
+          <a href="/cumplimiento-ley-31814/ds-115-2025-pcm/" class="btn btn--outline btn--sm">Ver el Reglamento &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sub-pages navigation -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Explore el Marco Regulatorio</h2>
+        <p>Cuatro guias detalladas para entender y cumplir con la normativa de IA en Peru.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3 class="card__title">Que es la Ley 31814</h3>
+          <p class="card__text">Definicion, alcance, principios clave y obligaciones para organizaciones que usan IA.</p>
+          <a href="/cumplimiento-ley-31814/que-es-ley-31814/" class="btn btn--outline btn--sm">Leer guia &rarr;</a>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-list-check"></i></div>
+          <h3 class="card__title">DS 115-2025-PCM: El Reglamento</h3>
+          <p class="card__text">Articulos clave, especificaciones de implementacion y requisitos tecnicos detallados.</p>
+          <a href="/cumplimiento-ley-31814/ds-115-2025-pcm/" class="btn btn--outline btn--sm">Leer guia &rarr;</a>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 class="card__title">Plazos de Cumplimiento</h3>
+          <p class="card__text">Calendario regulatorio con fechas clave, enfoque por fases y cronograma recomendado.</p>
+          <a href="/cumplimiento-ley-31814/plazos-cumplimiento/" class="btn btn--outline btn--sm">Ver plazos &rarr;</a>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Requisitos por Sector</h3>
+          <p class="card__text">Requisitos especificos para bancos, aseguradoras, fintechs, cooperativas y sector farmaceutico.</p>
+          <a href="/cumplimiento-ley-31814/requisitos-sector-financiero/" class="btn btn--outline btn--sm">Ver requisitos &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key obligations summary -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Obligaciones Principales</h2>
+        <p>Un resumen de las obligaciones clave que su organizacion debe cumplir.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-clipboard-list"></i></div>
+          <h3 class="card__title">Registro de Sistemas de IA</h3>
+          <p class="card__text">Identificar, clasificar y registrar todos los sistemas de IA utilizados en la organizacion, con su nivel de riesgo correspondiente.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3 class="card__title">Evaluacion de Impacto</h3>
+          <p class="card__text">Realizar evaluaciones de impacto para sistemas de IA de alto riesgo, documentando riesgos y medidas de mitigacion.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Gobernanza y Supervision</h3>
+          <p class="card__text">Establecer estructuras de gobernanza, supervisar el desempeno de los sistemas de IA y garantizar la transparencia algoritmita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services CTA -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios de Cumplimiento</h2>
+        <p>Nuestros servicios especializados para ayudarle a cumplir con la Ley 31814 y el DS 115-2025-PCM.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <span class="card__badge card__badge--danger">DS 115-2025-PCM</span>
+          <h3 class="card__title">AI Governance & Compliance Audit</h3>
+          <p class="card__text">Auditoria estrategica de gobernanza de IA y cumplimiento normativo para sectores de alto riesgo. Identificamos brechas y definimos el plan de accion.</p>
+          <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--primary btn--sm">Solicitar Auditoria &rarr;</a>
+        </div>
+        <div class="card">
+          <span class="card__badge card__badge--danger">Ley 31814</span>
+          <h3 class="card__title">Evaluacion de Impacto de IA</h3>
+          <p class="card__text">Informe formal de evaluacion de impacto para sistemas de IA de alto riesgo, segun los requisitos especificos de la Ley 31814.</p>
+          <a href="/servicios/evaluacion-impacto-ia/" class="btn btn--primary btn--sm">Solicitar Evaluacion &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>No Espere al Ultimo Momento</h2>
+      <p>El plazo de cumplimiento se acerca. Comience hoy con una evaluacion de su nivel de preparacion.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicite su Evaluacion</a>
+        <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Auditoria de Compliance</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

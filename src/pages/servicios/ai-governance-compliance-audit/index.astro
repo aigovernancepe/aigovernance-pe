@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../../data/company';
+import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'ai-governance-compliance-audit')!;
+const relatedServices = services.filter((s) =>
+  ['evaluacion-impacto-ia', 'evaluacion-sesgo', 'bi-data-foundations-ai'].includes(s.slug)
+);
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  serviceSchema(service),
+];
+---
+
+<BaseLayout
+  title="Auditoría de IA y Cumplimiento DS 115-2025-PCM Perú | AI Governance & Compliance Audit"
+  description="Auditoría estratégica de gobernanza de IA y cumplimiento normativo DS 115-2025-PCM para sectores regulados en Perú. Evaluación de Shadow AI, transparencia algorítmica y linaje de datos."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge" style="background:rgba(220,38,38,0.9)">DS 115-2025-PCM</span>
+      <h1>Strategic AI Governance & Compliance for High-Risk Sectors in Peru</h1>
+      <p class="hero__subtitle" style="font-size:1.25rem;color:rgba(255,255,255,0.95);margin-bottom:0.5rem">Ensure your AI initiatives meet DS 115-2025-PCM requirements</p>
+      <p>Auditoría integral de gobernanza de IA para sectores regulados: financiero, farmacéutico y asegurador. Identifique riesgos de Shadow AI, asegure transparencia algorítmica y cumpla con la regulación antes del plazo.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Auditoría</a>
+        <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Marco Regulatorio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem: Shadow AI -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>El Problema: "Shadow AI" en Industrias Reguladas</h2>
+        <p>El uso no gobernado de herramientas de IA en su organización genera riesgos legales, regulatorios y operativos que crecen cada día.</p>
+      </div>
+      <div class="grid grid--2">
+        <div>
+          <h3>Riesgos en Sectores Regulados</h3>
+          <p>Empresas supervisadas por <strong>DIGEMID</strong>, <strong>SMV</strong>, <strong>SBS</strong> y otras entidades regulatorias enfrentan un desafío doble: adoptar IA para mantener competitividad mientras cumplen con un marco regulatorio cada vez mas estricto.</p>
+          <p>El fenomeno de "Shadow AI" — empleados usando ChatGPT, Copilot y otras herramientas sin gobernanza — expone a su organización a:</p>
+          <ul class="pillar__list">
+            <li>Fuga de datos confidenciales y propiedad intelectual a modelos externos</li>
+            <li>Decisiones reguladas tomadas con apoyo de IA no auditada</li>
+            <li>Incumplimiento de Ley 31814 y DS 115-2025-PCM</li>
+            <li>Imposibilidad de demostrar trazabilidad ante auditores</li>
+            <li>Riesgo de sanciones de DIGEMID, SMV o SBS</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card" style="border-left:4px solid var(--color-error, #dc2626)">
+            <h3 class="card__title">Escenarios Reales de Riesgo</h3>
+            <div style="margin-bottom:1rem">
+              <strong>Sector Farmacéutico (DIGEMID)</strong>
+              <p class="card__text">Analistas usando IA para redactar documentación regulatoria sin validación de fuentes. Riesgo de información inexacta en registros sanitarios.</p>
+            </div>
+            <div style="margin-bottom:1rem">
+              <strong>Mercado de Valores (SMV)</strong>
+              <p class="card__text">Modelos de scoring y recomendaciones de inversión basados en IA sin transparencia algorítmica. Riesgo de manipulación o discriminación no detectada.</p>
+            </div>
+            <div>
+              <strong>Sector Financiero (SBS)</strong>
+              <p class="card__text">Chatbots y modelos de crédito con sesgos no evaluados. Riesgo de discriminación en acceso a productos financieros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Componentes de la Auditoría</h2>
+        <p>Evaluación completa de su postura de gobernanza de IA en tres dimensiones críticas.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="card__title">Algorithmic Transparency Assessment</h3>
+          <p class="card__text">Evaluación de la transparencia y explicabilidad de cada sistema de IA en operación. Mapeo de decisiones automatizadas, nivel de supervisión humana y capacidad de explicar resultados a reguladores y usuarios afectados.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3 class="card__title">Data Lineage Audit</h3>
+          <p class="card__text">Auditoría del linaje de datos que alimentan sus modelos de IA: origen, transformaciones, calidad y gobernanza. Verificación de trazabilidad end-to-end para cumplir con requisitos regulatorios de reproducibilidad.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 class="card__title">Risk Categorization</h3>
+          <p class="card__text">Clasificación de cada sistema de IA según el marco de riesgo del DS 115-2025-PCM: bajo, medio, alto y no aceptable. Priorización de acciones de remediación por nivel de riesgo e impacto regulatorio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional audit components -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Entregables de la Auditoría</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title">Informe de Auditoría</h3>
+          <ul class="pillar__list">
+            <li>Inventario completo de sistemas de IA en operación</li>
+            <li>Clasificación de riesgo por sistema (DS 115-2025-PCM)</li>
+            <li>Gap analysis vs. requisitos regulatorios</li>
+            <li>Evaluación de Shadow AI por departamento</li>
+            <li>Mapa de linaje de datos para modelos críticos</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Plan de Remediación</h3>
+          <ul class="pillar__list">
+            <li>Roadmap priorizado de cumplimiento</li>
+            <li>Políticas de uso aceptable de IA</li>
+            <li>Framework de gobernanza de IA recomendado</li>
+            <li>Programa de capacitación por audiencia</li>
+            <li>Cronograma de implementación antes de sept. 2026</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA: Download Checklist -->
+  <section class="section" style="background:linear-gradient(135deg,#1e3a5f,#2563eb);color:#fff;text-align:center">
+    <div class="container">
+      <h2 style="color:#fff">Recurso Gratuito: AI Law Compliance Checklist 2026</h2>
+      <p style="color:rgba(255,255,255,0.9);max-width:600px;margin:0 auto 1.5rem">Descargue el "2026 AI Law Compliance Checklist for Peruvian Executives" y verifique si su organización cumple con los requisitos de la Ley 31814 y el DS 115-2025-PCM.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Descargar Checklist Gratuito</a>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Relacionados</h2>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Disponible en Todo el Perú</h2>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Proteja su Organización del Riesgo de Shadow AI</h2>
+      <p>Auditoría de 4-6 semanas con plan de remediación completo. Asegure el cumplimiento antes del plazo regulatorio.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Auditoría de Compliance</a>
+        <a href="/servicios/evaluacion-impacto-ia/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Evaluación de Impacto IA</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

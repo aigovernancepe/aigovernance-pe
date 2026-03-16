@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'ai-governance-compliance-audit')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Lima', url: '/areas/lima/' },
+  { name: service.shortTitle, url: `/areas/lima/${service.slug}/` },
+];
+
+const schemas = [
+  serviceInAreaSchema(service, area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Lima', url: `${company.url}/areas/lima/` },
+    { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Auditoría de AI Governance y Compliance en Lima | AI Governance Peru"
+  description="Auditoría estratégica de gobernanza de IA y cumplimiento normativo para empresas en Lima. Evaluación integral bajo Ley 31814, DS 115-2025-PCM, normativas SBS y estándares internacionales."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>Auditoría de AI Governance y Compliance en Lima</h1>
+      <p>Auditoría estratégica de 4-6 semanas que evalúa la gobernanza de inteligencia artificial y el cumplimiento normativo de su organización en Lima. Revisamos políticas, procesos, controles técnicos y documentación contra los requisitos de la Ley 31814, DS 115-2025-PCM y normativas sectoriales.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Auditoría</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lima Regulatory Hub -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Lima: Nodo Regulatorio del Perú</h2>
+        <p>La auditoría de AI Governance en Lima se beneficia de la proximidad a los principales reguladores y las sedes corporativas de los sectores más supervisados del país.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="card__title">Marco Multi-Regulador</h3>
+          <p class="card__text">Las empresas en Lima deben cumplir simultáneamente con la Ley 31814, DS 115-2025-PCM, resoluciones de la SBS sobre riesgo tecnológico, normativas de la SMV y la Ley de Protección de Datos Personales. Nuestra auditoría evalúa el cumplimiento integral de todos estos marcos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3 class="card__title">Revisión Presencial de Controles</h3>
+          <p class="card__text">Verificamos in-situ la efectividad de los controles de gobernanza de IA: acceso a modelos, documentación técnica, registros de decisiones, mecanismos de supervisión humana y protocolos de escalamiento que operan en sus instalaciones de Lima.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-contract"></i></div>
+          <h3 class="card__title">Preparación para Inspecciones</h3>
+          <p class="card__text">Con reguladores ubicados en Lima, las inspecciones pueden ocurrir con poco aviso. Nuestra auditoría prepara su organización con la documentación, evidencia y trazabilidad necesarias para responder exitosamente a cualquier requerimiento regulatorio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audit Scope -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Alcance de la Auditoría en Lima</h2>
+        <p>Evaluamos seis dimensiones críticas de la gobernanza de IA en su organización.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title">Gobernanza Organizacional</h3>
+          <p class="card__text">Estructura de gobierno para IA, roles y responsabilidades, comités de supervisión, políticas de uso aceptable y procesos de aprobación de nuevos sistemas de inteligencia artificial.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Gestión de Riesgo de IA</h3>
+          <p class="card__text">Framework de identificación, evaluación y mitigación de riesgos de IA. Clasificación de sistemas por nivel de riesgo, controles implementados y monitoreo de riesgo residual.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Transparencia y Explicabilidad</h3>
+          <p class="card__text">Mecanismos de explicación de decisiones algorítmicas, comunicación a usuarios afectados, registros de auditoría y trazabilidad del proceso de decisión automatizada.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Calidad de Datos</h3>
+          <p class="card__text">Gobernanza de los datos que alimentan sistemas de IA, controles de calidad, linaje de datos, gestión de sesgo en datos de entrenamiento y monitoreo de drift.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Supervisión Humana</h3>
+          <p class="card__text">Efectividad de los mecanismos de human-in-the-loop y human-on-the-loop. Protocolos de escalamiento, capacidad de override y competencias del personal supervisor.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Cumplimiento Documentado</h3>
+          <p class="card__text">Completitud y calidad de la documentación técnica, evaluaciones de impacto, registros de cambios, evidencia de testing y reportes regulatorios requeridos por la normativa vigente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima" style="border:0;width:100%;height:350px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Lima Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Otros Servicios en Lima</h2>
+      </div>
+      <div class="grid grid--3">
+        {otherServices.map((s) => (
+          <div class="card">
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/areas/lima/${s.slug}/`} class="btn btn--outline btn--sm">Ver en Lima →</a>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/areas/lima/" class="btn btn--outline">Todos los servicios en Lima →</a>
+        <a href="/areas/peru/" class="btn btn--outline" style="margin-left:0.5rem">Cobertura nacional →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Audite su Gobernanza de IA en Lima</h2>
+      <p>Solicite una auditoría integral de AI Governance y Compliance. Identifique brechas regulatorias antes de que se conviertan en sanciones.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Auditoría</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Detalles del Servicio</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

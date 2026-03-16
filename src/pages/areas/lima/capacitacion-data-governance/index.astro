@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'capacitacion-data-governance')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Lima', url: '/areas/lima/' },
+  { name: service.shortTitle, url: `/areas/lima/${service.slug}/` },
+];
+
+const schemas = [
+  serviceInAreaSchema(service, area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Lima', url: `${company.url}/areas/lima/` },
+    { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Capacitación en Data Governance en Lima | AI Governance Peru"
+  description="Programas de capacitación presencial en Data Governance para equipos técnicos y ejecutivos en Lima. Workshops interactivos, ejercicios con datos reales y certificación interna."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>Capacitación en Data Governance en Lima</h1>
+      <p>Programas de formación presencial diseñados para equipos en Lima. Desde sesiones ejecutivas para el directorio hasta workshops técnicos para Data Stewards, nuestras capacitaciones combinan teoría, casos prácticos del contexto peruano y ejercicios con datos reales de su organización.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Programa de Capacitación</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Programs in Lima -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Programas de Capacitación Presencial en Lima</h2>
+        <p>Ofrecemos tres niveles de formación adaptados a las necesidades de cada audiencia dentro de su organización.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3 class="card__title">Nivel Ejecutivo</h3>
+          <p class="card__text">Sesiones de medio día para directores y gerentes generales. Cubre el valor estratégico de Data Governance, obligaciones regulatorias bajo la Ley 31814 y el rol del liderazgo en la gobernanza de datos. Formato de discusión interactiva en salas de directorio de Lima.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-user-gear"></i></div>
+          <h3 class="card__title">Nivel Gestión</h3>
+          <p class="card__text">Programa de 2 días para gerentes de área, Data Owners y oficiales de cumplimiento. Incluye definición de roles, políticas de calidad, métricas de gobernanza y gestión del cambio. Talleres prácticos con escenarios del sector financiero peruano.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3 class="card__title">Nivel Técnico</h3>
+          <p class="card__text">Workshop de 3 días para Data Stewards, analistas y equipos de TI. Herramientas de profiling, catálogo de datos, reglas de calidad, linaje y metadata management. Ejercicios hands-on con datos reales en las instalaciones de Lima.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lima Advantage -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Ventajas de la Capacitación Presencial en Lima</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3 class="card__title">Mayor Engagement y Retención</h3>
+          <p class="card__text">Las sesiones presenciales en Lima logran tasas de participación activa significativamente superiores a las virtuales. Los ejercicios grupales, role-playing y discusiones en persona generan un aprendizaje más profundo y duradero.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building"></i></div>
+          <h3 class="card__title">Ejercicios con Datos Reales</h3>
+          <p class="card__text">Al trabajar en sus oficinas de Lima, podemos utilizar datos y escenarios reales de su organización en los ejercicios prácticos. Esto elimina la brecha entre la teoría y la aplicación, permitiendo que los participantes apliquen lo aprendido inmediatamente.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-people-arrows"></i></div>
+          <h3 class="card__title">Networking Interno</h3>
+          <p class="card__text">Las capacitaciones presenciales fomentan conexiones entre equipos que raramente interactúan: TI con negocio, riesgos con operaciones. Estas relaciones son fundamentales para el éxito de la gobernanza de datos en la organización.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-certificate"></i></div>
+          <h3 class="card__title">Certificación Personalizada</h3>
+          <p class="card__text">Al finalizar cada programa, los participantes reciben certificación de AI Governance Peru que valida sus competencias en Data Governance. La evaluación presencial permite verificar habilidades prácticas, no solo conocimiento teórico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima" style="border:0;width:100%;height:350px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Lima Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Otros Servicios en Lima</h2>
+      </div>
+      <div class="grid grid--3">
+        {otherServices.map((s) => (
+          <div class="card">
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/areas/lima/${s.slug}/`} class="btn btn--outline btn--sm">Ver en Lima →</a>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/areas/lima/" class="btn btn--outline">Todos los servicios en Lima →</a>
+        <a href="/areas/peru/" class="btn btn--outline" style="margin-left:0.5rem">Cobertura nacional →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Capacite a su Equipo en Data Governance</h2>
+      <p>Diseñamos un programa de capacitación a medida para su organización en Lima. Contáctenos para definir objetivos, audiencia y cronograma.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Programa</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Detalles del Servicio</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

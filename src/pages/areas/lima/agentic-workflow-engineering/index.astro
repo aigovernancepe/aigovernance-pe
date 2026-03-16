@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'agentic-workflow-engineering')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Lima', url: '/areas/lima/' },
+  { name: service.shortTitle, url: `/areas/lima/${service.slug}/` },
+];
+
+const schemas = [
+  serviceInAreaSchema(service, area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Lima', url: `${company.url}/areas/lima/` },
+    { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Workflows de Agentes de IA en Lima | AI Governance Peru"
+  description="Diseño e implementación de workflows autónomos con agentes de IA para empresas en Lima. Automatización gobernada de procesos complejos en finanzas, farmacéutica y asset management."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>Workflows de Agentes de IA en Lima</h1>
+      <p>Diseñamos e implementamos sistemas de agentes de IA autónomos para las empresas más innovadoras de Lima. Workflows multi-agente que automatizan procesos complejos de negocio en finanzas, farmacéutica y asset management, operando dentro de marcos de gobernanza establecidos para garantizar control y trazabilidad.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Explorar Workflows Agénticos</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases in Lima -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Casos de Uso de Agentes de IA en Lima</h2>
+        <p>Las empresas con sede en Lima están adoptando workflows agénticos para automatizar procesos que antes requerían intervención manual intensiva. Cada implementación incluye gobernanza de IA integrada.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Banca y Finanzas</h3>
+          <p class="card__text">Agentes para análisis automatizado de solicitudes de crédito, monitoreo de portafolios, generación de reportes regulatorios para la SBS y procesamiento inteligente de documentos KYC. Workflows que combinan múltiples modelos de IA con supervisión humana definida.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-flask"></i></div>
+          <h3 class="card__title">Industria Farmacéutica</h3>
+          <p class="card__text">Workflows agénticos para monitoreo de eventos adversos, análisis de literatura científica, generación de informes de farmacovigilancia y gestión automatizada de documentación regulatoria bajo marcos GxP validados.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">Asset Management</h3>
+          <p class="card__text">Sistemas multi-agente para análisis de mercado, screening de inversiones, generación de due diligence reports y monitoreo de compliance de portafolio. Integración con fuentes de datos en tiempo real y frameworks de gobernanza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Lima for Agentic -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>¿Por Qué Implementar Workflows Agénticos desde Lima?</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3 class="card__title">Diseño Colaborativo Presencial</h3>
+          <p class="card__text">El diseño de workflows agénticos requiere sesiones intensivas con expertos de dominio. Trabajando en Lima, facilitamos talleres de co-diseño con los equipos de negocio, riesgos y tecnología para definir los flujos de agentes, puntos de decisión humana y reglas de gobernanza.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-lock"></i></div>
+          <h3 class="card__title">Integración con Sistemas Locales</h3>
+          <p class="card__text">Los agentes de IA deben conectarse con los sistemas core de la organización: core bancario, ERP, CRM y bases de datos internas. La presencia en Lima facilita el acceso a los entornos de desarrollo y staging para configuración y testing de integraciones.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Gobernanza Integrada</h3>
+          <p class="card__text">Cada workflow agéntico incluye controles de gobernanza: logging de decisiones, supervisión humana en puntos críticos, límites de autonomía y mecanismos de override. Definimos estos controles presencialmente con los equipos de compliance en Lima.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="card__title">Transfer de Conocimiento</h3>
+          <p class="card__text">La operación de sistemas multi-agente requiere nuevas capacidades en el equipo. Realizamos sesiones de capacitación presencial en Lima para que su equipo pueda monitorear, ajustar y evolucionar los workflows de forma autónoma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima" style="border:0;width:100%;height:350px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Lima Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Otros Servicios en Lima</h2>
+      </div>
+      <div class="grid grid--3">
+        {otherServices.map((s) => (
+          <div class="card">
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/areas/lima/${s.slug}/`} class="btn btn--outline btn--sm">Ver en Lima →</a>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/areas/lima/" class="btn btn--outline">Todos los servicios en Lima →</a>
+        <a href="/areas/peru/" class="btn btn--outline" style="margin-left:0.5rem">Cobertura nacional →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Automatice con Agentes de IA Gobernados</h2>
+      <p>Descubra cómo los workflows agénticos pueden transformar sus procesos de negocio en Lima. Solicite una sesión de exploración presencial.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Sesión de Exploración</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Detalles del Servicio</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

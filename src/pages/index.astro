@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { company, services, areas } from '../data/company';
+import { organizationSchema, faqSchema, webPageSchema } from '../utils/schema';
+
+const faqs = [
+  { question: '¿Qué es Data Governance y por qué lo necesito?', answer: 'Data Governance es el marco de políticas, procesos y roles que asegura la gestión efectiva de los datos de su organización. Es esencial para cumplir con regulaciones como Ley 31814, mejorar la calidad de datos y habilitar iniciativas de IA confiables.' },
+  { question: '¿Cuánto toma implementar un programa completo de Data Governance?', answer: 'Una implementación completa típicamente toma 6 meses, incluyendo el diseño del consejo de gobernanza, desarrollo de políticas, implementación de dashboards de calidad, catálogo de datos y capacitación del equipo.' },
+  { question: '¿Necesito experiencia técnica previa en Data Governance?', answer: 'No. Nuestro enfoque está diseñado para organizaciones en cualquier nivel de madurez. Comenzamos con un diagnóstico y adaptamos nuestra metodología a su contexto específico.' },
+  { question: '¿Trabajan solo con bancos grandes o también con fintechs?', answer: 'Trabajamos con todo el espectro del sector financiero: bancos, aseguradoras, asset managers, fintechs y cooperativas. También atendemos empresas farmacéuticas y otros sectores regulados.' },
+  { question: '¿Cuál es la diferencia entre Assessment e Implementación?', answer: 'El Assessment (3 semanas) diagnostica su nivel de madurez actual y genera un roadmap. La Implementación (6 meses) ejecuta ese roadmap, estableciendo el sistema completo de gobernanza de datos.' },
+  { question: '¿Qué pasa si no cumplo con la Ley 31814?', answer: 'La Ley 31814 y el DS 115-2025-PCM establecen obligaciones para sistemas de IA de alto riesgo. El incumplimiento puede resultar en sanciones regulatorias. El plazo máximo de cumplimiento es septiembre 2026.' },
+  { question: '¿Cómo se integran sus servicios de AI Governance con las iniciativas de IA existentes?', answer: 'Nuestros servicios están diseñados para complementar sus iniciativas de IA. Evaluamos la gobernanza de los datos que alimentan sus modelos, auditamos el cumplimiento normativo y diseñamos workflows agénticos que operan dentro de marcos de gobernanza establecidos.' },
+];
+
+const schemas = [
+  organizationSchema(),
+  webPageSchema({
+    title: 'AI Governance Peru | Data Governance, AI Compliance & Data Quality',
+    description: company.description,
+    url: company.url,
+  }),
+  faqSchema(faqs),
+];
+---
+
+<BaseLayout
+  title="AI Governance Peru | Data Governance, AI Compliance & Data Quality | Lima, Perú"
+  description="Servicios especializados de AI Governance, Data Governance, Data Quality y Compliance en Perú. Cumplimiento Ley 31814 y DS 115-2025-PCM. Consultoría en Lima para sector financiero y farmacéutico."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__badge">Especializado en Sectores Regulados</span>
+      <h1>Sus Datos, Su Ventaja Competitiva</h1>
+      <p>Frameworks de AI Governance, Data Governance, Data Quality y Compliance para instituciones financieras y empresas farmacéuticas que buscan excelencia operativa y cumplimiento regulatorio en Perú.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicite su Evaluación de Madurez</a>
+        <a href="/servicios/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>El Desafío de la Gobernanza de Datos e IA en Perú</h2>
+        <p>Las empresas peruanas enfrentan un panorama regulatorio en rápida evolución con la Ley 31814 y el DS 115-2025-PCM, mientras sus iniciativas de IA crecen sin gobernanza adecuada.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">Madurez de 1.88/5</h3>
+          <p class="card__text">El sector financiero peruano tiene un nivel de madurez en Data Governance de solo 1.88 sobre 5. La brecha es una oportunidad competitiva.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="card__title">Regulación Creciente</h3>
+          <p class="card__text">Ley 31814, DS 115-2025-PCM, SBS, SMV y protección de datos personales. Múltiples frentes regulatorios que requieren gobernanza integral.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 class="card__title">"Shadow AI" Empresarial</h3>
+          <p class="card__text">El uso no gestionado de LLMs y herramientas de IA en áreas reguladas genera riesgos legales y operativos que requieren gobernanza inmediata.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Pillar Framework -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Framework de 3 Pilares</h2>
+        <p>Un enfoque integral que cubre los fundamentos de gobernanza, calidad de datos y cumplimiento normativo.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-sitemap"></i></div>
+          <h3 class="card__title">Data Governance Foundation</h3>
+          <ul class="pillar__list">
+            <li>Establecimiento del Data Governance Council</li>
+            <li>Roles y responsabilidades (Data Owners, Stewards)</li>
+            <li>Políticas de gestión de datos</li>
+            <li>Procesos de aprobación y control</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">Data Quality Excellence</h3>
+          <ul class="pillar__list">
+            <li>Framework integral de calidad de datos</li>
+            <li>Dashboards de monitoreo continuo</li>
+            <li>Detección de anomalías</li>
+            <li>Validación y perfilado de datos críticos</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="card__title">Compliance & Transparency</h3>
+          <ul class="pillar__list">
+            <li>Documentación de lineage de datos</li>
+            <li>Catálogo de datos y metadatos</li>
+            <li>Trazabilidad para auditorías</li>
+            <li>Reporting regulatorio automatizado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Cómo Trabajamos Juntos</h2>
+        <p>Un proceso probado que genera resultados medibles desde la primera semana.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>Assessment Inicial — 3 semanas</h3>
+            <p>Evaluamos su madurez actual en Data Governance, identificamos brechas vs. mejores prácticas y creamos un roadmap priorizado con quick wins.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Reporte Ejecutivo — Incluido</h3>
+            <p>Presentación a directorio con hallazgos clave, clasificación de riesgos por área y recomendaciones estratégicas con estimaciones de inversión.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Implementación — 6 meses</h3>
+            <p>Establecimiento del Data Governance Council, desarrollo de políticas, implementación de dashboards de calidad, catálogo de datos y capacitación.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Monitoreo Continuo</h3>
+            <p>Sistema operativo con dashboards de monitoreo, reportes automatizados y soporte para auditorías regulatorias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Especializados</h2>
+        <p>Soluciones diseñadas para sectores regulados en Perú.</p>
+      </div>
+      <div class="grid grid--3">
+        {services.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <div class="card__meta">
+              <span><i class="fa-regular fa-clock"></i> {s.duration}</span>
+              <span><i class="fa-regular fa-building"></i> {s.audience}</span>
+            </div>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas We Serve -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Áreas que Servimos</h2>
+        <p>Consultoría presencial y remota en todo el Perú, con presencia principal en Lima.</p>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Ver servicios en {a.name} →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ley 31814 urgency -->
+  <section class="section" style="background:linear-gradient(135deg,#991b1b,#dc2626);color:#fff;text-align:center">
+    <div class="container">
+      <h2 style="color:#fff">¿Su Empresa Utiliza Inteligencia Artificial?</h2>
+      <p style="color:rgba(255,255,255,0.9);max-width:600px;margin:0 auto 1rem">La Ley 31814 y el DS 115-2025-PCM establecen requisitos específicos para sistemas de IA de alto riesgo. El plazo máximo de cumplimiento es:</p>
+      <div class="countdown" id="countdown"></div>
+      <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/cumplimiento-ley-31814/" class="btn btn--white btn--lg">Ver Requisitos Ley 31814</a>
+        <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.5);color:#fff">Solicitar Auditoría de Compliance</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Por Qué Trabajar con Nosotros</h2>
+        <p>Más de una década de experiencia en gobernanza de datos en industrias altamente reguladas.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Asset Management</h3>
+          <p class="card__text">Data Governance Council, políticas de calidad de datos y catálogo de datos en finanzas reguladas bajo estándares FINMA.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-flask"></i></div>
+          <h3 class="card__title">Farmacéutica (GxP)</h3>
+          <p class="card__text">6 años en compliance, frameworks de Data Quality, dashboards ejecutivos y analítica global en entornos GxP.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-globe"></i></div>
+          <h3 class="card__title">Enfoque Práctico</h3>
+          <p class="card__text">Trilingüe (alemán, inglés, español). Combinamos rigor suizo con comprensión del contexto peruano. Sistemas que funcionan, no solo PowerPoints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Comience su Viaje hacia la Excelencia en Datos</h2>
+      <p>Evaluación de 3 semanas sin compromiso de continuidad. Recibirá un diagnóstico completo con roadmap priorizado.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicite su Evaluación Gratuita</a>
+        <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">¿Usa Inteligencia Artificial?</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

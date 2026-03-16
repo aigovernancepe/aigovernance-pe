@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../../data/company';
+import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'evaluacion-sesgo')!;
+const relatedServices = services.filter((s) =>
+  ['evaluacion-impacto-ia', 'ai-governance-compliance-audit', 'evaluacion-madurez'].includes(s.slug)
+);
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  serviceSchema(service),
+];
+---
+
+<BaseLayout
+  title={`${service.title} | Fairness & Bias Detection Perú`}
+  description={`${service.description} Evaluación de 2-4 semanas para sistemas de IA/ML. Detección de sesgo algorítmico, análisis de fairness y recomendaciones de mitigación.`}
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge">2-4 Semanas — Sistemas de IA/ML</span>
+      <h1>{service.title}</h1>
+      <p>Análisis integral de fairness y detección de sesgo algorítmico en sus modelos de machine learning e inteligencia artificial. Asegure decisiones justas y cumpla con las regulaciones vigentes.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación</a>
+        <a href="/servicios/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Todos los Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Matters -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2">
+        <div>
+          <h2>¿Por Qué Evaluar el Sesgo en sus Modelos?</h2>
+          <p>Los modelos de IA y machine learning pueden perpetuar o amplificar sesgos existentes en los datos, generando decisiones discriminatorias en créditos, seguros, contratación y otros procesos críticos.</p>
+          <p>La <strong>Ley 31814</strong> y el <strong>DS 115-2025-PCM</strong> exigen que los sistemas de IA de alto riesgo demuestren equidad y no discriminación. Una evaluación proactiva de sesgo protege su organización legal y reputacionalmente.</p>
+        </div>
+        <div>
+          <div class="card">
+            <h3 class="card__title">Riesgos del Sesgo No Detectado</h3>
+            <ul class="pillar__list">
+              <li>Discriminación en decisiones crediticias o de seguros</li>
+              <li>Incumplimiento regulatorio (Ley 31814, SBS, SMV)</li>
+              <li>Daño reputacional y pérdida de confianza</li>
+              <li>Exposición a acciones legales y sanciones</li>
+              <li>Decisiones empresariales basadas en datos sesgados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Evaluate -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>¿Qué Evaluamos?</h2>
+        <p>Análisis multidimensional de fairness en sus modelos de IA.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-database"></i></div>
+          <h3 class="card__title">Sesgo en Datos</h3>
+          <p class="card__text">Análisis de representatividad, balance de clases, variables proxy y patrones históricos de discriminación en sus datasets de entrenamiento.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-brain"></i></div>
+          <h3 class="card__title">Sesgo en Modelos</h3>
+          <p class="card__text">Evaluación de métricas de fairness: demographic parity, equalized odds, calibration, predictive parity entre grupos protegidos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+          <h3 class="card__title">Sesgo en Resultados</h3>
+          <p class="card__text">Análisis de disparidad en las decisiones finales del modelo, impacto diferencial por grupos demográficos y análisis de casos límite.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-microscope"></i></div>
+          <h3 class="card__title">Explicabilidad</h3>
+          <p class="card__text">Análisis de interpretabilidad del modelo: importancia de features, SHAP values, y explicaciones a nivel individual para decisiones críticas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Mitigación</h3>
+          <p class="card__text">Recomendaciones técnicas de mitigación: preprocesamiento de datos, regularización de fairness, post-procesamiento de predicciones.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-bar"></i></div>
+          <h3 class="card__title">Monitoreo Continuo</h3>
+          <p class="card__text">Diseño de framework de monitoreo para detectar drift de fairness y degradación de equidad en producción.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Relacionados</h2>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'DS 115-2025-PCM' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Disponible en Todo el Perú</h2>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Asegure la Equidad de sus Modelos de IA</h2>
+      <p>Evaluación de sesgo en 2-4 semanas con informe detallado y plan de mitigación. Proteja su organización antes de que la regulación lo exija.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación de Sesgo</a>
+    </div>
+  </section>
+</BaseLayout>

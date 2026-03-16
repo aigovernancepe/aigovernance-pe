@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { company } from '../../data/company';
+import { breadcrumbSchema, webPageSchema, organizationSchema } from '../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Nosotros', url: `${company.url}/nosotros/` },
+];
+
+const schemas = [
+  organizationSchema(),
+  webPageSchema({
+    title: 'Sobre AI Governance Peru - Consultoria Especializada en Gobernanza de Datos',
+    description: 'Conozca AI Governance Peru: consultoria especializada en AI Governance, Data Governance y Compliance. Experiencia internacional en sectores regulados suizos aplicada al mercado peruano.',
+    url: `${company.url}/nosotros/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="Sobre AI Governance Peru | Consultoria Especializada en Gobernanza de Datos"
+  description="Conozca AI Governance Peru: consultoria especializada en AI Governance, Data Governance y Compliance. Experiencia internacional en sectores regulados suizos aplicada al mercado peruano."
+  schema={schemas}
+>
+  <!-- Breadcrumb -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Sobre AI Governance Peru</h1>
+      <p>Consultoria especializada en AI Governance, Data Governance, Data Quality y Compliance. Combinamos experiencia internacional en sectores regulados con profundo conocimiento del contexto peruano.</p>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <h2>Nuestra Historia</h2>
+      <p>AI Governance Peru fue fundada en <strong>2024</strong> con una mision clara: llevar las mejores practicas de gobernanza de datos e inteligencia artificial al mercado peruano, aplicando la experiencia adquirida en los sectores mas regulados de Europa.</p>
+      <p>Nacemos de la conviccion de que las empresas peruanas merecen acceso a la misma calidad de consultoria en gobernanza de datos que las instituciones financieras y farmaceuticas mas exigentes del mundo. La entrada en vigencia de la Ley 31814 y el DS 115-2025-PCM hace esta mision mas relevante que nunca.</p>
+    </div>
+  </section>
+
+  <!-- International experience -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Experiencia Internacional</h2>
+        <p>Mas de una decada de experiencia en los sectores mas regulados de Suiza, uno de los paises con los estandares de gobernanza mas exigentes del mundo.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">Asset Management</h3>
+          <p class="card__text">Establecimiento de Data Governance Councils, politicas de calidad de datos y catalogos de datos en firmas de gestion de activos reguladas bajo estandares FINMA (regulador financiero suizo).</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-flask"></i></div>
+          <h3 class="card__title">Industria Farmaceutica</h3>
+          <p class="card__text">6 anos de experiencia en compliance, frameworks de Data Quality, dashboards ejecutivos y analitica global en entornos GxP de farmaceuticas multinacionales.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Banca Privada</h3>
+          <p class="card__text">Gobernanza de datos en instituciones de banca privada suiza, con enfoque en proteccion de datos, cumplimiento regulatorio y reporting para supervisores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Peru -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <h2>Por Que Peru?</h2>
+      <p>Peru esta en un momento critico de su transformacion digital. La adopcion de inteligencia artificial crece rapidamente en el sector financiero y farmaceutico, pero la gobernanza de datos aun no acompana esta velocidad.</p>
+      <p>Con la Ley 31814 y el DS 115-2025-PCM, Peru da un paso importante hacia la regulacion de la IA. Las empresas necesitan guia experta para cumplir con estas nuevas obligaciones, y nosotros traemos exactamente esa experiencia: hemos visto como los sectores mas regulados del mundo implementan gobernanza de datos exitosamente.</p>
+      <p>Nuestra presencia en <strong>Lima</strong> nos permite trabajar de cerca con nuestros clientes, combinando consultoria presencial y remota para entregar resultados de clase mundial.</p>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Nuestros Valores</h2>
+        <p>Los principios que guian cada proyecto y cada interaccion con nuestros clientes.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-star"></i></div>
+          <h3 class="card__title">Excelencia</h3>
+          <p class="card__text">Aplicamos los estandares mas altos de calidad en cada entregable. Nuestro benchmark son las mejores practicas internacionales, no el minimo requerido.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3 class="card__title">Integridad</h3>
+          <p class="card__text">Somos transparentes en nuestras recomendaciones y honestos sobre lo que su organizacion necesita. No vendemos soluciones innecesarias.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3 class="card__title">Innovacion</h3>
+          <p class="card__text">Nos mantenemos a la vanguardia de las tendencias en gobernanza de datos e IA, incorporando las mejores herramientas y metodologias a nuestros servicios.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-people-arrows"></i></div>
+          <h3 class="card__title">Colaboracion</h3>
+          <p class="card__text">Trabajamos como una extension de su equipo. Transferimos conocimiento y construimos capacidades internas que perduran mas alla del proyecto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Nuestro Enfoque</h2>
+        <p>Cinco principios que definen nuestra metodologia de trabajo.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>1. Diagnostico</h3>
+            <p>Comenzamos con una evaluacion profunda de su situacion actual. No asumimos: medimos, analizamos y documentamos antes de recomendar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>2. Roadmap</h3>
+            <p>Disenamos un plan de accion priorizado con quick wins y objetivos a largo plazo, alineado con su presupuesto y capacidades organizacionales.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>3. Implementacion</h3>
+            <p>Ejecutamos junto a su equipo. Establecemos sistemas, politicas y procesos que funcionan en la practica, no solo en el papel.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>4. Capacitacion</h3>
+            <p>Transferimos conocimiento a su equipo para que pueda operar y evolucionar el sistema de gobernanza de forma autonoma.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>5. Soporte</h3>
+            <p>Ofrecemos acompanamiento continuo para resolver dudas, adaptar la estrategia y asegurar que los sistemas sigan operando de forma optima.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="section section--alt">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Fundador</h2>
+      </div>
+      <div class="card" style="text-align:center;padding:2rem">
+        <h3 class="card__title" style="font-size:1.5rem">Wilko Feye</h3>
+        <p style="color:var(--color-text-light);margin-bottom:1rem">Fundador & Consultor Principal</p>
+        <p class="card__text">Con mas de <strong>10 anos de experiencia</strong> en Data Governance, Data Quality y Compliance en Suiza, Wilko ha liderado proyectos de gobernanza de datos en asset management, farmaceutica y banca privada bajo los estandares regulatorios mas exigentes del mundo.</p>
+        <p class="card__text"><strong>Trilingue</strong> (aleman, ingles, espanol), combina rigor analitico suizo con una profunda comprension del contexto empresarial latinoamericano. Su mision es democratizar el acceso a consultoria de clase mundial en gobernanza de datos e IA para empresas peruanas.</p>
+        <div style="margin-top:1.5rem">
+          <a href="https://linkedin.com/in/wilkofeye" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm"><i class="fa-brands fa-linkedin"></i> Conectar en LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Explore Nuestros Servicios</h2>
+      </div>
+      <div class="link-list" style="max-width:600px;margin:0 auto">
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem">
+          <li><a href="/servicios/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Todos los Servicios</a></li>
+          <li><a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> AI Governance & Compliance Audit</a></li>
+          <li><a href="/servicios/evaluacion-madurez/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Evaluacion de Madurez en Data Governance</a></li>
+          <li><a href="/cumplimiento-ley-31814/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Cumplimiento Ley 31814</a></li>
+          <li><a href="/areas/lima/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicios en Lima</a></li>
+          <li><a href="/areas/peru/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicios en Peru</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Trabajemos Juntos</h2>
+      <p>Conozca como podemos ayudar a su organizacion a alcanzar la excelencia en gobernanza de datos e IA.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Contactenos</a>
+    </div>
+  </section>
+</BaseLayout>

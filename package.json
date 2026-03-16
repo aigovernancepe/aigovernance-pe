@@ -1,0 +1,25 @@
+{
+  "name": "aigovernance-pe",
+  "version": "1.0.0",
+  "description": "AI Governance Peru - Astro Website",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:36205/git/aigovernancepe/aigovernance-pe"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
+    "astro": "^6.0.5",
+    "astro-seo": "^1.1.0",
+    "sharp": "^0.34.5"
+  }
+}

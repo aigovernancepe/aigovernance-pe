@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services } from '../../../data/company';
+import { localBusinessSchema, breadcrumbSchema } from '../../../utils/schema';
+
+const area = { name: 'Lima', slug: 'lima' };
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Lima', url: '/areas/lima/' },
+];
+
+const schemas = [
+  localBusinessSchema(area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Lima', url: `${company.url}/areas/lima/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="AI Governance y Data Governance en Lima | Consultoría Presencial"
+  description="Servicios presenciales de AI Governance, Data Governance y Compliance en Lima, Perú. Workshops in-situ, capacitación ejecutiva y consultoría especializada para el sector financiero y farmacéutico."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>AI Governance y Data Governance en Lima</h1>
+      <p>Consultoría presencial en la capital financiera del Perú. Trabajamos codo a codo con su equipo en workshops, evaluaciones y sesiones de implementación para construir marcos de gobernanza robustos y preparar su organización para el cumplimiento regulatorio.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Agendar Reunión Presencial</a>
+        <a href="/areas/peru/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Cobertura Nacional</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lima as Financial Capital -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Lima: El Centro de la Regulación y las Finanzas en Perú</h2>
+        <p>Como sede de los principales organismos reguladores y las instituciones financieras más importantes del país, Lima concentra la mayor demanda de servicios de gobernanza de datos e IA.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Sede de la SBS</h3>
+          <p class="card__text">La Superintendencia de Banca, Seguros y AFP tiene su sede en Lima. Nuestra proximidad permite interpretar y aplicar rápidamente sus resoluciones sobre gestión de riesgos tecnológicos y gobernanza de datos en instituciones financieras supervisadas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <h3 class="card__title">Sede de la SMV</h3>
+          <p class="card__text">La Superintendencia del Mercado de Valores, también en Lima, exige estándares de calidad de datos y transparencia a los participantes del mercado de capitales. La gobernanza de datos es clave para su cumplimiento.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-landmark"></i></div>
+          <h3 class="card__title">Principales Bancos</h3>
+          <p class="card__text">BCP, BBVA, Interbank, Scotiabank y los bancos más importantes del sistema financiero peruano operan desde Lima. El distrito financiero de San Isidro concentra las oficinas principales donde se toman las decisiones de gobernanza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Nuestra Ubicación en Lima</h2>
+        <p>Atendemos a empresas en todos los distritos empresariales de Lima, incluyendo San Isidro, Miraflores, San Borja, Surco y el Centro Histórico.</p>
+      </div>
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima" style="border:0;width:100%;height:400px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- All 8 Services in Lima -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios de AI Governance y Data Governance en Lima</h2>
+        <p>Los 8 servicios de nuestro portafolio están disponibles de forma presencial en Lima, permitiendo workshops interactivos, sesiones de co-creación y acompañamiento directo a su equipo.</p>
+      </div>
+      <div class="grid grid--2">
+        {services.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.title} en Lima</h3>
+            <div class="card__meta">
+              <span><i class="fa-regular fa-clock"></i> {s.duration}</span>
+              <span><i class="fa-regular fa-building"></i> {s.audience}</span>
+            </div>
+            <p class="card__text">{s.description}</p>
+            <a href={`/areas/lima/${s.slug}/`} class="btn btn--primary btn--sm">Ver detalles en Lima →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits of On-Site -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Ventajas de la Consultoría Presencial en Lima</h2>
+        <p>La gobernanza de datos es un esfuerzo organizacional que se beneficia enormemente del contacto directo con los equipos y stakeholders clave.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-people-group"></i></div>
+          <h3 class="card__title">Workshops In-Situ</h3>
+          <p class="card__text">Realizamos talleres de descubrimiento, sesiones de levantamiento de información y workshops de alineación directamente en sus oficinas en Lima. La interacción presencial acelera la identificación de brechas y la co-creación de soluciones.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3 class="card__title">Acceso a Stakeholders</h3>
+          <p class="card__text">Los proyectos de gobernanza requieren entrevistas con directores, gerentes de riesgo, oficiales de cumplimiento y equipos técnicos. La presencia en Lima facilita la coordinación de agendas y reuniones con alta dirección.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3 class="card__title">Implementación Acelerada</h3>
+          <p class="card__text">La proximidad física permite resolver dudas en tiempo real, ajustar entregables sobre la marcha y mantener el momentum del proyecto. Los ciclos de retroalimentación son más cortos y efectivos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3 class="card__title">Capacitación Efectiva</h3>
+          <p class="card__text">Las sesiones de formación presenciales para Data Owners, Stewards y equipos ejecutivos logran mayor engagement y retención. Incluimos ejercicios prácticos con datos reales de su organización.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-lock"></i></div>
+          <h3 class="card__title">Datos Sensibles In-Situ</h3>
+          <p class="card__text">Para evaluaciones que involucran datos confidenciales del sector financiero o farmacéutico, el trabajo presencial elimina la necesidad de transferir información sensible a entornos externos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-comments"></i></div>
+          <h3 class="card__title">Cultura Organizacional</h3>
+          <p class="card__text">Comprender la cultura y dinámica interna de su organización es esencial para diseñar un programa de gobernanza que sea adoptado. La presencia continua nos permite captar matices imposibles de percibir remotamente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Navegue Nuestros Servicios</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-map text-accent"></i> Servicios en Perú</h3>
+          <p class="card__text">También ofrecemos consultoría remota para empresas fuera de Lima, cubriendo todo el territorio peruano con la misma calidad y compromiso.</p>
+          <a href="/areas/peru/" class="btn btn--outline">Ver cobertura nacional →</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-briefcase text-accent"></i> Portafolio de Servicios</h3>
+          <p class="card__text">Explore la descripción detallada de cada uno de nuestros servicios de AI Governance, Data Governance y Compliance.</p>
+          <a href="/servicios/" class="btn btn--outline">Ver todos los servicios →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Reúnase con Nosotros en Lima</h2>
+      <p>Agende una reunión presencial en Lima para discutir cómo podemos fortalecer la gobernanza de datos e IA de su organización.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Agendar Reunión Presencial</a>
+        <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Cumplimiento Ley 31814</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

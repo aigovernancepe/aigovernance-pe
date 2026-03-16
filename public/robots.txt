@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /_astro/
+Allow: /images/logo.svg
+Allow: /images/logo-icon.svg
+
+Crawl-delay: 1
+Host: https://aigovernance.pe
+Sitemap: https://aigovernance.pe/sitemap-index.xml

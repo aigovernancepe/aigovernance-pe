@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: `${company.url}/areas/` },
+];
+
+const schemas = [
+  webPageSchema({
+    title: 'Áreas que Servimos',
+    description: 'Servicios de AI Governance, Data Governance y Compliance disponibles en Perú y Lima. Consultoría presencial y remota.',
+    url: `${company.url}/areas/`,
+  }),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+  ]),
+];
+
+const dgServices = services.filter((s) => s.category === 'data-governance');
+const dqServices = services.filter((s) => s.category === 'data-quality');
+const complianceServices = services.filter((s) => s.category === 'compliance');
+---
+
+<BaseLayout
+  title="Áreas que Servimos | AI Governance Peru"
+  description="Descubra dónde ofrecemos servicios de AI Governance, Data Governance, Data Quality y Compliance. Consultoría presencial en Lima y remota en todo el Perú."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>Áreas que Servimos</h1>
+      <p>Brindamos servicios especializados de AI Governance, Data Governance y Compliance a empresas en todo el territorio peruano, con presencia presencial en Lima y capacidad de atención remota a nivel nacional.</p>
+    </div>
+  </section>
+
+  <!-- Areas Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Cobertura Nacional con Presencia Local</h2>
+        <p>Nuestra consultoría combina el conocimiento profundo del panorama regulatorio peruano con la capacidad de atención presencial en Lima, la capital financiera del país.</p>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((area) => (
+          <div class="card">
+            <h3 class="card__title">
+              <i class="fa-solid fa-location-dot text-accent"></i> {area.name}
+            </h3>
+            <p class="card__text">{area.description}</p>
+            <div class="map-embed">
+              <iframe src={area.mapEmbed} loading="lazy" title={`Mapa de ${area.name}`} style="border:0;width:100%;height:250px" allowfullscreen></iframe>
+            </div>
+            <div style="margin-top:1rem">
+              <a href={`/areas/${area.slug}/`} class="btn btn--primary">
+                Ver servicios en {area.name} →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Available -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Disponibles en Todas Nuestras Áreas</h2>
+        <p>Ofrecemos un portafolio completo de 8 servicios especializados, organizados en tres pilares estratégicos.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-sitemap text-accent"></i> Data Governance</h3>
+          <ul class="link-list">
+            {dgServices.map((s) => (
+              <li><a href={`/servicios/${s.slug}/`}>{s.title}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-chart-line text-accent"></i> Data Quality & AI</h3>
+          <ul class="link-list">
+            {dqServices.map((s) => (
+              <li><a href={`/servicios/${s.slug}/`}>{s.title}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-scale-balanced text-accent"></i> Compliance</h3>
+          <ul class="link-list">
+            {complianceServices.map((s) => (
+              <li><a href={`/servicios/${s.slug}/`}>{s.title}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Location Matters -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>¿Por Qué la Ubicación Importa en Gobernanza?</h2>
+        <p>Los proyectos de Data Governance e AI Governance requieren cercanía con los equipos, acceso a stakeholders clave y comprensión del contexto regulatorio local.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3 class="card__title">Workshops Presenciales</h3>
+          <p class="card__text">Las sesiones de descubrimiento, talleres de alineación y presentaciones ejecutivas son más efectivas cuando se realizan cara a cara con los equipos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Proximidad a Reguladores</h3>
+          <p class="card__text">Estar cerca de la SBS, SMV y otros organismos reguladores facilita la interpretación y aplicación correcta de las normativas vigentes.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users"></i></div>
+          <h3 class="card__title">Integración con Equipos</h3>
+          <p class="card__text">La implementación exitosa de gobernanza requiere trabajar codo a codo con Data Owners, Stewards y equipos de tecnología en su entorno real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Listo para Fortalecer su Gobernanza de Datos?</h2>
+      <p>Contáctenos para una evaluación inicial sin compromiso. Atendemos empresas en Lima de forma presencial y en todo el Perú de manera remota.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Consulta Gratuita</a>
+        <a href="/servicios/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Todos los Servicios</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

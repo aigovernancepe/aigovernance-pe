@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'implementacion-data-governance')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Lima', url: '/areas/lima/' },
+  { name: service.shortTitle, url: `/areas/lima/${service.slug}/` },
+];
+
+const schemas = [
+  serviceInAreaSchema(service, area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Lima', url: `${company.url}/areas/lima/` },
+    { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Implementación de Data Governance en Lima | AI Governance Peru"
+  description="Implementación integral de Data Governance para empresas en Lima. Establecimiento del Data Governance Council, políticas, catálogo de datos y dashboards de calidad con acompañamiento presencial durante 6 meses."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>Implementación de Data Governance en Lima</h1>
+      <p>Programa de implementación de 6 meses con acompañamiento presencial continuo en Lima. Establecemos el Data Governance Council, desarrollamos políticas, implementamos dashboards de calidad de datos y capacitamos a su equipo para operar el sistema de gobernanza de forma autónoma.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Iniciar Implementación</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lima Advantage for Implementation -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>La Ventaja de Implementar Data Governance en Lima</h2>
+        <p>Un programa de implementación de 6 meses requiere interacción continua con múltiples equipos. Lima ofrece las condiciones ideales para este acompañamiento.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-sitemap"></i></div>
+          <h3 class="card__title">Data Governance Council Presencial</h3>
+          <p class="card__text">Facilitamos las primeras sesiones del Consejo de Gobernanza de Datos directamente en sus instalaciones de Lima. La dinámica presencial es fundamental para establecer roles, definir la cadencia de reuniones y construir el compromiso organizacional necesario entre Data Owners y Stewards.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3 class="card__title">Coordinación Multi-Área</h3>
+          <p class="card__text">La implementación de gobernanza involucra a TI, riesgos, cumplimiento, operaciones y negocio. En Lima, coordinamos reuniones entre todas las áreas en sus propias oficinas, eliminando las barreras de comunicación que retrasan los proyectos remotos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-database"></i></div>
+          <h3 class="card__title">Catálogo de Datos con Contexto</h3>
+          <p class="card__text">El levantamiento del catálogo de datos requiere entender el contexto operativo de cada activo de información. Trabajando presencialmente con los equipos en Lima, capturamos metadatos, linaje y reglas de negocio que solo emergen en conversaciones directas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">Dashboards en Co-Creación</h3>
+          <p class="card__text">Los dashboards de calidad de datos se construyen iterativamente con los usuarios finales. Las sesiones presenciales de revisión y ajuste en Lima permiten ciclos rápidos de prototipado y validación con los equipos que los operarán diariamente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation Phases -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Fases de Implementación en Lima</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title">Fase 1: Diseño del Marco (Mes 1-2)</h3>
+          <p class="card__text">Definición de la estructura de gobernanza, roles y responsabilidades. Desarrollo del charter del Data Governance Council. Workshops presenciales con ejecutivos para alinear la visión de gobernanza con los objetivos estratégicos de la organización.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Fase 2: Políticas y Estándares (Mes 2-3)</h3>
+          <p class="card__text">Redacción de políticas de gestión de datos, estándares de calidad y procedimientos operativos. Revisión colaborativa con las áreas de cumplimiento y legal en sus oficinas de Lima para asegurar alineación regulatoria con SBS y SMV.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Fase 3: Tecnología y Procesos (Mes 3-5)</h3>
+          <p class="card__text">Implementación de herramientas de catálogo de datos, dashboards de calidad y procesos de monitoreo. Configuración y personalización trabajando directamente con los equipos técnicos en Lima.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Fase 4: Operación y Transfer (Mes 5-6)</h3>
+          <p class="card__text">Capacitación del equipo interno, primeras sesiones operativas del Data Governance Council y transferencia de conocimiento. Sesiones presenciales de coaching para asegurar la autonomía operativa del programa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima" style="border:0;width:100%;height:350px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Lima Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Otros Servicios en Lima</h2>
+      </div>
+      <div class="grid grid--3">
+        {otherServices.map((s) => (
+          <div class="card">
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/areas/lima/${s.slug}/`} class="btn btn--outline btn--sm">Ver en Lima →</a>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/areas/lima/" class="btn btn--outline">Todos los servicios en Lima →</a>
+        <a href="/areas/peru/" class="btn btn--outline" style="margin-left:0.5rem">Cobertura nacional →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Comience la Implementación de Data Governance en Lima</h2>
+      <p>Agende una reunión presencial para diseñar el programa de implementación de gobernanza de datos adaptado a su organización.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Agendar Reunión</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Detalles del Servicio</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

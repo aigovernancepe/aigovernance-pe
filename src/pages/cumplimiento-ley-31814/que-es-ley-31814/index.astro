@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ContactForm from '../../../components/ContactForm.astro';
+import { company } from '../../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Cumplimiento Ley 31814', url: `${company.url}/cumplimiento-ley-31814/` },
+  { name: 'Que es la Ley 31814', url: `${company.url}/cumplimiento-ley-31814/que-es-ley-31814/` },
+];
+
+const schemas = [
+  webPageSchema({
+    title: 'Que es la Ley 31814 - Ley de Inteligencia Artificial del Peru',
+    description: 'Explicacion completa de la Ley 31814, la primera ley de inteligencia artificial del Peru. Alcance, principios, obligaciones y clasificacion de riesgo de sistemas de IA.',
+    url: `${company.url}/cumplimiento-ley-31814/que-es-ley-31814/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="Que es la Ley 31814 | Ley de Inteligencia Artificial del Peru"
+  description="Explicacion completa de la Ley 31814, la primera ley de inteligencia artificial del Peru. Alcance, principios, obligaciones y clasificacion de riesgo de sistemas de IA."
+  schema={schemas}
+>
+  <!-- Breadcrumb -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__badge">Marco Regulatorio</span>
+      <h1>Que es la Ley 31814? La Primera Ley de IA del Peru</h1>
+      <p>Publicada en el Diario Oficial El Peruano, la Ley 31814 establece el marco legal para la promocion del uso de la inteligencia artificial en favor del desarrollo economico y social del pais.</p>
+    </div>
+  </section>
+
+  <!-- Definition -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <h2>Definicion y Contexto</h2>
+      <p>La Ley 31814, oficialmente denominada <strong>"Ley que promueve el uso de la Inteligencia Artificial en favor del desarrollo economico y social del pais"</strong>, es la primera legislacion peruana dedicada integramente a regular el uso de la inteligencia artificial.</p>
+      <p>Esta ley posiciona al Peru como uno de los primeros paises de America Latina en establecer un marco normativo especifico para la IA, alineandose con tendencias internacionales como el AI Act de la Union Europea y las recomendaciones de la OCDE sobre inteligencia artificial.</p>
+    </div>
+  </section>
+
+  <!-- Scope -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Alcance de la Ley</h2>
+        <p>La Ley 31814 aplica a toda entidad publica o privada que desarrolle, implemente, comercialice u opere sistemas de inteligencia artificial en el Peru.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building"></i></div>
+          <h3 class="card__title">Entidades Publicas</h3>
+          <p class="card__text">Ministerios, gobiernos regionales, organismos autonomos y toda institucion estatal que utilice sistemas de IA para la toma de decisiones o servicios al ciudadano.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3 class="card__title">Empresas Privadas</h3>
+          <p class="card__text">Bancos, aseguradoras, fintechs, farmaceuticas y cualquier empresa que utilice IA en procesos que afecten derechos fundamentales de las personas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="card__title">Desarrolladores de IA</h3>
+          <p class="card__text">Empresas y startups que desarrollen o comercialicen sistemas, modelos o soluciones basadas en inteligencia artificial dentro del territorio peruano.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Principles -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Principios Rectores</h2>
+        <p>La Ley 31814 establece principios fundamentales que guian el desarrollo y uso de la IA en el Peru.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="card__title">Transparencia</h3>
+          <p class="card__text">Los sistemas de IA deben ser comprensibles y explicables. Las organizaciones deben informar cuando se utiliza IA en decisiones que afecten a las personas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="card__title">No Discriminacion</h3>
+          <p class="card__text">Los sistemas de IA no deben generar sesgos ni discriminacion por razon de genero, origen, edad, condicion economica u otra caracteristica protegida.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-user-shield"></i></div>
+          <h3 class="card__title">Proteccion de Derechos</h3>
+          <p class="card__text">El uso de IA debe respetar los derechos fundamentales de las personas, incluyendo privacidad, proteccion de datos personales y dignidad humana.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+          <h3 class="card__title">Responsabilidad</h3>
+          <p class="card__text">Las organizaciones son responsables de los impactos de sus sistemas de IA. Deben existir mecanismos de rendicion de cuentas y supervision humana.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-lock"></i></div>
+          <h3 class="card__title">Seguridad y Robustez</h3>
+          <p class="card__text">Los sistemas de IA deben ser tecnicamente seguros, robustos y resilientes, con mecanismos de control que prevengan usos indebidos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-seedling"></i></div>
+          <h3 class="card__title">Sostenibilidad</h3>
+          <p class="card__text">El desarrollo de IA debe considerar su impacto ambiental y contribuir al desarrollo sostenible del pais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Obligations -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Obligaciones para las Organizaciones</h2>
+        <p>La Ley 31814 establece obligaciones concretas que varian segun el nivel de riesgo del sistema de IA.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>1. Inventario y Clasificacion de Sistemas de IA</h3>
+            <p>Identificar todos los sistemas de IA en uso, clasificarlos segun su nivel de riesgo (minimo, limitado, alto, inaceptable) y mantener un registro actualizado.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>2. Evaluacion de Impacto</h3>
+            <p>Realizar evaluaciones de impacto para sistemas de IA de alto riesgo, documentando riesgos potenciales y medidas de mitigacion implementadas.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>3. Gobernanza Interna</h3>
+            <p>Establecer una estructura de gobernanza con roles claros, politicas de uso de IA, procedimientos de supervision y mecanismos de revision periodica.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>4. Transparencia y Comunicacion</h3>
+            <p>Informar a los usuarios cuando interactuan con sistemas de IA y proporcionar mecanismos para que puedan solicitar revision humana de decisiones automatizadas.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>5. Monitoreo Continuo</h3>
+            <p>Implementar sistemas de monitoreo para detectar sesgos, errores o degradacion del rendimiento en los sistemas de IA en produccion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Risk classification -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Clasificacion de Riesgo de Sistemas de IA</h2>
+        <p>La ley establece una clasificacion por niveles de riesgo que determina las obligaciones aplicables.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title" style="color:var(--color-success)"><i class="fa-solid fa-circle-check"></i> Riesgo Minimo</h3>
+          <p class="card__text">Sistemas como filtros de spam, recomendaciones de contenido o asistentes basicos. Requieren obligaciones minimas de transparencia.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title" style="color:var(--color-warning,#f59e0b)"><i class="fa-solid fa-triangle-exclamation"></i> Riesgo Limitado</h3>
+          <p class="card__text">Chatbots, sistemas de generacion de contenido. Requieren informar al usuario que esta interactuando con IA.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title" style="color:#dc2626"><i class="fa-solid fa-circle-exclamation"></i> Alto Riesgo</h3>
+          <p class="card__text">Sistemas de scoring crediticio, seleccion de personal, diagnostico medico. Requieren evaluacion de impacto, registro, supervision humana y auditorias periodicas.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title" style="color:#7f1d1d"><i class="fa-solid fa-ban"></i> Riesgo Inaceptable</h3>
+          <p class="card__text">Sistemas de puntuacion social, manipulacion subliminal, vigilancia biometrica masiva. Estan prohibidos por la ley.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Continue Explorando</h2>
+      </div>
+      <div class="link-list" style="max-width:600px;margin:0 auto">
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem">
+          <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> DS 115-2025-PCM: El Reglamento de la Ley</a></li>
+          <li><a href="/cumplimiento-ley-31814/plazos-cumplimiento/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Plazos de Cumplimiento</a></li>
+          <li><a href="/cumplimiento-ley-31814/requisitos-sector-financiero/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Requisitos por Sector</a></li>
+          <li><a href="/servicios/evaluacion-impacto-ia/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicio: Evaluacion de Impacto de IA</a></li>
+          <li><a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicio: AI Governance & Compliance Audit</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Necesita Ayuda con el Cumplimiento?</h2>
+      <p>Nuestros expertos le guian en cada paso del proceso de adecuacion a la Ley 31814.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Contactar a un Experto</a>
+    </div>
+  </section>
+</BaseLayout>

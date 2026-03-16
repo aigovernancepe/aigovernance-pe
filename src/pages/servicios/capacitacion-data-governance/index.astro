@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../../data/company';
+import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'capacitacion-data-governance')!;
+const relatedServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  serviceSchema(service),
+];
+---
+
+<BaseLayout
+  title={`${service.title} | Formación para Equipos y Ejecutivos`}
+  description={`${service.description} Programas flexibles de formación en Data Governance y Data Quality para equipos técnicos y ejecutivos en Perú.`}
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge">Duración Flexible</span>
+      <h1>{service.title}</h1>
+      <p>Programas de capacitación personalizados para equipos técnicos y ejecutivos. Fortalezca las competencias de su organización en gobernanza de datos, calidad de datos y compliance.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Programa</a>
+        <a href="/servicios/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Todos los Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Programas de Capacitación</h2>
+        <p>Formación adaptada al nivel y necesidades de cada audiencia.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3 class="card__title">Para Equipos Técnicos</h3>
+          <ul class="pillar__list">
+            <li>Fundamentos de Data Governance y Data Quality</li>
+            <li>Rol del Data Steward: responsabilidades y herramientas</li>
+            <li>Gestión de metadatos y catálogo de datos</li>
+            <li>Monitoreo de calidad y detección de anomalías</li>
+            <li>Linaje de datos y trazabilidad</li>
+            <li>Workshops prácticos con herramientas reales</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3 class="card__title">Para Ejecutivos</h3>
+          <ul class="pillar__list">
+            <li>Visión estratégica de Data Governance</li>
+            <li>ROI de la gobernanza de datos</li>
+            <li>Panorama regulatorio: Ley 31814, DS 115-2025-PCM, SBS</li>
+            <li>Gobernanza de IA y riesgos de "Shadow AI"</li>
+            <li>Rol del Data Owner y responsabilidades del directorio</li>
+            <li>Casos de estudio del sector financiero y farmacéutico</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Metodología de Capacitación</h2>
+        <p>Enfoque práctico que genera resultados inmediatos.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3 class="card__title">Sesiones Interactivas</h3>
+          <p class="card__text">Clases presenciales o virtuales con casos prácticos del sector, ejercicios grupales y discusión de escenarios reales.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3 class="card__title">Workshops Prácticos</h3>
+          <p class="card__text">Ejercicios hands-on con herramientas de gobernanza de datos, dashboards de calidad y catálogos de metadatos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-certificate"></i></div>
+          <h3 class="card__title">Material de Referencia</h3>
+          <p class="card__text">Guías de referencia rápida, templates de políticas, checklists operativos y acceso a recursos de aprendizaje continuo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Relacionados</h2>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Capacitación en Todo el Perú</h2>
+        <p>Modalidad presencial en Lima y virtual para todo el país.</p>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Fortalezca las Competencias de su Equipo</h2>
+      <p>Programas personalizados de capacitación en Data Governance adaptados a su industria y nivel de madurez.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Programa de Capacitación</a>
+    </div>
+  </section>
+</BaseLayout>

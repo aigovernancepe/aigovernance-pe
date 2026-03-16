@@ -53,7 +53,7 @@ export const services = [
   {
     slug: 'capacitacion-ia-human-in-the-loop',
     category: 'compliance',
-    title: 'AI Literacy & Human-in-the-Loop Training',
+    title: 'Capacitación en IA y Supervisión Humana (Human-in-the-Loop)',
     shortTitle: 'Capacitación IA & Supervisión Humana',
     duration: 'Flexible (talleres, certificaciones)',
     audience: 'Equipos que supervisan sistemas de IA',
@@ -95,7 +95,7 @@ export const services = [
   {
     slug: 'ai-governance-compliance-audit',
     category: 'compliance',
-    title: 'AI Governance & Compliance Audit',
+    title: 'Auditoría de AI Governance & Compliance',
     shortTitle: 'Auditoría IA & Compliance',
     duration: '4-6 semanas',
     audience: 'Sectores regulados (Financiero, Farmacéutico)',
@@ -112,7 +112,7 @@ export const services = [
   {
     slug: 'agentic-workflow-engineering',
     category: 'data-quality',
-    title: 'Agentic Workflow Engineering',
+    title: 'Ingeniería de Workflows Agénticos',
     shortTitle: 'Workflows Agénticos',
     duration: '8-12 semanas',
     audience: 'Pharma, Finanzas, Asset Management',
@@ -129,7 +129,7 @@ export const services = [
   {
     slug: 'monitoreo-post-deployment',
     category: 'compliance',
-    title: 'Post-Deployment Monitoring & Ethical Guardrails',
+    title: 'Monitoreo Post-Deployment y Guardrails Éticos',
     shortTitle: 'Monitoreo Post-Deployment',
     duration: 'Retainer mensual',
     audience: 'Sistemas de IA en producción',
@@ -147,7 +147,7 @@ export const services = [
   {
     slug: 'bi-data-foundations-ai',
     category: 'data-governance',
-    title: 'BI-Integrated Data Foundations for AI',
+    title: 'Infraestructura de Datos Gobernada y BI para IA',
     shortTitle: 'Fundamentos de Datos para IA',
     duration: '6-10 semanas',
     audience: 'Empresas con iniciativas de IA',

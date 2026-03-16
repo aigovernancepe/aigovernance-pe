@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services } from '../../../data/company';
+import { serviceSchema, breadcrumbSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'monitoreo-post-deployment')!;
+const relatedServices = services.filter((s) =>
+  ['ai-governance-compliance-audit', 'capacitacion-ia-human-in-the-loop', 'evaluacion-sesgo'].includes(s.slug)
+);
+
+const breadcrumbs = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [serviceSchema(service), breadcrumbSchema(breadcrumbs)];
+---
+
+<BaseLayout
+  title="Monitoreo Post-Deployment de IA y Guardrails Éticos | Vigilancia Continua | AI Governance Peru"
+  description="Monitoreo continuo de modelos de IA en producción: detección de drift, vigilancia de sesgos y reportes mensuales de transparencia. Cumplimiento con la obligación de vigilancia continua del DS 115-2025-PCM."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbs} />
+      <span class="hero__badge">Retainer Mensual — Vigilancia Continua</span>
+      <h1>Post-Deployment Monitoring & Ethical Guardrails: Su IA No se Vigila Sola</h1>
+      <p>Los sistemas de IA de alto riesgo requieren "vigilancia continua" según el DS 115-2025-PCM. No solo construimos el auto — somos el mecánico que asegura que no se desvíe del camino.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Propuesta de Monitoreo</a>
+        <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Comenzar con Auditoría</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Monitoring -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por Qué su IA Necesita Vigilancia Después del Deployment?</h2>
+        <p>Un modelo de IA que funciona perfectamente hoy puede producir resultados sesgados, inexactos o peligrosos mañana. El mundo cambia, los datos cambian, y su IA se desvía silenciosamente.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">Data Drift</h3>
+          <p class="card__text">La distribución de los datos de entrada cambia con el tiempo. Un modelo de scoring crediticio entrenado con datos pre-pandemia puede fallar con patrones post-pandemia. Detectamos estas desviaciones antes de que causen daño.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-brain"></i></div>
+          <h3 class="card__title">Concept Drift</h3>
+          <p class="card__text">La relación entre inputs y outputs cambia. Lo que antes predecía riesgo crediticio correctamente ya no es válido. Nuestro monitoreo identifica cuándo sus modelos necesitan re-entrenamiento.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="card__title">Bias Drift</h3>
+          <p class="card__text">Un modelo puede desarrollar sesgos nuevos con datos frescos que no existían en el entrenamiento original. Vigilamos métricas de fairness por segmento demográfico de forma continua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>¿Qué Incluye el Retainer de Monitoreo?</h2>
+        <p>Un servicio mensual completo que cubre los tres pilares de la vigilancia de IA responsable.</p>
+      </div>
+
+      <div class="grid grid--2" style="max-width:900px;margin:0 auto">
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-radar text-accent"></i> Detección de Drift</h3>
+          <ul class="pillar__list">
+            <li>Monitoreo continuo de distribución de datos de entrada</li>
+            <li>Alertas automáticas de concept drift y data drift</li>
+            <li>Análisis de performance degradation por segmento</li>
+            <li>Recomendaciones de re-entrenamiento cuando sea necesario</li>
+            <li>Dashboard de salud del modelo en tiempo real</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-shield-halved text-accent"></i> Vigilancia de Sesgos</h3>
+          <ul class="pillar__list">
+            <li>Métricas de fairness por grupo protegido</li>
+            <li>Análisis de impacto desproporcionado</li>
+            <li>Detección de sesgos emergentes en datos nuevos</li>
+            <li>Reportes de equidad algorítmica para reguladores</li>
+            <li>Protocolos de intervención ante sesgo detectado</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-file-lines text-accent"></i> Reportes de Transparencia</h3>
+          <ul class="pillar__list">
+            <li>Reporte mensual ejecutivo de estado de modelos</li>
+            <li>Documentación de incidentes y resoluciones</li>
+            <li>Métricas de explicabilidad por modelo</li>
+            <li>Evidencia auditable para la SGTD</li>
+            <li>Actualización trimestral del Expediente Técnico</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-guardrails text-accent"></i> Guardrails Éticos</h3>
+          <ul class="pillar__list">
+            <li>Reglas de negocio que previenen outputs peligrosos</li>
+            <li>Límites de confianza para decisiones automatizadas</li>
+            <li>Escalamiento automático a supervisión humana</li>
+            <li>Filtros de contenido para modelos generativos</li>
+            <li>Auditoría de prompts y respuestas en LLMs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Applications -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Monitoreo Específico por Industria</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-flask"></i></div>
+          <h3 class="card__title">Farmacéutica</h3>
+          <p class="card__text">Monitoreo de agentes de farmacovigilancia, validación continua de modelos predictivos en clinical data, y vigilancia de sesgos en sistemas de diagnóstico asistido por IA. Cumplimiento GxP para sistemas computerizados.</p>
+          <p class="card__text"><strong>Resultado:</strong> Registro continuo que demuestra a DIGEMID que sus sistemas de IA operan dentro de los parámetros validados.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Financiero</h3>
+          <p class="card__text">Vigilancia de modelos de scoring crediticio, monitoreo de agentes de cobranza por cumplimiento ético, y detección de drift en modelos anti-fraude y KYC/AML. Reportes para SBS y SMV.</p>
+          <p class="card__text"><strong>Resultado:</strong> Reducción de riesgo regulatorio y evidencia de que sus decisiones automatizadas no discriminan por factores protegidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Outcome -->
+  <section class="section section--alt">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>El Resultado: Tranquilidad Operativa y Regulatoria</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card" style="text-align:center">
+          <div class="stat__number">24/7</div>
+          <div class="stat__label">Vigilancia de sus modelos de IA</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="stat__number">100%</div>
+          <div class="stat__label">Trazabilidad auditable para reguladores</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="stat__number">Mensual</div>
+          <div class="stat__label">Reportes de transparencia ejecutivos</div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:2rem;color:var(--color-text-light);font-size:1.05rem">No solo construimos y auditamos su IA — la vigilamos para que usted duerma tranquilo sabiendo que sus sistemas operan dentro de los límites éticos y regulatorios.</p>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Servicios Complementarios</h2>
+        <p>El monitoreo es más efectivo cuando parte de una auditoría inicial y se acompaña de capacitación.</p>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Mandato Legal' ? 'card__badge--danger' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio →</a>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top:2rem">
+        <h3>Disponible en</h3>
+        <div class="link-list" style="max-width:400px;margin-top:1rem">
+          <a href="/areas/lima/monitoreo-post-deployment/"><i class="fa-solid fa-location-dot"></i> Monitoreo de IA en Lima</a>
+          <a href="/areas/peru/"><i class="fa-solid fa-globe"></i> Todo el Perú (remoto)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Su IA Ya Está en Producción. ¿Quién la Vigila?</h2>
+      <p>Comience con una auditoría inicial y establezca un retainer de monitoreo continuo. La vigilancia es una obligación, no una opción.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Propuesta de Monitoreo</a>
+        <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Empezar con Auditoría</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

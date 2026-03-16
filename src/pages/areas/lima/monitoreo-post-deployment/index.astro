@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'monitoreo-post-deployment')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbs = [
+  { name: 'Áreas', url: `${company.url}/areas/` },
+  { name: 'Lima', url: `${company.url}/areas/lima/` },
+  { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+];
+
+const schemas = [serviceInAreaSchema(service, area), breadcrumbSchema(breadcrumbs)];
+---
+
+<BaseLayout
+  title="Monitoreo Post-Deployment de IA en Lima | Vigilancia Continua | AI Governance Peru"
+  description="Monitoreo continuo de modelos de IA en producción en Lima. Detección de drift, vigilancia de sesgos y reportes mensuales de transparencia para empresas limeñas con IA en producción."
+  schema={schemas}
+>
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbs} />
+      <h1>Monitoreo Post-Deployment de IA en Lima</h1>
+      <p>Vigilancia continua de sus modelos de IA en producción con presencia local en Lima. Detección de drift, monitoreo de sesgos y reportes de transparencia para reguladores peruanos.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Propuesta de Monitoreo</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por Qué Monitoreo Local en Lima?</h2>
+        <p>Los sistemas de IA que procesan datos de clientes peruanos necesitan vigilancia con conocimiento del contexto local: regulación SBS/SMV, patrones de mercado limeño y dinámicas sectoriales específicas.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-map-pin"></i></div>
+          <h3 class="card__title">Contexto de Mercado Local</h3>
+          <p class="card__text">Entendemos los patrones de datos del mercado peruano. Un modelo de scoring entrenado en datos internacionales puede derivar cuando se aplica al comportamiento crediticio local.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-landmark"></i></div>
+          <h3 class="card__title">Reportes para Reguladores Peruanos</h3>
+          <p class="card__text">Generamos reportes en el formato que SBS, SMV y la SGTD esperan. No adaptaciones genéricas — documentación diseñada para el contexto regulatorio peruano.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-clock"></i></div>
+          <h3 class="card__title">Respuesta en Zona Horaria Lima</h3>
+          <p class="card__text">Incidentes de IA no esperan. Nuestro equipo en Lima responde en horario local con capacidad de intervención presencial cuando la situación lo requiere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid grid--2">
+        <div>
+          <h2>Monitoreo Adaptado al Ecosistema de Lima</h2>
+          <div class="pillar" style="margin-top:1.5rem">
+            <div class="pillar__icon"><i class="fa-solid fa-building-columns"></i></div>
+            <div class="pillar__content">
+              <h3>Banca y Finanzas en San Isidro</h3>
+              <p>Vigilancia de modelos de riesgo crediticio, detección de fraude y scoring en los principales bancos. Reportes mensuales alineados a circulares SBS.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon"><i class="fa-solid fa-flask"></i></div>
+            <div class="pillar__content">
+              <h3>Farmacéuticas en Lima</h3>
+              <p>Monitoreo de agentes de farmacovigilancia y modelos predictivos en data clínica. Registro continuo compatible con requisitos GxP y DIGEMID.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon"><i class="fa-solid fa-chart-pie"></i></div>
+            <div class="pillar__content">
+              <h3>Asset Managers</h3>
+              <p>Vigilancia de modelos de investigación de inversiones y análisis de portafolio. Detección de drift en modelos de valoración y predicción.</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima, Perú"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Otros Servicios Disponibles en Lima</h2>
+      </div>
+      <div class="link-list" style="max-width:600px">
+        {otherServices.map((s) => (
+          <a href={`/areas/lima/${s.slug}/`}>
+            <i class="fa-solid fa-arrow-right"></i> {s.title} en Lima
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Su IA Está en Producción en Lima? Necesita Vigilancia</h2>
+      <p>Establezca un retainer de monitoreo continuo con presencia local. La vigilancia es una obligación legal, no una opción.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Propuesta de Monitoreo</a>
+    </div>
+  </section>
+</BaseLayout>

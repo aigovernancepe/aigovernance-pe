@@ -1,11 +1,11 @@
 # Legacy URL redirects from old site structure
 /servicios/evaluacion-madurez-ia/*    /servicios/evaluacion-madurez/:splat    301
 /servicios/implementacion-data-governance/*    /servicios/implementacion-data-governance/:splat    301
-/servicios/capacitacion-ai-governance/*    /servicios/capacitacion-data-governance/:splat    301
+/servicios/capacitacion-ai-governance/*    /servicios/capacitacion-ia-human-in-the-loop/:splat    301
 /servicios/evaluacion-impacto-ia/*    /servicios/evaluacion-impacto-ia/:splat    301
 /servicios/evaluacion-sesgo-algoritmico/*    /servicios/evaluacion-sesgo/:splat    301
 /servicios/data-governance/evaluacion-madurez-ia/*    /servicios/evaluacion-madurez/:splat    301
 /servicios/data-governance/implementacion/*    /servicios/implementacion-data-governance/:splat    301
-/servicios/data-governance/capacitacion/*    /servicios/capacitacion-data-governance/:splat    301
+/servicios/data-governance/capacitacion/*    /servicios/capacitacion-ia-human-in-the-loop/:splat    301
 /servicios/compliance/evaluacion-impacto-ia/*    /servicios/evaluacion-impacto-ia/:splat    301
 /servicios/data-quality/evaluacion-sesgo/*    /servicios/evaluacion-sesgo/:splat    301

@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services } from '../../../data/company';
+import { serviceSchema, breadcrumbSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'capacitacion-ia-human-in-the-loop')!;
+const relatedServices = services.filter((s) =>
+  ['ai-governance-compliance-audit', 'monitoreo-post-deployment', 'evaluacion-impacto-ia'].includes(s.slug)
+);
+
+const breadcrumbs = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [serviceSchema(service), breadcrumbSchema(breadcrumbs)];
+---
+
+<BaseLayout
+  title="Capacitación en IA y Supervisión Humana de Algoritmos | Mandato Legal DS 115-2025-PCM | AI Governance Peru"
+  description="Capacitación en IA y Human-in-the-Loop para empresas peruanas. Requisito legal del DS 115-2025-PCM Art. 1.2: el personal que supervisa IA de alto riesgo debe estar capacitado para detectar y corregir sesgos."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbs} />
+      <span class="hero__badge">Mandato Legal — Art. 1.2 DS 115-2025-PCM</span>
+      <h1>AI Literacy & Human-in-the-Loop Training: El Mandato que No Puede Ignorar</h1>
+      <p>La ley exige que toda persona que supervise un sistema de IA de alto riesgo esté "debidamente capacitada para detectar y corregir sesgos." No es una recomendación — es una obligación legal con plazo de cumplimiento.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Programa de Capacitación</a>
+        <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Requisitos Ley 31814</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Legal Mandate -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por Qué es un Requisito Legal y No Solo "Nice to Have"?</h2>
+        <p>El Artículo 1.2 del DS 115-2025-PCM establece de forma explícita que los operadores de sistemas de IA de alto riesgo deben garantizar que el personal de supervisión esté capacitado para:</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="card__title">Detectar Sesgos Algorítmicos</h3>
+          <p class="card__text">Identificar cuándo un modelo de IA produce resultados discriminatorios o injustos, especialmente en scoring crediticio, selección de personal o diagnóstico médico.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-sliders"></i></div>
+          <h3 class="card__title">Corregir Desviaciones</h3>
+          <p class="card__text">Intervenir de manera efectiva cuando un sistema de IA se desvía de su comportamiento esperado, activando protocolos de escalamiento y corrección documentados.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-shield"></i></div>
+          <h3 class="card__title">Documentar Decisiones</h3>
+          <p class="card__text">Mantener un registro auditable de las intervenciones humanas sobre sistemas automatizados — evidencia crítica para inspecciones de la SGTD y auditorías regulatorias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Programs -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Programas de Capacitación por Nivel</h2>
+        <p>Tres niveles diseñados para cubrir desde el directorio hasta los operadores técnicos de IA.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <span class="card__badge">Nivel Ejecutivo</span>
+          <h3 class="card__title">AI Governance para el C-Suite</h3>
+          <div class="card__meta"><span><i class="fa-regular fa-clock"></i> 1 día</span></div>
+          <p class="card__text">Para directores y gerentes generales. Comprensión del marco regulatorio, responsabilidades legales, y cómo evaluar el riesgo de sus iniciativas de IA.</p>
+          <ul class="pillar__list">
+            <li>Panorama regulatorio: Ley 31814 + DS 115-2025-PCM</li>
+            <li>Responsabilidad legal del directorio en IA</li>
+            <li>Framework de toma de decisiones sobre IA</li>
+            <li>Casos reales de sanciones por IA no gobernada</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="card__badge card__badge--success">Nivel Gerencial</span>
+          <h3 class="card__title">Supervisión de Sistemas de IA</h3>
+          <div class="card__meta"><span><i class="fa-regular fa-clock"></i> 2-3 días</span></div>
+          <p class="card__text">Para gerentes de área, compliance officers y data owners. Habilidades prácticas de supervisión "Human-in-the-Loop" para sistemas en producción.</p>
+          <ul class="pillar__list">
+            <li>Protocolos de intervención humana</li>
+            <li>Lectura de reportes de sesgo y drift</li>
+            <li>Escalamiento de incidentes de IA</li>
+            <li>Documentación para auditorías regulatorias</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="card__badge card__badge--warning">Nivel Técnico</span>
+          <h3 class="card__title">Operación y Monitoreo de Modelos</h3>
+          <div class="card__meta"><span><i class="fa-regular fa-clock"></i> 3-5 días</span></div>
+          <p class="card__text">Para científicos de datos, ingenieros de ML y equipos técnicos. Capacidades prácticas de detección de bias, drift y operación de guardrails éticos.</p>
+          <ul class="pillar__list">
+            <li>Métricas de fairness y detección de sesgo</li>
+            <li>Monitoreo de data drift y concept drift</li>
+            <li>Implementación de guardrails técnicos</li>
+            <li>Generación de Expedientes Técnicos para la SGTD</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry-Specific -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Capacitación Adaptada a su Industria</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-flask"></i></div>
+          <h3 class="card__title">Farmacéutica (GxP)</h3>
+          <p class="card__text">Supervisión de IA en farmacovigilancia, filing regulatorio ante DIGEMID, y modelos predictivos en clinical data. Incluye casos de uso de agentes autónomos en entornos GxP donde el error es inaceptable.</p>
+          <ul class="pillar__list">
+            <li>IA en expedientes técnicos DIGEMID</li>
+            <li>Supervisión de agentes de farmacovigilancia</li>
+            <li>Trazabilidad de datos clínicos generados por IA</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Financiero (SBS/SMV)</h3>
+          <p class="card__text">Supervisión de modelos de scoring crediticio, detección de fraude y agentes de cobranza empática. Cumplimiento con requisitos de SBS para explicabilidad algorítmica.</p>
+          <ul class="pillar__list">
+            <li>Sesgo en scoring crediticio y su impacto legal</li>
+            <li>Supervisión de agentes KYC/AML automatizados</li>
+            <li>Explicabilidad de decisiones automatizadas para clientes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Certificación Interna de Supervisores de IA</h2>
+        <p>Un programa de certificación recurrente que demuestra cumplimiento con el mandato del DS 115-2025-PCM y genera evidencia auditable.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>Evaluación de Conocimiento Base</h3>
+            <p>Diagnóstico del nivel actual de comprensión de IA, riesgos algorítmicos y marco regulatorio en su equipo.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Programa de Capacitación Personalizado</h3>
+            <p>Talleres presenciales (Lima) o virtuales con casos de uso de su propia industria y sistemas de IA.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Evaluación y Certificación</h3>
+            <p>Examen práctico con escenarios reales. Los aprobados reciben certificación interna con validez anual.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Recertificación Anual</h3>
+            <p>Actualización con nuevos requisitos regulatorios, nuevos tipos de sesgo, y evolución del panorama de IA. Ingreso recurrente para su organización y para nosotros.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Servicios Relacionados</h2>
+        <p>La capacitación es más efectiva cuando se combina con auditoría y monitoreo continuo.</p>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Retainer' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio →</a>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top:2rem">
+        <h3>Disponible en</h3>
+        <div class="link-list" style="max-width:400px;margin-top:1rem">
+          <a href="/areas/lima/capacitacion-ia-human-in-the-loop/"><i class="fa-solid fa-location-dot"></i> Capacitación IA en Lima (presencial)</a>
+          <a href="/areas/peru/"><i class="fa-solid fa-globe"></i> Todo el Perú (virtual)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>No Espere a que el Regulador le Exija la Evidencia</h2>
+      <p>El plazo de cumplimiento del DS 115-2025-PCM vence en septiembre 2026. Capacite a su equipo ahora y tenga la documentación lista.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Programa de Capacitación</a>
+        <a href="/cumplimiento-ley-31814/plazos-cumplimiento/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Plazos de Cumplimiento</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services } from '../../../data/company';
+import { localBusinessSchema, breadcrumbSchema } from '../../../utils/schema';
+
+const area = { name: 'Perú', slug: 'peru' };
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Perú', url: '/areas/peru/' },
+];
+
+const schemas = [
+  localBusinessSchema(area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Perú', url: `${company.url}/areas/peru/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="AI Governance y Data Governance en Perú | Consultoría Especializada"
+  description="Servicios de AI Governance, Data Governance, Data Quality y Compliance para empresas en todo el Perú. Cumplimiento con Ley 31814, DS 115-2025-PCM, normativas SBS y SMV."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>AI Governance y Data Governance en Perú</h1>
+      <p>Consultoría especializada en gobernanza de datos e inteligencia artificial para empresas peruanas que enfrentan un panorama regulatorio en constante evolución. Operamos en todo el territorio nacional con presencia principal en Lima.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Consulta</a>
+        <a href="/areas/lima/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Servicios en Lima</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regulatory Landscape -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>El Panorama Regulatorio Peruano en IA y Datos</h2>
+        <p>Perú cuenta con un marco normativo creciente que exige a las empresas implementar gobernanza de datos e inteligencia artificial de manera rigurosa.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-gavel text-accent"></i> Ley 31814 — Ley de IA</h3>
+          <p class="card__text">La Ley 31814, promulgada en 2023, establece el marco regulatorio para el uso de inteligencia artificial en Perú. Define categorías de riesgo para sistemas de IA, exige evaluaciones de impacto para sistemas de alto riesgo y establece principios de transparencia, no discriminación y supervisión humana. Las empresas que operan sistemas de IA de alto riesgo deben cumplir antes de septiembre 2026.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-file-contract text-accent"></i> DS 115-2025-PCM — Reglamento</h3>
+          <p class="card__text">El Decreto Supremo 115-2025-PCM reglamenta la Ley 31814 y detalla los requisitos específicos de cumplimiento: registro de sistemas de IA, documentación técnica obligatoria, evaluaciones de impacto periódicas y mecanismos de supervisión. Establece sanciones y el rol de la PCM como ente rector en la gobernanza de IA a nivel nacional.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-building-columns text-accent"></i> Normativas SBS</h3>
+          <p class="card__text">La Superintendencia de Banca, Seguros y AFP (SBS) regula la gestión de riesgos operativos y tecnológicos en el sector financiero peruano. Sus resoluciones exigen marcos de gobernanza de datos robustos, gestión de riesgo de modelos analíticos y controles sobre el uso de tecnologías emergentes, incluyendo inteligencia artificial y machine learning en procesos crediticios y operativos.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-chart-pie text-accent"></i> Normativas SMV</h3>
+          <p class="card__text">La Superintendencia del Mercado de Valores (SMV) establece requisitos de transparencia, reporting y gobernanza corporativa para emisores y participantes del mercado de capitales. La calidad de los datos financieros y la gobernanza de información son pilares fundamentales para el cumplimiento de sus regulaciones sobre revelación de información material.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Cobertura en Todo el Perú</h2>
+        <p>Atendemos empresas en todo el territorio peruano, con servicios presenciales en Lima y consultoría remota para cualquier región del país.</p>
+      </div>
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31512256.25!2d-85.0!3d-9.19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c850c05914e3%3A0xb717df1eee4c764!2sPeru!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Perú" style="border:0;width:100%;height:400px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- All 8 Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Nuestros 8 Servicios en Perú</h2>
+        <p>Portafolio completo de servicios especializados en gobernanza de datos, calidad de datos y cumplimiento normativo de IA para el mercado peruano.</p>
+      </div>
+      <div class="grid grid--2">
+        {services.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.title}</h3>
+            <div class="card__meta">
+              <span><i class="fa-regular fa-clock"></i> {s.duration}</span>
+              <span><i class="fa-regular fa-building"></i> {s.audience}</span>
+            </div>
+            <p class="card__text">{s.description}</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+              <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio →</a>
+              <a href={`/areas/lima/${s.slug}/`} class="btn btn--outline btn--sm">En Lima →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Peru Needs DG -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>¿Por Qué las Empresas Peruanas Necesitan Gobernanza de Datos?</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Cumplimiento Regulatorio</h3>
+          <p class="card__text">La Ley 31814 y el DS 115-2025-PCM exigen que las empresas que utilicen IA de alto riesgo implementen marcos de gobernanza antes de septiembre 2026. La SBS y SMV refuerzan estos requisitos para sectores regulados.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-trophy"></i></div>
+          <h3 class="card__title">Ventaja Competitiva</h3>
+          <p class="card__text">Con una madurez promedio de 1.88/5 en Data Governance en el sector financiero, las empresas que inviertan temprano en gobernanza obtendrán una ventaja significativa sobre sus competidores.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 class="card__title">IA Responsable</h3>
+          <p class="card__text">El despliegue acelerado de modelos de IA y LLMs en procesos empresariales requiere marcos de gobernanza que aseguren transparencia, equidad y trazabilidad en las decisiones automatizadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Explore Nuestros Servicios por Ubicación</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-city text-accent"></i> Servicios en Lima</h3>
+          <p class="card__text">Consultoría presencial en la capital financiera del Perú, con acceso directo a workshops, sesiones de descubrimiento y presentaciones ejecutivas en sus oficinas.</p>
+          <a href="/areas/lima/" class="btn btn--primary">Ver servicios en Lima →</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-list-check text-accent"></i> Todos los Servicios</h3>
+          <p class="card__text">Conozca nuestro portafolio completo de servicios de AI Governance, Data Governance y Compliance para empresas peruanas.</p>
+          <a href="/servicios/" class="btn btn--primary">Ver todos los servicios →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Inicie su Transformación en Gobernanza de Datos</h2>
+      <p>Converse con nuestros especialistas sobre cómo su empresa puede prepararse para el cumplimiento de la Ley 31814 y fortalecer su gobernanza de datos.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Consulta Gratuita</a>
+        <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Requisitos Ley 31814</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

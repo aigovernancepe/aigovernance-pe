@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../../data/company';
+import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'implementacion-data-governance')!;
+const relatedServices = services.filter((s) => s.slug !== service.slug && s.category === 'data-governance');
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  serviceSchema(service),
+];
+---
+
+<BaseLayout
+  title={`${service.title} | Framework Integral de Gobernanza de Datos`}
+  description={`${service.description} Programa de 6 meses que incluye DG Council, políticas, dashboard de calidad, catálogo de datos y capacitación para su equipo.`}
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge">Programa Integral — 6 Meses</span>
+      <h1>{service.title}</h1>
+      <p>Implementación completa del framework de Data Governance: desde el diseño del consejo de gobernanza hasta la operación autónoma con dashboards de calidad y catálogo de datos.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Implementación</a>
+        <a href="/servicios/evaluacion-madurez/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Comenzar con Evaluación</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>¿Qué Incluye la Implementación?</h2>
+        <p>Un programa de 6 meses que transforma la gobernanza de datos de su organización.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users"></i></div>
+          <h3 class="card__title">Data Governance Council</h3>
+          <p class="card__text">Diseño y establecimiento del consejo de gobernanza con roles definidos: Data Owners, Data Stewards, CDO. Estructura de gobierno con reuniones periódicas y toma de decisiones.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-shield"></i></div>
+          <h3 class="card__title">Políticas y Estándares</h3>
+          <p class="card__text">Desarrollo de políticas de gestión de datos, estándares de calidad, lineamientos de clasificación y procesos de aprobación adaptados a su sector.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">Dashboard de Data Quality</h3>
+          <p class="card__text">Implementación de dashboards de monitoreo continuo de calidad de datos con KPIs, alertas automáticas y reportes ejecutivos periódicos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3 class="card__title">Catálogo de Datos</h3>
+          <p class="card__text">Implementación de catálogo centralizado con metadatos, linaje de datos, glosario de negocio y documentación de activos de datos críticos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="card__title">Capacitación del Equipo</h3>
+          <p class="card__text">Programa de formación para Data Owners, Stewards y usuarios de negocio. Incluye workshops prácticos, guías de referencia y sesiones de coaching.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <h3 class="card__title">Operación y Transferencia</h3>
+          <p class="card__text">Transición hacia operación autónoma con soporte durante la estabilización. Su equipo queda capacitado para mantener y evolucionar el framework.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Cronograma de Implementación</h2>
+        <p>6 meses de trabajo estructurado con entregables incrementales.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>Mes 1-2: Fundamentos</h3>
+            <p>Establecimiento del Data Governance Council, definición de roles y responsabilidades, diseño de la estructura organizacional de gobernanza.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Mes 2-3: Políticas y Procesos</h3>
+            <p>Desarrollo de políticas de datos, estándares de calidad, procesos de aprobación y flujos de escalamiento.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Mes 3-5: Tecnología y Datos</h3>
+            <p>Implementación del catálogo de datos, dashboards de calidad, configuración de monitoreo y automatización de reportes.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Mes 5-6: Capacitación y Transferencia</h3>
+            <p>Formación del equipo, estabilización de procesos, transferencia de conocimiento y plan de evolución continua.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Complementarios</h2>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/servicios/" class="btn btn--primary">Ver Todos los Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicio Disponible en Todo el Perú</h2>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Implemente Data Governance en su Organización</h2>
+      <p>Programa de 6 meses con resultados medibles desde el primer mes. Contáctenos para una propuesta personalizada.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Propuesta</a>
+    </div>
+  </section>
+</BaseLayout>

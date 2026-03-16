@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Pagina No Encontrada | AI Governance Peru"
+  description="La pagina que busca no existe. Vuelva al inicio para encontrar lo que necesita."
+  noindex={true}
+>
+  <section class="section" style="min-height:60vh;display:flex;align-items:center">
+    <div class="container" style="text-align:center;max-width:600px">
+      <div style="font-size:6rem;font-weight:800;color:var(--color-primary,#1e40af);line-height:1">404</div>
+      <h1 style="margin-top:1rem">Pagina No Encontrada</h1>
+      <p style="color:var(--color-text-light);font-size:1.1rem;margin-bottom:2rem">Lo sentimos, la pagina que busca no existe o ha sido movida. Puede volver al inicio o explorar nuestros servicios.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/" class="btn btn--primary btn--lg">Volver al Inicio</a>
+        <a href="/servicios/" class="btn btn--outline btn--lg">Ver Servicios</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

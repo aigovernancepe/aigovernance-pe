@@ -1,0 +1,75 @@
+---
+import { company, services, areas } from '../data/company';
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/" aria-label="Inicio">
+          <img src={company.logoWhite} alt={company.name} width="160" height="40" loading="lazy" />
+        </a>
+        <p>{company.description}</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          {services.map((s) => (
+            <li><a href={`/servicios/${s.slug}/`}>{s.shortTitle}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Áreas</h4>
+        <ul>
+          {areas.map((a) => (
+            <li><a href={`/areas/${a.slug}/`}>{a.name}</a></li>
+          ))}
+        </ul>
+        <h4 style="margin-top:1.5rem">Empresa</h4>
+        <ul>
+          <li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/cumplimiento-ley-31814/">Ley 31814</a></li>
+          <li><a href="/recursos/">Recursos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href={`mailto:${company.email}`}><i class="fa-solid fa-envelope"></i> {company.email}</a></li>
+          <li><a href={company.linkedin} target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+          <li><i class="fa-solid fa-location-dot"></i> {company.address.locality}, {company.address.countryName}</li>
+        </ul>
+        <a href="/contacto/" class="btn btn--outline btn--sm" style="margin-top:1rem">Solicitar Evaluación</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {new Date().getFullYear()} {company.name} — Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-primary-dark); color: rgba(255,255,255,0.75);
+    padding: 4rem 0 2rem;
+  }
+  .footer__grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 3rem; }
+  .footer__brand p { margin-top: 1rem; font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
+  .footer__col h4 { color: #fff; font-size: 0.95rem; margin-bottom: 1rem; }
+  .footer__col ul { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer__col a { color: rgba(255,255,255,0.7); font-size: 0.85rem; transition: color 150ms; text-decoration: none; }
+  .footer__col a:hover { color: #fff; }
+  .footer__col li { font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; }
+  .footer__col i { width: 1rem; text-align: center; }
+  .footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 1.5rem; text-align: center; font-size: 0.8rem; }
+  .footer .btn--outline { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
+  .footer .btn--outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); color: #fff; }
+  @media (max-width: 768px) {
+    .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

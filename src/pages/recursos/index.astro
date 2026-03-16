@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { company } from '../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Recursos', url: `${company.url}/recursos/` },
+];
+
+const schemas = [
+  webPageSchema({
+    title: 'Recursos de AI Governance y Data Governance',
+    description: 'Recursos, guias y articulos sobre AI Governance, Data Governance, Data Quality y cumplimiento de la Ley 31814 en Peru.',
+    url: `${company.url}/recursos/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="Recursos de AI Governance y Data Governance | AI Governance Peru"
+  description="Recursos, guias y articulos sobre AI Governance, Data Governance, Data Quality y cumplimiento de la Ley 31814 en Peru."
+  schema={schemas}
+>
+  <!-- Breadcrumb -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Recursos</h1>
+      <p>Guias, articulos y herramientas para fortalecer la gobernanza de datos e inteligencia artificial en su organizacion.</p>
+    </div>
+  </section>
+
+  <!-- Coming soon -->
+  <section class="section">
+    <div class="container" style="max-width:700px;text-align:center">
+      <div class="card" style="padding:3rem 2rem">
+        <div style="font-size:3rem;margin-bottom:1rem"><i class="fa-solid fa-book-open" style="color:var(--color-primary,#1e40af)"></i></div>
+        <h2>Contenido en Desarrollo</h2>
+        <p style="color:var(--color-text-light);font-size:1.1rem;margin-bottom:1.5rem">Estamos preparando una biblioteca completa de recursos sobre AI Governance, Data Governance, Data Quality y cumplimiento regulatorio en Peru. Pronto publicaremos guias practicas, plantillas, checklists y articulos de analisis.</p>
+        <p style="color:var(--color-text-light)">Mientras tanto, explore nuestras guias disponibles sobre la Ley 31814 y suscribase a nuestro LinkedIn para recibir actualizaciones.</p>
+        <div style="margin-top:1.5rem">
+          <a href="https://linkedin.com/company/ai-governance-peru" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm"><i class="fa-brands fa-linkedin"></i> Seguir en LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Available resources -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Recursos Disponibles</h2>
+        <p>Nuestras guias sobre la Ley 31814 y el DS 115-2025-PCM ya estan disponibles.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <span class="card__badge card__badge--danger">Ley 31814</span>
+          <h3 class="card__title">Guia Completa de Cumplimiento</h3>
+          <p class="card__text">Todo lo que su empresa necesita saber para cumplir con la Ley 31814 y el DS 115-2025-PCM. Plazos, requisitos y pasos de implementacion.</p>
+          <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--sm">Leer Guia &rarr;</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Que es la Ley 31814?</h3>
+          <p class="card__text">Definicion, alcance, principios clave y obligaciones establecidas por la primera ley de inteligencia artificial del Peru.</p>
+          <a href="/cumplimiento-ley-31814/que-es-ley-31814/" class="btn btn--outline btn--sm">Leer Guia &rarr;</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">DS 115-2025-PCM: El Reglamento</h3>
+          <p class="card__text">Analisis detallado del reglamento que define las obligaciones operativas, plazos y sanciones para el uso de IA en Peru.</p>
+          <a href="/cumplimiento-ley-31814/ds-115-2025-pcm/" class="btn btn--outline btn--sm">Leer Guia &rarr;</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Plazos de Cumplimiento</h3>
+          <p class="card__text">Calendario regulatorio con fechas clave y cronograma recomendado para alcanzar el cumplimiento antes del plazo maximo.</p>
+          <a href="/cumplimiento-ley-31814/plazos-cumplimiento/" class="btn btn--outline btn--sm">Leer Guia &rarr;</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Requisitos por Sector</h3>
+          <p class="card__text">Requisitos especificos para bancos, aseguradoras, fintechs, cooperativas y sector farmaceutico.</p>
+          <a href="/cumplimiento-ley-31814/requisitos-sector-financiero/" class="btn btn--outline btn--sm">Leer Guia &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Necesita Orientacion Personalizada?</h2>
+      <p>Nuestros expertos pueden ayudarle a aplicar estos conceptos a su contexto especifico.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Contactar a un Experto</a>
+    </div>
+  </section>
+</BaseLayout>

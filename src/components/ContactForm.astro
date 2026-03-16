@@ -1,0 +1,63 @@
+---
+interface Props {
+  variant?: 'full' | 'compact';
+}
+const { variant = 'full' } = Astro.props;
+---
+
+<form class={`form ${variant === 'full' ? 'form--grid' : ''}`} action="https://formspree.io/f/placeholder" method="POST">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <div class="form__group">
+    <label class="form__label" for="nombre">Nombre completo *</label>
+    <input class="form__input" type="text" id="nombre" name="nombre" required />
+  </div>
+
+  <div class="form__group">
+    <label class="form__label" for="cargo">Cargo</label>
+    <input class="form__input" type="text" id="cargo" name="cargo" />
+  </div>
+
+  <div class="form__group">
+    <label class="form__label" for="institucion">Tipo de institución</label>
+    <select class="form__select" id="institucion" name="institucion">
+      <option value="">Seleccione...</option>
+      <option value="banco">Banco</option>
+      <option value="aseguradora">Aseguradora</option>
+      <option value="asset-manager">Asset Manager</option>
+      <option value="fintech">Fintech</option>
+      <option value="cooperativa">Cooperativa</option>
+      <option value="farmaceutica">Farmacéutica</option>
+      <option value="otro">Otro</option>
+    </select>
+  </div>
+
+  <div class="form__group">
+    <label class="form__label" for="empresa">Empresa *</label>
+    <input class="form__input" type="text" id="empresa" name="empresa" required />
+  </div>
+
+  <div class="form__group">
+    <label class="form__label" for="email">Email corporativo *</label>
+    <input class="form__input" type="email" id="email" name="email" required />
+  </div>
+
+  <div class="form__group">
+    <label class="form__label" for="telefono">Teléfono</label>
+    <input class="form__input" type="tel" id="telefono" name="telefono" />
+  </div>
+
+  <div class="form__group form__group--full">
+    <label class="form__label" for="mensaje">Mensaje</label>
+    <textarea class="form__textarea" id="mensaje" name="mensaje" placeholder="Cuéntenos sobre su proyecto o necesidades..."></textarea>
+  </div>
+
+  <div class="form__group form__group--full">
+    <button type="submit" class="btn btn--primary btn--lg">Solicitar Evaluación</button>
+    <p class="form__disclaimer">Al enviar, acepta nuestra política de privacidad. Su información es confidencial.</p>
+  </div>
+</form>
+
+<style>
+  .form__disclaimer { font-size: 0.75rem; color: var(--color-text-light); margin-top: 0.5rem; }
+</style>

@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'evaluacion-impacto-ia')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Lima', url: '/areas/lima/' },
+  { name: service.shortTitle, url: `/areas/lima/${service.slug}/` },
+];
+
+const schemas = [
+  serviceInAreaSchema(service, area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Lima', url: `${company.url}/areas/lima/` },
+    { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Evaluación de Impacto de IA en Lima | Ley 31814 | AI Governance Peru"
+  description="Evaluación de impacto para sistemas de IA de alto riesgo según Ley 31814 y DS 115-2025-PCM en Lima. Informe formal con análisis de riesgos, medidas de mitigación y documentación para cumplimiento regulatorio."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>Evaluación de Impacto de IA en Lima</h1>
+      <p>Informe formal de evaluación de impacto para sistemas de inteligencia artificial de alto riesgo, desarrollado presencialmente con su equipo en Lima. Cumplimiento completo con los requisitos de la Ley 31814 y el DS 115-2025-PCM antes del plazo de septiembre 2026.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación de Impacto</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Lima for AI Impact -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Lima: Epicentro del Despliegue de IA en Perú</h2>
+        <p>La mayoría de los sistemas de IA de alto riesgo en Perú operan desde Lima, donde se concentran las sedes corporativas de bancos, aseguradoras y empresas farmacéuticas que requieren evaluación de impacto.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 class="card__title">Sistemas de IA en Banca</h3>
+          <p class="card__text">Los bancos con sede en Lima despliegan modelos de scoring crediticio, detección de fraude, chatbots para atención al cliente y sistemas de trading algorítmico. Cada uno requiere evaluación de impacto si clasifica como alto riesgo bajo la Ley 31814.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-flask"></i></div>
+          <h3 class="card__title">IA en Farmacéutica</h3>
+          <p class="card__text">Las empresas farmacéuticas en Lima utilizan IA para optimización de ensayos clínicos, pharmacovigilance automatizada y predicción de demanda. La evaluación de impacto debe considerar las implicaciones en salud pública y los marcos GxP.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Proximidad a la PCM</h3>
+          <p class="card__text">La Presidencia del Consejo de Ministros, ente rector en gobernanza de IA según el DS 115-2025-PCM, tiene sede en Lima. Nuestra cercanía permite mantenernos actualizados sobre interpretaciones regulatorias y guías de implementación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Evaluation Components -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Componentes de la Evaluación de Impacto</h2>
+        <p>Nuestro informe cubre todos los requisitos del DS 115-2025-PCM para sistemas de IA de alto riesgo.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-clipboard-list text-accent"></i> Inventario de Sistemas</h3>
+          <p class="card__text">Catalogación presencial de todos los sistemas de IA en operación. Sesiones con equipos técnicos y de negocio en Lima para identificar algoritmos, datos de entrada, poblaciones afectadas y decisiones automatizadas.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-triangle-exclamation text-accent"></i> Análisis de Riesgos</h3>
+          <p class="card__text">Evaluación de riesgos para derechos fundamentales, seguridad, privacidad y no discriminación. Clasificación por nivel de riesgo según los criterios de la Ley 31814 y metodologías internacionales como la del EU AI Act.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-shield-halved text-accent"></i> Medidas de Mitigación</h3>
+          <p class="card__text">Diseño de controles técnicos y organizacionales para mitigar cada riesgo identificado. Incluye supervisión humana, mecanismos de apelación, monitoreo de desempeño y protocolos de escalamiento.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-file-signature text-accent"></i> Documentación Formal</h3>
+          <p class="card__text">Informe completo apto para presentación ante reguladores. Incluye ficha técnica del sistema, análisis de proporcionalidad, plan de supervisión continua y compromisos de transparencia conforme al DS 115-2025-PCM.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Urgency -->
+  <section class="section" style="background:linear-gradient(135deg,#991b1b,#dc2626);color:#fff;text-align:center">
+    <div class="container">
+      <h2 style="color:#fff">Plazo de Cumplimiento: Septiembre 2026</h2>
+      <p style="color:rgba(255,255,255,0.9);max-width:650px;margin:0 auto 1.5rem">Las empresas en Lima que operan sistemas de IA de alto riesgo deben completar sus evaluaciones de impacto antes de la fecha límite. No espere al último momento.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Iniciar Evaluación Ahora</a>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima" style="border:0;width:100%;height:350px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Lima Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Otros Servicios en Lima</h2>
+      </div>
+      <div class="grid grid--3">
+        {otherServices.map((s) => (
+          <div class="card">
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/areas/lima/${s.slug}/`} class="btn btn--outline btn--sm">Ver en Lima →</a>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/areas/lima/" class="btn btn--outline">Todos los servicios en Lima →</a>
+        <a href="/areas/peru/" class="btn btn--outline" style="margin-left:0.5rem">Cobertura nacional →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Cumpla con la Ley 31814 en Lima</h2>
+      <p>Solicite su evaluación de impacto de IA presencial en Lima. Asegure el cumplimiento regulatorio antes del plazo establecido.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación</a>
+        <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Requisitos Ley 31814</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

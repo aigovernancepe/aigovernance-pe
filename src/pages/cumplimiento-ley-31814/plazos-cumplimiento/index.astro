@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ContactForm from '../../../components/ContactForm.astro';
+import { company } from '../../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Cumplimiento Ley 31814', url: `${company.url}/cumplimiento-ley-31814/` },
+  { name: 'Plazos de Cumplimiento', url: `${company.url}/cumplimiento-ley-31814/plazos-cumplimiento/` },
+];
+
+const schemas = [
+  webPageSchema({
+    title: 'Plazos de Cumplimiento Ley 31814 - Calendario Regulatorio',
+    description: 'Calendario completo de plazos de cumplimiento de la Ley 31814 y DS 115-2025-PCM. Fechas clave, enfoque por fases y cronograma recomendado para empresas peruanas.',
+    url: `${company.url}/cumplimiento-ley-31814/plazos-cumplimiento/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="Plazos de Cumplimiento Ley 31814 | Calendario Regulatorio"
+  description="Calendario completo de plazos de cumplimiento de la Ley 31814 y DS 115-2025-PCM. Fechas clave, enfoque por fases y cronograma recomendado para empresas peruanas."
+  schema={schemas}
+>
+  <!-- Breadcrumb -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__badge">Calendario Regulatorio</span>
+      <h1>Plazos de Cumplimiento de la Ley 31814</h1>
+      <p>El tiempo corre. Conozca las fechas clave y planifique su estrategia de cumplimiento con un enfoque por fases.</p>
+      <div class="countdown" id="countdown"></div>
+      <p style="color:rgba(255,255,255,0.8);margin-top:0.5rem">Plazo maximo de cumplimiento: 10 de septiembre de 2026</p>
+    </div>
+  </section>
+
+  <!-- Key deadline -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Fecha Limite Principal</h2>
+        <p>El DS 115-2025-PCM establece el <strong>10 de septiembre de 2026</strong> como fecha limite para que todas las organizaciones que operen sistemas de IA de alto riesgo cumplan con los requisitos establecidos.</p>
+      </div>
+      <div class="stats" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;text-align:center;margin-top:2rem">
+        <div class="card" style="flex:1;min-width:200px;max-width:250px">
+          <div style="font-size:2.5rem;font-weight:800;color:var(--color-primary,#1e40af)">10 Sept</div>
+          <div style="font-size:1rem;color:var(--color-text-light)">2026</div>
+          <p class="card__text">Plazo maximo para sistemas de IA de alto riesgo</p>
+        </div>
+        <div class="card" style="flex:1;min-width:200px;max-width:250px">
+          <div style="font-size:2.5rem;font-weight:800;color:#dc2626">Hoy</div>
+          <div style="font-size:1rem;color:var(--color-text-light)">2026</div>
+          <p class="card__text">El tiempo para planificar e implementar se reduce cada dia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phased approach -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Enfoque por Fases Recomendado</h2>
+        <p>Un cronograma realista para alcanzar el cumplimiento antes de la fecha limite.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>Fase 1: Diagnostico (Semanas 1-3)</h3>
+            <p>Inventario de todos los sistemas de IA en uso, clasificacion por nivel de riesgo, identificacion de brechas de cumplimiento y evaluacion de la situacion actual de gobernanza.</p>
+            <ul style="margin-top:0.5rem;padding-left:1.2rem">
+              <li>Mapeo de sistemas de IA existentes</li>
+              <li>Clasificacion de riesgo inicial</li>
+              <li>Evaluacion de madurez en gobernanza</li>
+              <li>Informe de brechas vs. requisitos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Fase 2: Planificacion (Semanas 4-6)</h3>
+            <p>Desarrollo del roadmap de cumplimiento, definicion de la estructura de gobernanza, priorizacion de acciones por nivel de riesgo y estimacion de recursos necesarios.</p>
+            <ul style="margin-top:0.5rem;padding-left:1.2rem">
+              <li>Roadmap de cumplimiento priorizado</li>
+              <li>Diseno de estructura de gobernanza</li>
+              <li>Plan de recursos y presupuesto</li>
+              <li>Presentacion ejecutiva a directorio</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Fase 3: Implementacion (Meses 2-5)</h3>
+            <p>Ejecucion del roadmap: establecimiento de politicas, evaluaciones de impacto, documentacion tecnica, mecanismos de supervision y capacitacion del equipo.</p>
+            <ul style="margin-top:0.5rem;padding-left:1.2rem">
+              <li>Politicas y procedimientos de IA</li>
+              <li>Evaluaciones de impacto algoritmico</li>
+              <li>Documentacion tecnica de sistemas</li>
+              <li>Capacitacion de equipos clave</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Fase 4: Validacion y Monitoreo (Mes 6+)</h3>
+            <p>Revision final de cumplimiento, pruebas de los mecanismos implementados, ajustes finales y establecimiento del sistema de monitoreo continuo.</p>
+            <ul style="margin-top:0.5rem;padding-left:1.2rem">
+              <li>Auditoria interna de cumplimiento</li>
+              <li>Pruebas de mecanismos de supervision</li>
+              <li>Dashboard de monitoreo operativo</li>
+              <li>Plan de mejora continua</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline visualization -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Por Que Empezar Ahora?</h2>
+        <p>Un programa completo de adecuacion requiere al menos 6 meses. No espere al ultimo momento.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-clock"></i></div>
+          <h3 class="card__title">Complejidad Tecnica</h3>
+          <p class="card__text">La documentacion tecnica, evaluaciones de impacto y mecanismos de supervision requieren tiempo de desarrollo y validacion.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users"></i></div>
+          <h3 class="card__title">Cambio Organizacional</h3>
+          <p class="card__text">Establecer una cultura de gobernanza de IA requiere capacitacion, nuevos roles y procesos que necesitan tiempo para consolidarse.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Ventaja Competitiva</h3>
+          <p class="card__text">Las organizaciones que se adelantan obtienen ventaja competitiva y pueden usar el cumplimiento como diferenciador ante clientes y reguladores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sector-specific deadlines note -->
+  <section class="section section--alt">
+    <div class="container" style="max-width:800px">
+      <h2>Consideraciones por Sector</h2>
+      <p>Algunos sectores regulados pueden tener requisitos adicionales o plazos mas estrictos impuestos por sus reguladores sectoriales:</p>
+      <div class="grid grid--2" style="margin-top:1.5rem">
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-building-columns"></i> Sector Financiero</h3>
+          <p class="card__text">La SBS puede imponer requisitos adicionales para sistemas de scoring crediticio, prevencion de fraude y modelos de riesgo basados en IA.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title"><i class="fa-solid fa-flask"></i> Sector Farmaceutico</h3>
+          <p class="card__text">DIGEMID y entornos GxP pueden requerir validaciones adicionales para sistemas de IA utilizados en procesos de calidad y manufactura.</p>
+        </div>
+      </div>
+      <p style="margin-top:1.5rem;text-align:center">
+        <a href="/cumplimiento-ley-31814/requisitos-sector-financiero/" class="btn btn--primary">Ver Requisitos por Sector &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Recursos Adicionales</h2>
+      </div>
+      <div class="link-list" style="max-width:600px;margin:0 auto">
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem">
+          <li><a href="/cumplimiento-ley-31814/que-es-ley-31814/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Que es la Ley 31814</a></li>
+          <li><a href="/cumplimiento-ley-31814/ds-115-2025-pcm/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> DS 115-2025-PCM: El Reglamento</a></li>
+          <li><a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicio: AI Governance & Compliance Audit</a></li>
+          <li><a href="/servicios/evaluacion-impacto-ia/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicio: Evaluacion de Impacto de IA</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Comience su Programa de Cumplimiento Hoy</h2>
+      <p>Cada dia cuenta. Le ayudamos a disenar e implementar su plan de adecuacion a la Ley 31814.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Agendar Consulta</a>
+        <a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Auditoria de Compliance</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

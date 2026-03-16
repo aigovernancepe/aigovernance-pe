@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'evaluacion-sesgo')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Lima', url: '/areas/lima/' },
+  { name: service.shortTitle, url: `/areas/lima/${service.slug}/` },
+];
+
+const schemas = [
+  serviceInAreaSchema(service, area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Lima', url: `${company.url}/areas/lima/` },
+    { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Evaluación de Sesgo Algorítmico en Lima | AI Governance Peru"
+  description="Análisis de fairness y detección de sesgo en modelos de IA y ML para empresas en Lima. Evaluación presencial de scoring crediticio, modelos de riesgo y sistemas automatizados del sector financiero peruano."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>Evaluación de Sesgo Algorítmico en Lima</h1>
+      <p>Análisis especializado de fairness y detección de sesgo en los modelos analíticos y sistemas de IA que operan en las instituciones financieras y empresas de Lima. Evaluamos scoring crediticio, modelos de riesgo, sistemas de selección y algoritmos de decisión para identificar discriminación inadvertida.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación de Sesgo</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lima Context for Bias -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Sesgo Algorítmico en el Contexto Financiero de Lima</h2>
+        <p>Las instituciones financieras con sede en Lima utilizan modelos analíticos que toman decisiones sobre millones de peruanos. Detectar y mitigar sesgo es una obligación ética y regulatoria.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-credit-card"></i></div>
+          <h3 class="card__title">Scoring Crediticio</h3>
+          <p class="card__text">Los modelos de scoring crediticio utilizados por bancos en Lima pueden perpetuar sesgos históricos contra poblaciones vulnerables. Evaluamos las métricas de equidad demográfica, igualdad de oportunidades y calibración por grupo para identificar disparidades en aprobación, tasas y límites de crédito.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Modelos de Riesgo</h3>
+          <p class="card__text">Los sistemas de detección de fraude, prevención de lavado de activos y evaluación de riesgo operativo pueden generar falsos positivos desproporcionados en ciertos segmentos. Analizamos las tasas de error por grupo demográfico y geográfico.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-gavel"></i></div>
+          <h3 class="card__title">Cumplimiento Ley 31814</h3>
+          <p class="card__text">La Ley 31814 establece principios de no discriminación para sistemas de IA. Las empresas en Lima que operan modelos de alto riesgo deben demostrar que sus algoritmos no generan resultados discriminatorios. Nuestra evaluación produce la evidencia técnica necesaria.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users"></i></div>
+          <h3 class="card__title">Acceso a Datos Sensibles</h3>
+          <p class="card__text">La evaluación de sesgo requiere analizar datos demográficos sensibles que frecuentemente no pueden salir de las instalaciones. Trabajando presencialmente en Lima, accedemos a los datos en entornos seguros sin necesidad de transferencias externas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Metodología de Evaluación en Lima</h2>
+        <p>Un proceso riguroso de 2-4 semanas con componentes presenciales que maximizan la profundidad del análisis.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title">Inventario de Modelos</h3>
+          <p class="card__text">Sesiones presenciales con los equipos de analytics y ciencia de datos en Lima para catalogar todos los modelos en producción, sus datos de entrada, variables protegidas y poblaciones afectadas.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Análisis de Fairness</h3>
+          <p class="card__text">Aplicación de métricas de equidad (demographic parity, equalized odds, calibración) en los entornos seguros de sus oficinas. Análisis estadístico de resultados por grupo demográfico y geográfico.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Informe y Mitigación</h3>
+          <p class="card__text">Presentación presencial de hallazgos al comité de riesgos con recomendaciones de mitigación: re-entrenamiento, ajuste de umbrales, técnicas de debiasing y monitoreo continuo de fairness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima" style="border:0;width:100%;height:350px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Lima Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Otros Servicios en Lima</h2>
+      </div>
+      <div class="grid grid--3">
+        {otherServices.map((s) => (
+          <div class="card">
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/areas/lima/${s.slug}/`} class="btn btn--outline btn--sm">Ver en Lima →</a>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/areas/lima/" class="btn btn--outline">Todos los servicios en Lima →</a>
+        <a href="/areas/peru/" class="btn btn--outline" style="margin-left:0.5rem">Cobertura nacional →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Detecte Sesgo en sus Modelos Analíticos</h2>
+      <p>Agende una evaluación presencial de sesgo algorítmico en Lima. Proteja a su organización de riesgos reputacionales y regulatorios.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Detalles del Servicio</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

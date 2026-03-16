@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'evaluacion-madurez')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbItems = [
+  { name: 'Áreas', url: '/areas/' },
+  { name: 'Lima', url: '/areas/lima/' },
+  { name: service.shortTitle, url: `/areas/lima/${service.slug}/` },
+];
+
+const schemas = [
+  serviceInAreaSchema(service, area),
+  breadcrumbSchema([
+    { name: 'Inicio', url: company.url },
+    { name: 'Áreas', url: `${company.url}/areas/` },
+    { name: 'Lima', url: `${company.url}/areas/lima/` },
+    { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Evaluación de Madurez en Data Governance en Lima | AI Governance Peru"
+  description="Diagnóstico presencial de madurez en Data Governance para empresas en Lima. Workshops in-situ en el distrito financiero, entrevistas con stakeholders y roadmap priorizado en 3 semanas."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <h1>Evaluación de Madurez en Data Governance en Lima</h1>
+      <p>Diagnóstico presencial de su nivel de gobernanza de datos directamente en sus oficinas de Lima. En 3 semanas, nuestro equipo trabaja codo a codo con sus stakeholders para evaluar procesos, políticas y capacidades, entregando un roadmap ejecutivo con prioridades claras.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación en Lima</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Servicio Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Lima for Assessment -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>¿Por Qué Realizar el Assessment Presencialmente en Lima?</h2>
+        <p>La evaluación de madurez requiere interacción directa con múltiples áreas de su organización. Lima ofrece condiciones ideales para este proceso.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building"></i></div>
+          <h3 class="card__title">Proximidad al Distrito Financiero</h3>
+          <p class="card__text">San Isidro concentra las sedes corporativas de los principales bancos, aseguradoras y gestoras de activos. Realizamos workshops directamente en sus oficinas, minimizando la fricción logística para sus ejecutivos de alto nivel.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users"></i></div>
+          <h3 class="card__title">Workshops Presenciales</h3>
+          <p class="card__text">Las sesiones de descubrimiento cara a cara generan insights más profundos. Facilitamos dinámicas de grupo con Data Owners, gerentes de riesgo y equipos de TI que revelan brechas invisibles en evaluaciones remotas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3 class="card__title">Revisión de Documentación In-Situ</h3>
+          <p class="card__text">Accedemos a políticas internas, manuales de procedimientos y documentación regulatoria que frecuentemente no puede compartirse digitalmente por restricciones de confidencialidad del sector financiero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process in Lima -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Proceso de Evaluación en Lima</h2>
+        <p>Un cronograma de 3 semanas diseñado para maximizar el valor de la interacción presencial.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title">Semana 1: Descubrimiento</h3>
+          <p class="card__text">Entrevistas presenciales con stakeholders clave en sus oficinas de Lima. Revisión de políticas existentes, arquitectura de datos y procesos de gestión. Sesión de alineación con el equipo directivo para definir alcance y expectativas.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Semana 2: Análisis</h3>
+          <p class="card__text">Workshop colaborativo para mapear flujos de datos críticos. Evaluación de herramientas y tecnologías actuales. Benchmarking contra mejores prácticas internacionales y requisitos regulatorios de SBS y SMV.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Semana 3: Entrega</h3>
+          <p class="card__text">Presentación ejecutiva presencial al directorio con hallazgos, clasificación de madurez por dimensión, roadmap priorizado con quick wins y estimaciones de inversión para la implementación completa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <div class="map-embed" style="max-width:800px;margin:0 auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima" style="border:0;width:100%;height:350px" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Lima Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Otros Servicios Disponibles en Lima</h2>
+      </div>
+      <div class="grid grid--3">
+        {otherServices.map((s) => (
+          <div class="card">
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/areas/lima/${s.slug}/`} class="btn btn--outline btn--sm">Ver en Lima →</a>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/areas/lima/" class="btn btn--outline">Ver todos los servicios en Lima →</a>
+        <a href="/areas/peru/" class="btn btn--outline" style="margin-left:0.5rem">Cobertura nacional →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Solicite su Evaluación de Madurez en Lima</h2>
+      <p>Agende una reunión presencial para iniciar el diagnóstico de gobernanza de datos de su organización. Resultados en 3 semanas.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Agendar Evaluación</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Detalles del Servicio</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

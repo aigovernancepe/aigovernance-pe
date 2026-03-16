@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../../data/company';
+import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'evaluacion-madurez')!;
+const relatedServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  serviceSchema(service),
+];
+---
+
+<BaseLayout
+  title={`${service.title} | Diagnóstico Data Governance Perú`}
+  description={`${service.description} Servicio de 3 semanas para el sector financiero peruano. Evaluación 1-5, gap analysis, inventario de activos y roadmap priorizado.`}
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge">Más Popular — 3 Semanas</span>
+      <h1>{service.title}</h1>
+      <p>Diagnóstico completo del nivel de madurez en Data Governance de su organización con roadmap priorizado, gap analysis y presentación ejecutiva para el directorio.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación</a>
+        <a href="/servicios/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Todos los Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2">
+        <div>
+          <h2>¿Qué Incluye la Evaluación de Madurez?</h2>
+          <p>Nuestra evaluación integral analiza las capacidades actuales de gobernanza de datos de su organización, identificando brechas críticas y oportunidades de mejora. Diseñada específicamente para el <strong>sector financiero peruano</strong>, la evaluación considera los requisitos regulatorios de SBS, SMV y la Ley 31814.</p>
+          <div class="card__meta" style="margin-top:1.5rem">
+            <span><i class="fa-regular fa-clock"></i> Duración: 3 semanas</span>
+            <span><i class="fa-regular fa-building"></i> Sector Financiero</span>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3 class="card__title">Datos Clave</h3>
+            <ul class="pillar__list">
+              <li>Madurez promedio del sector: <strong>1.88/5</strong></li>
+              <li>Más del 60% de empresas no tiene Data Owner formal</li>
+              <li>Solo 15% tiene catálogo de datos implementado</li>
+              <li>La brecha representa una ventaja competitiva para los que actúan primero</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Entregables de la Evaluación</h2>
+        <p>Cada entregable está diseñado para generar valor inmediato y guiar las siguientes acciones.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3 class="card__title">Evaluación de Madurez (1-5)</h3>
+          <p class="card__text">Calificación detallada en escala 1 a 5 por cada dimensión de gobernanza: organización, políticas, procesos, tecnología y métricas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3 class="card__title">Gap Analysis</h3>
+          <p class="card__text">Análisis de brechas entre su estado actual y las mejores prácticas de la industria, con priorización por impacto y esfuerzo.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-database"></i></div>
+          <h3 class="card__title">Inventario de Activos de Datos</h3>
+          <p class="card__text">Catálogo inicial de sus activos de datos críticos, incluyendo fuentes, propietarios, flujos y dependencias.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h3 class="card__title">Clasificación de Riesgo</h3>
+          <p class="card__text">Mapeo de riesgos por área funcional, considerando impacto regulatorio, operativo y financiero de las brechas identificadas.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-road"></i></div>
+          <h3 class="card__title">Roadmap Priorizado</h3>
+          <p class="card__text">Plan de acción con quick wins (30 días), metas a mediano plazo (90 días) y objetivos estratégicos (6-12 meses).</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-presentation-screen"></i></div>
+          <h3 class="card__title">Presentación Ejecutiva</h3>
+          <p class="card__text">Documento listo para presentar al directorio con hallazgos clave, benchmarks del sector y recomendaciones de inversión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Proceso de 4 Fases</h2>
+        <p>Metodología estructurada que maximiza el valor en solo 3 semanas.</p>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto">
+        <div class="step">
+          <div class="step__content">
+            <h3>Fase 1: Descubrimiento — Semana 1</h3>
+            <p>Entrevistas con stakeholders clave (CDO, CIO, áreas de negocio, compliance). Revisión de documentación existente: políticas, procesos, herramientas y estructura organizacional.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Fase 2: Análisis — Semana 1-2</h3>
+            <p>Evaluación cuantitativa contra framework de madurez de 5 niveles. Mapeo de activos de datos, análisis de flujos y clasificación de riesgo por dominio.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Fase 3: Síntesis — Semana 2-3</h3>
+            <p>Desarrollo del gap analysis, construcción del roadmap priorizado y diseño de la presentación ejecutiva con benchmarks del sector financiero peruano.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__content">
+            <h3>Fase 4: Presentación — Semana 3</h3>
+            <p>Entrega formal de todos los entregables. Presentación ejecutiva al directorio. Sesión de preguntas y definición de próximos pasos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Relacionados</h2>
+        <p>Después de la evaluación, estos servicios le ayudarán a ejecutar el roadmap.</p>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Ley 31814' ? 'card__badge--danger' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Disponible en Todo el Perú</h2>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Solicite su Evaluación de Madurez</h2>
+      <p>3 semanas para obtener un diagnóstico completo con roadmap priorizado. Sin compromiso de continuidad.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Agendar Evaluación</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company, services, areas } from '../../../data/company';
+import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'bi-data-foundations-ai')!;
+const relatedServices = services.filter((s) =>
+  ['agentic-workflow-engineering', 'evaluacion-madurez', 'implementacion-data-governance'].includes(s.slug)
+);
+
+const breadcrumbItems = [
+  { name: 'Servicios', url: `${company.url}/servicios/` },
+  { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbItems),
+  serviceSchema(service),
+];
+---
+
+<BaseLayout
+  title="Gobierno de Datos y BI para Inteligencia Artificial Perú | BI-Integrated Data Foundations for AI"
+  description="Arquitectura de datos de alta integridad que conecta Business Intelligence con IA Generativa. Vector databases, metadata management y reliability engineering para RAG empresarial en Perú."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge card__badge--success" style="display:inline-block;padding:0.25rem 1rem;border-radius:100px;font-size:0.85rem">Nuevo — 6-10 Semanas</span>
+      <h1>Clean Data, Reliable AI: High-Integrity Data Governance for the AI Era</h1>
+      <p>La calidad de su IA depende de la calidad de sus datos. Construimos la arquitectura de datos que conecta su Business Intelligence existente con IA Generativa para decisiones confiables y auditables.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación de Madurez de Datos</a>
+        <a href="/servicios/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Todos los Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2">
+        <div>
+          <h2>El Desafío: IA sin Datos Confiables</h2>
+          <p>Muchas empresas en Perú están implementando soluciones de IA generativa — RAG, copilots, agentes — sobre datos desorganizados, duplicados e inconsistentes. El resultado: <strong>respuestas incorrectas que parecen correctas</strong>.</p>
+          <p>Sin fundamentos de datos sólidos, su inversión en IA genera riesgos en lugar de valor. Nuestro servicio construye la capa de datos que hace que su IA sea confiable, auditable y escalable.</p>
+        </div>
+        <div>
+          <div class="card">
+            <h3 class="card__title">Síntomas de Datos Inadecuados para IA</h3>
+            <ul class="pillar__list">
+              <li>RAG que devuelve información desactualizada o contradictoria</li>
+              <li>Dashboards de BI que no coinciden con outputs de IA</li>
+              <li>Duplicación masiva en bases vectoriales</li>
+              <li>Imposibilidad de rastrear el origen de las respuestas de IA</li>
+              <li>Modelos que degradan su precisión sin explicación</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Pillars -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Tres Pilares de Fundamentos de Datos para IA</h2>
+        <p>Una arquitectura integral que garantiza datos limpios, trazables y confiables para sus iniciativas de IA.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-cubes"></i></div>
+          <h3 class="card__title">Vector Database Architecture</h3>
+          <p class="card__text">Diseño e implementación de arquitectura de bases vectoriales empresariales. Estrategias de chunking, indexación y retrieval optimizadas para su dominio de negocio.</p>
+          <ul class="pillar__list">
+            <li>Selección de vector DB (Pinecone, Weaviate, pgvector)</li>
+            <li>Estrategias de embedding por tipo de contenido</li>
+            <li>Indexación híbrida (semántica + keyword)</li>
+            <li>Pipelines de ingestión automatizados</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-tags"></i></div>
+          <h3 class="card__title">Metadata Management</h3>
+          <p class="card__text">Gestión integral de metadatos que conecta su catálogo de datos de BI con sus fuentes de IA. Linaje de datos completo desde el origen hasta la respuesta del modelo.</p>
+          <ul class="pillar__list">
+            <li>Catálogo de datos unificado (BI + IA)</li>
+            <li>Linaje de datos end-to-end</li>
+            <li>Versionado de datasets y embeddings</li>
+            <li>Glosario de negocio con context para LLMs</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Reliability Engineering (RAG)</h3>
+          <p class="card__text">Framework de confiabilidad para sistemas RAG empresariales. Monitoreo de calidad de respuestas, detección de alucinaciones y validación continua contra fuentes autoritativas.</p>
+          <ul class="pillar__list">
+            <li>Métricas de faithfulness y relevance</li>
+            <li>Detección automatizada de alucinaciones</li>
+            <li>Testing de regresión para pipelines RAG</li>
+            <li>Alertas de degradación de calidad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>¿Por Qué Nosotros?</h2>
+        <p>Experiencia real en los sectores donde la calidad de datos es crítica.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-flask"></i></div>
+          <h3 class="card__title">Background Farmacéutico</h3>
+          <p class="card__text">6 años construyendo frameworks de Data Quality en entornos GxP donde un dato incorrecto puede tener consecuencias regulatorias y de seguridad del paciente. Trasladamos ese rigor a sus iniciativas de IA.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="card__title">Background Asset Management</h3>
+          <p class="card__text">Experiencia estableciendo Data Governance Councils y catálogos de datos en entornos financieros regulados por FINMA. Entendemos qué significa "datos confiables" cuando hay capital en juego.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <p>Combinamos <strong>rigor en gobernanza de datos</strong> con <strong>conocimiento de arquitectura de IA</strong>. No somos solo consultores de datos ni solo ingenieros de IA — somos el puente entre ambos mundos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Servicios Relacionados</h2>
+      </div>
+      <div class="grid grid--3">
+        {relatedServices.map((s) => (
+          <div class="card">
+            {s.badge && <span class={`card__badge ${s.badge === 'Más Popular' ? '' : s.badge === 'Nuevo' ? 'card__badge--success' : ''}`}>{s.badge}</span>}
+            <h3 class="card__title">{s.shortTitle}</h3>
+            <p class="card__text">{s.description}</p>
+            <a href={`/servicios/${s.slug}/`} class="btn btn--outline btn--sm">Ver Servicio</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Disponible en Todo el Perú</h2>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((a) => (
+          <div class="card">
+            <h3 class="card__title"><i class="fa-solid fa-location-dot text-accent"></i> {a.name}</h3>
+            <p class="card__text">{a.description}</p>
+            <a href={`/areas/${a.slug}/`} class="btn btn--outline btn--sm">Servicios en {a.name}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Obtenga su Data Maturity Assessment para IA</h2>
+      <p>Evaluamos la preparación de sus datos para iniciativas de IA y le entregamos un roadmap concreto. Comience con datos confiables, obtenga IA confiable.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación de Madurez de Datos para IA</a>
+    </div>
+  </section>
+</BaseLayout>

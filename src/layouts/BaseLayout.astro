@@ -1,0 +1,163 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  schema?: object | object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = '/images/og-image.png',
+  schema,
+  noindex = false,
+} = Astro.props;
+
+const siteName = 'AI Governance Peru';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const siteUrl = 'https://aigovernance.pe';
+const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+---
+
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content="es_PE" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Schema Markup -->
+  {schemas.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
+
+  <slot name="head" />
+</head>
+<body>
+  <Header />
+  <main id="main-content">
+    <slot />
+  </main>
+  <Footer />
+
+  <script>
+    // Mobile menu
+    const toggle = document.querySelector('[data-menu-toggle]');
+    const nav = document.querySelector('[data-nav]');
+    toggle?.addEventListener('click', () => {
+      const open = nav?.classList.toggle('nav--open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // Dropdowns
+    document.querySelectorAll('[data-dropdown-toggle]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const parent = btn.closest('[data-dropdown]');
+        parent?.classList.toggle('dropdown--open');
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown--open').forEach((d) => d.classList.remove('dropdown--open'));
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const answer = btn.nextElementSibling as HTMLElement;
+        if (answer) {
+          answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Scroll header
+    const header = document.querySelector('.header') as HTMLElement;
+    window.addEventListener('scroll', () => {
+      header?.classList.toggle('header--scrolled', window.scrollY > 10);
+    });
+
+    // Intersection observer for animations
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    // Countdown timer (Ley 31814 deadline: Sept 10, 2026)
+    function updateCountdown() {
+      const deadline = new Date('2026-09-10T00:00:00-05:00').getTime();
+      const now = Date.now();
+      const diff = deadline - now;
+      if (diff <= 0) return;
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const el = document.getElementById('countdown');
+      if (el) {
+        el.innerHTML = `
+          <div class="countdown__item"><div class="countdown__number">${days}</div><div class="countdown__label">Días</div></div>
+          <div class="countdown__item"><div class="countdown__number">${hours}</div><div class="countdown__label">Horas</div></div>
+          <div class="countdown__item"><div class="countdown__number">${minutes}</div><div class="countdown__label">Minutos</div></div>`;
+      }
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tabGroup = btn.closest('.tab-group');
+        if (!tabGroup) return;
+        tabGroup.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
+        tabGroup.querySelectorAll('.tab-panel').forEach((p) => p.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.getAttribute('data-tab');
+        if (target) tabGroup.querySelector(`#${target}`)?.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { company } from '../../data/company';
+import { breadcrumbSchema, webPageSchema, organizationSchema } from '../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Contacto', url: `${company.url}/contacto/` },
+];
+
+const contactPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contacto - AI Governance Peru',
+  description: 'Contacte a AI Governance Peru para solicitar su evaluacion de Data Governance o AI Governance. Respuesta en 24 horas.',
+  url: `${company.url}/contacto/`,
+  mainEntity: {
+    '@type': 'ProfessionalService',
+    name: company.name,
+    email: company.email,
+    url: company.url,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Lima',
+      addressCountry: 'PE',
+    },
+    openingHours: company.openingHours,
+  },
+};
+
+const schemas = [
+  contactPageSchema,
+  webPageSchema({
+    title: 'Contacto - Solicite su Evaluacion de Data Governance',
+    description: 'Contacte a AI Governance Peru. Email, LinkedIn o formulario. Respuesta en 24 horas, llamada de 30 minutos y propuesta personalizada.',
+    url: `${company.url}/contacto/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="Contacto | Solicite su Evaluacion de Data Governance | AI Governance Peru"
+  description="Contacte a AI Governance Peru. Email, LinkedIn o formulario. Respuesta en 24 horas, llamada de 30 minutos y propuesta personalizada. Confidencialidad garantizada."
+  schema={schemas}
+>
+  <!-- Breadcrumb -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Contacto</h1>
+      <p>Estamos listos para ayudarle a fortalecer la gobernanza de datos e inteligencia artificial en su organizacion. Contactenos y reciba una respuesta personalizada.</p>
+    </div>
+  </section>
+
+  <!-- Contact methods -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        <div class="card" style="text-align:center">
+          <div class="card__icon"><i class="fa-solid fa-envelope"></i></div>
+          <h2 class="card__title">Email</h2>
+          <p class="card__text">Escribanos directamente. Respondemos en un maximo de 24 horas habiles.</p>
+          <a href="mailto:info@aigovernance.pe" class="btn btn--primary btn--sm">info@aigovernance.pe</a>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="card__icon"><i class="fa-brands fa-linkedin"></i></div>
+          <h2 class="card__title">LinkedIn</h2>
+          <p class="card__text">Conéctese con nosotros en LinkedIn para contenido y actualizaciones.</p>
+          <a href="https://linkedin.com/company/ai-governance-peru" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">AI Governance Peru</a>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="card__icon"><i class="fa-solid fa-location-dot"></i></div>
+          <h2 class="card__title">Ubicacion</h2>
+          <p class="card__text">Con base en Lima, Peru. Consultoria presencial y remota a nivel nacional.</p>
+          <span class="btn btn--outline btn--sm" style="cursor:default">Lima, Peru</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to expect -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Que Puede Esperar</h2>
+        <p>Nuestro proceso de atencion esta disenado para ser rapido, profesional y confidencial.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-clock"></i></div>
+          <h3 class="card__title">Respuesta en 24 Horas</h3>
+          <p class="card__text">Revisamos cada consulta personalmente y respondemos dentro de las 24 horas habiles con una propuesta de siguientes pasos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-phone"></i></div>
+          <h3 class="card__title">Llamada de 30 Minutos</h3>
+          <p class="card__text">Agendamos una llamada inicial de 30 minutos sin compromiso para entender sus necesidades y explorar como podemos ayudarle.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3 class="card__title">Propuesta Personalizada</h3>
+          <p class="card__text">Recibira una propuesta adaptada a su contexto especifico: sector, tamano de organizacion, nivel de madurez y objetivos.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-lock"></i></div>
+          <h3 class="card__title">Confidencialidad</h3>
+          <p class="card__text">Toda la informacion compartida durante el proceso de evaluacion es tratada con absoluta confidencialidad. Firmamos NDAs antes de cualquier diagnostico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact form -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Envie su Consulta</h2>
+        <p>Complete el formulario y nos pondremos en contacto a la brevedad.</p>
+      </div>
+      <ContactForm />
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Mientras Tanto, Explore</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card" style="text-align:center">
+          <h3 class="card__title">Servicios</h3>
+          <p class="card__text">Conozca nuestra oferta completa de consultoria en Data Governance y AI Governance.</p>
+          <a href="/servicios/" class="btn btn--outline btn--sm">Ver Servicios &rarr;</a>
+        </div>
+        <div class="card" style="text-align:center">
+          <h3 class="card__title">Ley 31814</h3>
+          <p class="card__text">Informese sobre los requisitos de cumplimiento de la nueva ley de IA del Peru.</p>
+          <a href="/cumplimiento-ley-31814/" class="btn btn--outline btn--sm">Ver Requisitos &rarr;</a>
+        </div>
+        <div class="card" style="text-align:center">
+          <h3 class="card__title">Nosotros</h3>
+          <p class="card__text">Conozca nuestra experiencia internacional y enfoque de trabajo.</p>
+          <a href="/nosotros/" class="btn btn--outline btn--sm">Sobre Nosotros &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

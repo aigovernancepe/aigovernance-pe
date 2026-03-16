@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { company, services } from '../../../../data/company';
+import { serviceInAreaSchema, breadcrumbSchema } from '../../../../utils/schema';
+
+const service = services.find((s) => s.slug === 'capacitacion-ia-human-in-the-loop')!;
+const area = { name: 'Lima', slug: 'lima' };
+const otherServices = services.filter((s) => s.slug !== service.slug);
+
+const breadcrumbs = [
+  { name: 'Áreas', url: `${company.url}/areas/` },
+  { name: 'Lima', url: `${company.url}/areas/lima/` },
+  { name: service.shortTitle, url: `${company.url}/areas/lima/${service.slug}/` },
+];
+
+const schemas = [serviceInAreaSchema(service, area), breadcrumbSchema(breadcrumbs)];
+---
+
+<BaseLayout
+  title="Capacitación en IA y Supervisión Humana en Lima | Talleres Presenciales | AI Governance Peru"
+  description="Talleres presenciales de AI Literacy y Human-in-the-Loop en Lima. Capacite a su equipo para supervisar sistemas de IA según el mandato del DS 115-2025-PCM. Certificación interna incluida."
+  schema={schemas}
+>
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbs} />
+      <h1>Capacitación en IA y Supervisión Humana en Lima</h1>
+      <p>Talleres presenciales en el centro financiero de Lima para equipos que supervisan sistemas de IA. Cumpla con el mandato de capacitación del DS 115-2025-PCM con programas adaptados a su industria.</p>
+      <div class="hero__actions">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Programa Presencial</a>
+        <a href={`/servicios/${service.slug}/`} class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Programa Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ventajas de la Capacitación Presencial en Lima</h2>
+        <p>Lima concentra el 80% de las instituciones financieras y farmacéuticas del Perú. La capacitación presencial permite trabajar con casos reales de sus propios sistemas.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-users"></i></div>
+          <h3 class="card__title">Workshops Interactivos</h3>
+          <p class="card__text">Sesiones presenciales con ejercicios prácticos usando datos y escenarios de su propia organización. No es teoría — es entrenamiento con sus sistemas reales.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-building"></i></div>
+          <h3 class="card__title">En sus Oficinas o las Nuestras</h3>
+          <p class="card__text">Nos desplazamos a sus oficinas en San Isidro, Miraflores, San Borja o cualquier distrito de Lima. También disponible en nuestras instalaciones.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-certificate"></i></div>
+          <h3 class="card__title">Certificación con Evidencia</h3>
+          <p class="card__text">Cada participante recibe certificación documentada que sirve como evidencia de cumplimiento para auditorías de la SGTD y reguladores sectoriales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid grid--2">
+        <div>
+          <h2>Programas Adaptados al Contexto Limeño</h2>
+          <p style="color:var(--color-text-light);margin:1rem 0">Nuestros talleres en Lima incluyen casos de uso específicos del ecosistema regulatorio peruano:</p>
+          <div class="pillar">
+            <div class="pillar__icon"><i class="fa-solid fa-building-columns"></i></div>
+            <div class="pillar__content">
+              <h3>Sector Financiero (SBS/SMV)</h3>
+              <p>Supervisión de modelos de scoring crediticio en bancos de San Isidro. Ejercicios con datos de mercado local.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon"><i class="fa-solid fa-flask"></i></div>
+            <div class="pillar__content">
+              <h3>Farmacéutica (DIGEMID)</h3>
+              <p>Supervisión de agentes de farmacovigilancia y filing regulatorio. Talleres en el corredor industrial de Lima.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon"><i class="fa-solid fa-landmark"></i></div>
+            <div class="pillar__content">
+              <h3>Proximidad Regulatoria</h3>
+              <p>Lima es sede de SBS, SMV, DIGEMID y la SGTD. Coordinamos directamente con las entidades que inspeccionarán sus sistemas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249744.02551217362!2d-77.12!3d-12.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1" loading="lazy" title="Mapa de Lima, Perú"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Otros Servicios Disponibles en Lima</h2>
+      </div>
+      <div class="link-list" style="max-width:600px">
+        {otherServices.map((s) => (
+          <a href={`/areas/lima/${s.slug}/`}>
+            <i class="fa-solid fa-arrow-right"></i> {s.title} en Lima
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Capacite a su Equipo en Lima Antes de que Venza el Plazo</h2>
+      <p>El DS 115-2025-PCM exige personal capacitado para supervisar IA de alto riesgo. Talleres presenciales disponibles inmediatamente.</p>
+      <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Programa Presencial</a>
+    </div>
+  </section>
+</BaseLayout>

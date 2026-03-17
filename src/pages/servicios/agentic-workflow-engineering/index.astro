@@ -104,7 +104,7 @@ const schemas = [
             <div class="card">
               <div class="card__icon"><i class="fa-solid fa-file-contract"></i></div>
               <h3 class="card__title">Compliance Documental</h3>
-              <p class="card__text">Automatización de la revisión de documentación de clientes, verificación de requisitos KYC/AML y generación de reportes de compliance para SMV.</p>
+              <p class="card__text">Automatización de la revisión de documentación de clientes, verificación de requisitos KYC/AML y generación de reportes de compliance para SMV. Diseñado con metodologías probadas en asset management regulado por FINMA en Suiza, adaptadas al contexto peruano.</p>
             </div>
           </div>
         </div>
@@ -127,8 +127,46 @@ const schemas = [
     </div>
   </section>
 
-  <!-- Technical Edge -->
+  <!-- HITL Workflow Diagram -->
   <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Flujo de Trabajo: Plan → Ejecutar → Revisar</h2>
+        <p>Cada workflow incluye supervisión humana configurable. El CEO y su equipo definen exactamente dónde interviene el humano.</p>
+      </div>
+      <div class="hitl-flow">
+        <div class="hitl-flow__step">
+          <div class="hitl-flow__icon hitl-flow__icon--ai"><i class="fa-solid fa-clipboard-list"></i></div>
+          <div class="hitl-flow__label">Tarea Asignada</div>
+          <div class="hitl-flow__desc">El sistema recibe la tarea de negocio</div>
+        </div>
+        <div class="hitl-flow__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="hitl-flow__step">
+          <div class="hitl-flow__icon hitl-flow__icon--ai"><i class="fa-solid fa-robot"></i></div>
+          <div class="hitl-flow__label">Agente Procesa</div>
+          <div class="hitl-flow__desc">IA ejecuta investigación, análisis y redacción</div>
+        </div>
+        <div class="hitl-flow__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="hitl-flow__step hitl-flow__step--human">
+          <div class="hitl-flow__icon hitl-flow__icon--human"><i class="fa-solid fa-user-check"></i></div>
+          <div class="hitl-flow__label">Checkpoint Humano</div>
+          <div class="hitl-flow__desc">Su equipo revisa, aprueba o redirige</div>
+        </div>
+        <div class="hitl-flow__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="hitl-flow__step">
+          <div class="hitl-flow__icon hitl-flow__icon--success"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="hitl-flow__label">Resultado Validado</div>
+          <div class="hitl-flow__desc">Output auditado y trazable listo para uso</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:1.5rem">
+        <p style="color:var(--color-text-light);font-size:0.9rem"><i class="fa-solid fa-shield-halved" style="color:var(--color-accent)"></i> Usted configura el nivel de autonomía: desde aprobación manual completa hasta supervisión por excepción.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Edge -->
+  <section class="section section--alt">
     <div class="container">
       <div class="section-header section-header--center">
         <h2>Ventaja Técnica</h2>
@@ -207,3 +245,71 @@ const schemas = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hitl-flow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+  }
+  .hitl-flow__step {
+    text-align: center;
+    max-width: 160px;
+    flex-shrink: 0;
+  }
+  .hitl-flow__step--human {
+    transform: scale(1.08);
+  }
+  .hitl-flow__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 1.5rem;
+  }
+  .hitl-flow__icon--ai {
+    background: var(--color-bg-alt);
+    color: var(--color-accent);
+    border: 2px solid var(--color-border);
+  }
+  .hitl-flow__icon--human {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    color: #fff;
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  }
+  .hitl-flow__icon--success {
+    background: var(--color-bg-alt);
+    color: var(--color-success);
+    border: 2px solid var(--color-success);
+  }
+  .hitl-flow__label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.25rem;
+  }
+  .hitl-flow__desc {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    line-height: 1.4;
+  }
+  .hitl-flow__arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 1.25rem;
+    color: var(--color-accent);
+    font-size: 1.25rem;
+  }
+  @media (max-width: 640px) {
+    .hitl-flow { flex-direction: column; align-items: center; }
+    .hitl-flow__arrow { transform: rotate(90deg); padding-top: 0; }
+    .hitl-flow__step { max-width: 200px; }
+  }
+</style>

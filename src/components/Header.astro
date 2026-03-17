@@ -7,6 +7,13 @@ const categories = [
 ];
 ---
 
+<div class="urgency-bar">
+  <div class="container urgency-bar__inner">
+    <i class="fa-solid fa-clock"></i>
+    <span>Plazo Ley 31814: <strong class="countdown-inline"></strong></span>
+    <a href="/cumplimiento-ley-31814/plazos-cumplimiento/" class="urgency-bar__link">Ver plazos →</a>
+  </div>
+</div>
 <header class="header">
   <div class="container header__inner">
     <a href="/" class="header__logo" aria-label="AI Governance Perú - Inicio">
@@ -69,8 +76,21 @@ const categories = [
 </header>
 
 <style>
+  .urgency-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+    background: linear-gradient(90deg, #1e3a5f, #dc2626);
+    color: #fff; font-size: 0.8rem; height: 32px;
+    display: flex; align-items: center;
+  }
+  .urgency-bar__inner {
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+  .urgency-bar__link {
+    color: rgba(255,255,255,0.9); text-decoration: underline; margin-left: 0.5rem; font-size: 0.75rem;
+  }
+  .urgency-bar__link:hover { color: #fff; }
   .header {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 32px; left: 0; right: 0; z-index: 100;
     background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
     border-bottom: 1px solid transparent;
     transition: all 150ms ease;
@@ -122,7 +142,7 @@ const categories = [
   @media (max-width: 1024px) {
     .header__toggle { display: block; }
     .nav {
-      display: none; position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0;
+      display: none; position: fixed; top: calc(var(--header-height) + 32px); left: 0; right: 0; bottom: 0;
       flex-direction: column; background: #fff; padding: 1.5rem; gap: 0.5rem;
       overflow-y: auto; align-items: stretch;
     }

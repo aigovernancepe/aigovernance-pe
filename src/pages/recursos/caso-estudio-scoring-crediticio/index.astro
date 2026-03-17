@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { company } from '../../../data/company';
+import { breadcrumbSchema, webPageSchema } from '../../../utils/schema';
+
+const breadcrumbItems = [
+  { name: 'Recursos', url: `${company.url}/recursos/` },
+  { name: 'Caso de Estudio: Scoring Crediticio', url: `${company.url}/recursos/caso-estudio-scoring-crediticio/` },
+];
+
+const schemas = [
+  webPageSchema({
+    title: 'Caso de Estudio: Scoring Crediticio con Data Governance',
+    description: 'Cómo un banco mediano en Lima mejoró su scoring crediticio con Data Governance: madurez de 1.5 a 3.8, calidad de datos de 65% a 97%, sesgo de género reducido en 87%.',
+    url: `${company.url}/recursos/caso-estudio-scoring-crediticio/`,
+  }),
+  breadcrumbSchema(breadcrumbItems),
+];
+---
+
+<BaseLayout
+  title="Caso de Estudio: Scoring Crediticio con Data Governance | AI Governance Perú"
+  description="Cómo un banco mediano en Lima mejoró su scoring crediticio con Data Governance: madurez de 1.5 a 3.8, calidad de datos de 65% a 97%, sesgo de género reducido en 87%."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} variant="dark" />
+      <span class="hero__badge card__badge--success" style="display:inline-block;padding:0.25rem 1rem;border-radius:100px;font-size:0.85rem">Caso de Estudio — 4 Meses</span>
+      <h1>Scoring Crediticio con Data Governance</h1>
+      <p>Cómo un banco mediano en Lima transformó su modelo de scoring crediticio mediante Data Governance, mejorando la calidad de datos, eliminando sesgos algorítmicos y cumpliendo con requisitos regulatorios de la SBS.</p>
+    </div>
+  </section>
+
+  <!-- Key Metrics -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        <div class="card" style="text-align:center;border-top:4px solid var(--color-accent)">
+          <div style="font-size:2.5rem;font-weight:800;color:var(--color-accent)">1.5 → 3.8</div>
+          <div style="font-size:0.9rem;color:var(--color-text-light);margin-top:0.25rem">Madurez de Governance</div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--color-success, #16a34a)">+153%</div>
+        </div>
+        <div class="card" style="text-align:center;border-top:4px solid var(--color-accent)">
+          <div style="font-size:2.5rem;font-weight:800;color:var(--color-accent)">65% → 97%</div>
+          <div style="font-size:0.9rem;color:var(--color-text-light);margin-top:0.25rem">Score de Calidad de Datos</div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--color-success, #16a34a)">+49%</div>
+        </div>
+        <div class="card" style="text-align:center;border-top:4px solid var(--color-accent)">
+          <div style="font-size:2.5rem;font-weight:800;color:var(--color-accent)">8 → 1 pt</div>
+          <div style="font-size:0.9rem;color:var(--color-text-light);margin-top:0.25rem">Sesgo por Género</div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--color-success, #16a34a)">-87%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Context -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid grid--2">
+        <div>
+          <h2>Contexto del Caso</h2>
+          <p>Un banco mediano en Lima con más de 500 empleados, especializado en banca retail, préstamos personales y tarjetas de crédito, operaba un modelo de scoring crediticio que procesaba aproximadamente <strong>50,000 evaluaciones mensuales</strong> para aprobación automática de préstamos.</p>
+          <p>El modelo tomaba decisiones de aprobación/rechazo y determinaba montos de línea de crédito, pero operaba sin gobernanza de datos formal, sin documentación y sin monitoreo de sesgos.</p>
+        </div>
+        <div>
+          <div class="card">
+            <h3 class="card__title">Perfil del Cliente</h3>
+            <ul class="pillar__list">
+              <li><strong>Tipo:</strong> Banco mediano</li>
+              <li><strong>Ubicación:</strong> Lima, Perú</li>
+              <li><strong>Empleados:</strong> 500+</li>
+              <li><strong>Volumen:</strong> ~50,000 evaluaciones/mes</li>
+              <li><strong>Duración:</strong> 4 meses</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Initial Situation -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Situación Inicial</h2>
+        <p>Cinco problemas críticos que ponían en riesgo la operación y el cumplimiento regulatorio.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card" style="border-left:4px solid var(--color-error, #dc2626)">
+          <h3 class="card__title"><i class="fa-solid fa-database text-accent"></i> Calidad de Datos</h3>
+          <ul class="pillar__list">
+            <li>15% de clientes con múltiples registros duplicados</li>
+            <li>25% de solicitudes sin ingreso verificado</li>
+            <li>Direcciones con más de 3 años de antigüedad</li>
+            <li>Saldos en core vs. data warehouse no coincidían</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left:4px solid var(--color-error, #dc2626)">
+          <h3 class="card__title"><i class="fa-solid fa-scale-unbalanced text-accent"></i> Sesgos Algorítmicos</h3>
+          <ul class="pillar__list">
+            <li>Mujeres con tasa de rechazo 8% mayor sin justificación</li>
+            <li>Distritos periféricos penalizados injustamente</li>
+            <li>Jóvenes sin historial rechazados automáticamente</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left:4px solid var(--color-error, #dc2626)">
+          <h3 class="card__title"><i class="fa-solid fa-eye-slash text-accent"></i> Falta de Explicabilidad</h3>
+          <ul class="pillar__list">
+            <li>Imposible explicar rechazos a clientes</li>
+            <li>Reclamos en INDECOPI sin respuesta técnica</li>
+            <li>Auditoría interna no podía revisar decisiones</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left:4px solid var(--color-error, #dc2626)">
+          <h3 class="card__title"><i class="fa-solid fa-gavel text-accent"></i> Riesgo Regulatorio</h3>
+          <ul class="pillar__list">
+            <li>SBS había solicitado documentación de modelo</li>
+            <li>No existía documentación formal</li>
+            <li>30% de rechazos potencialmente erróneos</li>
+            <li>Auditorías tomaban 3+ meses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Solución Implementada</h2>
+        <p>Seis fases ejecutadas en 16 semanas, desde el diagnóstico hasta el monitoreo continuo.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title">Fase 1-2: Assessment y Governance Foundation</h3>
+          <p class="card__text">Diagnóstico de madurez (1.5/5), inventario de 3 modelos de IA, establecimiento del Data Governance Council con gerentes de Riesgos, IT, Compliance y Negocio. Designación de Data Owners y Data Stewards con capacitación de 8 horas.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Fase 3: Data Quality para Scoring</h3>
+          <p class="card__text">Framework de calidad en 5 dimensiones (completitud, exactitud, consistencia, unicidad, oportunidad). Reglas de validación automatizadas, dashboard en Power BI con alertas y drill-down hasta registro individual.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Fase 4: Documentación y Lineage</h3>
+          <p class="card__text">150 campos documentados con diccionario de datos completo. Lineage end-to-end desde fuentes hasta decisión: transformaciones, validaciones, responsables y frecuencia de actualización.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Fase 5-6: Monitoreo de Sesgo y Apelación</h3>
+          <p class="card__text">Análisis de sesgo por género, geografía y edad. Reentrenamiento de modelo eliminando variables sesgadas. Proceso formal de apelación con respuesta en 5 días hábiles y tasa de reversión del 15%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Resultados Obtenidos</h2>
+      </div>
+      <div class="grid grid--2">
+        <div>
+          <div class="card">
+            <h3 class="card__title">Métricas Clave</h3>
+            <table style="width:100%;border-collapse:collapse;font-size:0.9rem">
+              <thead>
+                <tr style="border-bottom:2px solid var(--color-border)">
+                  <th style="text-align:left;padding:0.5rem">Métrica</th>
+                  <th style="text-align:center;padding:0.5rem">Antes</th>
+                  <th style="text-align:center;padding:0.5rem">Después</th>
+                  <th style="text-align:center;padding:0.5rem">Mejora</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--color-border)">
+                  <td style="padding:0.5rem">Madurez de Governance</td>
+                  <td style="text-align:center;padding:0.5rem">1.5/5</td>
+                  <td style="text-align:center;padding:0.5rem;font-weight:600">3.8/5</td>
+                  <td style="text-align:center;padding:0.5rem;color:var(--color-success, #16a34a)">+153%</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border)">
+                  <td style="padding:0.5rem">Rechazos por datos incorrectos</td>
+                  <td style="text-align:center;padding:0.5rem">30%</td>
+                  <td style="text-align:center;padding:0.5rem;font-weight:600">5%</td>
+                  <td style="text-align:center;padding:0.5rem;color:var(--color-success, #16a34a)">-83%</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border)">
+                  <td style="padding:0.5rem">Tiempo de auditoría</td>
+                  <td style="text-align:center;padding:0.5rem">3+ meses</td>
+                  <td style="text-align:center;padding:0.5rem;font-weight:600">2 semanas</td>
+                  <td style="text-align:center;padding:0.5rem;color:var(--color-success, #16a34a)">-85%</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border)">
+                  <td style="padding:0.5rem">Trazabilidad</td>
+                  <td style="text-align:center;padding:0.5rem">0%</td>
+                  <td style="text-align:center;padding:0.5rem;font-weight:600">100%</td>
+                  <td style="text-align:center;padding:0.5rem;color:var(--color-success, #16a34a)">+100%</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border)">
+                  <td style="padding:0.5rem">Calidad de datos</td>
+                  <td style="text-align:center;padding:0.5rem">65%</td>
+                  <td style="text-align:center;padding:0.5rem;font-weight:600">97%</td>
+                  <td style="text-align:center;padding:0.5rem;color:var(--color-success, #16a34a)">+49%</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.5rem">Sesgo por género</td>
+                  <td style="text-align:center;padding:0.5rem">8 pts</td>
+                  <td style="text-align:center;padding:0.5rem;font-weight:600">1 pt</td>
+                  <td style="text-align:center;padding:0.5rem;color:var(--color-success, #16a34a)">-87%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3 class="card__title">Beneficios de Negocio</h3>
+            <ul class="pillar__list">
+              <li><strong>+12%</strong> en aprobaciones correctas sin aumento de mora</li>
+              <li><strong>-40%</strong> en reclamos a INDECOPI</li>
+              <li><strong>De 3 meses a 2 semanas</strong> en tiempo de auditoría</li>
+              <li>Documentación completa disponible para SBS</li>
+              <li>Equipo capacitado y autónomo</li>
+              <li>Base para expandir governance a otros sistemas</li>
+            </ul>
+          </div>
+          <div class="card" style="margin-top:1rem">
+            <h3 class="card__title">Lecciones Aprendidas</h3>
+            <ul class="pillar__list">
+              <li>Involucrar a alta dirección desde el inicio</li>
+              <li>Quick wins para mantener momentum</li>
+              <li>Dashboard visible para todos los stakeholders</li>
+              <li>Enfoque pragmático, no perfeccionista</li>
+              <li>Empezar con el sistema de mayor riesgo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Su Organización Enfrenta Desafíos Similares?</h2>
+      <p>Evaluamos su nivel de madurez en Data Governance y diseñamos un roadmap personalizado para su sector. Consulta inicial gratuita.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn--white btn--lg">Solicitar Evaluación</a>
+        <a href="/servicios/evaluacion-madurez/" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.4);color:#fff">Ver Evaluación de Madurez</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

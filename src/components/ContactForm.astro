@@ -1,12 +1,30 @@
 ---
+import { company } from '../data/company';
+
 interface Props {
   variant?: 'full' | 'compact';
 }
 const { variant = 'full' } = Astro.props;
+const recurso = Astro.url.searchParams.get('recurso');
+
+const recursoLabels: Record<string, string> = {
+  'checklist-compliance-ia': 'Checklist de Cumplimiento de IA 2026',
+};
+const recursoLabel = recurso ? recursoLabels[recurso] ?? recurso : null;
 ---
 
-<form class={`form ${variant === 'full' ? 'form--grid' : ''}`} action="https://formspree.io/f/placeholder" method="POST">
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+{recursoLabel && (
+  <div class="form__banner">
+    <i class="fa-solid fa-file-download"></i> Solicite su {recursoLabel}
+  </div>
+)}
+
+<form class={`form ${variant === 'full' ? 'form--grid' : ''}`} action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+  <input type="hidden" name="access_key" value={company.web3formsKey} />
+  <input type="hidden" name="subject" value={recursoLabel ? `Solicitud: ${recursoLabel}` : 'Nuevo contacto desde aigovernance.pe'} />
+  <input type="hidden" name="from_name" value="AI Governance Perú" />
+  {recurso && <input type="hidden" name="recurso" value={recurso} />}
+  <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
   <div class="form__group">
     <label class="form__label" for="nombre">Nombre completo *</label>
@@ -49,15 +67,70 @@ const { variant = 'full' } = Astro.props;
 
   <div class="form__group form__group--full">
     <label class="form__label" for="mensaje">Mensaje</label>
-    <textarea class="form__textarea" id="mensaje" name="mensaje" placeholder="Cuéntenos sobre su proyecto o necesidades..."></textarea>
+    <textarea class="form__textarea" id="mensaje" name="mensaje" placeholder="Cuéntenos sobre su proyecto o necesidades...">{recursoLabel ? `Solicito el ${recursoLabel}.` : ''}</textarea>
   </div>
 
   <div class="form__group form__group--full">
-    <button type="submit" class="btn btn--primary btn--lg">Solicitar Evaluación</button>
+    <button type="submit" class="btn btn--primary btn--lg" id="form-submit-btn">Solicitar Evaluación</button>
     <p class="form__disclaimer">Al enviar, acepta nuestra política de privacidad. Su información es confidencial.</p>
   </div>
 </form>
 
+<div class="form__success" id="form-success" style="display:none">
+  <div style="font-size:3rem;margin-bottom:1rem"><i class="fa-solid fa-circle-check" style="color:var(--color-success, #16a34a)"></i></div>
+  <h3>Gracias por su mensaje</h3>
+  <p>Nos pondremos en contacto en las próximas 24 horas.</p>
+</div>
+
+<div class="form__error" id="form-error" style="display:none">
+  <p style="color:var(--color-error, #dc2626)"><i class="fa-solid fa-circle-exclamation"></i> Hubo un error al enviar el formulario. Por favor, intente nuevamente o escríbanos a <a href="mailto:info@aigovernance.pe">info@aigovernance.pe</a>.</p>
+</div>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('form-submit-btn') as HTMLButtonElement;
+  const successEl = document.getElementById('form-success')!;
+  const errorEl = document.getElementById('form-error')!;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    errorEl.style.display = 'none';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+      } else {
+        throw new Error(data.message || 'Error al enviar');
+      }
+    } catch {
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Solicitar Evaluación';
+    }
+  });
+</script>
+
 <style>
   .form__disclaimer { font-size: 0.75rem; color: var(--color-text-light); margin-top: 0.5rem; }
+  .form__banner {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .form__success { text-align: center; padding: 2rem; }
+  .form__error { margin-top: 1rem; }
 </style>

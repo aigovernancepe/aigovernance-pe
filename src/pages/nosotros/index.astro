@@ -3,10 +3,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import { company } from '../../data/company';
-import { breadcrumbSchema, webPageSchema, organizationSchema } from '../../utils/schema';
+import { breadcrumbSchema, webPageSchema, organizationSchema, faqSchema } from '../../utils/schema';
 
 const breadcrumbItems = [
   { name: 'Nosotros', url: `${company.url}/nosotros/` },
+];
+
+const faqs = [
+  { question: '¿Qué experiencia tiene AI Governance Perú?', answer: 'Nuestro fundador tiene más de 10 años de experiencia en Data Governance, Data Quality y Compliance en Suiza, en sectores altamente regulados: asset management (FINMA), farmacéutica (GxP) y banca privada.' },
+  { question: '¿Por qué una consultora con experiencia suiza en Perú?', answer: 'Suiza tiene uno de los marcos regulatorios más exigentes del mundo en gobernanza de datos. Traemos ese rigor y metodología al mercado peruano, donde la Ley 31814 está creando necesidades similares de cumplimiento.' },
+  { question: '¿En qué idiomas trabajan?', answer: 'Somos trilingües: alemán, inglés y español. Esto nos permite acceder a las mejores prácticas internacionales y adaptarlas al contexto empresarial peruano.' },
+  { question: '¿Trabajan como extensión de nuestro equipo?', answer: 'Sí. Nuestro enfoque es colaborativo: trabajamos junto a su equipo, transferimos conocimiento y construimos capacidades internas que perduran más allá del proyecto. No generamos dependencia.' },
 ];
 
 const schemas = [
@@ -17,6 +24,7 @@ const schemas = [
     url: `${company.url}/nosotros/`,
   }),
   breadcrumbSchema(breadcrumbItems),
+  faqSchema(faqs),
 ];
 ---
 
@@ -204,6 +212,21 @@ const schemas = [
           <li><a href="/areas/peru/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicios en Perú</a></li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

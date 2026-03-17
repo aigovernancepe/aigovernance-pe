@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services, areas } from '../../../data/company';
-import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'evaluacion-impacto-ia')!;
 const relatedServices = services.filter((s) =>
@@ -14,9 +14,17 @@ const breadcrumbItems = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
+const faqs = [
+  { question: '¿Qué es una evaluación de impacto de IA?', answer: 'Es un informe formal que documenta los riesgos de un sistema de IA de alto riesgo: descripción del sistema, evaluación de riesgos, análisis de fairness, especificaciones técnicas, medidas de mitigación y plan de monitoreo. Es requisito de la Ley 31814.' },
+  { question: '¿Qué sistemas requieren evaluación de impacto?', answer: 'Los sistemas de IA clasificados como de alto riesgo: scoring crediticio, selección de personal, diagnóstico médico, y cualquier sistema que afecte derechos fundamentales de las personas según la Ley 31814 y el DS 115-2025-PCM.' },
+  { question: '¿Cuánto tiempo toma la evaluación de impacto?', answer: 'La evaluación completa toma 2-3 semanas. Incluye recopilación de información, evaluación técnica de sesgo y fairness, desarrollo del informe de 6 secciones y presentación de hallazgos al equipo directivo.' },
+  { question: '¿El informe sirve para presentar ante reguladores?', answer: 'Sí. El informe está diseñado para cumplir con los requisitos formales de la Ley 31814 y el DS 115-2025-PCM. Es un documento listo para presentar ante la SGTD, SBS o cualquier autoridad regulatoria competente.' },
+];
+
 const schemas = [
   breadcrumbSchema(breadcrumbItems),
   serviceSchema(service),
+  faqSchema(faqs),
 ];
 ---
 
@@ -164,6 +172,21 @@ const schemas = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

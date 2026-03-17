@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services, areas } from '../../../data/company';
-import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'implementacion-data-governance')!;
 const relatedServices = services.filter((s) => s.slug !== service.slug && s.category === 'data-governance');
@@ -12,9 +12,17 @@ const breadcrumbItems = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
+const faqs = [
+  { question: '¿Cuánto tiempo toma implementar un programa completo de Data Governance?', answer: 'El programa estándar dura 6 meses, con entregables incrementales desde el primer mes. Incluye el establecimiento del Data Governance Council, desarrollo de políticas, implementación de dashboards de calidad y catálogo de datos.' },
+  { question: '¿Es necesario realizar la evaluación de madurez antes de la implementación?', answer: 'Recomendamos comenzar con la evaluación de madurez de 3 semanas para tener un diagnóstico claro. Sin embargo, si ya cuenta con un diagnóstico reciente, podemos iniciar directamente con la implementación.' },
+  { question: '¿Qué roles se necesitan internamente para el Data Governance Council?', answer: 'Se requieren Data Owners (responsables de dominio de datos), Data Stewards (gestores operativos), un sponsor ejecutivo y opcionalmente un CDO. Nosotros le ayudamos a definir y capacitar a cada rol.' },
+  { question: '¿El programa incluye herramientas tecnológicas?', answer: 'Sí. Implementamos dashboards de monitoreo de calidad de datos, catálogo de datos centralizado con metadatos y linaje, y reportes automatizados. Las herramientas se adaptan a su infraestructura existente.' },
+];
+
 const schemas = [
   breadcrumbSchema(breadcrumbItems),
   serviceSchema(service),
+  faqSchema(faqs),
 ];
 ---
 
@@ -160,6 +168,21 @@ const schemas = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

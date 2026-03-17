@@ -2,13 +2,20 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services } from '../../../data/company';
-import { localBusinessSchema, breadcrumbSchema } from '../../../utils/schema';
+import { localBusinessSchema, breadcrumbSchema, faqSchema } from '../../../utils/schema';
 
 const area = { name: 'Lima', slug: 'lima' };
 
 const breadcrumbItems = [
   { name: 'Áreas', url: '/areas/' },
   { name: 'Lima', url: '/areas/lima/' },
+];
+
+const faqs = [
+  { question: '¿Por qué elegir consultoría presencial en Lima?', answer: 'La consultoría presencial permite workshops in-situ, acceso directo a stakeholders clave, revisión de documentación confidencial sin transferencias externas y ciclos de retroalimentación más rápidos. Lima concentra las sedes de los principales reguladores (SBS, SMV) y bancos.' },
+  { question: '¿En qué distritos de Lima operan?', answer: 'Atendemos empresas en todos los distritos empresariales: San Isidro (distrito financiero), Miraflores, San Borja, Santiago de Surco y el Centro Histórico. Realizamos workshops directamente en sus oficinas.' },
+  { question: '¿Pueden combinar consultoría presencial y remota?', answer: 'Sí. Nuestro modelo híbrido combina sesiones presenciales para workshops de descubrimiento y presentaciones ejecutivas con trabajo remoto para análisis, desarrollo de entregables y seguimiento.' },
+  { question: '¿Cuántos servicios ofrecen presencialmente en Lima?', answer: 'Los 8 servicios de nuestro portafolio están disponibles de forma presencial en Lima: desde evaluación de madurez y auditoría de compliance hasta capacitación en IA y monitoreo post-deployment.' },
 ];
 
 const schemas = [
@@ -18,6 +25,7 @@ const schemas = [
     { name: 'Áreas', url: `${company.url}/areas/` },
     { name: 'Lima', url: `${company.url}/areas/lima/` },
   ]),
+  faqSchema(faqs),
 ];
 ---
 
@@ -163,6 +171,21 @@ const schemas = [
           <a href="/servicios/" class="btn btn--outline">Ver todos los servicios →</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

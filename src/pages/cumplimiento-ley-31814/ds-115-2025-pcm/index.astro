@@ -3,11 +3,18 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import ContactForm from '../../../components/ContactForm.astro';
 import { company } from '../../../data/company';
-import { breadcrumbSchema, webPageSchema } from '../../../utils/schema';
+import { breadcrumbSchema, faqSchema, webPageSchema } from '../../../utils/schema';
 
 const breadcrumbItems = [
   { name: 'Cumplimiento Ley 31814', url: `${company.url}/cumplimiento-ley-31814/` },
   { name: 'DS 115-2025-PCM', url: `${company.url}/cumplimiento-ley-31814/ds-115-2025-pcm/` },
+];
+
+const faqs = [
+  { question: '¿Cuál es la diferencia entre la Ley 31814 y el DS 115-2025-PCM?', answer: 'La Ley 31814 establece el marco general, principios y obligaciones. El DS 115-2025-PCM es su reglamento: define los requisitos operativos detallados, plazos específicos, formatos de documentación, procedimientos de auditoría y el régimen sancionador.' },
+  { question: '¿Qué documentación técnica exige el DS 115-2025-PCM?', answer: 'Para cada sistema de IA de alto riesgo se requiere: descripción del sistema, datos de entrenamiento, arquitectura del modelo, métricas de desempeño, pruebas de sesgo, limitaciones conocidas, registros de trazabilidad y plan de monitoreo continuo.' },
+  { question: '¿Quién supervisa el cumplimiento del reglamento?', answer: 'La Presidencia del Consejo de Ministros (PCM) actúa como ente rector. La SGTD (Secretaría de Gobierno y Transformación Digital) es la encargada de las inspecciones y supervisión del cumplimiento.' },
+  { question: '¿Qué sanciones establece el DS 115-2025-PCM?', answer: 'Las sanciones incluyen multas, suspensión de operaciones de IA y responsabilidad administrativa para directivos. Las infracciones se tipifican según gravedad y pueden agravarse en sectores regulados.' },
 ];
 
 const schemas = [
@@ -17,6 +24,7 @@ const schemas = [
     url: `${company.url}/cumplimiento-ley-31814/ds-115-2025-pcm/`,
   }),
   breadcrumbSchema(breadcrumbItems),
+  faqSchema(faqs),
 ];
 ---
 
@@ -181,6 +189,21 @@ const schemas = [
           <li><a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicio: AI Governance & Compliance Audit</a></li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

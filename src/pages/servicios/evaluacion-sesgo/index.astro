@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services, areas } from '../../../data/company';
-import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'evaluacion-sesgo')!;
 const relatedServices = services.filter((s) =>
@@ -14,9 +14,17 @@ const breadcrumbItems = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
+const faqs = [
+  { question: '¿Qué tipos de sesgo se evalúan?', answer: 'Evaluamos sesgo en datos (representatividad, variables proxy), sesgo en modelos (demographic parity, equalized odds, calibration) y sesgo en resultados (disparidad en decisiones). También analizamos explicabilidad con SHAP values.' },
+  { question: '¿Cuánto dura la evaluación de sesgo algorítmico?', answer: 'La evaluación toma entre 2 y 4 semanas dependiendo de la complejidad del modelo y la cantidad de variables protegidas a analizar. Incluye informe detallado y plan de mitigación.' },
+  { question: '¿Necesitan acceso a nuestros modelos y datos?', answer: 'Sí, para una evaluación rigurosa necesitamos acceso a los datos de entrenamiento, el modelo en producción y los datos de scoring. Firmamos NDAs y trabajamos bajo estrictos protocolos de confidencialidad.' },
+  { question: '¿Qué pasa si se detecta sesgo en nuestros modelos?', answer: 'Entregamos un plan de mitigación con recomendaciones técnicas: preprocesamiento de datos, regularización de fairness y post-procesamiento de predicciones. También diseñamos un framework de monitoreo continuo.' },
+];
+
 const schemas = [
   breadcrumbSchema(breadcrumbItems),
   serviceSchema(service),
+  faqSchema(faqs),
 ];
 ---
 
@@ -140,6 +148,21 @@ const schemas = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

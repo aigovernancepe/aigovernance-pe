@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services, areas } from '../../../data/company';
-import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'ai-governance-compliance-audit')!;
 const relatedServices = services.filter((s) =>
@@ -14,9 +14,17 @@ const breadcrumbItems = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
+const faqs = [
+  { question: '¿Qué es una auditoría de AI Governance y Compliance?', answer: 'Es una evaluación integral de su postura de gobernanza de IA que incluye: inventario de sistemas de IA, evaluación de Shadow AI, análisis de transparencia algorítmica, auditoría de linaje de datos y categorización de riesgo según el DS 115-2025-PCM.' },
+  { question: '¿Cuánto dura la auditoría de compliance de IA?', answer: 'La auditoría completa toma entre 4 y 6 semanas. Incluye entrevistas con equipos técnicos y de negocio, evaluación de cada sistema de IA, informe detallado y plan de remediación con cronograma.' },
+  { question: '¿Qué es Shadow AI y por qué es un riesgo?', answer: 'Shadow AI es el uso no autorizado o no gobernado de herramientas de IA (ChatGPT, Copilot, etc.) por empleados sin supervisión. Genera riesgos de fuga de datos, incumplimiento regulatorio y decisiones no auditables en áreas reguladas.' },
+  { question: '¿La auditoría cubre todos los sectores regulados?', answer: 'Sí. Tenemos experiencia en auditorías para el sector financiero (SBS, SMV), farmacéutico (DIGEMID, GxP) y asegurador. Adaptamos la metodología a los requisitos específicos de cada regulador.' },
+];
+
 const schemas = [
   breadcrumbSchema(breadcrumbItems),
   serviceSchema(service),
+  faqSchema(faqs),
 ];
 ---
 
@@ -182,6 +190,21 @@ const schemas = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

@@ -3,10 +3,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import { company } from '../../data/company';
-import { breadcrumbSchema, webPageSchema, organizationSchema } from '../../utils/schema';
+import { breadcrumbSchema, webPageSchema, organizationSchema, faqSchema } from '../../utils/schema';
 
 const breadcrumbItems = [
   { name: 'Contacto', url: `${company.url}/contacto/` },
+];
+
+const faqs = [
+  { question: '¿En cuánto tiempo responden a una consulta?', answer: 'Respondemos dentro de las 24 horas hábiles con una propuesta de siguientes pasos personalizada según su situación y sector.' },
+  { question: '¿La consulta inicial tiene costo?', answer: 'No. Ofrecemos una llamada inicial de 30 minutos sin compromiso para entender sus necesidades y explorar cómo podemos ayudarle. Después recibirá una propuesta personalizada.' },
+  { question: '¿Firman acuerdos de confidencialidad?', answer: 'Sí. Firmamos NDAs antes de cualquier diagnóstico o evaluación. Toda la información compartida durante el proceso es tratada con absoluta confidencialidad.' },
+  { question: '¿Cómo es el proceso después del primer contacto?', answer: 'Después de su consulta, agendamos una llamada de 30 minutos, evaluamos sus necesidades y le enviamos una propuesta personalizada adaptada a su sector, tamaño de organización y objetivos específicos.' },
 ];
 
 const contactPageSchema = {
@@ -37,6 +44,7 @@ const schemas = [
     url: `${company.url}/contacto/`,
   }),
   breadcrumbSchema(breadcrumbItems),
+  faqSchema(faqs),
 ];
 ---
 
@@ -126,6 +134,21 @@ const schemas = [
         <p>Complete el formulario y nos pondremos en contacto a la brevedad.</p>
       </div>
       <ContactForm />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

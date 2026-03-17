@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services } from '../../../data/company';
-import { serviceSchema, breadcrumbSchema } from '../../../utils/schema';
+import { serviceSchema, breadcrumbSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'capacitacion-ia-human-in-the-loop')!;
 const relatedServices = services.filter((s) =>
@@ -14,7 +14,14 @@ const breadcrumbs = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
-const schemas = [serviceSchema(service), breadcrumbSchema(breadcrumbs)];
+const faqs = [
+  { question: '¿La capacitación en IA es obligatoria por ley?', answer: 'Sí. El Artículo 1.2 del DS 115-2025-PCM establece que el personal que supervise sistemas de IA de alto riesgo debe estar capacitado para detectar y corregir sesgos algorítmicos. Es una obligación legal, no una recomendación.' },
+  { question: '¿Qué niveles de capacitación ofrecen?', answer: 'Ofrecemos tres niveles: Ejecutivo (1 día, para directores), Gerencial (2-3 días, para supervisores y compliance officers) y Técnico (3-5 días, para científicos de datos e ingenieros de ML).' },
+  { question: '¿La certificación tiene validez oficial?', answer: 'Es una certificación interna que demuestra cumplimiento con el requisito del DS 115-2025-PCM. Genera evidencia auditable para inspecciones de la SGTD. La certificación requiere recertificación anual.' },
+  { question: '¿La capacitación se adapta a nuestro sector?', answer: 'Sí. Tenemos módulos específicos para el sector financiero (SBS/SMV) y farmacéutico (DIGEMID/GxP), con casos de uso y escenarios reales de cada industria.' },
+];
+
+const schemas = [serviceSchema(service), breadcrumbSchema(breadcrumbs), faqSchema(faqs)];
 ---
 
 <BaseLayout
@@ -213,6 +220,21 @@ const schemas = [serviceSchema(service), breadcrumbSchema(breadcrumbs)];
           <a href="/areas/peru/"><i class="fa-solid fa-globe"></i> Todo el Perú (virtual)</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services } from '../../../data/company';
-import { serviceSchema, breadcrumbSchema } from '../../../utils/schema';
+import { serviceSchema, breadcrumbSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'monitoreo-post-deployment')!;
 const relatedServices = services.filter((s) =>
@@ -14,7 +14,14 @@ const breadcrumbs = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
-const schemas = [serviceSchema(service), breadcrumbSchema(breadcrumbs)];
+const faqs = [
+  { question: '¿Por qué necesito monitoreo post-deployment de IA?', answer: 'Los modelos de IA se degradan silenciosamente con el tiempo por data drift, concept drift y bias drift. El DS 115-2025-PCM exige "vigilancia continua" para sistemas de alto riesgo. Sin monitoreo, un modelo preciso hoy puede producir decisiones sesgadas mañana.' },
+  { question: '¿Qué incluye el retainer mensual de monitoreo?', answer: 'Incluye: detección de drift en datos y modelos, vigilancia continua de métricas de fairness por grupo protegido, reportes mensuales de transparencia, guardrails éticos configurables y evidencia auditable para reguladores.' },
+  { question: '¿Cómo funciona la detección de drift?', answer: 'Monitoreamos continuamente la distribución de datos de entrada y la performance del modelo. Cuando detectamos desviaciones significativas (data drift o concept drift), generamos alertas automáticas y recomendaciones de re-entrenamiento.' },
+  { question: '¿El monitoreo es compatible con cualquier modelo de IA?', answer: 'Sí. Nuestro framework de monitoreo se adapta a modelos de ML tradicionales, LLMs, sistemas de scoring y agentes autónomos. Configuramos métricas y guardrails específicos para cada tipo de modelo.' },
+];
+
+const schemas = [serviceSchema(service), breadcrumbSchema(breadcrumbs), faqSchema(faqs)];
 ---
 
 <BaseLayout
@@ -187,6 +194,21 @@ const schemas = [serviceSchema(service), breadcrumbSchema(breadcrumbs)];
           <a href="/areas/peru/"><i class="fa-solid fa-globe"></i> Todo el Perú (remoto)</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

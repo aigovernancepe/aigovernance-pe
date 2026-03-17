@@ -2,13 +2,20 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services } from '../../../data/company';
-import { localBusinessSchema, breadcrumbSchema } from '../../../utils/schema';
+import { localBusinessSchema, breadcrumbSchema, faqSchema } from '../../../utils/schema';
 
 const area = { name: 'Perú', slug: 'peru' };
 
 const breadcrumbItems = [
   { name: 'Áreas', url: '/areas/' },
   { name: 'Perú', url: '/areas/peru/' },
+];
+
+const faqs = [
+  { question: '¿Ofrecen servicios de Data Governance fuera de Lima?', answer: 'Sí. Ofrecemos consultoría remota para empresas en cualquier región del Perú. Los workshops y sesiones de descubrimiento se realizan de forma virtual con la misma calidad metodológica que la consultoría presencial en Lima.' },
+  { question: '¿Qué regulaciones de IA aplican en el Perú?', answer: 'Las principales son la Ley 31814 (marco de IA), el DS 115-2025-PCM (reglamento), las normativas SBS para el sector financiero y las regulaciones SMV para el mercado de valores. El plazo máximo de cumplimiento es septiembre 2026.' },
+  { question: '¿Cuál es el nivel de madurez en Data Governance del Perú?', answer: 'El sector financiero peruano tiene un nivel de madurez promedio de 1.88 sobre 5 en Data Governance. Esto representa una oportunidad competitiva significativa para las empresas que actúen primero.' },
+  { question: '¿Los 8 servicios están disponibles para todo el Perú?', answer: 'Sí. Todos nuestros servicios de AI Governance, Data Governance y Compliance están disponibles a nivel nacional, con opción de consultoría presencial en Lima y remota para el resto del país.' },
 ];
 
 const schemas = [
@@ -18,6 +25,7 @@ const schemas = [
     { name: 'Áreas', url: `${company.url}/areas/` },
     { name: 'Perú', url: `${company.url}/areas/peru/` },
   ]),
+  faqSchema(faqs),
 ];
 ---
 
@@ -151,6 +159,21 @@ const schemas = [
           <a href="/servicios/" class="btn btn--primary">Ver todos los servicios →</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

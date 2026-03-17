@@ -3,11 +3,18 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import ContactForm from '../../../components/ContactForm.astro';
 import { company } from '../../../data/company';
-import { breadcrumbSchema, webPageSchema } from '../../../utils/schema';
+import { breadcrumbSchema, faqSchema, webPageSchema } from '../../../utils/schema';
 
 const breadcrumbItems = [
   { name: 'Cumplimiento Ley 31814', url: `${company.url}/cumplimiento-ley-31814/` },
   { name: 'Requisitos por Sector', url: `${company.url}/cumplimiento-ley-31814/requisitos-sector-financiero/` },
+];
+
+const faqs = [
+  { question: '¿Qué sectores tienen requisitos específicos bajo la Ley 31814?', answer: 'Los sectores con requisitos más exigentes son: bancos (scoring crediticio, AML/KYC), aseguradoras (pricing, siniestros), asset managers (trading algorítmico), fintechs (lending digital, onboarding), cooperativas (evaluación crediticia) y farmacéuticas (control de calidad, farmacovigilancia).' },
+  { question: '¿Los bancos tienen requisitos adicionales a la Ley 31814?', answer: 'Sí. Además de la Ley 31814, los bancos deben cumplir con las normativas de la SBS sobre gestión de riesgos tecnológicos, que exigen gobernanza de datos robusta y controles sobre modelos de IA para scoring crediticio, prevención de fraude y AML/KYC.' },
+  { question: '¿Las fintechs deben cumplir los mismos requisitos que los bancos?', answer: 'En lo que respecta a IA de alto riesgo, sí. Las plataformas de lending digital que usan IA para evaluación crediticia deben cumplir los mismos requisitos de evaluación de sesgo, explicabilidad y supervisión humana.' },
+  { question: '¿Qué requisitos aplican al sector farmacéutico?', answer: 'Además de la Ley 31814, las farmacéuticas deben cumplir con requisitos GxP para validación de sistemas computarizados, trazabilidad completa en farmacovigilancia y reporting regulatorio a DIGEMID para sistemas de IA en control de calidad.' },
 ];
 
 const schemas = [
@@ -17,6 +24,7 @@ const schemas = [
     url: `${company.url}/cumplimiento-ley-31814/requisitos-sector-financiero/`,
   }),
   breadcrumbSchema(breadcrumbItems),
+  faqSchema(faqs),
 ];
 ---
 
@@ -254,6 +262,21 @@ const schemas = [
           <li><a href="/nosotros/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Sobre AI Governance Perú</a></li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

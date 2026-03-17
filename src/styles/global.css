@@ -123,6 +123,7 @@ ul, ol { list-style: none; }
   pointer-events: none;
 }
 .hero h1 { color: #fff; margin-bottom: 1.5rem; }
+.hero__accent { color: #93c5fd; }
 .hero p { color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 640px; }
 .hero__actions { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
 .hero__badge {

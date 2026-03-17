@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services, areas } from '../../../data/company';
-import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'agentic-workflow-engineering')!;
 const relatedServices = services.filter((s) =>
@@ -14,9 +14,17 @@ const breadcrumbItems = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
+const faqs = [
+  { question: '¿Qué diferencia hay entre un chatbot y un workflow agéntico?', answer: 'Un chatbot responde preguntas individuales y requiere input constante. Un workflow agéntico orquesta múltiples agentes de IA que ejecutan procesos complejos de forma autónoma, con supervisión humana en puntos críticos (Human-in-the-Loop).' },
+  { question: '¿Mis datos están seguros con workflows agénticos?', answer: 'Sí. Desplegamos los agentes en su propia infraestructura (VPC en AWS, Azure o GCP). Sus datos nunca salen de su entorno. La integración con su IAM garantiza control de acceso granular.' },
+  { question: '¿Cuánto tiempo toma implementar un workflow agéntico?', answer: 'El proyecto típico dura entre 8 y 12 semanas, incluyendo diseño de arquitectura, desarrollo de agentes, configuración de checkpoints humanos, pruebas y despliegue en producción.' },
+  { question: '¿Para qué industrias son útiles los workflows agénticos?', answer: 'Son especialmente valiosos en farmacéutica (automatización de expedientes DIGEMID, monitoreo de literatura), asset management (research automatizado, compliance documental) y finanzas (gestión de cobranzas, KYC/AML).' },
+];
+
 const schemas = [
   breadcrumbSchema(breadcrumbItems),
   serviceSchema(service),
+  faqSchema(faqs),
 ];
 ---
 
@@ -233,6 +241,21 @@ const schemas = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

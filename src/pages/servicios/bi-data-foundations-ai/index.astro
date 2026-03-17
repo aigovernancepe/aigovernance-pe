@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services, areas } from '../../../data/company';
-import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'bi-data-foundations-ai')!;
 const relatedServices = services.filter((s) =>
@@ -14,9 +14,17 @@ const breadcrumbItems = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
+const faqs = [
+  { question: '¿Por qué necesito fundamentos de datos antes de implementar IA?', answer: 'La calidad de su IA depende directamente de la calidad de sus datos. Sin datos limpios, trazables y bien gobernados, los sistemas RAG devuelven información incorrecta, los modelos se degradan y las decisiones automatizadas no son auditables.' },
+  { question: '¿Qué es una base vectorial y para qué sirve?', answer: 'Una base vectorial almacena representaciones numéricas (embeddings) de sus documentos y datos. Permite búsquedas semánticas que sus sistemas de IA generativa usan para encontrar información relevante. Diseñamos la arquitectura óptima para su caso de uso.' },
+  { question: '¿Cómo se conecta el BI existente con la IA generativa?', answer: 'Creamos un catálogo de datos unificado que conecta sus fuentes de BI con las fuentes de IA, incluyendo linaje de datos end-to-end, versionado de embeddings y un glosario de negocio que los LLMs pueden utilizar como contexto.' },
+  { question: '¿Cuánto dura el proyecto de fundamentos de datos?', answer: 'El proyecto típico dura entre 6 y 10 semanas, cubriendo arquitectura de bases vectoriales, gestión de metadatos e ingeniería de confiabilidad para sistemas RAG.' },
+];
+
 const schemas = [
   breadcrumbSchema(breadcrumbItems),
   serviceSchema(service),
+  faqSchema(faqs),
 ];
 ---
 
@@ -168,6 +176,21 @@ const schemas = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

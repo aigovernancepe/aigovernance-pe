@@ -3,11 +3,18 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import ContactForm from '../../../components/ContactForm.astro';
 import { company } from '../../../data/company';
-import { breadcrumbSchema, webPageSchema } from '../../../utils/schema';
+import { breadcrumbSchema, faqSchema, webPageSchema } from '../../../utils/schema';
 
 const breadcrumbItems = [
   { name: 'Cumplimiento Ley 31814', url: `${company.url}/cumplimiento-ley-31814/` },
   { name: 'Que es la Ley 31814', url: `${company.url}/cumplimiento-ley-31814/que-es-ley-31814/` },
+];
+
+const faqs = [
+  { question: '¿Cuándo fue promulgada la Ley 31814?', answer: 'La Ley 31814 fue publicada en el Diario Oficial El Peruano y es la primera legislación peruana dedicada íntegramente a regular el uso de la inteligencia artificial, posicionando al Perú como pionero en América Latina.' },
+  { question: '¿Cuáles son los principios rectores de la Ley 31814?', answer: 'Los seis principios son: transparencia (sistemas comprensibles y explicables), no discriminación (sin sesgos por características protegidas), protección de derechos (privacidad y dignidad), responsabilidad (rendición de cuentas), seguridad y robustez, y sostenibilidad.' },
+  { question: '¿Qué niveles de riesgo establece la ley?', answer: 'La ley define cuatro niveles: riesgo mínimo (filtros de spam, recomendaciones), riesgo limitado (chatbots, generación de contenido), alto riesgo (scoring crediticio, diagnóstico médico) y riesgo inaceptable (puntuación social, vigilancia masiva).' },
+  { question: '¿La Ley 31814 se aplica también a empresas que usan ChatGPT?', answer: 'Sí. Si su empresa usa herramientas de IA como ChatGPT en procesos que afectan decisiones sobre personas (créditos, contratación, atención al cliente), debe cumplir con los requisitos de transparencia y supervisión de la ley.' },
 ];
 
 const schemas = [
@@ -17,6 +24,7 @@ const schemas = [
     url: `${company.url}/cumplimiento-ley-31814/que-es-ley-31814/`,
   }),
   breadcrumbSchema(breadcrumbItems),
+  faqSchema(faqs),
 ];
 ---
 
@@ -214,6 +222,21 @@ const schemas = [
           <li><a href="/servicios/ai-governance-compliance-audit/" class="btn btn--outline" style="width:100%;text-align:left"><i class="fa-solid fa-arrow-right"></i> Servicio: AI Governance & Compliance Audit</a></li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

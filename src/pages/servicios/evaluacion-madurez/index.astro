@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { company, services, areas } from '../../../data/company';
-import { breadcrumbSchema, serviceSchema } from '../../../utils/schema';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../../../utils/schema';
 
 const service = services.find((s) => s.slug === 'evaluacion-madurez')!;
 const relatedServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
@@ -12,9 +12,17 @@ const breadcrumbItems = [
   { name: service.shortTitle, url: `${company.url}/servicios/${service.slug}/` },
 ];
 
+const faqs = [
+  { question: '¿Cuánto dura la evaluación de madurez en Data Governance?', answer: 'La evaluación completa dura 3 semanas. Incluye entrevistas con stakeholders, análisis de brechas, inventario de activos de datos y presentación ejecutiva al directorio con roadmap priorizado.' },
+  { question: '¿Qué escala se utiliza para medir la madurez?', answer: 'Utilizamos una escala de 1 a 5 que evalúa cinco dimensiones: organización, políticas, procesos, tecnología y métricas. El promedio del sector financiero peruano es de 1.88/5.' },
+  { question: '¿La evaluación requiere acceso a nuestros sistemas?', answer: 'El proceso se basa principalmente en entrevistas y revisión de documentación. No requiere acceso directo a sistemas ni datos sensibles durante la fase de diagnóstico.' },
+  { question: '¿Qué obtenemos al finalizar la evaluación?', answer: 'Recibirá un reporte ejecutivo con: calificación de madurez por dimensión, análisis de brechas, inventario de activos de datos, clasificación de riesgo por área y un roadmap priorizado con quick wins a 30 días y objetivos a 6-12 meses.' },
+];
+
 const schemas = [
   breadcrumbSchema(breadcrumbItems),
   serviceSchema(service),
+  faqSchema(faqs),
 ];
 ---
 
@@ -185,6 +193,21 @@ const schemas = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

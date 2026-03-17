@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import { company, services, areas } from '../../data/company';
-import { breadcrumbSchema, webPageSchema } from '../../utils/schema';
+import { breadcrumbSchema, webPageSchema, faqSchema } from '../../utils/schema';
 
 const breadcrumbItems = [
   { name: 'Servicios', url: `${company.url}/servicios/` },
@@ -12,6 +12,12 @@ const dgServices = services.filter((s) => s.category === 'data-governance');
 const dqServices = services.filter((s) => s.category === 'data-quality');
 const complianceServices = services.filter((s) => s.category === 'compliance');
 
+const faqs = [
+  { question: '¿Cuál es el mejor servicio para comenzar?', answer: 'Recomendamos iniciar con la Evaluación de Madurez en Data Governance (3 semanas). Este diagnóstico le dará un panorama claro de su situación actual y un roadmap priorizado para los siguientes pasos.' },
+  { question: '¿Los servicios se pueden contratar de forma individual?', answer: 'Sí. Cada servicio funciona de forma independiente. Sin embargo, obtiene mayor valor al combinarlos: por ejemplo, una evaluación de madurez seguida de la implementación, o una auditoría de compliance complementada con capacitación.' },
+  { question: '¿Trabajan con empresas fuera de Lima?', answer: 'Sí. Ofrecemos consultoría presencial en Lima y remota para todo el Perú. Los workshops y sesiones de descubrimiento pueden realizarse de forma híbrida según las necesidades de su organización.' },
+];
+
 const schemas = [
   breadcrumbSchema(breadcrumbItems),
   webPageSchema({
@@ -19,6 +25,7 @@ const schemas = [
     description: 'Servicios especializados de AI Governance, Data Governance, Data Quality y Compliance para empresas peruanas. Evaluación de madurez, implementación, capacitación, auditoría de IA y workflows agénticos.',
     url: `${company.url}/servicios/`,
   }),
+  faqSchema(faqs),
 ];
 ---
 
@@ -142,6 +149,21 @@ const schemas = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="section-header section-header--center">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">{faq.question}</button>
+          <div class="faq-answer"><p>{faq.answer}</p></div>
+        </div>
+      ))}
     </div>
   </section>
 

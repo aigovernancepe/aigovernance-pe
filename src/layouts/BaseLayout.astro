@@ -142,6 +142,9 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
           <div class="countdown__item"><div class="countdown__number">${hours}</div><div class="countdown__label">Horas</div></div>
           <div class="countdown__item"><div class="countdown__number">${minutes}</div><div class="countdown__label">Minutos</div></div>`;
       }
+      document.querySelectorAll('.countdown-inline').forEach((inlineEl) => {
+        inlineEl.textContent = `${days} días, ${hours}h ${minutes}m restantes`;
+      });
     }
     updateCountdown();
     setInterval(updateCountdown, 60000);

@@ -18,7 +18,7 @@ export const company = {
     country: 'PE',
     countryName: 'Perú',
   },
-  web3formsKey: 'YOUR_ACCESS_KEY_HERE',
+  web3formsKey: 'dd9b2cd3-79ed-4ac5-a5cf-347b32e8c39e',
   priceRange: '$$$',
   openingHours: 'Mo-Fr 09:00-18:00',
   languages: ['es', 'en', 'de'],

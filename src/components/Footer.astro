@@ -10,6 +10,7 @@ import { company, services, areas } from '../data/company';
           <img src={company.logoWhite} alt={company.name} width="160" height="40" loading="lazy" />
         </a>
         <p>{company.description}</p>
+        <p class="footer__credit">Página web por <a href="https://starkrank.com/pe/diseno-web-lima/" target="_blank" rel="noopener">StarkRank</a></p>
       </div>
 
       <div class="footer__col">
@@ -60,6 +61,9 @@ import { company, services, areas } from '../data/company';
   }
   .footer__grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 3rem; }
   .footer__brand p { margin-top: 1rem; font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
+  .footer__credit { font-size: 0.8rem; margin-top: 0.5rem; }
+  .footer__credit a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 150ms; }
+  .footer__credit a:hover { color: #fff; }
   .footer__col h4 { color: #fff; font-size: 0.95rem; margin-bottom: 1rem; }
   .footer__col ul { display: flex; flex-direction: column; gap: 0.5rem; }
   .footer__col a { color: rgba(255,255,255,0.7); font-size: 0.85rem; transition: color 150ms; text-decoration: none; }
